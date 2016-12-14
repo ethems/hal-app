@@ -1,0 +1,29 @@
+{
+  "name": "hal-app",
+  "version": "0.0.1",
+  "description": "hal application",
+  "main": "index.js",
+  "engines": {
+    "node": "6.9.2"
+  },
+  "scripts": {
+    "test": "npm run test-node",
+    "test-node": "node_modules/.bin/mocha test/**/* --reporter spec",
+    "start": "node index.js"
+  },
+  "author": "Furkan Ozdeslik",
+  "license": "UNLICENSED",
+  "private": "true",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.12.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-flowtype": "^2.29.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2"
+  }
+}

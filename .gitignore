@@ -1,0 +1,4 @@
+**/node_modules
+configuration.json
+./logs
+.jsbeautifyrc
