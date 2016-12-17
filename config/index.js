@@ -11,7 +11,7 @@ module.exports = () => {
   const configJson = JSON.parse(fs.readFileSync(filePath));
   const runtimeConfig = {};
 
-  runtimeConfig.serverPort = process.env.PORT || configJson['ServerPort'] || 3000;
+  runtimeConfig.serverPort = process.env.PORT || configJson.serverPort || 3000;
   runtimeConfig.dbUri = configJson.dbUri;
   runtimeConfig.secret = configJson.Secret;
 
