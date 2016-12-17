@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var test = require('../config/test');
+var bluebird = require('bluebird');
 // ensure the NODE_ENV is set to 'test'
 // this is helpful when you would like to change behavior when testing
 process.env.NODE_ENV = 'test';
@@ -15,6 +16,7 @@ before(function(done) {
   }
 
   function reconnect() {
+    mongoose.Promise = bluebird;
     mongoose.connect(test.dbUri, function(err) {
       if (err) {
         throw err;
