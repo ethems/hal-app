@@ -1,5 +1,6 @@
 const express = require('express');
 const logger = require('./lib/logger');
+const appRouter = require('./lib/app-router');
 
 const server = express();
 
@@ -15,6 +16,10 @@ const config = require('./config')();
 // DB SETUP
 require('./lib/db')(config);
 
+
+// APP ROUTER
+server.use(express.static('public'));
+server.use(config.siteRoot, appRouter(config));
 
 server.listen(config.serverPort, (error) => {
   if (error) {

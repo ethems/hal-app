@@ -12,6 +12,7 @@ module.exports = () => {
   const runtimeConfig = {};
 
   runtimeConfig.serverPort = process.env.PORT || configJson.serverPort || 3000;
+  runtimeConfig.siteRoot = `/${configJson.siteRoot}`;
   runtimeConfig.dbUri = configJson.dbUri;
   runtimeConfig.secret = configJson.Secret;
 

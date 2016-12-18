@@ -12,6 +12,9 @@ before(function(done) {
       mongoose.connection.collections[i].remove();
     }
     mongoose.connection.collections.products.insert({name: "Avokado"});
+    mongoose.connection.collections.products.insert({name: "Price Fruit"});
+    mongoose.connection.collections.products.insert({name: "Price Fruit2"});
+
     return done();
   }
 
@@ -39,10 +42,9 @@ before(function(done) {
   }
 
   checkState();
-
 });
 
-after(function(done) {
+after((done) => {
   mongoose.disconnect();
   return done();
 });
