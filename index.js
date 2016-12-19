@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('./lib/logger');
 const appRouter = require('./lib/app-router');
 
-const server = express();
+const app = express();
 
 // ENVIRONMENT
 const environmentTypes = ['production', 'development', 'test'];
@@ -14,17 +14,20 @@ process.env.NODE_ENV = process.env.NODE_ENV || env;
 const config = require('./config')();
 
 // DB SETUP
-require('./lib/db')(config);
-
+if (process.env.NODE_ENV !== 'test') {
+  require('./lib/db')(config);
+}
 
 // APP ROUTER
-server.use(express.static('public'));
-server.use(config.siteRoot, appRouter(config));
+app.use(express.static('public'));
+app.use(config.siteRoot, appRouter(config));
 
-server.listen(config.serverPort, (error) => {
+const server = app.listen(config.serverPort, (error) => {
   if (error) {
     logger.error(error);
   } else {
     logger.info(`===> Listening on port ${config.serverPort} in ${process.env.NODE_ENV} mode`);
   }
 });
+
+module.exports = server;

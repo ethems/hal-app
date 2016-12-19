@@ -29,6 +29,8 @@
     "airbnb"
   ],
   "rules": {
+    "generator-star-spacing": ["error", {"before": true, "after": true}],
+    "max-len": ["error", 150],
     "func-names": ["error", "never"],
     "comma-dangle": ["error", "never"],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/*.spec.js"]}],

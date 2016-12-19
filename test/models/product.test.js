@@ -67,6 +67,14 @@ describe('PRODUCTS  MODEL', () => {
         });
       });
     });
+    it('should throw exception when there is product named xxx', (done) => {
+      co(function * () {
+        yield Product.findById('xxx');
+      }).catch((err) => {
+        should.exist(err);
+        done();
+      })
+    });
   });
   describe('#Update', () => {
     it('should update productHistory', (done) => {
