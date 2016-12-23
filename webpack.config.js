@@ -1,5 +1,5 @@
-const path = require('path');
-const webpack = require('webpack');
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   entry: [
@@ -8,7 +8,7 @@ module.exports = {
   externals: {
     jquery: 'jQuery'
   },
-  plugins: [new webpack.ProvidePlugin({$: 'jquery', jQuery: 'jquery'})],
+  plugins: [new webpack.ProvidePlugin({'$': 'jquery', 'jQuery': 'jquery'})],
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
@@ -24,20 +24,23 @@ module.exports = {
         query: {
           presets: ['react', 'es2015', 'stage-0']
         },
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/
+        test: /\.js|.jsx?$/,
+        include: path.join(__dirname, './client')
       }, {
-        loader: 'url?limit=100000',
-        test: /\.(jpg|png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/
+        test: /\.(woff2?|svg)$/,
+        loader: 'url?limit=10000'
+      }, {
+        test: /\.(ttf|eot)$/,
+        loader: 'file'
       }, {
         test: /\.scss$/,
         loaders: [
-          'style', 'css', 'sass'
+          "style", "css", "sass"
         ],
         exclude: /(node_modules|bower_components)/
       }, {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: "style-loader!css-loader"
       }
     ]
   }
