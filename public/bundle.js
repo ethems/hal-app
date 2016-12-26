@@ -22849,6 +22849,12 @@
 	      return [].concat(_toConsumableArray(action.payload.data.products));
 	    case _productAction.ActionTypes.GET_PRODUCTS_REJECTED:
 	      return state;
+	    case _productAction.ActionTypes.DELETE_PRODUCTS_PENDING:
+	      return state;
+	    case _productAction.ActionTypes.DELETE_PRODUCTS_FULFILLED:
+	      return state;
+	    case _productAction.ActionTypes.DELETE_PRODUCTS_REJECTED:
+	      return state;
 	    default:
 	      return state;
 	  }
@@ -22867,6 +22873,7 @@
 	});
 	exports.ActionTypes = undefined;
 	exports.getProducts = getProducts;
+	exports.deleteProduct = deleteProduct;
 
 	var _axios = __webpack_require__(210);
 
@@ -22878,11 +22885,26 @@
 	  GET_PRODUCTS: 'GET_PRODUCTS',
 	  GET_PRODUCTS_PENDING: 'GET_PRODUCTS_PENDING',
 	  GET_PRODUCTS_FULFILLED: 'GET_PRODUCTS_FULFILLED',
-	  GET_PRODUCTS_REJECTED: 'GET_PRODUCTS_REJECTED'
+	  GET_PRODUCTS_REJECTED: 'GET_PRODUCTS_REJECTED',
+
+	  DELETE_PRODUCTS: 'DELETE_PRODUCTS',
+	  DELETE_PRODUCTS_PENDING: 'DELETE_PRODUCTS_PENDING',
+	  DELETE_PRODUCTS_FULFILLED: 'DELETE_PRODUCTS_FULFILLED',
+	  DELETE_PRODUCTS_REJECTED: 'DELETE_PRODUCTS_REJECTED'
 	};
 
 	function getProducts() {
-	  return { type: ActionTypes.GET_PRODUCTS, payload: _axios2.default.get('/api/products') };
+	  return {
+	    type: ActionTypes.GET_PRODUCTS,
+	    payload: _axios2.default.get('/api/products')
+	  };
+	}
+
+	function deleteProduct(productId) {
+	  return {
+	    type: ActionTypes.DELETE_PRODUCTS,
+	    payload: _axios2.default.delete('/api/products/' + productId)
+	  };
 	}
 
 /***/ },
@@ -24396,13 +24418,17 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _admin = __webpack_require__(311);
+	var _admin = __webpack_require__(321);
 
 	var _admin2 = _interopRequireDefault(_admin);
 
-	var _products = __webpack_require__(314);
+	var _products = __webpack_require__(324);
 
 	var _products2 = _interopRequireDefault(_products);
+
+	var _product = __webpack_require__(333);
+
+	var _product2 = _interopRequireDefault(_product);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24420,7 +24446,8 @@
 	        _react2.default.createElement(
 	          _reactRouter.Route,
 	          { path: 'admin', component: _admin2.default },
-	          _react2.default.createElement(_reactRouter.Route, { path: 'products', component: _products2.default })
+	          _react2.default.createElement(_reactRouter.Route, { path: 'products', component: _products2.default }),
+	          _react2.default.createElement(_reactRouter.Route, { path: 'product(/:id)', component: _product2.default })
 	        )
 	      )
 	    )
@@ -30429,6 +30456,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	__webpack_require__(314);
+
 	var App = function App(_ref) {
 	  var children = _ref.children;
 	  return _react2.default.createElement(
@@ -30789,7 +30818,100 @@
 
 
 /***/ },
-/* 311 */
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(315);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(310)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../style-loader/index.js!./../../css-loader/index.js!./material-icons.css", function() {
+				var newContent = require("!!./../../style-loader/index.js!./../../css-loader/index.js!./material-icons.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 315 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(316);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(310)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../css-loader/index.js!./material-icons.css", function() {
+				var newContent = require("!!./../../css-loader/index.js!./material-icons.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 316 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(309)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@font-face {\n  font-family: 'Material Icons';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(317) + "); /* For IE6-8 */\n  src: local('Material Icons'),\n       local('MaterialIcons-Regular'),\n       url(" + __webpack_require__(318) + ") format('woff2'),\n       url(" + __webpack_require__(319) + ") format('woff'),\n       url(" + __webpack_require__(320) + ") format('truetype');\n}\n\n.material-icons {\n  font-family: 'Material Icons';\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;  /* Preferred icon size */\n  display: inline-block;\n  line-height: 1;\n  text-transform: none;\n  letter-spacing: normal;\n  word-wrap: normal;\n  white-space: nowrap;\n  direction: ltr;\n\n  /* Support for all WebKit browsers. */\n  -webkit-font-smoothing: antialiased;\n  /* Support for Safari and Chrome. */\n  text-rendering: optimizeLegibility;\n\n  /* Support for Firefox. */\n  -moz-osx-font-smoothing: grayscale;\n\n  /* Support for IE. */\n  font-feature-settings: 'liga';\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 317 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "e79bfd88537def476913f3ed52f4f4b3.eot";
+
+/***/ },
+/* 318 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "570eb83859dc23dd0eec423a49e147fe.woff2";
+
+/***/ },
+/* 319 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "012cf6a10129e2275d79d6adac7f3b02.woff";
+
+/***/ },
+/* 320 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "a37b0c01c0baf1888ca812cc0508f6e2.ttf";
+
+/***/ },
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30802,7 +30924,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(312);
+	__webpack_require__(322);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30818,13 +30940,13 @@
 	exports.default = Admin;
 
 /***/ },
-/* 312 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(313);
+	var content = __webpack_require__(323);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(310)(content, {});
@@ -30844,7 +30966,7 @@
 	}
 
 /***/ },
-/* 313 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(309)();
@@ -30858,7 +30980,373 @@
 
 
 /***/ },
-/* 314 */
+/* 324 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _productsTable = __webpack_require__(325);
+
+	var _productsTable2 = _interopRequireDefault(_productsTable);
+
+	__webpack_require__(331);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Products = function Products(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'products-container' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'products-table-wrapper' },
+	      _react2.default.createElement(_productsTable2.default, null)
+	    )
+	  );
+	};
+
+	exports.default = Products;
+
+/***/ },
+/* 325 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(236);
+
+	var _productAction = __webpack_require__(209);
+
+	var productActions = _interopRequireWildcard(_productAction);
+
+	var _productsRow = __webpack_require__(326);
+
+	var _productsRow2 = _interopRequireDefault(_productsRow);
+
+	__webpack_require__(329);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ProductsTable = function (_Component) {
+	  _inherits(ProductsTable, _Component);
+
+	  function ProductsTable() {
+	    _classCallCheck(this, ProductsTable);
+
+	    return _possibleConstructorReturn(this, (ProductsTable.__proto__ || Object.getPrototypeOf(ProductsTable)).apply(this, arguments));
+	  }
+
+	  _createClass(ProductsTable, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.props.getProducts();
+	    }
+	  }, {
+	    key: '_renderRows',
+	    value: function _renderRows() {
+	      var products = this.props.products;
+
+	      return products.map(function (product, index) {
+	        return _react2.default.createElement(_productsRow2.default, _extends({ key: product._id, index: index }, product));
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'admin-products-container' },
+	        _react2.default.createElement(
+	          'table',
+	          { className: 'products-table' },
+	          _react2.default.createElement(
+	            'thead',
+	            null,
+	            _react2.default.createElement(
+	              'tr',
+	              null,
+	              _react2.default.createElement(
+	                'th',
+	                { colSpan: 3 },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'search-text-container' },
+	                  _react2.default.createElement('input', { className: 'search-text' })
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'tr',
+	              { className: 'products-table-header' },
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                'Product Name'
+	              ),
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                'Status'
+	              ),
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                'Price'
+	              ),
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                'Actions'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tbody',
+	            null,
+	            this._renderRows()
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ProductsTable;
+	}(_react.Component);
+
+	var mapStateToProps = function mapStateToProps(state) {
+	  return { products: state.products };
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, productActions)(ProductsTable);
+
+/***/ },
+/* 326 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(253);
+
+	var _reactRedux = __webpack_require__(236);
+
+	var _productAction = __webpack_require__(209);
+
+	var productActions = _interopRequireWildcard(_productAction);
+
+	__webpack_require__(327);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ProductsRow = function ProductsRow(props) {
+	  var index = props.index,
+	      _id = props._id,
+	      name = props.name,
+	      priceHistory = props.priceHistory,
+	      active = props.active;
+
+	  var type = +index % 2 === 0 ? ' even ' : ' odd ';
+	  var priceText = priceHistory.length == 0 ? 'No price' : '\u20BA' + priceHistory[0].price + ' / ' + priceHistory[0].unit;
+	  var status = active ? 'Active' : 'Inactive';
+	  return _react2.default.createElement(
+	    'tr',
+	    { className: 'products-row ' + type },
+	    _react2.default.createElement(
+	      'td',
+	      null,
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/admin/product/' + _id },
+	        name
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'td',
+	      null,
+	      status
+	    ),
+	    _react2.default.createElement(
+	      'td',
+	      null,
+	      priceText
+	    ),
+	    _react2.default.createElement(
+	      'td',
+	      null,
+	      _react2.default.createElement(
+	        'button',
+	        { onClick: function onClick(e) {
+	            props.deleteProduct(1);
+	          } },
+	        _react2.default.createElement(
+	          'i',
+	          { className: 'material-icons' },
+	          'delete'
+	        )
+	      )
+	    )
+	  );
+	};
+	exports.default = (0, _reactRedux.connect)(null, productActions)(ProductsRow);
+
+/***/ },
+/* 327 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(328);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(310)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./products-row.scss", function() {
+				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./products-row.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 328 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(309)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".products-row {\n  height: 40px; }\n  .products-row.odd {\n    background-color: #E0F2F1; }\n  .products-row.even {\n    background-color: #B2DFDB; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 329 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(330);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(310)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./products-table.scss", function() {
+				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./products-table.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 330 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(309)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".admin-products-container {\n  width: 100%;\n  margin: 10px; }\n  .admin-products-container .products-table {\n    width: 100%;\n    border-collapse: collapse; }\n    .admin-products-container .products-table th {\n      text-align: left;\n      height: 30px; }\n  .admin-products-container .products-table .search-text-container {\n    display: flex;\n    height: 30px;\n    padding-bottom: 10px; }\n    .admin-products-container .products-table .search-text-container .search-text {\n      width: 25%; }\n  .admin-products-container .products-table .products-table-header {\n    background-color: #009688;\n    color: #ffffff; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 331 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(332);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(310)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./products.scss", function() {
+				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./products.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 332 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(309)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30873,7 +31361,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(315);
+	__webpack_require__(334);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30883,39 +31371,39 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Products = function (_Component) {
-	  _inherits(Products, _Component);
+	var Product = function (_Component) {
+	  _inherits(Product, _Component);
 
-	  function Products() {
-	    _classCallCheck(this, Products);
+	  function Product() {
+	    _classCallCheck(this, Product);
 
-	    return _possibleConstructorReturn(this, (Products.__proto__ || Object.getPrototypeOf(Products)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).apply(this, arguments));
 	  }
 
-	  _createClass(Products, [{
+	  _createClass(Product, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'products-content' },
-	        'Hello products'
+	        { className: 'product-content' },
+	        'Hello product'
 	      );
 	    }
 	  }]);
 
-	  return Products;
+	  return Product;
 	}(_react.Component);
 
-	exports.default = Products;
+	exports.default = Product;
 
 /***/ },
-/* 315 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(316);
+	var content = __webpack_require__(335);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(310)(content, {});
@@ -30924,8 +31412,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./products.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./products.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./product.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./product.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -30935,7 +31423,7 @@
 	}
 
 /***/ },
-/* 316 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(309)();
