@@ -4,9 +4,24 @@ export const ActionTypes = {
   GET_PRODUCTS: 'GET_PRODUCTS',
   GET_PRODUCTS_PENDING: 'GET_PRODUCTS_PENDING',
   GET_PRODUCTS_FULFILLED: 'GET_PRODUCTS_FULFILLED',
-  GET_PRODUCTS_REJECTED: 'GET_PRODUCTS_REJECTED'
+  GET_PRODUCTS_REJECTED: 'GET_PRODUCTS_REJECTED',
+
+  DELETE_PRODUCTS: 'DELETE_PRODUCTS',
+  DELETE_PRODUCTS_PENDING: 'DELETE_PRODUCTS_PENDING',
+  DELETE_PRODUCTS_FULFILLED: 'DELETE_PRODUCTS_FULFILLED',
+  DELETE_PRODUCTS_REJECTED: 'DELETE_PRODUCTS_REJECTED'
 };
 
 export function getProducts() {
-  return {type: ActionTypes.GET_PRODUCTS, payload: axios.get('/api/products')};
+  return {
+    type: ActionTypes.GET_PRODUCTS,
+    payload: axios.get( '/api/products' )
+  };
+}
+
+export function deleteProduct( productId ) {
+  return {
+    type: ActionTypes.DELETE_PRODUCTS,
+    payload: axios.delete( `/api/products/${productId}` )
+  };
 }

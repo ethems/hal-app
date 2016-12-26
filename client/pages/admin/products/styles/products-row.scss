@@ -1,0 +1,11 @@
+.products-row {
+    height: 40px;
+
+    &.odd {
+        background-color: #E0F2F1;
+    }
+
+    &.even {
+        background-color: #B2DFDB;
+    }
+}

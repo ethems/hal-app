@@ -1,1 +1,4 @@
-{}
+{
+  "siteRoot": "",
+  "dbUri":"mongodb://localhost:auth/test-app"
+}
