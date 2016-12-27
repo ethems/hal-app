@@ -10,9 +10,9 @@ before(function(done) {
     for (let i in mongoose.connection.collections) {
       mongoose.connection.collections[i].remove();
     }
-    mongoose.connection.collections.products.insert({name: 'Avokado'});
-    mongoose.connection.collections.products.insert({name: 'Price Fruit'});
-    mongoose.connection.collections.products.insert({name: 'Price Fruit2'});
+    mongoose.connection.collections.products.insert({name: 'Avokado', isDeleted: false});
+    mongoose.connection.collections.products.insert({name: 'Price Fruit', isDeleted: false});
+    mongoose.connection.collections.products.insert({name: 'Price Fruit2', isDeleted: false});
     return done();
   }
 

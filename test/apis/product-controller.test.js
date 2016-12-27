@@ -44,6 +44,22 @@ describe('Product Controller', () => {
       });
     });
   });
+  describe('DELETE', () => {
+    it('should delete product', (done) => {
+      co(function * () {
+        const product = {
+          name: 'product delete test'
+        };
+        const createdProduct = yield Product.create(product);
+        yield Product.updatePrice(createdProduct.id, {price: 30.34});
+        request(server).delete(`/api/products/${createdProduct.id}`).expect(200).end((err, res) => {
+          should.not.exists(err);
+          res.body.product.isDeleted.should.equal(true);
+          done();
+        });
+      });
+    });
+  });
   describe('POST', () => {
     it('should update price', (done) => {
       co(function * () {
@@ -74,6 +90,8 @@ describe('Product Controller', () => {
       co(function * () {
         const foundProduct = yield Product.findByName('avokado');
         request(server).get(`/api/products/${foundProduct.id}`).expect(200, done);
+      }).catch((err)=>{
+        console.log(err);
       });
     });
     it('should respond 200 to /api/products/:id/:timespan', (done) => {

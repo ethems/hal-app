@@ -27,11 +27,8 @@ module.exports = {
         test: /\.js|.jsx?$/,
         include: path.join(__dirname, './client')
       }, {
-        test: /\.(woff2?|svg)$/,
-        loader: 'url?limit=10000'
-      }, {
-        test: /\.(ttf|eot)$/,
-        loader: 'file'
+        loader: 'url?limit=100000',
+        test: /\.(jpg|png|woff(2)?|eot|ttf|svg)$/
       }, {
         test: /\.scss$/,
         loaders: [

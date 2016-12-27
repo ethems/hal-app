@@ -2,11 +2,20 @@ import React, {Component} from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import * as productActions from '../../../actions/product-action';
+import moment from 'moment';
 
 import './styles/products-row.scss';
 
 const ProductsRow = (props) => {
-  const {index, _id, name, priceHistory, active} = props;
+  const {
+    index,
+    _id,
+    name,
+    priceHistory,
+    active,
+    createdDate,
+    modifiedDate
+  } = props;
   const type = +index % 2 === 0
     ? ' even '
     : ' odd ';
@@ -16,6 +25,7 @@ const ProductsRow = (props) => {
   const status = active
     ? 'Active'
     : 'Inactive';
+  const updateDate = modifiedDate || createdDate;
   return (
     <tr className={`products-row ${type}`}>
       <td>
@@ -23,12 +33,15 @@ const ProductsRow = (props) => {
       </td>
       <td>{status}</td>
       <td>{priceText}</td>
+      <td>{moment(updateDate).format('DD-MM-YYYY, hh:mm')}</td>
       <td>
-        <button onClick={e => {
-          props.deleteProduct(1)
-        }}>
-          <i className="material-icons">delete</i>
-        </button>
+        <div className="action-buttons-container">
+          <button onClick={e => {
+            props.deleteProduct(_id);
+          }}>
+            <i className="material-icons">delete</i>
+          </button>
+        </div>
       </td>
     </tr>
   );

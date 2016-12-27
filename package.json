@@ -59,6 +59,7 @@
     "mongoose": "^4.7.4",
     "node-uuid": "^1.4.7",
     "react": "^15.4.1",
+    "react-addons-update": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^5.0.1",
     "react-router": "^3.0.0",

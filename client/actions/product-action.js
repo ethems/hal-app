@@ -13,15 +13,28 @@ export const ActionTypes = {
 };
 
 export function getProducts() {
-  return {
-    type: ActionTypes.GET_PRODUCTS,
-    payload: axios.get( '/api/products' )
-  };
+  return {type: ActionTypes.GET_PRODUCTS, payload: axios.get('/api/products')};
 }
 
-export function deleteProduct( productId ) {
-  return {
-    type: ActionTypes.DELETE_PRODUCTS,
-    payload: axios.delete( `/api/products/${productId}` )
-  };
+export function deleteProduct(productId){
+  return {type: ActionTypes.DELETE_PRODUCTS, payload: axios.delete(`/api/products/${productId}`)};
 }
+//
+// !!! important
+//
+// export function deleteProduct(productId) {
+//   return (dispatch) => {
+//     return dispatch({
+//       type: ActionTypes.DELETE_PRODUCTS_PENDING,
+//       payload: axios.delete(`/api/products/${productId}`)
+//     }).then(() => {
+//       dispatch({type: ActionTypes.DELETE_PRODUCTS_FULFILLED, payload: {
+//           productId
+//         }});
+//     }).catch(() => {
+//       dispatch({type: ActionTypes.DELETE_PRODUCTS_REJECTED, payload: {
+//           productId
+//         }});
+//     });
+//   };
+// }
