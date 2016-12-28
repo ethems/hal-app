@@ -12,6 +12,15 @@
         }
     }
 
+    .products-table .products-table-actions {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .products-table .products-table-extra-actions-container {
+        width: 20%;
+    }
+
     .products-table .search-text-container {
         display: flex;
         height: 30px;

@@ -1,0 +1,28 @@
+.setup-container {
+    width: 100%;
+
+    .product-form {
+        width: 50%;
+    }
+
+    .product-form .row {
+        margin-bottom: 10px;
+
+        .label {
+            width: 20%;
+            max-width: 100px;
+            white-space: nowrap;
+            vertical-align: top;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        .field {
+            display: inline-block;
+            width: 80%;
+        }
+        .field .setup-field-control{
+          width: 100%;
+        }
+    }
+}

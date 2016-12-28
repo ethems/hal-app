@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import './styles/product.scss';
+import Setup from './setup';
+import './styles/index.scss';
 
 class Product extends Component {
   render() {
     return (
-      <div className="product-content">
-        Hello product
+      <div className="product-container">
+        <Setup/>
       </div>
     );
   }

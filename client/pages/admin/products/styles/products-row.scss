@@ -2,7 +2,7 @@
     height: 40px;
 
     a {
-        color: #03A9F4 !important;
+        color: #0892CE !important;
         text-decoration: none;
     }
 
@@ -16,16 +16,15 @@
     }
 
     &.odd {
-        background-color: #FAFAFA;
+        background-color: #FFFFFF;
     }
 
     &.even {
-        background-color: #EEEEEE;
+        background-color: #F8F9FA;
     }
 
     &:hover {
-        background-color: #FFAB91 !important;
-        color: #FFFFFF;
+        background-color: #E0F2F1 !important;
     }
 }
 
