@@ -3,7 +3,7 @@ import Setup from './setup';
 import './styles/index.scss';
 
 class Product extends Component {
-  componentWillMount() {}
+  
   render() {
     return (
       <div className="product-container">

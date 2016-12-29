@@ -1,18 +1,25 @@
 .admin-products-container {
-
     .products-table {
         width: 100%;
+        border-collapse: collapse;
     }
 
     .products-table .products-table-actions {
         background-color: #E1E4E9;
+        height: 50px;
     }
 
-    .products-table .products-table-extra-actions-container {
-        width: 20%;
+    .products-table .products-table-header {
+        background-color: #4FC3F7;
+        color: #ffffff;
+
+        th {
+            text-align: left;
+            height: 30px;
+        }
     }
 
-    .products-table .search-text-container {
+    .products-table .products-table-actions .search-text-container {
         padding-left: 10px;
         height: 25px;
 
@@ -20,10 +27,5 @@
             width: 40%;
             height: 100%;
         }
-    }
-
-    .products-table .products-table-header {
-        background-color: #4FC3F7;
-        color: #ffffff;
     }
 }
