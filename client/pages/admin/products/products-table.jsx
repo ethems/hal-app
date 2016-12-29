@@ -52,6 +52,8 @@ class ProductsTable extends Component {
       switch (by) {
         case 'name':
           return product.name;
+        case 'date':
+          return product.modifiedDate || product.createdDate
         default:
           return product.name;
       }
@@ -71,7 +73,7 @@ class ProductsTable extends Component {
       <div className="admin-products-container">
         <table className="products-table">
           <thead>
-            <tr>
+            <tr className="products-table-actions">
               <th colSpan={4}>
                 <div className="search-text-container">
                   <input className="search-text" value={searchText} onChange={(event) => {
@@ -80,8 +82,7 @@ class ProductsTable extends Component {
                 </div>
               </th>
               <th colSpan={1}>
-                <div className="active-visibility-container">
-                </div>
+                <div className="active-visibility-container"></div>
               </th>
             </tr>
             <tr className="products-table-header">
@@ -90,7 +91,9 @@ class ProductsTable extends Component {
               }}>Product Name</th>
               <th>Status</th>
               <th>Price</th>
-              <th>Update Date</th>
+              <th onClick={e => {
+                this.onChangeSortType('date')
+              }}>Update Date</th>
               <th>Actions</th>
             </tr>
           </thead>

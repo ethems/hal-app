@@ -1,20 +1,11 @@
 .admin-products-container {
-    width: 100%;
-    margin: 10px;
 
     .products-table {
         width: 100%;
-        border-collapse: collapse;
-
-        th {
-            text-align: left;
-            height: 30px;
-        }
     }
 
     .products-table .products-table-actions {
-        display: flex;
-        justify-content: space-between;
+        background-color: #E1E4E9;
     }
 
     .products-table .products-table-extra-actions-container {
@@ -22,17 +13,17 @@
     }
 
     .products-table .search-text-container {
-        display: flex;
-        height: 30px;
-        padding-bottom: 10px;
+        padding-left: 10px;
+        height: 25px;
 
         .search-text {
-            width: 25%;
+            width: 40%;
+            height: 100%;
         }
     }
 
     .products-table .products-table-header {
-        background-color: #009688;
+        background-color: #4FC3F7;
         color: #ffffff;
     }
 }

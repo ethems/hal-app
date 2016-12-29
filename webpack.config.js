@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: [
@@ -8,7 +8,7 @@ module.exports = {
   externals: {
     jquery: 'jQuery'
   },
-  plugins: [new webpack.ProvidePlugin({'$': 'jquery', 'jQuery': 'jquery'})],
+  plugins: [new webpack.ProvidePlugin({$: 'jquery', jQuery: 'jquery'})],
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
@@ -22,7 +22,10 @@ module.exports = {
       {
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0']
+          presets: [
+            'react', 'es2015', 'stage-0'
+          ],
+          plugins: ['transform-class-properties', 'transform-object-rest-spread']
         },
         test: /\.js|.jsx?$/,
         include: path.join(__dirname, './client')
@@ -32,12 +35,12 @@ module.exports = {
       }, {
         test: /\.scss$/,
         loaders: [
-          "style", "css", "sass"
+          'style', 'css', 'sass'
         ],
         exclude: /(node_modules|bower_components)/
       }, {
         test: /\.css$/,
-        loader: "style-loader!css-loader"
+        loader: 'style-loader!css-loader'
       }
     ]
   }
