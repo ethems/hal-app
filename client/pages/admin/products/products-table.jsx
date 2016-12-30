@@ -76,7 +76,7 @@ class ProductsTable extends Component {
             <tr className="products-table-actions">
               <th colSpan={4}>
                 <div className="search-text-container">
-                  <input className="search-text" value={searchText} onChange={(event) => {
+                  <input className="search-text"  value={searchText} onChange={(event) => {
                     this.onChangeText(event)
                   }}/>
                 </div>

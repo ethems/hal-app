@@ -10,18 +10,18 @@
     }
 
     .products-table .products-table-header {
-        background-color: #4FC3F7;
-        color: #ffffff;
-
+        background-color: #FFFFFF;
         th {
             text-align: left;
-            height: 30px;
+            height: 40px;
+            border-bottom: 1px solid #dddddd;
         }
     }
 
     .products-table .products-table-actions .search-text-container {
         padding-left: 10px;
         height: 25px;
+        display: flex;
 
         .search-text {
             width: 40%;
