@@ -22853,13 +22853,15 @@
 	  switch (action.type) {
 	    case _productAction.ActionTypes.GET_PRODUCTS_FULFILLED:
 	      return [].concat(_toConsumableArray(action.payload.data.products));
+	    case _productAction.ActionTypes.GET_PRODUCT_FULFILLED:
+	      return [action.payload.data.product];
 	    case _productAction.ActionTypes.DELETE_PRODUCT_FULFILLED:
 	      {
 	        var _ret = function () {
-	          var _id = action.payload.data.product._id;
+	          var id = action.payload.data.product.id;
 
 	          var index = _lodash2.default.findIndex(state, function (product) {
-	            return product._id === _id;
+	            return product.id === id;
 	          });
 	          if (index > -1) {
 	            return {
@@ -39964,6 +39966,7 @@
 	exports.ActionTypes = undefined;
 	exports.getProducts = getProducts;
 	exports.getProduct = getProduct;
+	exports.updateProduct = updateProduct;
 	exports.deleteProduct = deleteProduct;
 
 	var _axios = __webpack_require__(211);
@@ -39983,6 +39986,11 @@
 	  GET_PRODUCT_FULFILLED: 'GET_PRODUCT_FULFILLED',
 	  GET_PRODUCT_REJECTED: 'GET_PRODUCT_REJECTED',
 
+	  UPDATE_PRODUCT: 'UPDATE_PRODUCT',
+	  UPDATE_PRODUCT_PENDING: 'UPDATE_PRODUCT_PENDING',
+	  UPDATE_PRODUCT_FULFILLED: 'UPDATE_PRODUCT_FULFILLED',
+	  UPDATE_PRODUCT_REJECTED: 'UPDATE_PRODUCT_REJECTED',
+
 	  DELETE_PRODUCT: 'DELETE_PRODUCT',
 	  DELETE_PRODUCT_PENDING: 'DELETE_PRODUCT_PENDING',
 	  DELETE_PRODUCT_FULFILLED: 'DELETE_PRODUCT_FULFILLED',
@@ -39997,7 +40005,14 @@
 	function getProduct(productId) {
 	  return {
 	    type: ActionTypes.GET_PRODUCT,
-	    payload: _axios2.default.get('/api/product/' + productId)
+	    payload: _axios2.default.get('/api/products/' + productId)
+	  };
+	}
+
+	function updateProduct(productId, product) {
+	  return {
+	    type: ActionTypes.UPDATE_PRODUCT,
+	    payload: _axios2.default.put('/api/product', Object.assign({}, product, { id: productId }))
 	  };
 	}
 
@@ -47582,6 +47597,8 @@
 
 	__webpack_require__(452);
 
+	__webpack_require__(455);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var App = function App(_ref) {
@@ -48002,7 +48019,7 @@
 
 
 	// module
-	exports.push([module.id, "body,\nhtml {\n  font-family: 'Roboto', sans-serif; }\n\n.app-container {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: #ECEFF1; }\n", ""]);
+	exports.push([module.id, ".app-container {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: #ECEFF1; }\n", ""]);
 
 	// exports
 
@@ -48296,7 +48313,7 @@
 	      var products = this.props.products;
 
 	      return this._sort(this._filter(products)).map(function (product, index) {
-	        return _react2.default.createElement(_productsRow2.default, _extends({ key: product._id, index: index }, product));
+	        return _react2.default.createElement(_productsRow2.default, _extends({ key: product.id, index: index }, product));
 	      });
 	    }
 	  }, {
@@ -48544,7 +48561,7 @@
 
 	var ProductsRow = function ProductsRow(props) {
 	  var index = props.index,
-	      _id = props._id,
+	      id = props.id,
 	      name = props.name,
 	      priceHistory = props.priceHistory,
 	      active = props.active,
@@ -48563,7 +48580,7 @@
 	      null,
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '/admin/product/' + _id },
+	        { to: '/admin/product/' + id },
 	        name
 	      )
 	    ),
@@ -48591,7 +48608,7 @@
 	        _react2.default.createElement(
 	          'button',
 	          { onClick: function onClick(e) {
-	              props.deleteProduct(_id);
+	              props.deleteProduct(id);
 	            } },
 	          _react2.default.createElement(
 	            'i',
@@ -63604,7 +63621,7 @@
 
 
 	// module
-	exports.push([module.id, ".products-container {\n  padding: 10px 10px 20px; }\n\n.products-container .products-actions {\n  display: flex;\n  flex-direction: row-reverse;\n  margin-bottom: 20px; }\n", ""]);
+	exports.push([module.id, ".products-container {\n  padding: 10px 10px 20px 20px; }\n\n.products-container .products-actions {\n  display: flex;\n  flex-direction: row-reverse;\n  margin-bottom: 20px; }\n", ""]);
 
 	// exports
 
@@ -63619,19 +63636,41 @@
 	  value: true
 	});
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(5);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRedux = __webpack_require__(237);
+
+	var _reactRouter = __webpack_require__(254);
+
+	var _lodash = __webpack_require__(209);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _classnames = __webpack_require__(454);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
 	var _setup = __webpack_require__(445);
 
 	var _setup2 = _interopRequireDefault(_setup);
 
+	var _productAction = __webpack_require__(210);
+
+	var productActions = _interopRequireWildcard(_productAction);
+
 	__webpack_require__(448);
 
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -63642,21 +63681,118 @@
 	var Product = function (_Component) {
 	  _inherits(Product, _Component);
 
-	  function Product() {
+	  function Product(props) {
 	    _classCallCheck(this, Product);
 
-	    return _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).call(this, props));
+
+	    _initialiseProps.call(_this);
+
+	    var id = props.params.id;
+	    var products = props.products;
+
+	    _this.state = {};
+	    if (id) {
+	      var index = _lodash2.default.findIndex(products, function (product) {
+	        return product.id === id;
+	      });
+	      if (index === -1) {
+	        props.getProduct(id);
+	      } else {
+	        var product = products[index];
+	        _this.state = _extends({}, product, {
+	          priceHistory: [].concat(_toConsumableArray(product.priceHistory))
+	        });
+	      }
+	    }
+	    return _this;
 	  }
 
 	  _createClass(Product, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var id = this.props.params.id;
+	      var products = nextProps.products;
+
+	      if (id) {
+	        var index = _lodash2.default.findIndex(products, function (product) {
+	          return product.id === id;
+	        });
+	        if (index !== -1) {
+	          var product = products[index];
+	          this.setState(_extends({}, product, {
+	            priceHistory: [].concat(_toConsumableArray(product.priceHistory))
+	          }));
+	        }
+	      }
+	    }
+	  }, {
+	    key: '_renderProductName',
+	    value: function _renderProductName() {
+	      var _this2 = this;
+
+	      var _state = this.state,
+	          name = _state.name,
+	          showNameEdit = _state.showNameEdit;
+
+	      var showInput = showNameEdit || !name;
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'product-name-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: (0, _classnames2.default)('product-name-label', { hide: showInput }), onClick: function onClick() {
+	              return _this2.onClickNameLabel();
+	            } },
+	          name || ''
+	        ),
+	        _react2.default.createElement('input', { className: (0, _classnames2.default)('product-name', {
+	            hide: !showInput
+	          }), value: name || '', onChange: function onChange(event) {
+	            return _this2.onChangeName(event);
+	          } })
+	      );
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this3 = this;
+
+	      var _state2 = this.state,
+	          active = _state2.active,
+	          priceHistory = _state2.priceHistory;
+
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'product-container' },
-	        _react2.default.createElement('div', { className: 'product-name-section' }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'product-name-section' },
+	          this._renderProductName()
+	        ),
 	        _react2.default.createElement('div', { className: 'product-tabs-section' }),
-	        _react2.default.createElement('div', { className: 'product-actions' })
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'product-actions-section' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'botton-container' },
+	            _react2.default.createElement(
+	              'button',
+	              { className: 'pure-button  button-primary valign-center', onClick: function onClick() {
+	                  return _this3.onClickSave();
+	                } },
+	              'Save'
+	            ),
+	            _react2.default.createElement(
+	              'button',
+	              { className: 'pure-button valign-center', onClick: function onClick() {
+	                  return _this3.onClickCancel();
+	                } },
+	              'Cancel'
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -63664,7 +63800,34 @@
 	  return Product;
 	}(_react.Component);
 
-	exports.default = Product;
+	var _initialiseProps = function _initialiseProps() {
+	  var _this4 = this;
+
+	  this.onClickNameLabel = function () {
+	    _this4.setState({ showNameEdit: true });
+	  };
+
+	  this.onChangeName = function (event) {
+	    var value = event.target.value;
+
+	    _this4.setState({ name: value });
+	  };
+
+	  this.onClickSave = function () {
+	    var id = _this4.props.params.id;
+
+	    _this4.props.updateProduct(id, _this4.state);
+	  };
+
+	  this.onClickCancel = function () {
+	    _reactRouter.browserHistory.push('/admin/products');
+	  };
+	};
+
+	var mapStateToProps = function mapStateToProps(state) {
+	  return { products: state.products };
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, productActions)(Product);
 
 /***/ },
 /* 445 */
@@ -63809,7 +63972,7 @@
 
 
 	// module
-	exports.push([module.id, ".product-container {\n  padding: 10px 10px 20px 10px; }\n", ""]);
+	exports.push([module.id, ".product-container {\n  padding: 20px 10px 20px 20px; }\n\n.product-container .product-name-container {\n  width: 60%;\n  height: 30px;\n  font-size: 25px;\n  padding-bottom: 20px; }\n\n.product-container .product-name-container .product-name {\n  width: 100%;\n  height: 100%; }\n\n.product-container .product-actions-section .botton-container {\n  width: 160px;\n  display: flex;\n  justify-content: space-between; }\n", ""]);
 
 	// exports
 
@@ -63890,6 +64053,100 @@
 
 	// module
 	exports.push([module.id, "/* Rules for sizing the icon. */\n.material-icons.md-18 {\n  font-size: 18px; }\n\n.material-icons.md-24 {\n  font-size: 24px; }\n\n.material-icons.md-36 {\n  font-size: 36px; }\n\n.material-icons.md-40 {\n  font-size: 40px; }\n\n.material-icons.md-48 {\n  font-size: 48px; }\n\n/* Rules for using icons as black on a light background. */\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n\n/* Rules for using icons as white on a dark background. */\n.material-icons.md-light {\n  color: white; }\n\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n\n.valign-center {\n  display: inline-flex;\n  vertical-align: middle;\n  align-items: center; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 454 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
+/* 455 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(456);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(315)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./main.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./main.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 456 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(310)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "body,\nhtml {\n  font-family: 'Roboto', sans-serif;\n  font-weight: 300; }\n\n.hide {\n  display: none; }\n", ""]);
 
 	// exports
 

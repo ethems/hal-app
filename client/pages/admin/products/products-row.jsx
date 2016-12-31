@@ -9,7 +9,7 @@ import './styles/products-row.scss';
 const ProductsRow = (props) => {
   const {
     index,
-    _id,
+    id,
     name,
     priceHistory,
     active,
@@ -29,7 +29,7 @@ const ProductsRow = (props) => {
   return (
     <tr className={`products-row ${type}`}>
       <td>
-        <Link to={`/admin/product/${_id}`}>{name}</Link>
+        <Link to={`/admin/product/${id}`}>{name}</Link>
       </td>
       <td>{status}</td>
       <td>{priceText}</td>
@@ -37,7 +37,7 @@ const ProductsRow = (props) => {
       <td>
         <div className="action-buttons-container">
           <button onClick={e => {
-            props.deleteProduct(_id);
+            props.deleteProduct(id);
           }}>
             <i className="material-icons">delete</i>
           </button>

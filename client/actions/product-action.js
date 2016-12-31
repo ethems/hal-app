@@ -11,6 +11,11 @@ export const ActionTypes = {
   GET_PRODUCT_FULFILLED: 'GET_PRODUCT_FULFILLED',
   GET_PRODUCT_REJECTED: 'GET_PRODUCT_REJECTED',
 
+  UPDATE_PRODUCT: 'UPDATE_PRODUCT',
+  UPDATE_PRODUCT_PENDING: 'UPDATE_PRODUCT_PENDING',
+  UPDATE_PRODUCT_FULFILLED: 'UPDATE_PRODUCT_FULFILLED',
+  UPDATE_PRODUCT_REJECTED: 'UPDATE_PRODUCT_REJECTED',
+
   DELETE_PRODUCT: 'DELETE_PRODUCT',
   DELETE_PRODUCT_PENDING: 'DELETE_PRODUCT_PENDING',
   DELETE_PRODUCT_FULFILLED: 'DELETE_PRODUCT_FULFILLED',
@@ -25,7 +30,14 @@ export function getProducts() {
 export function getProduct(productId) {
   return {
     type: ActionTypes.GET_PRODUCT,
-    payload: axios.get(`/api/product/${productId}`)
+    payload: axios.get(`/api/products/${productId}`)
+  };
+}
+
+export function updateProduct(productId, product) {
+  return {
+    type: ActionTypes.UPDATE_PRODUCT,
+    payload: axios.put('/api/product', Object.assign({}, product, {id: productId}))
   };
 }
 

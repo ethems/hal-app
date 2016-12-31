@@ -5,11 +5,13 @@ const products = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.GET_PRODUCTS_FULFILLED:
       return [...action.payload.data.products];
+    case ActionTypes.GET_PRODUCT_FULFILLED:
+      return [action.payload.data.product];
     case ActionTypes.DELETE_PRODUCT_FULFILLED:
       {
-        const {_id} = action.payload.data.product;
+        const {id} = action.payload.data.product;
         const index = _.findIndex(state, (product) => {
-          return product._id === _id
+          return product.id === id;
         });
         if (index > -1) {
           return [

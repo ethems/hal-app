@@ -53,7 +53,7 @@ class ProductsTable extends Component {
         case 'name':
           return product.name;
         case 'date':
-          return product.modifiedDate || product.createdDate
+          return product.modifiedDate || product.createdDate;
         default:
           return product.name;
       }
@@ -65,7 +65,7 @@ class ProductsTable extends Component {
   }
   _renderRows() {
     const {products} = this.props;
-    return this._sort(this._filter(products)).map((product, index) => <ProductsRow key={product._id} index={index} {...product}/>);
+    return this._sort(this._filter(products)).map((product, index) => <ProductsRow key={product.id} index={index} {...product}/>);
   }
   render() {
     const {searchText} = this.state;
@@ -76,7 +76,7 @@ class ProductsTable extends Component {
             <tr className="products-table-actions">
               <th colSpan={4}>
                 <div className="search-text-container">
-                  <input className="search-text"  value={searchText} onChange={(event) => {
+                  <input className="search-text" value={searchText} onChange={(event) => {
                     this.onChangeText(event)
                   }}/>
                 </div>
