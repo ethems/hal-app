@@ -1,0 +1,27 @@
+.tabs {
+    ul {
+        list-style-type: none;
+        display: flex;
+        margin-bottom: 0;
+
+        li {
+            background-color: #DCDFE4;
+            padding:: 7px 20px 7px 20px;
+            margin: 0 1px;
+
+            a {
+                text-decoration: none;
+                color: #000000;
+            }
+        }
+
+        li.active {
+            background-color: #ffffff;
+        }
+    }
+}
+
+.tabs .tabs__content {
+    background-color: #ffffff;
+    padding: 20px 10px 20px 40px;
+}

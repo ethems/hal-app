@@ -30,6 +30,9 @@ const ProductsRow = (props) => {
     <tr className={`products-row ${type}`}>
       <td>
         <Link to={`/admin/product/${id}`}>{name}</Link>
+        <div className="products-row-id">
+          {id}
+        </div>
       </td>
       <td>{status}</td>
       <td>{priceText}</td>

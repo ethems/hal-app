@@ -1,28 +1,38 @@
 .setup-container {
     width: 100%;
 
-    .product-form {
+    .primary-form {
         width: 50%;
     }
 
-    .product-form .row {
-        margin-bottom: 10px;
+    .primary-form .row {
+        margin-bottom: 20px;
+        height: 30px;
+    }
 
-        .label {
-            width: 20%;
-            max-width: 100px;
-            white-space: nowrap;
-            vertical-align: top;
-            display: inline-block;
-            margin-top: 8px;
-        }
+    .primary-form .row .label {
+        width: 20%;
+        max-width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
+        display: inline-block;
+        margin-top: 8px;
+        font-size: 18px;
+    }
 
-        .field {
-            display: inline-block;
-            width: 80%;
+    .primary-form .row .field {
+        display: inline-block;
+        width: 80%;
+        height: 100%;
+
+        .field-content {
+            display: flex;
+            height: 100%;
+            font-size: 18px;
         }
-        .field .setup-field-control{
+        .field-control{
           width: 100%;
+          height: 100%;
         }
     }
 }

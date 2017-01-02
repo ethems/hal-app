@@ -43,7 +43,7 @@ describe('PRODUCTS  MODEL', () => {
         yield Product.softDelete(product.id);
         const product2 = yield Product.create(p);
         yield Product.softDelete(product2.id);
-        yield Product.create(p)
+        yield Product.create(p);
         done();
       });
     });
@@ -115,7 +115,20 @@ describe('PRODUCTS  MODEL', () => {
         done();
       });
     });
+    it('should update product with same name', (done) => {
+      co(function * () {
+        const p = {
+          name: 'Avokado 2'
+        };
+        const product = yield Product.create(p);
+        yield product.save(function(err){
+          console.log(err);
+          should.not.exist(err);
+          done();
+        });
 
+      });
+    });
     it('should add new price to productHistory', (done) => {
       const p = {
         name: 'Domates biber patlican sogan 2',

@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {browserHistory} from 'react-router'
+import {browserHistory} from 'react-router';
 import _ from 'lodash';
 import classNames from 'classnames';
-import Setup from './setup';
+import Tabs from '../../../components/tabs/tabs';
+import Pane from '../../../components/tabs/pane';
 import * as productActions from '../../../actions/product-action';
+import Setup from './setup';
 
 import './styles/index.scss';
 
@@ -41,6 +43,9 @@ class Product extends Component {
       }
     }
   }
+  onChangeStatus = (active) => {
+    this.setState({active});
+  }
   onClickNameLabel = () => {
     this.setState({showNameEdit: true});
   }
@@ -67,14 +72,40 @@ class Product extends Component {
       </div>
     );
   }
+  renderButtonSettings() {
+    return (
+      <div>
+        <div className="valign-center">
+          <i className="material-icons">settings</i>&nbsp;Settings
+        </div>
+      </div>
+    );
+  }
+  renderButtonTimeline(){
+    return (
+      <div>
+        <div className="valign-center">
+          <i className="material-icons">timeline</i>&nbsp;Timeline
+        </div>
+      </div>
+    );
+  }
   render() {
-    const {active, priceHistory} = this.state;
     return (
       <div className="product-container">
         <div className="product-name-section">
           {this._renderProductName()}
         </div>
-        <div className="product-tabs-section"></div>
+        <div className="product-tabs-section">
+          <Tabs selected={0}>
+            <Pane label={this.renderButtonSettings()}>
+              <Setup {...this.state} onChangeStatus={this.onChangeStatus}/>
+            </Pane>
+            <Pane label={this.renderButtonTimeline()}>
+              <div></div>
+            </Pane>
+          </Tabs>
+        </div>
         <div className="product-actions-section">
           <div className="botton-container">
             <button className="pure-button  button-primary valign-center" onClick={() => this.onClickSave()}>Save</button>

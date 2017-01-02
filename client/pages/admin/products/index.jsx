@@ -6,7 +6,7 @@ import './styles/index.scss';
 const Products = props => (
   <div className="products-container">
     <div className="products-actions">
-      <button className="pure-button  button-primary valign-center"><i className="material-icons material-icons.md-18">add</i>New</button>
+      <button className="pure-button  button-primary"><div className="valign-center"><i className="material-icons material-icons.md-18">add</i>New</div></button>
     </div>
     <div className="products-table-wrapper">
       <ProductsTable/>

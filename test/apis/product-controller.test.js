@@ -90,8 +90,6 @@ describe('Product Controller', () => {
       co(function * () {
         const foundProduct = yield Product.findByName('avokado');
         request(server).get(`/api/products/${foundProduct.id}`).expect(200, done);
-      }).catch((err)=>{
-        console.log(err);
       });
     });
     it('should respond 200 to /api/products/:id/:timespan', (done) => {
