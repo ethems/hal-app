@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux'
+import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 import update from 'react-addons-update';
 import _ from 'lodash';
@@ -18,6 +18,7 @@ class Product extends Component {
     const {id} = props.params;
     const {products} = props;
     this.state = {
+      priceHistory: [],
       newPrice: {}
     };
     if (id) {
@@ -79,7 +80,13 @@ class Product extends Component {
   }
   onClickSave = () => {
     const {id} = this.props.params;
-    this.props.productActions.updateProduct(id, this.state);
+    const {priceHistory} = this.state;
+    const activePrice = _.find(priceHistory, price => price.active === true) || {}
+    let state = Object.assign({}, this.state);
+    if (_.isEqual(state.newPrice, activePrice)) {
+      delete state.newPrice;
+    }
+    this.props.productActions.updateProduct(id, state);
   }
   onClickCancel = () => {
     browserHistory.push('/admin/products');

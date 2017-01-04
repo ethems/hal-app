@@ -22819,7 +22819,7 @@
 
 	var _products2 = _interopRequireDefault(_products);
 
-	var _priceUnits = __webpack_require__(469);
+	var _priceUnits = __webpack_require__(236);
 
 	var _priceUnits2 = _interopRequireDefault(_priceUnits);
 
@@ -41535,7 +41535,34 @@
 
 
 /***/ },
-/* 236 */,
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _priceAction = __webpack_require__(237);
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	var products = function products() {
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case _priceAction.ActionTypes.GET_PRICE_UNITS_FULFILLED:
+	      return [].concat(_toConsumableArray(action.payload.data.units));
+	    default:
+	      return state;
+	  }
+	};
+
+	exports.default = products;
+
+/***/ },
 /* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -63840,7 +63867,7 @@
 
 	var _setup2 = _interopRequireDefault(_setup);
 
-	__webpack_require__(465);
+	__webpack_require__(467);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -63868,6 +63895,7 @@
 	    var products = props.products;
 
 	    _this.state = {
+	      priceHistory: [],
 	      newPrice: {}
 	    };
 	    if (id) {
@@ -64072,8 +64100,16 @@
 
 	  this.onClickSave = function () {
 	    var id = _this4.props.params.id;
+	    var priceHistory = _this4.state.priceHistory;
 
-	    _this4.props.productActions.updateProduct(id, _this4.state);
+	    var activePrice = _lodash2.default.find(priceHistory, function (price) {
+	      return price.active === true;
+	    }) || {};
+	    var state = Object.assign({}, _this4.state);
+	    if (_lodash2.default.isEqual(state.newPrice, activePrice)) {
+	      delete state.newPrice;
+	    }
+	    _this4.props.productActions.updateProduct(id, state);
 	  };
 
 	  this.onClickCancel = function () {
@@ -64379,7 +64415,7 @@
 
 	__webpack_require__(463);
 
-	__webpack_require__(467);
+	__webpack_require__(465);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -64871,8 +64907,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./index.scss", function() {
-				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./index.scss");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./dropdown.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./dropdown.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -64890,7 +64926,7 @@
 
 
 	// module
-	exports.push([module.id, ".product-container {\n  padding: 20px 10px 20px 20px; }\n\n.product-container .product-name-section .product-name-container {\n  width: 60%;\n  height: 30px;\n  font-size: 25px;\n  padding-bottom: 20px; }\n\n.product-container .product-name-section .product-name-container .product-name {\n  width: 100%;\n  height: 100%; }\n\n.product-container .product-tabs-section {\n  margin-bottom: 30px; }\n\n.product-container .product-actions-section .botton-container {\n  width: 160px;\n  display: flex;\n  justify-content: space-between; }\n", ""]);
+	exports.push([module.id, ".Dropdown-root {\n  position: relative;\n  width: 100%; }\n\n.Dropdown-control {\n  position: relative;\n  overflow: hidden;\n  background-color: white;\n  border: 1px solid #ccc;\n  border-radius: 2px;\n  box-sizing: border-box;\n  color: #333;\n  cursor: default;\n  outline: none;\n  padding: 8px 52px 8px 10px;\n  transition: all 200ms ease; }\n\n.Dropdown-control:hover {\n  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06); }\n\n.Dropdown-arrow {\n  border-color: #999 transparent transparent;\n  border-style: solid;\n  border-width: 5px 5px 0;\n  content: ' ';\n  display: block;\n  height: 0;\n  margin-top: -ceil(2.5);\n  position: absolute;\n  right: 10px;\n  top: 14px;\n  width: 0; }\n\n.is-open .Dropdown-arrow {\n  border-color: transparent transparent #999;\n  border-width: 0 5px 5px; }\n\n.Dropdown-menu {\n  background-color: white;\n  border: 1px solid #ccc;\n  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);\n  box-sizing: border-box;\n  margin-top: -1px;\n  max-height: 200px;\n  overflow-y: auto;\n  position: absolute;\n  top: 100%;\n  width: 100%;\n  z-index: 1000;\n  -webkit-overflow-scrolling: touch; }\n\n.Dropdown-menu .Dropdown-group > .Dropdown-title {\n  padding: 8px 10px;\n  color: #333333;\n  font-weight: bold;\n  text-transform: capitalize; }\n\n.Dropdown-option {\n  box-sizing: border-box;\n  color: rgba(51, 51, 51, 0.8);\n  cursor: pointer;\n  display: block;\n  padding: 8px 10px; }\n\n.Dropdown-option:last-child {\n  border-bottom-right-radius: 2px;\n  border-bottom-left-radius: 2px; }\n\n.Dropdown-option:hover {\n  background-color: #f2f9fc;\n  color: #333; }\n\n.Dropdown-option.is-selected {\n  background-color: #f2f9fc;\n  color: #333; }\n\n.Dropdown-noresults {\n  box-sizing: border-box;\n  color: #ccc;\n  cursor: default;\n  display: block;\n  padding: 8px 10px; }\n", ""]);
 
 	// exports
 
@@ -64911,8 +64947,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./dropdown.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./dropdown.scss");
+			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./index.scss", function() {
+				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./index.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -64930,38 +64966,10 @@
 
 
 	// module
-	exports.push([module.id, ".Dropdown-root {\n  position: relative;\n  width: 100%; }\n\n.Dropdown-control {\n  position: relative;\n  overflow: hidden;\n  background-color: white;\n  border: 1px solid #ccc;\n  border-radius: 2px;\n  box-sizing: border-box;\n  color: #333;\n  cursor: default;\n  outline: none;\n  padding: 8px 52px 8px 10px;\n  transition: all 200ms ease; }\n\n.Dropdown-control:hover {\n  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06); }\n\n.Dropdown-arrow {\n  border-color: #999 transparent transparent;\n  border-style: solid;\n  border-width: 5px 5px 0;\n  content: ' ';\n  display: block;\n  height: 0;\n  margin-top: -ceil(2.5);\n  position: absolute;\n  right: 10px;\n  top: 14px;\n  width: 0; }\n\n.is-open .Dropdown-arrow {\n  border-color: transparent transparent #999;\n  border-width: 0 5px 5px; }\n\n.Dropdown-menu {\n  background-color: white;\n  border: 1px solid #ccc;\n  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);\n  box-sizing: border-box;\n  margin-top: -1px;\n  max-height: 200px;\n  overflow-y: auto;\n  position: absolute;\n  top: 100%;\n  width: 100%;\n  z-index: 1000;\n  -webkit-overflow-scrolling: touch; }\n\n.Dropdown-menu .Dropdown-group > .Dropdown-title {\n  padding: 8px 10px;\n  color: #333333;\n  font-weight: bold;\n  text-transform: capitalize; }\n\n.Dropdown-option {\n  box-sizing: border-box;\n  color: rgba(51, 51, 51, 0.8);\n  cursor: pointer;\n  display: block;\n  padding: 8px 10px; }\n\n.Dropdown-option:last-child {\n  border-bottom-right-radius: 2px;\n  border-bottom-left-radius: 2px; }\n\n.Dropdown-option:hover {\n  background-color: #f2f9fc;\n  color: #333; }\n\n.Dropdown-option.is-selected {\n  background-color: #f2f9fc;\n  color: #333; }\n\n.Dropdown-noresults {\n  box-sizing: border-box;\n  color: #ccc;\n  cursor: default;\n  display: block;\n  padding: 8px 10px; }\n", ""]);
+	exports.push([module.id, ".product-container {\n  padding: 20px 10px 20px 20px; }\n\n.product-container .product-name-section .product-name-container {\n  width: 60%;\n  height: 30px;\n  font-size: 25px;\n  padding-bottom: 20px; }\n\n.product-container .product-name-section .product-name-container .product-name {\n  width: 100%;\n  height: 100%; }\n\n.product-container .product-tabs-section {\n  margin-bottom: 30px; }\n\n.product-container .product-actions-section .botton-container {\n  width: 160px;\n  display: flex;\n  justify-content: space-between; }\n", ""]);
 
 	// exports
 
-
-/***/ },
-/* 469 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _priceAction = __webpack_require__(237);
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-	var products = function products() {
-	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-	  var action = arguments[1];
-
-	  switch (action.type) {
-	    case _priceAction.ActionTypes.GET_PRICE_UNITS_FULFILLED:
-	      return [].concat(_toConsumableArray(action.payload.data.units));
-	    default:
-	      return state;
-	  }
-	};
-
-	exports.default = products;
 
 /***/ }
 /******/ ]);

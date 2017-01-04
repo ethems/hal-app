@@ -13,6 +13,33 @@ describe('Product Controller', () => {
     done();
   });
   describe('PUT', () => {
+    it('should create new product with just name', (done) => {
+      const product = {
+        name: 'product put test just name'
+      };
+      request(server).put('/api/product').send(product).expect(200).end((err, res) => {
+        should.not.exists(err);
+        res.body.product.name.should.equal('Product Put Test Just Name');
+        res.body.product.active.should.equal(true);
+        done();
+      });
+    });
+    it('should create new product with just name and newPrice', (done) => {
+      const product = {
+        name: 'product put test just name and price',
+        newPrice: {
+          price: 123
+        }
+      };
+      request(server).put('/api/product').send(product).expect(200).end((err, res) => {
+        should.not.exists(err);
+        res.body.product.name.should.equal('Product Put Test Just Name And Price');
+        res.body.product.active.should.equal(true);
+        res.body.product.priceHistory.length.should.equal(1);
+        res.body.product.priceHistory[0].price.should.equal(123);
+        done();
+      });
+    });
     it('should create new product', (done) => {
       const product = {
         name: 'product put test',
@@ -43,6 +70,73 @@ describe('Product Controller', () => {
           should.not.exists(err);
           res.body.product.name.should.equal('Product Put Test 2 Updated');
           done();
+        });
+      });
+    });
+    it('should  update product active state ', (done) => {
+      co(function * () {
+        const product = {
+          name: 'product put test 2 for state',
+          active: true
+        };
+        const productCreated = yield Product.create(product);
+        productCreated.active = false;
+        request(server).put('/api/product').send(productCreated).expect(200).end((err, res) => {
+          should.not.exists(err);
+          res.body.product.active.should.equal(false);
+          done();
+        });
+      });
+    });
+    it('should  update product price ', (done) => {
+      co(function * () {
+        const product = {
+          name: 'product put test 2 for price',
+          active: false
+        };
+        let productCreated = yield Product.create(product);
+        const updateProduct = {
+          id: productCreated.id,
+          active: false,
+          name: productCreated.name,
+          newPrice: {
+            price: 234
+          }
+        };
+        request(server).put('/api/product').send(updateProduct).expect(200).end((err, res) => {
+          should.not.exists(err);
+          res.body.product.priceHistory.length.should.equal(1);
+          res.body.product.priceHistory[0].price.should.equal(234);
+          res.body.product.active.should.equal(false);
+          done();
+        });
+      });
+    });
+    it('should not update product price with same unit and price', (done) => {
+      co(function * () {
+        const product = {
+          name: 'product put test 3 for price',
+          active: false
+        };
+        const productCreated = yield Product.create(product);
+        const updateProduct = {
+          id: productCreated.id,
+          active: false,
+          name: productCreated.name,
+          newPrice: {
+            price: 234567
+          }
+        };
+        request(server).put('/api/product').send(updateProduct).expect(200).end((err, res) => {
+          should.not.exists(err);
+          const product = res.body.product;
+          product.newPrice = res.body.product.priceHistory[0];
+          request(server).put('/api/product').send(product).expect(200).end((err, res) => {
+              Product.findById(productCreated.id,(err,product)=>{
+              product.priceHistory.length.should.equal(1);
+              done();
+            });
+          });
         });
       });
     });
