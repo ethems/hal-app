@@ -49,6 +49,7 @@ class Product extends Component {
       }
     }
   }
+  onChangePriceUnit = (type) => {
     this.setState(update(this.state, {
       newPrice: {
         unit: {
@@ -122,6 +123,7 @@ class Product extends Component {
         <div className="product-tabs-section">
           <Tabs selected={0}>
             <Pane label={this.renderButtonSettings()}>
+              <Setup {...this.state} onChangeStatus={this.onChangeStatus} onChangePrice={this.onChangePrice} onChangePriceUnit={this.onChangePriceUnit}/>
             </Pane>
             <Pane label={this.renderButtonTimeline()}>
               <div></div>
