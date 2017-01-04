@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
 import {browserHistory} from 'react-router';
+import update from 'react-addons-update';
 import _ from 'lodash';
 import classNames from 'classnames';
 import Tabs from '../../../components/tabs/tabs';
@@ -15,16 +17,19 @@ class Product extends Component {
     super(props);
     const {id} = props.params;
     const {products} = props;
-    this.state = {};
+    this.state = {
+      newPrice: {}
+    };
     if (id) {
       const index = _.findIndex(products, product => product.id === id);
       if (index === -1) {
-        props.getProduct(id);
+        props.productActions.getProduct(id);
       } else {
         const product = products[index];
         this.state = {
           ...product,
-          priceHistory: [...product.priceHistory]
+          priceHistory: [...product.priceHistory],
+          newPrice: _.find(product.priceHistory, price => price.active === true) || {}
         };
       }
     }
@@ -38,10 +43,28 @@ class Product extends Component {
         const product = products[index];
         this.setState({
           ...product,
-          priceHistory: [...product.priceHistory]
+          priceHistory: [...product.priceHistory],
+          newPrice: _.find(product.priceHistory, price => price.active === true) || {}
         });
       }
     }
+  }
+    this.setState(update(this.state, {
+      newPrice: {
+        unit: {
+          $set: type.value
+        }
+      }
+    }));
+  }
+  onChangePrice = (price) => {
+    this.setState(update(this.state, {
+      newPrice: {
+        price: {
+          $set: price
+        }
+      }
+    }));
   }
   onChangeStatus = (active) => {
     this.setState({active});
@@ -55,7 +78,7 @@ class Product extends Component {
   }
   onClickSave = () => {
     const {id} = this.props.params;
-    this.props.updateProduct(id, this.state);
+    this.props.productActions.updateProduct(id, this.state);
   }
   onClickCancel = () => {
     browserHistory.push('/admin/products');
@@ -81,7 +104,7 @@ class Product extends Component {
       </div>
     );
   }
-  renderButtonTimeline(){
+  renderButtonTimeline() {
     return (
       <div>
         <div className="valign-center">
@@ -99,7 +122,6 @@ class Product extends Component {
         <div className="product-tabs-section">
           <Tabs selected={0}>
             <Pane label={this.renderButtonSettings()}>
-              <Setup {...this.state} onChangeStatus={this.onChangeStatus}/>
             </Pane>
             <Pane label={this.renderButtonTimeline()}>
               <div></div>
@@ -116,6 +138,10 @@ class Product extends Component {
     );
   }
 }
-
+function mapDispatchToProps(dispatch) {
+  return {
+    productActions: bindActionCreators(productActions, dispatch)
+  };
+}
 const mapStateToProps = state => ({products: state.products});
-export default connect(mapStateToProps, productActions)(Product);
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

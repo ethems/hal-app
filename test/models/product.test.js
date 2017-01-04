@@ -121,7 +121,7 @@ describe('PRODUCTS  MODEL', () => {
           name: 'Avokado 2'
         };
         const product = yield Product.create(p);
-        yield product.save(function(err){
+        yield product.save(function(err) {
           console.log(err);
           should.not.exist(err);
           done();

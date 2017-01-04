@@ -47,22 +47,3 @@ export function deleteProduct(productId) {
     payload: axios.delete(`/api/products/${productId}`)
   };
 }
-//
-// !!! important
-//
-// export function deleteProduct(productId) {
-//   return (dispatch) => {
-//     return dispatch({
-//       type: ActionTypes.DELETE_PRODUCTS_PENDING,
-//       payload: axios.delete(`/api/products/${productId}`)
-//     }).then(() => {
-//       dispatch({type: ActionTypes.DELETE_PRODUCTS_FULFILLED, payload: {
-//           productId
-//         }});
-//     }).catch(() => {
-//       dispatch({type: ActionTypes.DELETE_PRODUCTS_REJECTED, payload: {
-//           productId
-//         }});
-//     });
-//   };
-// }

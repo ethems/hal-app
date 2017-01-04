@@ -15,7 +15,8 @@ describe('Product Controller', () => {
   describe('PUT', () => {
     it('should create new product', (done) => {
       const product = {
-        name: 'product put test'
+        name: 'product put test',
+        active: true
       };
       request(server).put('/api/product').send(product).expect(200).end((err, res) => {
         should.not.exists(err);
@@ -25,14 +26,16 @@ describe('Product Controller', () => {
     });
     it('should respond 500 if there is already a product with same name', (done) => {
       const product = {
-        name: 'product put test'
+        name: 'product put test',
+        active: true
       };
       request(server).put('/api/product').send(product).expect(500, done);
     });
     it('should update a product', (done) => {
       co(function * () {
         const product = {
-          name: 'product put test 2'
+          name: 'product put test 2',
+          active: true
         };
         const productCreated = yield Product.create(product);
         productCreated.name = 'product put test 2 updated';
