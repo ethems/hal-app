@@ -1,4 +1,7 @@
 .admin-products-container {
+    width: 70%;
+    margin: 0 auto;
+
     .products-table {
         width: 100%;
         border-collapse: collapse;
@@ -11,6 +14,7 @@
 
     .products-table .products-table-header {
         background-color: #FFFFFF;
+
         th {
             text-align: left;
             height: 40px;

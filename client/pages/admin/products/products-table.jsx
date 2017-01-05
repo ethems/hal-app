@@ -54,6 +54,8 @@ class ProductsTable extends Component {
           return product.name;
         case 'date':
           return product.modifiedDate || product.createdDate;
+        case 'status':
+          return product.active;
         default:
           return product.name;
       }
@@ -86,15 +88,17 @@ class ProductsTable extends Component {
               </th>
             </tr>
             <tr className="products-table-header">
-              <th onClick={e => {
+              <th width="40%" onClick={e => {
                 this.onChangeSortType('name')
               }}>Product Name</th>
-              <th>Status</th>
-              <th>Price</th>
-              <th onClick={e => {
+              <th width="10%" onClick={e => {
+                this.onChangeSortType('status')
+              }}>Status</th>
+              <th width="20%">Price</th>
+              <th width="20%" onClick={e => {
                 this.onChangeSortType('date')
               }}>Update Date</th>
-              <th>Actions</th>
+              <th width="10%">Actions</th>
             </tr>
           </thead>
           <tbody>{this._renderRows()}</tbody>

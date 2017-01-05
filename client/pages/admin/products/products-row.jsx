@@ -34,7 +34,7 @@ const ProductsRow = (props) => {
           {id}
         </div>
       </td>
-      <td>{status}</td>
+      <td className={status.toLowerCase()}>{status}</td>
       <td>{priceText}</td>
       <td>{moment(updateDate).format('DD-MM-YYYY, hh:mm')}</td>
       <td>

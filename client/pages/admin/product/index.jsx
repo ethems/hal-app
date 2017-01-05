@@ -4,11 +4,11 @@ import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 import update from 'react-addons-update';
 import _ from 'lodash';
-import classNames from 'classnames';
 import Tabs from '../../../components/tabs/tabs';
 import Pane from '../../../components/tabs/pane';
 import * as productActions from '../../../actions/product-action';
 import Setup from './setup';
+import ProductName from './product-name';
 
 import './styles/index.scss';
 
@@ -91,18 +91,6 @@ class Product extends Component {
   onClickCancel = () => {
     browserHistory.push('/admin/products');
   }
-  _renderProductName() {
-    const {name, showNameEdit} = this.state;
-    const showInput = showNameEdit || !name;
-    return (
-      <div className="product-name-container">
-        <div className={classNames('product-name-label', {hide: showInput})} onClick={() => this.onClickNameLabel()}>{name || ''}</div>
-        <input className={classNames('product-name', {
-          hide: !showInput
-        })} value={name || ''} onChange={event => this.onChangeName(event)}/>
-      </div>
-    );
-  }
   renderButtonSettings() {
     return (
       <div>
@@ -125,7 +113,7 @@ class Product extends Component {
     return (
       <div className="product-container">
         <div className="product-name-section">
-          {this._renderProductName()}
+          <ProductName {...this.state} onChangeName={this.onChangeName}/>
         </div>
         <div className="product-tabs-section">
           <Tabs selected={0}>

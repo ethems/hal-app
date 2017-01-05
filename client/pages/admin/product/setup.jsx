@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import Switch from '../../../components/switch';
 import * as priceActions from '../../../actions/price-action';
 
+import 'react-dropdown/style.css';
 import './styles/setup.scss';
-import '../../../components/styles/dropdown.scss';
 
 class Setup extends Component {
   constructor(props) {
