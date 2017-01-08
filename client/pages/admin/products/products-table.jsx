@@ -7,6 +7,7 @@ import ProductsRow from './products-row';
 
 import './styles/products-table.scss';
 
+
 class ProductsTable extends Component {
   constructor(props) {
     super(props);
@@ -56,6 +57,10 @@ class ProductsTable extends Component {
           return product.modifiedDate || product.createdDate;
         case 'status':
           return product.active;
+        case 'price':
+          return product.priceHistory.length === 0
+            ? 0
+            : product.priceHistory[0].price;
         default:
           return product.name;
       }
@@ -94,7 +99,9 @@ class ProductsTable extends Component {
               <th width="10%" onClick={e => {
                 this.onChangeSortType('status')
               }}>Status</th>
-              <th width="20%">Price</th>
+              <th width="20%" onClick={e => {
+                this.onChangeSortType('price')
+              }}>Price</th>
               <th width="20%" onClick={e => {
                 this.onChangeSortType('date')
               }}>Update Date</th>

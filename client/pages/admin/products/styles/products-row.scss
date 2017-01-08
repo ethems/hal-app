@@ -24,14 +24,18 @@
     &:hover {
         background-color: #f8f8f8 !important;
     }
+}
 
-    .active {
-        color: #AAC667;
-    }
+.products-row .active {
+    color: #AAC667;
+}
 
-    .inactive {
-        color: #EE637A;
-    }
+.products-row .inactive {
+    color: #EE637A;
+}
+
+.products-row .products-update-date {
+    font-size: 12px;
 }
 
 .products-row .products-row-id {

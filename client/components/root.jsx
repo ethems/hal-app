@@ -13,7 +13,7 @@ const Root = ({store}) => (
       <Route path="/" component={App}>
         <Route path="admin" component={Admin}>
           <Route path="products" component={Products}/>
-          <Route path="product/:id" component={Product}/>
+          <Route path="product(/:id)" component={Product}/>
         </Route>
       </Route>
     </Router>

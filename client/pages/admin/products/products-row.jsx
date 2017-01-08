@@ -36,7 +36,7 @@ const ProductsRow = (props) => {
       </td>
       <td className={status.toLowerCase()}>{status}</td>
       <td>{priceText}</td>
-      <td>{moment(updateDate).format('DD-MM-YYYY, hh:mm')}</td>
+      <td className="products-update-date">{moment(updateDate).format('DD-MM-YYYY, hh:mm')}</td>
       <td>
         <div className="action-buttons-container">
           <button onClick={e => {
