@@ -1,0 +1,17 @@
+.Dropdown-root {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.Dropdown-root .Dropdown-menu {
+    .Dropdown-option {
+        background-color: #F5F5F5;
+    }
+    .Dropdown-option.is-selected {
+        background-color: #1998D9 !important;
+        color: #ffffff;
+    }
+    .Dropdown-option:hover {
+        background-color: #E1E4E9;
+    }
+}

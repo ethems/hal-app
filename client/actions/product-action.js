@@ -34,11 +34,16 @@ export function getProduct(productId) {
   };
 }
 
-export function updateProduct(productId, product) {
-  return {
-    type: ActionTypes.UPDATE_PRODUCT,
+export function updateProduct(productId, product, callback) {
+  return dispatch => dispatch({
+    type: ActionTypes.UPDATE_PRODUCT_PENDING,
     payload: axios.put('/api/product', Object.assign({}, product, {id: productId}))
-  };
+  }).then((res) => {
+    dispatch({type: ActionTypes.UPDATE_PRODUCT_FULFILLED, payload: res.value});
+    callback && setTimeout(() => callback(), 1);
+  }).catch((res) => {
+    dispatch({type: ActionTypes.UPDATE_PRODUCT_REJECTED, payload: res.value});
+  });
 }
 
 export function deleteProduct(productId) {

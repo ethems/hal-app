@@ -11,13 +11,17 @@ class ProductName extends Component {
       isOpened: !!!props.id
     };
   }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      isOpened: !!!nextProps.id
+    });
+  }
   onClickNameLabel = () => {
     this.setState({isOpened: true});
   }
   handleClickOutside() {
     this.setState({isOpened: false});
   }
-  componentWillReceiveProps(nextProps) {}
   render() {
     const {name, onChangeName} = this.props;
     const {isOpened} = this.state;

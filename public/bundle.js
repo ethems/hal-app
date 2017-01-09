@@ -40031,10 +40031,19 @@
 	  };
 	}
 
-	function updateProduct(productId, product) {
-	  return {
-	    type: ActionTypes.UPDATE_PRODUCT,
-	    payload: _axios2.default.put('/api/product', Object.assign({}, product, { id: productId }))
+	function updateProduct(productId, product, callback) {
+	  return function (dispatch) {
+	    return dispatch({
+	      type: ActionTypes.UPDATE_PRODUCT_PENDING,
+	      payload: _axios2.default.put('/api/product', Object.assign({}, product, { id: productId }))
+	    }).then(function (res) {
+	      dispatch({ type: ActionTypes.UPDATE_PRODUCT_FULFILLED, payload: res.value });
+	      callback && setTimeout(function () {
+	        return callback();
+	      }, 1);
+	    }).catch(function (res) {
+	      dispatch({ type: ActionTypes.UPDATE_PRODUCT_REJECTED, payload: res.value });
+	    });
 	  };
 	}
 
@@ -47659,6 +47668,8 @@
 
 	__webpack_require__(326);
 
+	__webpack_require__(483);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var App = function App(_ref) {
@@ -48159,7 +48170,7 @@
 
 
 	// module
-	exports.push([module.id, ".button-primary {\n  background: #31B8F1;\n  color: #FFFFFF; }\n", ""]);
+	exports.push([module.id, ".button-primary {\n  background: #31B8F1 !important;\n  color: #FFFFFF; }\n", ""]);
 
 	// exports
 
@@ -48431,8 +48442,17 @@
 
 	    var _this = _possibleConstructorReturn(this, (ProductsTable.__proto__ || Object.getPrototypeOf(ProductsTable)).call(this, props));
 
+	    _this.handleOpenDeleteSection = function (id) {
+	      _this.setState({ deleteConfirmationRowId: id });
+	    };
+
+	    _this.handleCloseDeleteSection = function () {
+	      _this.setState({ deleteConfirmationRowId: null });
+	    };
+
 	    _this.state = {
 	      searchText: '',
+	      deleteConfirmationRowId: null,
 	      sort: {
 	        by: 'name',
 	        ascending: true
@@ -48506,16 +48526,19 @@
 	  }, {
 	    key: '_renderRows',
 	    value: function _renderRows() {
+	      var _this2 = this;
+
 	      var products = this.props.products;
+	      var deleteConfirmationRowId = this.state.deleteConfirmationRowId;
 
 	      return this._sort(this._filter(products)).map(function (product, index) {
-	        return _react2.default.createElement(_productsRow2.default, _extends({ key: product.id, index: index }, product));
+	        return _react2.default.createElement(_productsRow2.default, _extends({ key: product.id, index: index, isDeleteSectionOpen: deleteConfirmationRowId === product.id }, product, { onOpenDeleteSection: _this2.handleOpenDeleteSection, onCloseDeleteSection: _this2.handleCloseDeleteSection }));
 	      });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
+	      var _this3 = this;
 
 	      var searchText = this.state.searchText;
 
@@ -48538,7 +48561,7 @@
 	                  'div',
 	                  { className: 'search-text-container' },
 	                  _react2.default.createElement('input', { className: 'search-text', value: searchText, onChange: function onChange(event) {
-	                      _this2.onChangeText(event);
+	                      return _this3.onChangeText(event);
 	                    } })
 	                )
 	              ),
@@ -48553,35 +48576,35 @@
 	              { className: 'products-table-header' },
 	              _react2.default.createElement(
 	                'th',
-	                { width: '40%', onClick: function onClick(e) {
-	                    _this2.onChangeSortType('name');
+	                { width: '40%', onClick: function onClick() {
+	                    return _this3.onChangeSortType('name');
 	                  } },
 	                'Product Name'
 	              ),
 	              _react2.default.createElement(
 	                'th',
-	                { width: '10%', onClick: function onClick(e) {
-	                    _this2.onChangeSortType('status');
+	                { width: '10%', onClick: function onClick() {
+	                    return _this3.onChangeSortType('status');
 	                  } },
 	                'Status'
 	              ),
 	              _react2.default.createElement(
 	                'th',
-	                { width: '20%', onClick: function onClick(e) {
-	                    _this2.onChangeSortType('price');
+	                { width: '20%', onClick: function onClick() {
+	                    return _this3.onChangeSortType('price');
 	                  } },
 	                'Price'
 	              ),
 	              _react2.default.createElement(
 	                'th',
-	                { width: '20%', onClick: function onClick(e) {
-	                    _this2.onChangeSortType('date');
+	                { width: '15%', onClick: function onClick() {
+	                    return _this3.onChangeSortType('date');
 	                  } },
 	                'Update Date'
 	              ),
 	              _react2.default.createElement(
 	                'th',
-	                { width: '10%' },
+	                { width: '15%' },
 	                'Actions'
 	              )
 	            )
@@ -48776,12 +48799,59 @@
 	      priceHistory = props.priceHistory,
 	      active = props.active,
 	      createdDate = props.createdDate,
-	      modifiedDate = props.modifiedDate;
+	      modifiedDate = props.modifiedDate,
+	      isDeleteSectionOpen = props.isDeleteSectionOpen,
+	      onOpenDeleteSection = props.onOpenDeleteSection,
+	      onCloseDeleteSection = props.onCloseDeleteSection,
+	      deleteProduct = props.deleteProduct;
 
 	  var type = +index % 2 === 0 ? ' even ' : ' odd ';
 	  var priceText = priceHistory.length == 0 ? 'No price' : '\u20BA' + priceHistory[0].price + ' / ' + priceHistory[0].unit;
 	  var status = active ? 'Active' : 'Inactive';
 	  var updateDate = modifiedDate || createdDate;
+	  var _renderActions = function _renderActions() {
+	    if (!isDeleteSectionOpen) {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'action-buttons-container' },
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: function onClick() {
+	              return onOpenDeleteSection(id);
+	            } },
+	          _react2.default.createElement(
+	            'i',
+	            { className: 'material-icons' },
+	            'delete'
+	          )
+	        )
+	      );
+	    } else {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'delete-section' },
+	        'Delete product ?',
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'button',
+	            { className: 'pure-button  button-primary valign-center', onClick: function onClick() {
+	                return deleteProduct(id);
+	              } },
+	            'Delete'
+	          ),
+	          _react2.default.createElement(
+	            'button',
+	            { className: 'pure-button', onClick: function onClick() {
+	                return onCloseDeleteSection();
+	              } },
+	            'Cancel'
+	          )
+	        )
+	      );
+	    }
+	  };
 	  return _react2.default.createElement(
 	    'tr',
 	    { className: 'products-row ' + type },
@@ -48817,21 +48887,7 @@
 	    _react2.default.createElement(
 	      'td',
 	      null,
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'action-buttons-container' },
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: function onClick(e) {
-	              props.deleteProduct(id);
-	            } },
-	          _react2.default.createElement(
-	            'i',
-	            { className: 'material-icons' },
-	            'delete'
-	          )
-	        )
-	      )
+	      _renderActions()
 	    )
 	  );
 	};
@@ -63756,7 +63812,7 @@
 
 
 	// module
-	exports.push([module.id, ".products-row {\n  height: 40px;\n  background-color: #FFFFFF;\n  border-top: 1px solid #ededed; }\n  .products-row a {\n    color: #0288D1 !important;\n    text-decoration: none; }\n  .products-row td {\n    padding: 18px 0 18px 10px; }\n  .products-row button {\n    background-color: Transparent;\n    background-repeat: no-repeat;\n    border: none;\n    cursor: pointer;\n    overflow: hidden;\n    outline: none; }\n  .products-row:hover {\n    background-color: #f8f8f8 !important; }\n\n.products-row .active {\n  color: #AAC667; }\n\n.products-row .inactive {\n  color: #EE637A; }\n\n.products-row .products-update-date {\n  font-size: 12px; }\n\n.products-row .products-row-id {\n  color: #888c90;\n  font-size: 10px; }\n\n.products-row .action-buttons-container {\n  padding-right: 20px;\n  display: flex;\n  flex-direction: row-reverse; }\n", ""]);
+	exports.push([module.id, ".products-row {\n  height: 40px;\n  background-color: #FFFFFF;\n  border-top: 1px solid #ededed; }\n  .products-row a {\n    color: #0288D1 !important;\n    text-decoration: none; }\n  .products-row td {\n    padding: 18px 0 18px 10px; }\n  .products-row button {\n    background-color: Transparent;\n    background-repeat: no-repeat;\n    border: none;\n    cursor: pointer;\n    overflow: hidden;\n    outline: none; }\n  .products-row:hover {\n    background-color: #f8f8f8 !important; }\n\n.products-row .active {\n  color: #AAC667; }\n\n.products-row .inactive {\n  color: #EE637A; }\n\n.products-row .products-update-date {\n  font-size: 12px; }\n\n.products-row .products-row-id {\n  color: #888c90;\n  font-size: 10px; }\n\n.products-row .action-buttons-container {\n  padding-right: 20px;\n  display: flex;\n  flex-direction: row-reverse; }\n\n.products-row .delete-section {\n  font-size: 12px; }\n", ""]);
 
 	// exports
 
@@ -64108,7 +64164,7 @@
 	    if (_lodash2.default.isEqual(state.newPrice, activePrice)) {
 	      delete state.newPrice;
 	    }
-	    _this3.props.productActions.updateProduct(id, state);
+	    _this3.props.productActions.updateProduct(id, state, _this3.onClickCancel);
 	  };
 
 	  this.onClickCancel = function () {
@@ -64433,7 +64489,7 @@
 	                    return _this2.handleChangePrice(e);
 	                  } }),
 	                '\xA0/\xA0',
-	                _react2.default.createElement(_reactDropdown2.default, { value: unit, onChange: onChangePriceUnit, options: priceUnits, placeholder: 'Select a price type' })
+	                _react2.default.createElement(_reactDropdown2.default, { className: 'field-control', value: unit, onChange: onChangePriceUnit, options: priceUnits, placeholder: 'Select a price type' })
 	              )
 	            )
 	          ),
@@ -64983,13 +65039,17 @@
 	  }
 
 	  _createClass(ProductName, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      this.setState({
+	        isOpened: !!!nextProps.id
+	      });
+	    }
+	  }, {
 	    key: 'handleClickOutside',
 	    value: function handleClickOutside() {
 	      this.setState({ isOpened: false });
 	    }
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {}
 	  }, {
 	    key: 'render',
 	    value: function render() {
@@ -65140,6 +65200,46 @@
 
 	// module
 	exports.push([module.id, ".product-container {\n  padding: 20px 10px 20px 20px; }\n\n.product-container .product-tabs-section {\n  margin-bottom: 30px; }\n\n.product-container .product-actions-section .botton-container {\n  width: 160px;\n  display: flex;\n  justify-content: space-between; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 483 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(484);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(317)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./dropdown.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./dropdown.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 484 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(312)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".Dropdown-root {\n  width: 100% !important;\n  height: 100% !important; }\n\n.Dropdown-root .Dropdown-menu .Dropdown-option {\n  background-color: #F5F5F5; }\n\n.Dropdown-root .Dropdown-menu .Dropdown-option.is-selected {\n  background-color: #1998D9 !important;\n  color: #ffffff; }\n\n.Dropdown-root .Dropdown-menu .Dropdown-option:hover {\n  background-color: #E1E4E9; }\n", ""]);
 
 	// exports
 

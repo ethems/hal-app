@@ -34,7 +34,7 @@ class Setup extends Component {
             <div className="label">Price</div>
             <div className="field">
               <div className="field-content">
-                <input type="text" value={price} className="field-control" onChange={e => this.handleChangePrice(e)}/>&nbsp;/&nbsp;<Dropdown value={unit} onChange={onChangePriceUnit}  options={priceUnits} placeholder="Select a price type"/>
+                <input type="text" value={price} className="field-control" onChange={e => this.handleChangePrice(e)}/>&nbsp;/&nbsp;<Dropdown className="field-control" value={unit} onChange={onChangePriceUnit}  options={priceUnits} placeholder="Select a price type"/>
               </div>
             </div>
           </div>

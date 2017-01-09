@@ -6,6 +6,7 @@ import './styles/app.scss';
 import './styles/buttons.scss';
 import './styles/icons.scss';
 import './styles/main.scss';
+import './styles/dropdown.scss';
 
 const App = ({children}) => (
   <div className="app-container">

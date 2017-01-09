@@ -86,7 +86,7 @@ class Product extends Component {
     if (_.isEqual(state.newPrice, activePrice)) {
       delete state.newPrice;
     }
-    this.props.productActions.updateProduct(id, state);
+    this.props.productActions.updateProduct(id, state, this.onClickCancel);
   }
   onClickCancel = () => {
     browserHistory.push('/admin/products');

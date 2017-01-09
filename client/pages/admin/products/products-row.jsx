@@ -14,7 +14,11 @@ const ProductsRow = (props) => {
     priceHistory,
     active,
     createdDate,
-    modifiedDate
+    modifiedDate,
+    isDeleteSectionOpen,
+    onOpenDeleteSection,
+    onCloseDeleteSection,
+    deleteProduct
   } = props;
   const type = +index % 2 === 0
     ? ' even '
@@ -26,6 +30,27 @@ const ProductsRow = (props) => {
     ? 'Active'
     : 'Inactive';
   const updateDate = modifiedDate || createdDate;
+  const _renderActions = () => {
+    if (!isDeleteSectionOpen) {
+      return (
+        <div className="action-buttons-container">
+          <button onClick={() => onOpenDeleteSection(id)}>
+            <i className="material-icons">delete</i>
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div className="delete-section">
+          {'Delete product ?'}
+          <div>
+            <button className="pure-button  button-primary valign-center" onClick={() => deleteProduct(id)}>Delete</button>
+            <button className="pure-button" onClick={() => onCloseDeleteSection()}>Cancel</button>
+          </div>
+        </div>
+      )
+    }
+  };
   return (
     <tr className={`products-row ${type}`}>
       <td>
@@ -38,13 +63,7 @@ const ProductsRow = (props) => {
       <td>{priceText}</td>
       <td className="products-update-date">{moment(updateDate).format('DD-MM-YYYY, hh:mm')}</td>
       <td>
-        <div className="action-buttons-container">
-          <button onClick={e => {
-            props.deleteProduct(id);
-          }}>
-            <i className="material-icons">delete</i>
-          </button>
-        </div>
+        {_renderActions()}
       </td>
     </tr>
   );

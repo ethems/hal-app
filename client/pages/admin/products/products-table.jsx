@@ -7,12 +7,12 @@ import ProductsRow from './products-row';
 
 import './styles/products-table.scss';
 
-
 class ProductsTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchText: '',
+      deleteConfirmationRowId: null,
       sort: {
         by: 'name',
         ascending: true
@@ -25,6 +25,12 @@ class ProductsTable extends Component {
   }
   onChangeText(event) {
     this.setState({searchText: event.target.value});
+  }
+  handleOpenDeleteSection = (id) => {
+    this.setState({deleteConfirmationRowId: id});
+  }
+  handleCloseDeleteSection = () => {
+    this.setState({deleteConfirmationRowId: null});
   }
   onChangeSortType(newSortBy) {
     this.setState({
@@ -72,7 +78,8 @@ class ProductsTable extends Component {
   }
   _renderRows() {
     const {products} = this.props;
-    return this._sort(this._filter(products)).map((product, index) => <ProductsRow key={product.id} index={index} {...product}/>);
+    const {deleteConfirmationRowId} = this.state;
+    return this._sort(this._filter(products)).map((product, index) => <ProductsRow key={product.id} index={index} isDeleteSectionOpen={deleteConfirmationRowId === product.id} {...product} onOpenDeleteSection={this.handleOpenDeleteSection} onCloseDeleteSection={this.handleCloseDeleteSection}/>);
   }
   render() {
     const {searchText} = this.state;
@@ -83,9 +90,7 @@ class ProductsTable extends Component {
             <tr className="products-table-actions">
               <th colSpan={4}>
                 <div className="search-text-container">
-                  <input className="search-text" value={searchText} onChange={(event) => {
-                    this.onChangeText(event)
-                  }}/>
+                  <input className="search-text" value={searchText} onChange={event => this.onChangeText(event)}/>
                 </div>
               </th>
               <th colSpan={1}>
@@ -93,19 +98,11 @@ class ProductsTable extends Component {
               </th>
             </tr>
             <tr className="products-table-header">
-              <th width="40%" onClick={e => {
-                this.onChangeSortType('name')
-              }}>Product Name</th>
-              <th width="10%" onClick={e => {
-                this.onChangeSortType('status')
-              }}>Status</th>
-              <th width="20%" onClick={e => {
-                this.onChangeSortType('price')
-              }}>Price</th>
-              <th width="20%" onClick={e => {
-                this.onChangeSortType('date')
-              }}>Update Date</th>
-              <th width="10%">Actions</th>
+              <th width="40%" onClick={() => this.onChangeSortType('name')}>Product Name</th>
+              <th width="10%" onClick={() => this.onChangeSortType('status')}>Status</th>
+              <th width="20%" onClick={() => this.onChangeSortType('price')}>Price</th>
+              <th width="15%" onClick={() => this.onChangeSortType('date')}>Update Date</th>
+              <th width="15%">Actions</th>
             </tr>
           </thead>
           <tbody>{this._renderRows()}</tbody>
