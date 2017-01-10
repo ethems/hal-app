@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import Dropdown from 'react-dropdown';
+import Select from 'react-select';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Switch from '../../../components/switch';
 import * as priceActions from '../../../actions/price-action';
 
-import 'react-dropdown/style.css';
+import 'react-select/dist/react-select.css';
 import './styles/setup.scss';
 
 class Setup extends Component {
@@ -24,7 +24,7 @@ class Setup extends Component {
     }
   }
   render() {
-    const {active, onChangeStatus, newPrice, priceUnits,onChangePriceUnit} = this.props;
+    const {active, onChangeStatus, newPrice, priceUnits, onChangePriceUnit} = this.props;
     const price = newPrice.price || '';
     const unit = newPrice.unit;
     return (
@@ -34,7 +34,12 @@ class Setup extends Component {
             <div className="label">Price</div>
             <div className="field">
               <div className="field-content">
-                <input type="text" value={price} className="field-control" onChange={e => this.handleChangePrice(e)}/>&nbsp;/&nbsp;<Dropdown className="field-control" value={unit} onChange={onChangePriceUnit}  options={priceUnits} placeholder="Select a price type"/>
+                <input type="text" value={price} className="field-control" onChange={e => this.handleChangePrice(e)}/>&nbsp;/&nbsp;
+                <div className="field-control">
+                  <Select searchable={false} backspaceRemoves={false} clearable={false} value={unit} onChange={onChangePriceUnit} options={priceUnits.map((priceUnit) => {
+                    return {value: priceUnit, label: priceUnit}
+                  })} placeholder="Select a price type"/>
+                </div>
               </div>
             </div>
           </div>

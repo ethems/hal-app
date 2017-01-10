@@ -4,6 +4,26 @@ const Product = require('../../lib/models/product');
 const co = require('co');
 
 describe('PRICE  MODEL', () => {
+  describe('#Find', () => {
+    it('should get price', (done) => {
+      co(function * () {
+        const p = {
+          name: 'Price find test1'
+        };
+        const product = yield Product.create(p);
+        should.exist(product);
+        yield Product.updatePrice(product.id, {price: 10.34});
+        yield Product.updatePrice(product.id, {
+          price: 10.36,
+          startDate: new Date(1999, 1, 1)
+        });
+        yield Product.updatePrice(product.id, {price: 10.35});
+        const prices = yield Price.getAllSince(product.id, new Date(2000, 1, 1));
+        prices.length.should.equal(2);
+        done();
+      });
+    });
+  });
   describe('#Create', () => {
     it('should create a new Price', (done) => {
       co(function * () {

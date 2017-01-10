@@ -8,7 +8,10 @@ import Tabs from '../../../components/tabs/tabs';
 import Pane from '../../../components/tabs/pane';
 import * as productActions from '../../../actions/product-action';
 import Setup from './setup';
+import Timeline from './timeline';
 import ProductName from './product-name';
+import timespanTypes from './timespan-types';
+
 
 import './styles/index.scss';
 
@@ -19,7 +22,8 @@ class Product extends Component {
     const {products} = props;
     this.state = {
       priceHistory: [],
-      newPrice: {}
+      newPrice: {},
+      timespanType: timespanTypes[0]
     };
     if (id) {
       const index = _.findIndex(products, product => product.id === id);
@@ -30,7 +34,8 @@ class Product extends Component {
         this.state = {
           ...product,
           priceHistory: [...product.priceHistory],
-          newPrice: _.find(product.priceHistory, price => price.active === true) || {}
+          newPrice: _.find(product.priceHistory, price => price.active === true) || {},
+          timespanType: timespanTypes[0]
         };
       }
     }
@@ -91,6 +96,9 @@ class Product extends Component {
   onClickCancel = () => {
     browserHistory.push('/admin/products');
   }
+  handleChangeTimespanType = (timespanType) => {
+    this.setState({timespanType: timespanType.value});
+  }
   renderButtonSettings() {
     return (
       <div>
@@ -121,7 +129,7 @@ class Product extends Component {
               <Setup {...this.state} onChangeStatus={this.onChangeStatus} onChangePrice={this.onChangePrice} onChangePriceUnit={this.onChangePriceUnit}/>
             </Pane>
             <Pane label={this.renderButtonTimeline()}>
-              <div></div>
+              <Timeline {...this.state} onChangeTimespan={this.handleChangeTimespanType}/>
             </Pane>
           </Tabs>
         </div>

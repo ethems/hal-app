@@ -1,0 +1,17 @@
+.timeline-container {}
+
+.timeline-container .timeline-header {
+    padding: 0 10px 0 40px;
+    border-bottom: 4px solid #F1F1F1;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.timeline-container .timeline-header .timeline-timespan-selection {
+    width: 20%;
+}
+
+.timeline-container .timeline-content{
+  width: 100%;
+  height: 500px;
+}
