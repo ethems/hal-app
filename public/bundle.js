@@ -67365,6 +67365,7 @@
 	          width = _state.width,
 	          height = _state.height;
 
+	      this._cleanGraph(chartContainerDOM);
 	      timeline && timeline.prices ? this._updateGraph(chartContainerDOM, {
 	        width: width,
 	        height: height,
@@ -67373,9 +67374,17 @@
 	      }) : this._renderEmpty();
 	    }
 	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {}
+	  }, {
 	    key: '_createGraph',
 	    value: function _createGraph(el, props) {
-	      d3.select(el).append('svg').attr('width', props.width).attr('height', props.height).attr('class', 'svg-container');
+	      d3.select(el).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', '0 0 ' + props.width + ' ' + props.height).attr('class', 'svg-container');
+	    }
+	  }, {
+	    key: '_cleanGraph',
+	    value: function _cleanGraph(el) {
+	      d3.select(el).selectAll('.svg-container').selectAll("*").remove();
 	    }
 	  }, {
 	    key: '_updateGraph',
@@ -67397,9 +67406,7 @@
 	      })), Math.ceil(d3.max(prices, function (price) {
 	        return price.price;
 	      }))]).range([height - padding, padding]);
-	      // LABELS
-	      // d3.select(el).selectAll('.svg-container').selectAll('text').data(prices).enter().append('text').text(d=>d.price).attr('class', 'line-label').attr('x', d => xScale(new Date(d.startDate))).attr('y', d => yScale(d.price))
-	      // .attr('transform', `translate(${-20},${-10})`);
+
 	      // AXIS
 	      //  YAXIS
 	      var yAxis = d3.axisRight(yScale);
@@ -67412,6 +67419,8 @@
 	      var xAxis = d3.axisBottom(xScale);
 	      xAxis.tickFormat(d3.timeFormat('%H:%M'));
 	      var gx = d3.select(el).selectAll('.svg-container').append('g').call(xAxis).attr('class', 'xaxis-container').attr('transform', 'translate(0,' + (height - padding) + ')');
+	      gx.selectAll('line').attr('class', 'xaxis-line');
+	      gx.selectAll('text').attr('class', 'xaxis-text');
 	      // LINE
 	      var lineFun = d3.line().x(function (d) {
 	        return xScale(new Date(d.startDate));
@@ -67426,7 +67435,7 @@
 	        return xScale(new Date(d.startDate));
 	      }).attr('y', function (d) {
 	        return yScale(d.price);
-	      }).attr('transform', 'translate(' + -20 + ',' + -10 + ')');
+	      }).attr('transform', 'translate(' + -10 + ',' + -10 + ')');
 	    }
 	  }, {
 	    key: '_renderEmpty',
@@ -83888,7 +83897,7 @@
 
 
 	// module
-	exports.push([module.id, ".price-timeline-line-graph-container {\n  width: 100%;\n  height: 100%; }\n\n.price-timeline-line-graph-container .svg-container .label-container {\n  font-size: 11px;\n  fill: #7E8A96;\n  stroke: none; }\n\n.price-timeline-line-graph-container .svg-container .line-container {\n  fill: none;\n  stroke: #146FB0;\n  stroke-width: 2px; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container path {\n  display: none; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n", ""]);
+	exports.push([module.id, ".price-timeline-line-graph-container {\n  width: 100%;\n  height: 100%; }\n\n.price-timeline-line-graph-container .svg-container .label-container {\n  font-size: 11px;\n  fill: #7E8A96;\n  stroke: none; }\n\n.price-timeline-line-graph-container .svg-container .line-container {\n  fill: none;\n  stroke: #146FB0;\n  stroke-width: 2px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container path {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container .xaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container .xaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container path {\n  display: none; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n", ""]);
 
 	// exports
 

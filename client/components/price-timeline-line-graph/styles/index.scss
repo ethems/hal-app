@@ -4,15 +4,36 @@
 }
 
 .price-timeline-line-graph-container .svg-container {}
-.price-timeline-line-graph-container .svg-container .label-container{
+
+.price-timeline-line-graph-container .svg-container .label-container {
     font-size: 11px;
-    fill:#7E8A96;
-    stroke:none;
+    fill: #7E8A96;
+    stroke: none;
 }
+
 .price-timeline-line-graph-container .svg-container .line-container {
     fill: none;
     stroke: #146FB0;
     stroke-width: 2px;
+}
+
+.price-timeline-line-graph-container .svg-container .xaxis-container {
+    path {
+        stroke: #E1E4E9;
+        stroke-width: 1px;
+    }
+
+    .xaxis-line {
+        stroke: #E1E4E9;
+        stroke-width: 1px;
+    }
+
+    .xaxis-text {
+        font-family: sans-serif;
+        font-size: 13px;
+        stroke: none;
+        fill: #707378;
+    }
 }
 
 .price-timeline-line-graph-container .svg-container .yaxis-container {

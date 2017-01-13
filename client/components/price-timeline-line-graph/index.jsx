@@ -27,6 +27,7 @@ class PriceTimelineLineGraph extends Component {
     const chartContainerDOM = ReactDOM.findDOMNode(this._chartContainer);
     const {timeline} = this.props;
     const {width, height} = this.state;
+    this._cleanGraph(chartContainerDOM);
     (timeline && timeline.prices)
       ? this._updateGraph(chartContainerDOM, {
         width,
@@ -36,8 +37,12 @@ class PriceTimelineLineGraph extends Component {
       })
       : this._renderEmpty();
   }
+  componentWillUnmount() {}
   _createGraph(el, props) {
-    d3.select(el).append('svg').attr('width', props.width).attr('height', props.height).attr('class', 'svg-container');
+    d3.select(el).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', `0 0 ${props.width} ${props.height}`).attr('class', 'svg-container');
+  }
+  _cleanGraph(el) {
+    d3.select(el).selectAll('.svg-container').selectAll("*").remove();
   }
   _updateGraph(el, props) {
     const {padding} = this.props;
@@ -56,31 +61,31 @@ class PriceTimelineLineGraph extends Component {
       height - padding,
       padding
     ]);
-    // LABELS
-    // d3.select(el).selectAll('.svg-container').selectAll('text').data(prices).enter().append('text').text(d=>d.price).attr('class', 'line-label').attr('x', d => xScale(new Date(d.startDate))).attr('y', d => yScale(d.price))
-    // .attr('transform', `translate(${-20},${-10})`);
+
     // AXIS
     //  YAXIS
     const yAxis = d3.axisRight(yScale);
     yAxis.tickSize(width - (padding));
     yAxis.ticks(4);
     const gy = d3.select(el).selectAll('.svg-container').append('g').call(yAxis).attr('class', 'yaxis-container').attr('transform', `translate(${padding},0)`);
-    gy.selectAll('line').attr('class', 'yaxis-line')
+    gy.selectAll('line').attr('class', 'yaxis-line');
     gy.selectAll('text').attr('class', 'yaxis-text').attr('x', -(padding));
     //  XAXIS
     const xAxis = d3.axisBottom(xScale);
     xAxis.tickFormat(d3.timeFormat('%H:%M'));
     const gx = d3.select(el).selectAll('.svg-container').append('g').call(xAxis).attr('class', 'xaxis-container').attr('transform', `translate(0,${height - padding})`);
+    gx.selectAll('line').attr('class', 'xaxis-line');
+    gx.selectAll('text').attr('class', 'xaxis-text');
     // LINE
     const lineFun = d3.line().x(d => xScale(new Date(d.startDate))).y(d => yScale(d.price));
     d3.select(el).selectAll('.svg-container').append('path').attr('d', lineFun(prices)).attr('class', 'line-container');
     // LABELS
-    d3.select(el).selectAll('.svg-container').selectAll('.label-container').data(prices).enter().append('text').attr('class', 'label-container').text(d => d.price).attr('x', d => xScale(new Date(d.startDate))).attr('y', d => yScale(d.price)).attr('transform', `translate(${ - 20},${ - 10})`);
+    d3.select(el).selectAll('.svg-container').selectAll('.label-container').data(prices).enter().append('text').attr('class', 'label-container').text(d => d.price).attr('x', d => xScale(new Date(d.startDate))).attr('y', d => yScale(d.price)).attr('transform', `translate(${ - 10},${ - 10})`);
   }
   _renderEmpty() {}
   render() {
     return (
-      <div className="price-timeline-line-graph-container" ref={(c) => this._chartContainer = c}></div>
+      <div className="price-timeline-line-graph-container" ref={c => this._chartContainer = c}></div>
     );
   }
 }
