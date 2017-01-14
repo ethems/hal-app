@@ -67273,7 +67273,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'timeline-content' },
-	          _react2.default.createElement(_priceTimelineLineGraph2.default, { timeline: activeTimeline })
+	          _react2.default.createElement(_priceTimelineLineGraph2.default, { timeline: activeTimeline, timespanType: timespanType })
 	        )
 	      );
 	    }
@@ -67321,13 +67321,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _d = __webpack_require__(483);
+	var _d3LineChart = __webpack_require__(494);
 
-	var d3 = _interopRequireWildcard(_d);
+	var _d3LineChart2 = _interopRequireDefault(_d3LineChart);
 
 	__webpack_require__(484);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -67349,104 +67347,26 @@
 	  _createClass(PriceTimelineLineGraph, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      var timeline = this.props.timeline;
+	      var _props = this.props,
+	          timeline = _props.timeline,
+	          padding = _props.padding,
+	          timespanType = _props.timespanType;
 
 	      var chartContainerDOM = _reactDom2.default.findDOMNode(this._chartContainer);
 	      var clientWidth = chartContainerDOM.clientWidth,
 	          clientHeight = chartContainerDOM.clientHeight;
 
-	      this.setState({ width: clientWidth, height: clientHeight });
-	      this._createGraph(chartContainerDOM, {
-	        width: clientWidth,
-	        height: clientHeight
-	      });
-	      timeline && timeline.prices ? this._updateGraph(chartContainerDOM, {
-	        width: clientWidth,
-	        height: clientHeight,
-	        prices: timeline.prices,
-	        timespanType: timeline.timespanType
-	      }) : this._renderEmpty();
+	      this.d3LineChart = new _d3LineChart2.default({ el: chartContainerDOM, width: clientWidth, height: clientHeight, padding: padding, timespanType: timespanType });
+	      timeline && timeline.prices ? this.d3LineChart.updateProperties({ prices: timeline.prices, timespanType: timespanType }) : this._renderEmpty();
 	    }
 	  }, {
 	    key: 'componentDidUpdate',
 	    value: function componentDidUpdate(prevProps, prevState) {
-	      var chartContainerDOM = _reactDom2.default.findDOMNode(this._chartContainer);
-	      var timeline = this.props.timeline;
-	      var _state = this.state,
-	          width = _state.width,
-	          height = _state.height;
+	      var _props2 = this.props,
+	          timeline = _props2.timeline,
+	          timespanType = _props2.timespanType;
 
-	      this._cleanGraph(chartContainerDOM);
-	      timeline && timeline.prices ? this._updateGraph(chartContainerDOM, {
-	        width: width,
-	        height: height,
-	        prices: timeline.prices,
-	        timespanType: timeline.timespanType
-	      }) : this._renderEmpty();
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {}
-	  }, {
-	    key: '_createGraph',
-	    value: function _createGraph(el, props) {
-	      d3.select(el).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', '0 0 ' + props.width + ' ' + props.height).attr('class', 'svg-container');
-	    }
-	  }, {
-	    key: '_cleanGraph',
-	    value: function _cleanGraph(el) {
-	      d3.select(el).selectAll('.svg-container').selectAll("*").remove();
-	    }
-	  }, {
-	    key: '_updateGraph',
-	    value: function _updateGraph(el, props) {
-	      var padding = this.props.padding;
-	      var timespanType = props.timespanType,
-	          prices = props.prices,
-	          width = props.width,
-	          height = props.height;
-	      // SCALES
-
-	      var xScale = d3.scaleLinear().domain([d3.min(prices, function (price) {
-	        return new Date(price.startDate);
-	      }), d3.max(prices, function (price) {
-	        return new Date(price.startDate);
-	      })]).range([padding, width - padding]);
-	      var yScale = d3.scaleLinear().domain([Math.floor(d3.min(prices, function (price) {
-	        return price.price;
-	      })), Math.ceil(d3.max(prices, function (price) {
-	        return price.price;
-	      }))]).range([height - padding, padding]);
-
-	      // AXIS
-	      //  YAXIS
-	      var yAxis = d3.axisRight(yScale);
-	      yAxis.tickSize(width - padding);
-	      yAxis.ticks(4);
-	      var gy = d3.select(el).selectAll('.svg-container').append('g').call(yAxis).attr('class', 'yaxis-container').attr('transform', 'translate(' + padding + ',0)');
-	      gy.selectAll('line').attr('class', 'yaxis-line');
-	      gy.selectAll('text').attr('class', 'yaxis-text').attr('x', -padding);
-	      //  XAXIS
-	      var xAxis = d3.axisBottom(xScale);
-	      xAxis.tickFormat(d3.timeFormat('%H:%M'));
-	      var gx = d3.select(el).selectAll('.svg-container').append('g').call(xAxis).attr('class', 'xaxis-container').attr('transform', 'translate(0,' + (height - padding) + ')');
-	      gx.selectAll('line').attr('class', 'xaxis-line');
-	      gx.selectAll('text').attr('class', 'xaxis-text');
-	      // LINE
-	      var lineFun = d3.line().x(function (d) {
-	        return xScale(new Date(d.startDate));
-	      }).y(function (d) {
-	        return yScale(d.price);
-	      });
-	      d3.select(el).selectAll('.svg-container').append('path').attr('d', lineFun(prices)).attr('class', 'line-container');
-	      // LABELS
-	      d3.select(el).selectAll('.svg-container').selectAll('.label-container').data(prices).enter().append('text').attr('class', 'label-container').text(function (d) {
-	        return d.price;
-	      }).attr('x', function (d) {
-	        return xScale(new Date(d.startDate));
-	      }).attr('y', function (d) {
-	        return yScale(d.price);
-	      }).attr('transform', 'translate(' + -10 + ',' + -10 + ')');
+	      timeline && timeline.prices ? this.d3LineChart.updateProperties({ prices: timeline.prices, timespanType: timespanType }) : this._renderEmpty();
 	    }
 	  }, {
 	    key: '_renderEmpty',
@@ -83908,7 +83828,7 @@
 
 
 	// module
-	exports.push([module.id, ".price-timeline-line-graph-container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.price-timeline-line-graph-container .svg-container .label-container {\n  font-size: 11px;\n  fill: #7E8A96;\n  stroke: none; }\n\n.price-timeline-line-graph-container .svg-container .line-container {\n  fill: none;\n  stroke: #146FB0;\n  stroke-width: 2px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container path {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container .xaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container .xaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container path {\n  display: none; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n", ""]);
+	exports.push([module.id, ".price-timeline-line-graph-container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.price-timeline-line-graph-container .line-graph-svg .label-container {\n  font-size: 11px;\n  fill: #7E8A96;\n  stroke: none; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-container {\n  fill: none;\n  stroke: #146FB0;\n  stroke-width: 2px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis path {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis .xaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis .xaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis path {\n  display: none; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis .yaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis .yaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n", ""]);
 
 	// exports
 
@@ -84170,6 +84090,238 @@
 
 	// exports
 
+
+/***/ },
+/* 494 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _d = __webpack_require__(483);
+
+	var d3 = _interopRequireWildcard(_d);
+
+	var _lodash = __webpack_require__(208);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _moment = __webpack_require__(339);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var LineChart = function () {
+	  function LineChart(props) {
+	    _classCallCheck(this, LineChart);
+
+	    var el = props.el,
+	        width = props.width,
+	        height = props.height,
+	        prices = props.prices,
+	        timespanType = props.timespanType,
+	        padding = props.padding;
+
+	    if (!el) {
+	      throw new Error('Root element could not be found !!!');
+	    }
+	    this.el = el;
+	    this.width = width || 100;
+	    this.height = height || 100;
+	    this.prices = prices || [];
+	    this.timespanType = timespanType || 'hourly';
+	    this.padding = padding || 10;
+	    this.createGraph();
+	    prices && this.updateGraph();
+	  }
+
+	  _createClass(LineChart, [{
+	    key: 'updateProperties',
+	    value: function updateProperties(props) {
+	      var timespanType = props.timespanType,
+	          prices = props.prices;
+
+	      prices && (this.prices = prices);
+	      timespanType && (this.timespanType = timespanType);
+	      this.cleanGraph();
+	      this.renderGraph();
+	    }
+	  }, {
+	    key: 'cleanGraph',
+	    value: function cleanGraph() {
+	      d3.select(this.el).selectAll('.line-graph-svg').selectAll("*").remove();
+	    }
+	  }, {
+	    key: 'createGraph',
+	    value: function createGraph() {
+	      d3.select(this.el).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', '0 0 ' + this.width + ' ' + this.height).attr('class', 'line-graph-svg');
+	    }
+	  }, {
+	    key: '_renderXAxis',
+	    value: function _renderXAxis(xScale) {
+	      var height = this.height,
+	          padding = this.padding,
+	          el = this.el,
+	          timespanType = this.timespanType;
+
+	      var xAxis = d3.axisBottom(xScale);
+	      switch (timespanType) {
+	        case 'daily':
+	          xAxis.tickFormat(d3.timeFormat('%H:%M'));
+	          break;
+	        case 'weekly':
+	          xAxis.tickFormat(d3.timeFormat('%a %d'));
+	          break;
+	        case 'monthly':
+	          xAxis.tickFormat(d3.timeFormat('%b %d'));
+	          break;
+	        case 'yearly':
+	          xAxis.tickFormat(d3.timeFormat('%B'));
+	          break;
+	        default:
+	          xAxis.tickFormat(d3.timeFormat('%H:%M'));
+	      }
+
+	      var gx = d3.select(el).selectAll('.line-graph-svg').append('g').call(xAxis).attr('class', 'line-graph-xaxis').attr('transform', 'translate(0,' + (height - padding) + ')');
+	      gx.selectAll('line').attr('class', 'xaxis-line');
+	      gx.selectAll('text').attr('class', 'xaxis-text');
+	    }
+	  }, {
+	    key: '_renderYAxis',
+	    value: function _renderYAxis(yScale) {
+	      var width = this.width,
+	          padding = this.padding,
+	          el = this.el;
+
+	      var yAxis = d3.axisRight(yScale);
+	      yAxis.tickSize(width - padding);
+	      yAxis.ticks(4);
+	      var gy = d3.select(el).selectAll('.line-graph-svg').append('g').call(yAxis).attr('class', 'line-graph-yaxis').attr('transform', 'translate(' + padding + ',0)');
+	      gy.selectAll('line').attr('class', 'yaxis-line');
+	      gy.selectAll('text').attr('class', 'yaxis-text').attr('x', -padding);
+	    }
+	  }, {
+	    key: 'prepareData',
+	    value: function prepareData() {
+	      var prices = this.prices,
+	          timespanType = this.timespanType;
+
+	      switch (timespanType) {
+	        case 'daily':
+	          return prices;
+	        case 'weekly':
+	          var oldPricesByDay = _lodash2.default.chain(prices.filter(function (price) {
+	            return price.active === false;
+	          })).groupBy(function (price) {
+	            return (0, _moment2.default)(price.startDate).startOf('day').format();
+	          }).map(function (group, day) {
+	            var startDate = day;
+	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
+	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
+	            });
+	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
+	          }).value();
+	          return [].concat(_toConsumableArray(oldPricesByDay), _toConsumableArray(prices.filter(function (price) {
+	            return price.active === true;
+	          })));
+	        case 'monthly':
+	          var oldPricesByWeek = _lodash2.default.chain(prices.filter(function (price) {
+	            return price.active === false;
+	          })).groupBy(function (price) {
+	            return (0, _moment2.default)(price.startDate).startOf('week').format();
+	          }).map(function (group, day) {
+	            var startDate = day;
+	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
+	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
+	            });
+	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
+	          }).value();
+	          return [].concat(_toConsumableArray(oldPricesByWeek), _toConsumableArray(prices.filter(function (price) {
+	            return price.active === true;
+	          })));
+	        case 'yearly':
+	          var oldPricesByMonth = _lodash2.default.chain(prices.filter(function (price) {
+	            return price.active === false;
+	          })).groupBy(function (price) {
+	            return (0, _moment2.default)(price.startDate).startOf('month').format();
+	          }).map(function (group, day) {
+	            var startDate = day;
+	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
+	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
+	            });
+	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
+	          }).value();
+	          return [].concat(_toConsumableArray(oldPricesByMonth), _toConsumableArray(prices.filter(function (price) {
+	            return price.active === true;
+	          })));
+	        default:
+	          return prices;
+	      }
+	      return prices;
+	    }
+	  }, {
+	    key: 'sortData',
+	    value: function sortData(prices) {
+	      return _lodash2.default.sortBy(prices, function (price) {
+	        return new Date(price.startDate);
+	      });
+	    }
+	  }, {
+	    key: 'renderGraph',
+	    value: function renderGraph() {
+	      var width = this.width,
+	          height = this.height,
+	          padding = this.padding,
+	          el = this.el;
+
+	      var prices = this.sortData(this.prepareData());
+	      debugger;
+	      var xScale = d3.scaleLinear().domain([d3.min(prices, function (price) {
+	        return new Date(price.startDate);
+	      }), d3.max(prices, function (price) {
+	        return new Date(price.startDate);
+	      })]).range([padding, width - padding]);
+	      var yScale = d3.scaleLinear().domain([Math.floor(d3.min(prices, function (price) {
+	        return price.price;
+	      })), Math.ceil(d3.max(prices, function (price) {
+	        return price.price;
+	      }))]).range([height - padding, padding]);
+	      this._renderYAxis(yScale);
+	      this._renderXAxis(xScale);
+	      // LINE
+	      var lineFun = d3.line().x(function (d) {
+	        return xScale(new Date(d.startDate));
+	      }).y(function (d) {
+	        return yScale(d.price);
+	      });
+	      d3.select(el).selectAll('.line-graph-svg').append('path').attr('d', lineFun(prices)).attr('class', 'line-container');
+	      // LABELS
+	      d3.select(el).selectAll('.line-graph-svg').selectAll('.label-container').data(prices).enter().append('text').attr('class', 'label-container').text(function (d) {
+	        return d.price;
+	      }).attr('x', function (d) {
+	        return xScale(new Date(d.startDate));
+	      }).attr('y', function (d) {
+	        return yScale(d.price);
+	      }).attr('transform', 'translate(' + -10 + ',' + -10 + ')');
+	    }
+	  }]);
+
+	  return LineChart;
+	}();
+
+	exports.default = LineChart;
 
 /***/ }
 /******/ ]);

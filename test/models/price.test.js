@@ -70,7 +70,101 @@ describe('PRICE  MODEL', () => {
         });
         done();
       });
-    })
+    });
+    it('FOR PRICE TIMELINE WEEKLY', (done) => {
+      co(function * () {
+        const p = {
+          name: 'TIMLINE PRICE TEST WEEKLY'
+        };
+
+        const product = yield Product.create(p);
+        should.exist(product);
+        yield Product.updatePrice(product.id, {
+          price: 10.34,
+          startDate: moment().startOf('week').add(1, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.36,
+          startDate: moment().startOf('week').add(2, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.35,
+          startDate: moment().startOf('week').add(3, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.35,
+          startDate: moment().startOf('week').add(4, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.30,
+          startDate: moment().startOf('day').add(5, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.29,
+          startDate: moment().startOf('day').add(6, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.21,
+          startDate: moment().startOf('day').add(7, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.55,
+          startDate: moment().startOf('day').add(8, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 11,
+          startDate: moment().startOf('day').add(9, 'hours')
+        });
+        done();
+      });
+    });
+    it('FOR PRICE TIMELINE MONTHLY', (done) => {
+      co(function * () {
+        const p = {
+          name: 'TIMLINE PRICE TEST MONTHLY'
+        };
+
+        const product = yield Product.create(p);
+        should.exist(product);
+        yield Product.updatePrice(product.id, {
+          price: 10.34,
+          startDate: moment().startOf('month').add(1, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.36,
+          startDate: moment().startOf('week').add(2, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.35,
+          startDate: moment().startOf('week').add(3, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.35,
+          startDate: moment().startOf('week').add(4, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.30,
+          startDate: moment().startOf('day').add(5, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.29,
+          startDate: moment().startOf('day').add(6, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.21,
+          startDate: moment().startOf('day').add(7, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 10.55,
+          startDate: moment().startOf('day').add(8, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 11,
+          startDate: moment().startOf('day').add(9, 'hours')
+        });
+        done();
+      });
+    });
   });
   describe('#Create', () => {
     it('should create a new Price', (done) => {

@@ -6,21 +6,21 @@
   height: 100%;
 }
 
-.price-timeline-line-graph-container .svg-container {}
+.price-timeline-line-graph-container .line-graph-svg {}
 
-.price-timeline-line-graph-container .svg-container .label-container {
+.price-timeline-line-graph-container .line-graph-svg .label-container {
     font-size: 11px;
     fill: #7E8A96;
     stroke: none;
 }
 
-.price-timeline-line-graph-container .svg-container .line-container {
+.price-timeline-line-graph-container .line-graph-svg .line-container {
     fill: none;
     stroke: #146FB0;
     stroke-width: 2px;
 }
 
-.price-timeline-line-graph-container .svg-container .xaxis-container {
+.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis {
     path {
         stroke: #E1E4E9;
         stroke-width: 1px;
@@ -39,7 +39,7 @@
     }
 }
 
-.price-timeline-line-graph-container .svg-container .yaxis-container {
+.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis {
     path {
         display: none;
     }

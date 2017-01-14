@@ -36,7 +36,7 @@ class Timeline extends Component {
           </div>
         </div>
         <div className="timeline-content">
-          <PriceTimelineLineGraph timeline={activeTimeline}/>
+          <PriceTimelineLineGraph timeline={activeTimeline} timespanType={timespanType}/>
         </div>
       </div>
     );
