@@ -17,7 +17,13 @@ class Timeline extends Component {
       props.getPriceTimelines(id, timespanType);
     }
   }
-
+  componentWillReceiveProps(nextProps) {
+    const {id, timespanType} = nextProps;
+    const oldTimeSpanType = this.props.timespanType;
+    if (timespanType && id && timespanType !== oldTimeSpanType) {
+      this.props.getPriceTimelines(id, timespanType);
+    }
+  }
   render() {
     const {timespanType, activeTimeline} = this.props;
     return (

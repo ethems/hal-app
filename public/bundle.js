@@ -67239,6 +67239,17 @@
 	  }
 
 	  _createClass(Timeline, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var id = nextProps.id,
+	          timespanType = nextProps.timespanType;
+
+	      var oldTimeSpanType = this.props.timespanType;
+	      if (timespanType && id && timespanType !== oldTimeSpanType) {
+	        this.props.getPriceTimelines(id, timespanType);
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _props = this.props,
@@ -83897,7 +83908,7 @@
 
 
 	// module
-	exports.push([module.id, ".price-timeline-line-graph-container {\n  width: 100%;\n  height: 100%; }\n\n.price-timeline-line-graph-container .svg-container .label-container {\n  font-size: 11px;\n  fill: #7E8A96;\n  stroke: none; }\n\n.price-timeline-line-graph-container .svg-container .line-container {\n  fill: none;\n  stroke: #146FB0;\n  stroke-width: 2px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container path {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container .xaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container .xaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container path {\n  display: none; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n", ""]);
+	exports.push([module.id, ".price-timeline-line-graph-container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.price-timeline-line-graph-container .svg-container .label-container {\n  font-size: 11px;\n  fill: #7E8A96;\n  stroke: none; }\n\n.price-timeline-line-graph-container .svg-container .line-container {\n  fill: none;\n  stroke: #146FB0;\n  stroke-width: 2px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container path {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container .xaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .xaxis-container .xaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container path {\n  display: none; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .svg-container .yaxis-container .yaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n", ""]);
 
 	// exports
 
@@ -83937,7 +83948,7 @@
 
 
 	// module
-	exports.push([module.id, ".timeline-container .timeline-header {\n  padding: 0 10px 0 40px;\n  border-bottom: 4px solid #F1F1F1;\n  display: flex;\n  flex-direction: row-reverse; }\n\n.timeline-container .timeline-header .timeline-timespan-selection {\n  width: 20%; }\n\n.timeline-container .timeline-content {\n  width: 100%;\n  height: 500px; }\n", ""]);
+	exports.push([module.id, ".timeline-container .timeline-header {\n  padding: 0 10px 0 40px;\n  border-bottom: 4px solid #F1F1F1;\n  display: flex;\n  flex-direction: row-reverse; }\n\n.timeline-container .timeline-header .timeline-timespan-selection {\n  width: 20%; }\n\n.timeline-container .timeline-content {\n  width: 100%;\n  height: 0;\n  padding-bottom: 25%;\n  position: relative; }\n", ""]);
 
 	// exports
 
