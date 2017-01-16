@@ -114,7 +114,6 @@ export default class LineChart {
       default:
         return prices;
     }
-    return prices;
   }
   sortData(prices) {
     return _.sortBy(prices, price => new Date(price.startDate));
@@ -122,7 +121,6 @@ export default class LineChart {
   renderGraph() {
     const {width, height, padding, el} = this;
     const prices = this.sortData(this.prepareData());
-    debugger;
     const xScale = d3.scaleLinear().domain([
       d3.min(prices, price => new Date(price.startDate)),
       d3.max(prices, price => new Date(price.startDate))

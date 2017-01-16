@@ -39986,6 +39986,8 @@
 	      return [].concat(_toConsumableArray(action.payload.data.products));
 	    case _productAction.ActionTypes.GET_PRODUCT_FULFILLED:
 	      return [action.payload.data.product];
+	    case _productAction.ActionTypes.DUPLICATE_PRODUCT_FULFILLED:
+	      return [].concat(_toConsumableArray(state), [action.payload.data.product]);
 	    case _productAction.ActionTypes.DELETE_PRODUCT_FULFILLED:
 	      {
 	        var _ret = function () {
@@ -40027,6 +40029,7 @@
 	exports.getProduct = getProduct;
 	exports.updateProduct = updateProduct;
 	exports.deleteProduct = deleteProduct;
+	exports.duplicateProduct = duplicateProduct;
 
 	var _axios = __webpack_require__(211);
 
@@ -40053,8 +40056,12 @@
 	  DELETE_PRODUCT: 'DELETE_PRODUCT',
 	  DELETE_PRODUCT_PENDING: 'DELETE_PRODUCT_PENDING',
 	  DELETE_PRODUCT_FULFILLED: 'DELETE_PRODUCT_FULFILLED',
-	  DELETE_PRODUCT_REJECTED: 'DELETE_PRODUCT_REJECTED'
+	  DELETE_PRODUCT_REJECTED: 'DELETE_PRODUCT_REJECTED',
 
+	  DUPLICATE_PRODUCT: 'DUPLICATE_PRODUCT',
+	  DUPLICATE_PRODUCT_PENDING: 'DUPLICATE_PRODUCT_PENDING',
+	  DUPLICATE_PRODUCT_FULFILLED: 'DUPLICATE_PRODUCT_FULFILLED',
+	  DUPLICATE_PRODUCT_REJECTED: 'DUPLICATE_PRODUCT_REJECTED'
 	};
 
 	function getProducts() {
@@ -40088,6 +40095,13 @@
 	  return {
 	    type: ActionTypes.DELETE_PRODUCT,
 	    payload: _axios2.default.delete('/api/products/' + productId)
+	  };
+	}
+
+	function duplicateProduct(productId) {
+	  return {
+	    type: ActionTypes.DUPLICATE_PRODUCT,
+	    payload: _axios2.default.post('/api/products/' + productId + '/duplicate')
 	  };
 	}
 
@@ -48953,6 +48967,17 @@
 	            'i',
 	            { className: 'material-icons' },
 	            'delete'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: function onClick() {
+	              return props.duplicateProduct(id);
+	            } },
+	          _react2.default.createElement(
+	            'i',
+	            { className: 'material-icons' },
+	            'content_copy'
 	          )
 	        )
 	      );
@@ -84269,7 +84294,6 @@
 	        default:
 	          return prices;
 	      }
-	      return prices;
 	    }
 	  }, {
 	    key: 'sortData',
@@ -84287,7 +84311,6 @@
 	          el = this.el;
 
 	      var prices = this.sortData(this.prepareData());
-	      debugger;
 	      var xScale = d3.scaleLinear().domain([d3.min(prices, function (price) {
 	        return new Date(price.startDate);
 	      }), d3.max(prices, function (price) {

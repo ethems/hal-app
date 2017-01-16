@@ -7,6 +7,11 @@ const products = (state = [], action) => {
       return [...action.payload.data.products];
     case ActionTypes.GET_PRODUCT_FULFILLED:
       return [action.payload.data.product];
+    case ActionTypes.DUPLICATE_PRODUCT_FULFILLED:
+      return [
+        ...state,
+        action.payload.data.product
+      ];
     case ActionTypes.DELETE_PRODUCT_FULFILLED:
       {
         const {id} = action.payload.data.product;

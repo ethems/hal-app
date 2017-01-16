@@ -34,8 +34,12 @@ const ProductsRow = (props) => {
     if (!isDeleteSectionOpen) {
       return (
         <div className="action-buttons-container">
+
           <button onClick={() => onOpenDeleteSection(id)}>
             <i className="material-icons">delete</i>
+          </button>
+          <button onClick={() => props.duplicateProduct(id)}>
+            <i className="material-icons">content_copy</i>
           </button>
         </div>
       );

@@ -19,8 +19,12 @@ export const ActionTypes = {
   DELETE_PRODUCT: 'DELETE_PRODUCT',
   DELETE_PRODUCT_PENDING: 'DELETE_PRODUCT_PENDING',
   DELETE_PRODUCT_FULFILLED: 'DELETE_PRODUCT_FULFILLED',
-  DELETE_PRODUCT_REJECTED: 'DELETE_PRODUCT_REJECTED'
+  DELETE_PRODUCT_REJECTED: 'DELETE_PRODUCT_REJECTED',
 
+  DUPLICATE_PRODUCT: 'DUPLICATE_PRODUCT',
+  DUPLICATE_PRODUCT_PENDING: 'DUPLICATE_PRODUCT_PENDING',
+  DUPLICATE_PRODUCT_FULFILLED: 'DUPLICATE_PRODUCT_FULFILLED',
+  DUPLICATE_PRODUCT_REJECTED: 'DUPLICATE_PRODUCT_REJECTED'
 };
 
 export function getProducts() {
@@ -50,5 +54,12 @@ export function deleteProduct(productId) {
   return {
     type: ActionTypes.DELETE_PRODUCT,
     payload: axios.delete(`/api/products/${productId}`)
+  };
+}
+
+export function duplicateProduct(productId){
+  return {
+    type: ActionTypes.DUPLICATE_PRODUCT,
+    payload: axios.post(`/api/products/${productId}/duplicate`)
   };
 }
