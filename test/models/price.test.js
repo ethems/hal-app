@@ -165,6 +165,65 @@ describe('PRICE  MODEL', () => {
         done();
       });
     });
+    it('should get price with active and close price when they are entered all price current day', (done) => {
+      co(function * () {
+        const p = {
+          name: 'Price find test2'
+        };
+        const product = yield Product.create(p);
+        should.exist(product);
+        yield Product.updatePrice(product.id, {price: 10.34});
+        yield Product.updatePrice(product.id, {price: 10.35});
+        yield Product.updatePrice(product.id, {price: 10.36});
+        const foundProduct = yield Product.getWithActivePriceAndClosePriceOfPreviousDay(product.id, moment().startOf('day'));
+        foundProduct.priceHistory.length.should.equal(1);
+        done();
+      });
+    });
+    it('should get price with active and close price when when the are entered different day', (done) => {
+      co(function * () {
+        const p = {
+          name: 'Price find test3'
+        };
+        const product = yield Product.create(p);
+        should.exist(product);
+        yield Product.updatePrice(product.id, {
+          price: 99.99,
+          startDate: moment().startOf('month').add(1, 'hours')
+        });
+        yield Product.updatePrice(product.id, {price: 10.35});
+        yield Product.updatePrice(product.id, {price: 10.36});
+        const foundProduct = yield Product.getWithActivePriceAndClosePriceOfPreviousDay(product.id, moment().startOf('day'));
+        foundProduct.priceHistory.length.should.equal(2);
+        foundProduct.priceHistory[0].price.should.equal(10.36);
+        foundProduct.priceHistory[1].price.should.equal(99.99);
+        done();
+      });
+    });
+    it('should get price with active and close price when when the are entered different day 2', (done) => {
+      co(function * () {
+        const p = {
+          name: 'Price find test4'
+        };
+        const product = yield Product.create(p);
+        should.exist(product);
+        yield Product.updatePrice(product.id, {
+          price: 99.99,
+          startDate: moment().startOf('month').add(1, 'hours')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 100,
+          startDate: moment().startOf('month').add(2, 'hours')
+        });
+        yield Product.updatePrice(product.id, {price: 10.35});
+        yield Product.updatePrice(product.id, {price: 10.36});
+        const foundProduct = yield Product.getWithActivePriceAndClosePriceOfPreviousDay(product.id, moment().startOf('day'));
+        foundProduct.priceHistory.length.should.equal(2);
+        foundProduct.priceHistory[0].price.should.equal(10.36);
+        foundProduct.priceHistory[1].price.should.equal(100);
+        done();
+      });
+    });
   });
   describe('#Create', () => {
     it('should create a new Price', (done) => {

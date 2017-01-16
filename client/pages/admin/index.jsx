@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles/admin.scss';
+import './styles/index.scss';
 
 
 const Admin = ({children}) => (
