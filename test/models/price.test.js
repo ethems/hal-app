@@ -175,8 +175,8 @@ describe('PRICE  MODEL', () => {
         yield Product.updatePrice(product.id, {price: 10.34});
         yield Product.updatePrice(product.id, {price: 10.35});
         yield Product.updatePrice(product.id, {price: 10.36});
-        const foundProduct = yield Product.getWithActivePriceAndClosePriceOfPreviousDay(product.id, moment().startOf('day'));
-        foundProduct.priceHistory.length.should.equal(1);
+        const foundPrice = yield Price.getPreviousDayClosePrice(product.id, moment().startOf('day'));
+        foundPrice.length.should.equal(0);
         done();
       });
     });
@@ -193,10 +193,8 @@ describe('PRICE  MODEL', () => {
         });
         yield Product.updatePrice(product.id, {price: 10.35});
         yield Product.updatePrice(product.id, {price: 10.36});
-        const foundProduct = yield Product.getWithActivePriceAndClosePriceOfPreviousDay(product.id, moment().startOf('day'));
-        foundProduct.priceHistory.length.should.equal(2);
-        foundProduct.priceHistory[0].price.should.equal(10.36);
-        foundProduct.priceHistory[1].price.should.equal(99.99);
+        const foundPrice = yield Price.getPreviousDayClosePrice(product.id, moment().startOf('day'));
+        foundPrice.length.should.equal(1);
         done();
       });
     });
@@ -217,10 +215,9 @@ describe('PRICE  MODEL', () => {
         });
         yield Product.updatePrice(product.id, {price: 10.35});
         yield Product.updatePrice(product.id, {price: 10.36});
-        const foundProduct = yield Product.getWithActivePriceAndClosePriceOfPreviousDay(product.id, moment().startOf('day'));
-        foundProduct.priceHistory.length.should.equal(2);
-        foundProduct.priceHistory[0].price.should.equal(10.36);
-        foundProduct.priceHistory[1].price.should.equal(100);
+        const foundPrice = yield Price.getPreviousDayClosePrice(product.id, moment().startOf('day'));
+        foundPrice.length.should.equal(1);
+        foundPrice[0].price.should.equal(100);
         done();
       });
     });
