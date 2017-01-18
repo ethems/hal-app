@@ -7,7 +7,6 @@ import './styles/buttons.scss';
 import './styles/icons.scss';
 import './styles/main.scss';
 import './styles/dropdown.scss';
-import './styles/simple-grid.scss';
 
 const App = ({children}) => (
   <div className="app-container">

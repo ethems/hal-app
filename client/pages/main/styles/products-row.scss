@@ -1,0 +1,24 @@
+@import "~susy/sass/susy";
+
+.products-row-container {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    &:last-child {
+        border-bottom: 0;
+    }
+    @media (min-width:320px) {
+        height: 70px;
+    }
+    @media (min-width:641px) {
+        height: 90px;
+    }
+}
+
+.products-row-container .products-row-price-section {
+    width: 30%;
+}
+
+.products-row-container .products-row-content-section {
+    width: 70%;
+}

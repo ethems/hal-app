@@ -1,0 +1,23 @@
+@import "~susy/sass/susy";
+$susy: ( columns: 12, container: 1120px, global-box-sizing: border-box );
+/* Makes border-box properties */
+@include border-box-sizing;
+
+.index-container {
+    @include container;
+}
+
+.index-container .graph-wrapper {
+    @media (max-width: 961px) {
+         @include span(12);
+         display: none;
+    }
+    @include span(6 last);
+}
+
+.index-container .product-table-wrapper {
+    @media (max-width: 961px) {
+         @include span(12);
+    }
+    @include span(6 first);
+}

@@ -177,6 +177,9 @@ describe('Product Controller', () => {
     });
   });
   describe('GET', () => {
+    it('should response 200 to /api/products?withrate=true',(done)=>{
+      request(server).get('/api/products?withrate=true').expect(200, done);
+    });
     it('should respond 200 to  /api/products', (done) => {
       request(server).get('/api/products').expect(200, done);
     });

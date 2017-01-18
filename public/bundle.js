@@ -40065,7 +40065,11 @@
 	};
 
 	function getProducts() {
-	  return { type: ActionTypes.GET_PRODUCTS, payload: _axios2.default.get('/api/products') };
+	  var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+	  var withRate = props.withRate || false;
+	  var justActive = props.justActive || false;
+	  return { type: ActionTypes.GET_PRODUCTS, payload: _axios2.default.get('/api/products?withrate=' + withRate + '&justactive=' + justActive) };
 	}
 
 	function getProduct(productId) {
@@ -41748,6 +41752,10 @@
 
 	var _product2 = _interopRequireDefault(_product);
 
+	var _main = __webpack_require__(495);
+
+	var _main2 = _interopRequireDefault(_main);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Root = function Root(_ref) {
@@ -41761,6 +41769,7 @@
 	      _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/', component: _app2.default },
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _main2.default }),
 	        _react2.default.createElement(
 	          _reactRouter.Route,
 	          { path: 'admin', component: _admin2.default },
@@ -47784,8 +47793,6 @@
 
 	__webpack_require__(329);
 
-	__webpack_require__(495);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var App = function App(_ref) {
@@ -48425,7 +48432,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(497);
+	__webpack_require__(332);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48441,8 +48448,46 @@
 	exports.default = Admin;
 
 /***/ },
-/* 332 */,
-/* 333 */,
+/* 332 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(333);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 333 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
 /* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -64068,7 +64113,7 @@
 
 	var _timeline2 = _interopRequireDefault(_timeline);
 
-	var _productName = __webpack_require__(488);
+	var _productName = __webpack_require__(489);
 
 	var _productName2 = _interopRequireDefault(_productName);
 
@@ -64076,7 +64121,7 @@
 
 	var _timespanTypes2 = _interopRequireDefault(_timespanTypes);
 
-	__webpack_require__(492);
+	__webpack_require__(493);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -67198,7 +67243,7 @@
 
 	__webpack_require__(476);
 
-	__webpack_require__(486);
+	__webpack_require__(487);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -67310,11 +67355,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _d3LineChart = __webpack_require__(494);
+	var _d3LineChart = __webpack_require__(483);
 
 	var _d3LineChart2 = _interopRequireDefault(_d3LineChart);
 
-	__webpack_require__(484);
+	__webpack_require__(485);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -67385,6 +67430,236 @@
 
 /***/ },
 /* 483 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _d = __webpack_require__(484);
+
+	var d3 = _interopRequireWildcard(_d);
+
+	var _lodash = __webpack_require__(208);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _moment = __webpack_require__(339);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var LineChart = function () {
+	  function LineChart(props) {
+	    _classCallCheck(this, LineChart);
+
+	    var el = props.el,
+	        width = props.width,
+	        height = props.height,
+	        prices = props.prices,
+	        timespanType = props.timespanType,
+	        padding = props.padding;
+
+	    if (!el) {
+	      throw new Error('Root element could not be found !!!');
+	    }
+	    this.el = el;
+	    this.width = width || 100;
+	    this.height = height || 100;
+	    this.prices = prices || [];
+	    this.timespanType = timespanType || 'hourly';
+	    this.padding = padding || 10;
+	    this.createGraph();
+	    prices && this.updateGraph();
+	  }
+
+	  _createClass(LineChart, [{
+	    key: 'updateProperties',
+	    value: function updateProperties(props) {
+	      var timespanType = props.timespanType,
+	          prices = props.prices;
+
+	      prices && (this.prices = prices);
+	      timespanType && (this.timespanType = timespanType);
+	      this.cleanGraph();
+	      this.renderGraph();
+	    }
+	  }, {
+	    key: 'cleanGraph',
+	    value: function cleanGraph() {
+	      d3.select(this.el).selectAll('.line-graph-svg').selectAll("*").remove();
+	    }
+	  }, {
+	    key: 'createGraph',
+	    value: function createGraph() {
+	      d3.select(this.el).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', '0 0 ' + this.width + ' ' + this.height).attr('class', 'line-graph-svg');
+	    }
+	  }, {
+	    key: '_renderXAxis',
+	    value: function _renderXAxis(xScale) {
+	      var height = this.height,
+	          padding = this.padding,
+	          el = this.el,
+	          timespanType = this.timespanType;
+
+	      var xAxis = d3.axisBottom(xScale);
+	      switch (timespanType) {
+	        case 'daily':
+	          xAxis.tickFormat(d3.timeFormat('%H:%M'));
+	          break;
+	        case 'weekly':
+	          xAxis.tickFormat(d3.timeFormat('%a %d'));
+	          break;
+	        case 'monthly':
+	          xAxis.tickFormat(d3.timeFormat('%b %d'));
+	          break;
+	        case 'yearly':
+	          xAxis.tickFormat(d3.timeFormat('%B'));
+	          break;
+	        default:
+	          xAxis.tickFormat(d3.timeFormat('%H:%M'));
+	      }
+
+	      var gx = d3.select(el).selectAll('.line-graph-svg').append('g').call(xAxis).attr('class', 'line-graph-xaxis').attr('transform', 'translate(0,' + (height - padding) + ')');
+	      gx.selectAll('line').attr('class', 'xaxis-line');
+	      gx.selectAll('text').attr('class', 'xaxis-text');
+	    }
+	  }, {
+	    key: '_renderYAxis',
+	    value: function _renderYAxis(yScale) {
+	      var width = this.width,
+	          padding = this.padding,
+	          el = this.el;
+
+	      var yAxis = d3.axisRight(yScale);
+	      yAxis.tickSize(width - padding);
+	      yAxis.ticks(4);
+	      var gy = d3.select(el).selectAll('.line-graph-svg').append('g').call(yAxis).attr('class', 'line-graph-yaxis').attr('transform', 'translate(' + padding + ',0)');
+	      gy.selectAll('line').attr('class', 'yaxis-line');
+	      gy.selectAll('text').attr('class', 'yaxis-text').attr('x', -padding);
+	    }
+	  }, {
+	    key: 'prepareData',
+	    value: function prepareData() {
+	      var prices = this.prices,
+	          timespanType = this.timespanType;
+
+	      switch (timespanType) {
+	        case 'daily':
+	          return prices;
+	        case 'weekly':
+	          var oldPricesByDay = _lodash2.default.chain(prices.filter(function (price) {
+	            return price.active === false;
+	          })).groupBy(function (price) {
+	            return (0, _moment2.default)(price.startDate).startOf('day').format();
+	          }).map(function (group, day) {
+	            var startDate = day;
+	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
+	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
+	            });
+	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
+	          }).value();
+	          return [].concat(_toConsumableArray(oldPricesByDay), _toConsumableArray(prices.filter(function (price) {
+	            return price.active === true;
+	          })));
+	        case 'monthly':
+	          var oldPricesByWeek = _lodash2.default.chain(prices.filter(function (price) {
+	            return price.active === false;
+	          })).groupBy(function (price) {
+	            return (0, _moment2.default)(price.startDate).startOf('week').format();
+	          }).map(function (group, day) {
+	            var startDate = day;
+	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
+	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
+	            });
+	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
+	          }).value();
+	          return [].concat(_toConsumableArray(oldPricesByWeek), _toConsumableArray(prices.filter(function (price) {
+	            return price.active === true;
+	          })));
+	        case 'yearly':
+	          var oldPricesByMonth = _lodash2.default.chain(prices.filter(function (price) {
+	            return price.active === false;
+	          })).groupBy(function (price) {
+	            return (0, _moment2.default)(price.startDate).startOf('month').format();
+	          }).map(function (group, day) {
+	            var startDate = day;
+	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
+	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
+	            });
+	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
+	          }).value();
+	          return [].concat(_toConsumableArray(oldPricesByMonth), _toConsumableArray(prices.filter(function (price) {
+	            return price.active === true;
+	          })));
+	        default:
+	          return prices;
+	      }
+	    }
+	  }, {
+	    key: 'sortData',
+	    value: function sortData(prices) {
+	      return _lodash2.default.sortBy(prices, function (price) {
+	        return new Date(price.startDate);
+	      });
+	    }
+	  }, {
+	    key: 'renderGraph',
+	    value: function renderGraph() {
+	      var width = this.width,
+	          height = this.height,
+	          padding = this.padding,
+	          el = this.el;
+
+	      var prices = this.sortData(this.prepareData());
+	      var xScale = d3.scaleLinear().domain([d3.min(prices, function (price) {
+	        return new Date(price.startDate);
+	      }), d3.max(prices, function (price) {
+	        return new Date(price.startDate);
+	      })]).range([padding, width - padding]);
+	      var yScale = d3.scaleLinear().domain([Math.floor(d3.min(prices, function (price) {
+	        return price.price;
+	      })), Math.ceil(d3.max(prices, function (price) {
+	        return price.price;
+	      }))]).range([height - padding, padding]);
+	      this._renderYAxis(yScale);
+	      this._renderXAxis(xScale);
+	      // LINE
+	      var lineFun = d3.line().x(function (d) {
+	        return xScale(new Date(d.startDate));
+	      }).y(function (d) {
+	        return yScale(d.price);
+	      });
+	      d3.select(el).selectAll('.line-graph-svg').append('path').attr('d', lineFun(prices)).attr('class', 'line-container');
+	      // LABELS
+	      d3.select(el).selectAll('.line-graph-svg').selectAll('.label-container').data(prices).enter().append('text').attr('class', 'label-container').text(function (d) {
+	        return d.price;
+	      }).attr('x', function (d) {
+	        return xScale(new Date(d.startDate));
+	      }).attr('y', function (d) {
+	        return yScale(d.price);
+	      }).attr('transform', 'translate(' + -10 + ',' + -10 + ')');
+	    }
+	  }]);
+
+	  return LineChart;
+	}();
+
+	exports.default = LineChart;
+
+/***/ },
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// https://d3js.org Version 4.4.1. Copyright 2017 Mike Bostock.
@@ -83783,13 +84058,13 @@
 
 
 /***/ },
-/* 484 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(485);
+	var content = __webpack_require__(486);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -83809,7 +84084,7 @@
 	}
 
 /***/ },
-/* 485 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -83823,13 +84098,13 @@
 
 
 /***/ },
-/* 486 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(487);
+	var content = __webpack_require__(488);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -83849,7 +84124,7 @@
 	}
 
 /***/ },
-/* 487 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -83863,7 +84138,7 @@
 
 
 /***/ },
-/* 488 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -83878,7 +84153,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactClickOutside = __webpack_require__(489);
+	var _reactClickOutside = __webpack_require__(490);
 
 	var _reactClickOutside2 = _interopRequireDefault(_reactClickOutside);
 
@@ -83886,7 +84161,7 @@
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	__webpack_require__(490);
+	__webpack_require__(491);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -83962,7 +84237,7 @@
 	exports.default = (0, _reactClickOutside2.default)(ProductName);
 
 /***/ },
-/* 489 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84001,13 +84276,13 @@
 	};
 
 /***/ },
-/* 490 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(491);
+	var content = __webpack_require__(492);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84027,7 +84302,7 @@
 	}
 
 /***/ },
-/* 491 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84041,13 +84316,13 @@
 
 
 /***/ },
-/* 492 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(493);
+	var content = __webpack_require__(494);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84067,7 +84342,7 @@
 	}
 
 /***/ },
-/* 493 */
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84081,7 +84356,7 @@
 
 
 /***/ },
-/* 494 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84090,234 +84365,182 @@
 	  value: true
 	});
 
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _productsTable = __webpack_require__(496);
+
+	var _productsTable2 = _interopRequireDefault(_productsTable);
+
+	__webpack_require__(502);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Main = function Main(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'index-container' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'product-table-wrapper' },
+	      _react2.default.createElement(_productsTable2.default, null)
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'graph-wrapper' },
+	      'Graph'
+	    )
+	  );
+	};
+
+	exports.default = Main;
+
+/***/ },
+/* 496 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _d = __webpack_require__(483);
+	var _react = __webpack_require__(5);
 
-	var d3 = _interopRequireWildcard(_d);
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(240);
 
 	var _lodash = __webpack_require__(208);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _moment = __webpack_require__(339);
+	var _productAction = __webpack_require__(210);
 
-	var _moment2 = _interopRequireDefault(_moment);
+	var productActions = _interopRequireWildcard(_productAction);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _productsRow = __webpack_require__(497);
+
+	var _productsRow2 = _interopRequireDefault(_productsRow);
+
+	__webpack_require__(500);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var LineChart = function () {
-	  function LineChart(props) {
-	    _classCallCheck(this, LineChart);
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	    var el = props.el,
-	        width = props.width,
-	        height = props.height,
-	        prices = props.prices,
-	        timespanType = props.timespanType,
-	        padding = props.padding;
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	    if (!el) {
-	      throw new Error('Root element could not be found !!!');
-	    }
-	    this.el = el;
-	    this.width = width || 100;
-	    this.height = height || 100;
-	    this.prices = prices || [];
-	    this.timespanType = timespanType || 'hourly';
-	    this.padding = padding || 10;
-	    this.createGraph();
-	    prices && this.updateGraph();
+	var MainProductsTable = function (_Component) {
+	  _inherits(MainProductsTable, _Component);
+
+	  function MainProductsTable(props) {
+	    _classCallCheck(this, MainProductsTable);
+
+	    return _possibleConstructorReturn(this, (MainProductsTable.__proto__ || Object.getPrototypeOf(MainProductsTable)).call(this, props));
 	  }
 
-	  _createClass(LineChart, [{
-	    key: 'updateProperties',
-	    value: function updateProperties(props) {
-	      var timespanType = props.timespanType,
-	          prices = props.prices;
-
-	      prices && (this.prices = prices);
-	      timespanType && (this.timespanType = timespanType);
-	      this.cleanGraph();
-	      this.renderGraph();
+	  _createClass(MainProductsTable, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.props.getProducts({ justActive: true, withRate: true });
 	    }
 	  }, {
-	    key: 'cleanGraph',
-	    value: function cleanGraph() {
-	      d3.select(this.el).selectAll('.line-graph-svg').selectAll("*").remove();
-	    }
-	  }, {
-	    key: 'createGraph',
-	    value: function createGraph() {
-	      d3.select(this.el).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', '0 0 ' + this.width + ' ' + this.height).attr('class', 'line-graph-svg');
-	    }
-	  }, {
-	    key: '_renderXAxis',
-	    value: function _renderXAxis(xScale) {
-	      var height = this.height,
-	          padding = this.padding,
-	          el = this.el,
-	          timespanType = this.timespanType;
-
-	      var xAxis = d3.axisBottom(xScale);
-	      switch (timespanType) {
-	        case 'daily':
-	          xAxis.tickFormat(d3.timeFormat('%H:%M'));
-	          break;
-	        case 'weekly':
-	          xAxis.tickFormat(d3.timeFormat('%a %d'));
-	          break;
-	        case 'monthly':
-	          xAxis.tickFormat(d3.timeFormat('%b %d'));
-	          break;
-	        case 'yearly':
-	          xAxis.tickFormat(d3.timeFormat('%B'));
-	          break;
-	        default:
-	          xAxis.tickFormat(d3.timeFormat('%H:%M'));
-	      }
-
-	      var gx = d3.select(el).selectAll('.line-graph-svg').append('g').call(xAxis).attr('class', 'line-graph-xaxis').attr('transform', 'translate(0,' + (height - padding) + ')');
-	      gx.selectAll('line').attr('class', 'xaxis-line');
-	      gx.selectAll('text').attr('class', 'xaxis-text');
-	    }
-	  }, {
-	    key: '_renderYAxis',
-	    value: function _renderYAxis(yScale) {
-	      var width = this.width,
-	          padding = this.padding,
-	          el = this.el;
-
-	      var yAxis = d3.axisRight(yScale);
-	      yAxis.tickSize(width - padding);
-	      yAxis.ticks(4);
-	      var gy = d3.select(el).selectAll('.line-graph-svg').append('g').call(yAxis).attr('class', 'line-graph-yaxis').attr('transform', 'translate(' + padding + ',0)');
-	      gy.selectAll('line').attr('class', 'yaxis-line');
-	      gy.selectAll('text').attr('class', 'yaxis-text').attr('x', -padding);
-	    }
-	  }, {
-	    key: 'prepareData',
-	    value: function prepareData() {
-	      var prices = this.prices,
-	          timespanType = this.timespanType;
-
-	      switch (timespanType) {
-	        case 'daily':
-	          return prices;
-	        case 'weekly':
-	          var oldPricesByDay = _lodash2.default.chain(prices.filter(function (price) {
-	            return price.active === false;
-	          })).groupBy(function (price) {
-	            return (0, _moment2.default)(price.startDate).startOf('day').format();
-	          }).map(function (group, day) {
-	            var startDate = day;
-	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
-	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
-	            });
-	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
-	          }).value();
-	          return [].concat(_toConsumableArray(oldPricesByDay), _toConsumableArray(prices.filter(function (price) {
-	            return price.active === true;
-	          })));
-	        case 'monthly':
-	          var oldPricesByWeek = _lodash2.default.chain(prices.filter(function (price) {
-	            return price.active === false;
-	          })).groupBy(function (price) {
-	            return (0, _moment2.default)(price.startDate).startOf('week').format();
-	          }).map(function (group, day) {
-	            var startDate = day;
-	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
-	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
-	            });
-	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
-	          }).value();
-	          return [].concat(_toConsumableArray(oldPricesByWeek), _toConsumableArray(prices.filter(function (price) {
-	            return price.active === true;
-	          })));
-	        case 'yearly':
-	          var oldPricesByMonth = _lodash2.default.chain(prices.filter(function (price) {
-	            return price.active === false;
-	          })).groupBy(function (price) {
-	            return (0, _moment2.default)(price.startDate).startOf('month').format();
-	          }).map(function (group, day) {
-	            var startDate = day;
-	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
-	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
-	            });
-	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
-	          }).value();
-	          return [].concat(_toConsumableArray(oldPricesByMonth), _toConsumableArray(prices.filter(function (price) {
-	            return price.active === true;
-	          })));
-	        default:
-	          return prices;
-	      }
-	    }
-	  }, {
-	    key: 'sortData',
-	    value: function sortData(prices) {
-	      return _lodash2.default.sortBy(prices, function (price) {
-	        return new Date(price.startDate);
+	    key: '_sort',
+	    value: function _sort(products) {
+	      return _lodash2.default.sortBy(products, function (product) {
+	        return product.name;
 	      });
 	    }
 	  }, {
-	    key: 'renderGraph',
-	    value: function renderGraph() {
-	      var width = this.width,
-	          height = this.height,
-	          padding = this.padding,
-	          el = this.el;
+	    key: '_renderRows',
+	    value: function _renderRows() {
+	      var products = this.props.products;
 
-	      var prices = this.sortData(this.prepareData());
-	      var xScale = d3.scaleLinear().domain([d3.min(prices, function (price) {
-	        return new Date(price.startDate);
-	      }), d3.max(prices, function (price) {
-	        return new Date(price.startDate);
-	      })]).range([padding, width - padding]);
-	      var yScale = d3.scaleLinear().domain([Math.floor(d3.min(prices, function (price) {
-	        return price.price;
-	      })), Math.ceil(d3.max(prices, function (price) {
-	        return price.price;
-	      }))]).range([height - padding, padding]);
-	      this._renderYAxis(yScale);
-	      this._renderXAxis(xScale);
-	      // LINE
-	      var lineFun = d3.line().x(function (d) {
-	        return xScale(new Date(d.startDate));
-	      }).y(function (d) {
-	        return yScale(d.price);
+	      return this._sort(products).map(function (product) {
+	        return _react2.default.createElement(_productsRow2.default, _extends({ key: product.id }, product));
 	      });
-	      d3.select(el).selectAll('.line-graph-svg').append('path').attr('d', lineFun(prices)).attr('class', 'line-container');
-	      // LABELS
-	      d3.select(el).selectAll('.line-graph-svg').selectAll('.label-container').data(prices).enter().append('text').attr('class', 'label-container').text(function (d) {
-	        return d.price;
-	      }).attr('x', function (d) {
-	        return xScale(new Date(d.startDate));
-	      }).attr('y', function (d) {
-	        return yScale(d.price);
-	      }).attr('transform', 'translate(' + -10 + ',' + -10 + ')');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'products-table-container' },
+	        this._renderRows()
+	      );
 	    }
 	  }]);
 
-	  return LineChart;
-	}();
+	  return MainProductsTable;
+	}(_react.Component);
 
-	exports.default = LineChart;
+	var mapStateToProps = function mapStateToProps(state) {
+	  return { products: state.products };
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, productActions)(MainProductsTable);
 
 /***/ },
-/* 495 */
+/* 497 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(240);
+
+	__webpack_require__(498);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MainProductsRow = function MainProductsRow(props) {
+	  var id = props.id,
+	      name = props.name,
+	      priceHistory = props.priceHistory;
+
+	  var price = priceHistory[0].price;
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'products-row-container' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'products-row-price-section' },
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        price
+	      ),
+	      _react2.default.createElement('div', null)
+	    ),
+	    _react2.default.createElement('div', { className: 'products-row-content-section' })
+	  );
+	};
+	exports.default = MainProductsRow;
+
+/***/ },
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(496);
+	var content = __webpack_require__(499);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84326,8 +84549,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./simple-grid.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./simple-grid.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./products-row.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./products-row.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -84337,7 +84560,7 @@
 	}
 
 /***/ },
-/* 496 */
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84345,19 +84568,59 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  height: 100%;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  left: 0;\n  top: 0;\n  font-size: 100%; }\n\n* {\n  line-height: 1.5; }\n\nh1 {\n  font-size: 2.5rem; }\n\nh2 {\n  font-size: 2rem; }\n\nh3 {\n  font-size: 1.375rem; }\n\nh4 {\n  font-size: 1.125rem; }\n\nh5 {\n  font-size: 1rem; }\n\nh6 {\n  font-size: 0.875rem; }\n\np {\n  font-size: 1.125rem;\n  font-weight: 200;\n  line-height: 1.8; }\n\n.font-light {\n  font-weight: 300; }\n\n.font-regular {\n  font-weight: 400; }\n\n.font-heavy {\n  font-weight: 700; }\n\n.left {\n  text-align: left; }\n\n.right {\n  text-align: right; }\n\n.center {\n  text-align: center;\n  margin-left: auto;\n  margin-right: auto; }\n\n.justify {\n  text-align: justify; }\n\n.hidden-sm {\n  display: none; }\n\n.container {\n  width: 90%;\n  margin-left: auto;\n  margin-right: auto; }\n  @media only screen and (min-width: 33.75em) {\n    .container {\n      width: 80%; } }\n  @media only screen and (min-width: 60em) {\n    .container {\n      width: 75%;\n      max-width: 60rem; } }\n\n.row {\n  position: relative;\n  width: 100%; }\n\n.row [class^=\"col\"] {\n  float: left;\n  margin: 0.5rem 2%;\n  min-height: 0.125rem; }\n\n.row::after {\n  content: \"\";\n  display: table;\n  clear: both; }\n\n.col-1,\n.col-2,\n.col-3,\n.col-4,\n.col-5,\n.col-6,\n.col-7,\n.col-8,\n.col-9,\n.col-10,\n.col-11,\n.col-12 {\n  width: 96%; }\n\n.col-1-sm {\n  width: 4.33333%; }\n\n.col-2-sm {\n  width: 12.66667%; }\n\n.col-3-sm {\n  width: 21%; }\n\n.col-4-sm {\n  width: 29.33333%; }\n\n.col-5-sm {\n  width: 37.66667%; }\n\n.col-6-sm {\n  width: 46%; }\n\n.col-7-sm {\n  width: 54.33333%; }\n\n.col-8-sm {\n  width: 62.66667%; }\n\n.col-9-sm {\n  width: 71%; }\n\n.col-10-sm {\n  width: 79.33333%; }\n\n.col-11-sm {\n  width: 87.66667%; }\n\n.col-12-sm {\n  width: 96%; }\n\n@media only screen and (min-width: 45em) {\n  .col-1 {\n    width: 4.33333%; }\n  .col-2 {\n    width: 12.66667%; }\n  .col-3 {\n    width: 21%; }\n  .col-4 {\n    width: 29.33333%; }\n  .col-5 {\n    width: 37.66667%; }\n  .col-6 {\n    width: 46%; }\n  .col-7 {\n    width: 54.33333%; }\n  .col-8 {\n    width: 62.66667%; }\n  .col-9 {\n    width: 71%; }\n  .col-10 {\n    width: 79.33333%; }\n  .col-11 {\n    width: 87.66667%; }\n  .col-12 {\n    width: 96%; }\n  .hidden-sm {\n    display: block; } }\n", ""]);
+	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n  @media (min-width: 320px) {\n    .products-row-container {\n      height: 70px; } }\n  @media (min-width: 641px) {\n    .products-row-container {\n      height: 90px; } }\n\n.products-row-container .products-row-price-section {\n  width: 30%; }\n\n.products-row-container .products-row-content-section {\n  width: 70%; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 497 */
+/* 500 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(498);
+	var content = __webpack_require__(501);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./products-table.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./products-table.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 501 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".products-table-container {\n  background-color: #fff; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 502 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(503);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84377,7 +84640,7 @@
 	}
 
 /***/ },
-/* 498 */
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84385,7 +84648,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .index-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n", ""]);
 
 	// exports
 

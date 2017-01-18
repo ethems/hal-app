@@ -27,8 +27,10 @@ export const ActionTypes = {
   DUPLICATE_PRODUCT_REJECTED: 'DUPLICATE_PRODUCT_REJECTED'
 };
 
-export function getProducts() {
-  return {type: ActionTypes.GET_PRODUCTS, payload: axios.get('/api/products')};
+export function getProducts(props = {}) {
+  const withRate = props.withRate || false;
+  const justActive = props.justActive || false;
+  return {type: ActionTypes.GET_PRODUCTS, payload: axios.get(`/api/products?withrate=${withRate}&justactive=${justActive}`)};
 }
 
 export function getProduct(productId) {
@@ -57,7 +59,7 @@ export function deleteProduct(productId) {
   };
 }
 
-export function duplicateProduct(productId){
+export function duplicateProduct(productId) {
   return {
     type: ActionTypes.DUPLICATE_PRODUCT,
     payload: axios.post(`/api/products/${productId}/duplicate`)
