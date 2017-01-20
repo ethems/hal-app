@@ -3,6 +3,7 @@
 .products-row-container {
     display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 5px;
 
     &:last-child {
         border-bottom: 0;
@@ -17,8 +18,89 @@
 
 .products-row-container .products-row-price-section {
     width: 30%;
+    display: flex;
+    flex-direction: column;
 }
 
-.products-row-container .products-row-content-section {
+.products-row-container .products-row-price-section .price-unit__container {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+
+    .price__content {
+        font-weight: 300;
+        font-size: 3vmax;
+        display: flex;
+        align-items: center;
+        @media (min-width: 961px) {
+            font-size: 2vmax;
+        }
+
+        sup {
+            font-size: 2vmax;
+            @media (min-width: 961px) {
+                font-size: 1.5vmax;
+            }
+        }
+    }
+
+    .unit__content {
+        font-size: 2vmax;
+        display: flex;
+        align-items: center;
+        @media (min-width: 961px) {
+            font-size: 1vmax;
+        }
+    }
+}
+
+.products-row-container .products-row-price-section .rate__container {
+    font-size: 2vmax;
+    @media (min-width: 961px) {
+        font-size: 1vmax;
+    }
+}
+
+.products-row-container .products-row-price-section .rate__container .rate__content {
+    display: flex;
+    align-items: center;
+
+    &.up {
+        color: #64DD17;
+    }
+
+    &.down {
+        color: #FF1744;
+    }
+}
+
+.products-row-container .products-row__content-section {
     width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.products-row-container .products-row__content-section .name-container {
+    height: 40%;
+
+    .name__content {
+        font-size: 2vmax;
+        @media (min-width: 961px) {
+            font-size: 1.5vmax;
+        }
+        color: #2196F3;
+    }
+}
+
+.products-row-container .products-row__content-section .attribute-container {
+  height: 60%;
+  .update__content{
+    color:#757575;
+    font-size: 1.5vmax;
+    display: flex;
+    align-items: center;
+    @media (min-width: 961px) {
+        font-size: 1vmax;
+    }
+  }
 }
