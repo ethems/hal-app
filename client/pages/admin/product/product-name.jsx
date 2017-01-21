@@ -12,9 +12,12 @@ class ProductName extends Component {
     };
   }
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      isOpened: !!!nextProps.id
-    });
+    const {id} = this.props;
+    if (nextProps.id !== id) {
+      this.setState({
+        isOpened: !!!nextProps.id
+      });
+    }
   }
   onClickNameLabel = () => {
     this.setState({isOpened: true});

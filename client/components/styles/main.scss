@@ -4,6 +4,16 @@ html {
     font-weight: 400;
 }
 
-.hide{
-  display: none;
+.hide {
+    display: none;
+}
+
+.valign-center {
+    display: inline-flex;
+    align-items: center;
+}
+
+.full-width-height {
+    height: 100%;
+    width: 100%;
 }

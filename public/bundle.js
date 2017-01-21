@@ -41740,19 +41740,19 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _admin = __webpack_require__(331);
+	var _admin = __webpack_require__(330);
 
 	var _admin2 = _interopRequireDefault(_admin);
 
-	var _products = __webpack_require__(334);
+	var _products = __webpack_require__(333);
 
 	var _products2 = _interopRequireDefault(_products);
 
-	var _product = __webpack_require__(455);
+	var _product = __webpack_require__(454);
 
 	var _product2 = _interopRequireDefault(_product);
 
-	var _main = __webpack_require__(495);
+	var _main = __webpack_require__(494);
 
 	var _main2 = _interopRequireDefault(_main);
 
@@ -47808,17 +47808,17 @@
 
 	__webpack_require__(311);
 
-	__webpack_require__(319);
+	__webpack_require__(503);
 
-	__webpack_require__(321);
+	__webpack_require__(320);
 
-	__webpack_require__(323);
+	__webpack_require__(322);
 
-	__webpack_require__(325);
+	__webpack_require__(324);
 
-	__webpack_require__(327);
+	__webpack_require__(326);
 
-	__webpack_require__(329);
+	__webpack_require__(328);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48206,53 +48206,14 @@
 
 
 /***/ },
-/* 319 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(320);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(318)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../css-loader/index.js!./pure-min.css", function() {
-				var newContent = require("!!./../../css-loader/index.js!./pure-min.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
+/* 319 */,
 /* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(313)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "/*!\nPure v0.6.2\nCopyright 2013 Yahoo!\nLicensed under the BSD License.\nhttps://github.com/yahoo/pure/blob/master/LICENSE.md\n*/\n/*!\nnormalize.css v^3.0 | MIT License | git.io/normalize\nCopyright (c) Nicolas Gallagher and Jonathan Neal\n*/\n/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */.pure-button:focus,a:active,a:hover{outline:0}.pure-table,table{border-collapse:collapse;border-spacing:0}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre,textarea{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}.pure-button,input{line-height:normal}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}.pure-button,.pure-form input:not([type]),.pure-menu{box-sizing:border-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend,td,th{padding:0}legend{border:0}.hidden,[hidden]{display:none!important}.pure-img{max-width:100%;height:auto;display:block}.pure-g{letter-spacing:-.31em;text-rendering:optimizespeed;font-family:FreeSans,Arimo,\"Droid Sans\",Helvetica,Arial,sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){table .pure-g{display:block}}.opera-only :-o-prefocus,.pure-g{word-spacing:-.43em}.pure-u,.pure-u-1,.pure-u-1-1,.pure-u-1-12,.pure-u-1-2,.pure-u-1-24,.pure-u-1-3,.pure-u-1-4,.pure-u-1-5,.pure-u-1-6,.pure-u-1-8,.pure-u-10-24,.pure-u-11-12,.pure-u-11-24,.pure-u-12-24,.pure-u-13-24,.pure-u-14-24,.pure-u-15-24,.pure-u-16-24,.pure-u-17-24,.pure-u-18-24,.pure-u-19-24,.pure-u-2-24,.pure-u-2-3,.pure-u-2-5,.pure-u-20-24,.pure-u-21-24,.pure-u-22-24,.pure-u-23-24,.pure-u-24-24,.pure-u-3-24,.pure-u-3-4,.pure-u-3-5,.pure-u-3-8,.pure-u-4-24,.pure-u-4-5,.pure-u-5-12,.pure-u-5-24,.pure-u-5-5,.pure-u-5-6,.pure-u-5-8,.pure-u-6-24,.pure-u-7-12,.pure-u-7-24,.pure-u-7-8,.pure-u-8-24,.pure-u-9-24{letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto;display:inline-block;zoom:1}.pure-g [class*=pure-u]{font-family:sans-serif}.pure-u-1-24{width:4.1667%}.pure-u-1-12,.pure-u-2-24{width:8.3333%}.pure-u-1-8,.pure-u-3-24{width:12.5%}.pure-u-1-6,.pure-u-4-24{width:16.6667%}.pure-u-1-5{width:20%}.pure-u-5-24{width:20.8333%}.pure-u-1-4,.pure-u-6-24{width:25%}.pure-u-7-24{width:29.1667%}.pure-u-1-3,.pure-u-8-24{width:33.3333%}.pure-u-3-8,.pure-u-9-24{width:37.5%}.pure-u-2-5{width:40%}.pure-u-10-24,.pure-u-5-12{width:41.6667%}.pure-u-11-24{width:45.8333%}.pure-u-1-2,.pure-u-12-24{width:50%}.pure-u-13-24{width:54.1667%}.pure-u-14-24,.pure-u-7-12{width:58.3333%}.pure-u-3-5{width:60%}.pure-u-15-24,.pure-u-5-8{width:62.5%}.pure-u-16-24,.pure-u-2-3{width:66.6667%}.pure-u-17-24{width:70.8333%}.pure-u-18-24,.pure-u-3-4{width:75%}.pure-u-19-24{width:79.1667%}.pure-u-4-5{width:80%}.pure-u-20-24,.pure-u-5-6{width:83.3333%}.pure-u-21-24,.pure-u-7-8{width:87.5%}.pure-u-11-12,.pure-u-22-24{width:91.6667%}.pure-u-23-24{width:95.8333%}.pure-u-1,.pure-u-1-1,.pure-u-24-24,.pure-u-5-5{width:100%}.pure-button{display:inline-block;zoom:1;white-space:nowrap;vertical-align:middle;text-align:center;cursor:pointer;-webkit-user-drag:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.pure-button::-moz-focus-inner{padding:0;border:0}.pure-button-group{letter-spacing:-.31em;text-rendering:optimizespeed}.opera-only :-o-prefocus,.pure-button-group{word-spacing:-.43em}.pure-button{font-family:inherit;font-size:100%;padding:.5em 1em;color:#444;color:rgba(0,0,0,.8);border:1px solid #999;border:transparent;background-color:#E6E6E6;text-decoration:none;border-radius:2px}.pure-button-hover,.pure-button:focus,.pure-button:hover{filter:alpha(opacity=90);background-image:-webkit-linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));background-image:linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1))}.pure-button-active,.pure-button:active{box-shadow:0 0 0 1px rgba(0,0,0,.15) inset,0 0 6px rgba(0,0,0,.2) inset;border-color:#000\\9}.pure-button-disabled,.pure-button-disabled:active,.pure-button-disabled:focus,.pure-button-disabled:hover,.pure-button[disabled]{border:none;background-image:none;filter:alpha(opacity=40);opacity:.4;cursor:not-allowed;box-shadow:none;pointer-events:none}.pure-button-hidden{display:none}.pure-button-primary,.pure-button-selected,a.pure-button-primary,a.pure-button-selected{background-color:#0078e7;color:#fff}.pure-button-group .pure-button{letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto;margin:0;border-radius:0;border-right:1px solid #111;border-right:1px solid rgba(0,0,0,.2)}.pure-button-group .pure-button:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.pure-button-group .pure-button:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px;border-right:none}.pure-form input[type=password],.pure-form input[type=email],.pure-form input[type=url],.pure-form input[type=date],.pure-form input[type=month],.pure-form input[type=time],.pure-form input[type=datetime],.pure-form input[type=datetime-local],.pure-form input[type=week],.pure-form input[type=tel],.pure-form input[type=color],.pure-form input[type=number],.pure-form input[type=search],.pure-form input[type=text],.pure-form select,.pure-form textarea{padding:.5em .6em;display:inline-block;border:1px solid #ccc;box-shadow:inset 0 1px 3px #ddd;border-radius:4px;vertical-align:middle;box-sizing:border-box}.pure-form input:not([type]){padding:.5em .6em;display:inline-block;border:1px solid #ccc;box-shadow:inset 0 1px 3px #ddd;border-radius:4px}.pure-form input[type=color]{padding:.2em .5em}.pure-form input:not([type]):focus,.pure-form input[type=password]:focus,.pure-form input[type=email]:focus,.pure-form input[type=url]:focus,.pure-form input[type=date]:focus,.pure-form input[type=month]:focus,.pure-form input[type=time]:focus,.pure-form input[type=datetime]:focus,.pure-form input[type=datetime-local]:focus,.pure-form input[type=week]:focus,.pure-form input[type=tel]:focus,.pure-form input[type=color]:focus,.pure-form input[type=number]:focus,.pure-form input[type=search]:focus,.pure-form input[type=text]:focus,.pure-form select:focus,.pure-form textarea:focus{outline:0;border-color:#129FEA}.pure-form input[type=file]:focus,.pure-form input[type=checkbox]:focus,.pure-form input[type=radio]:focus{outline:#129FEA auto 1px}.pure-form .pure-checkbox,.pure-form .pure-radio{margin:.5em 0;display:block}.pure-form input:not([type])[disabled],.pure-form input[type=password][disabled],.pure-form input[type=email][disabled],.pure-form input[type=url][disabled],.pure-form input[type=date][disabled],.pure-form input[type=month][disabled],.pure-form input[type=time][disabled],.pure-form input[type=datetime][disabled],.pure-form input[type=datetime-local][disabled],.pure-form input[type=week][disabled],.pure-form input[type=tel][disabled],.pure-form input[type=color][disabled],.pure-form input[type=number][disabled],.pure-form input[type=search][disabled],.pure-form input[type=text][disabled],.pure-form select[disabled],.pure-form textarea[disabled]{cursor:not-allowed;background-color:#eaeded;color:#cad2d3}.pure-form input[readonly],.pure-form select[readonly],.pure-form textarea[readonly]{background-color:#eee;color:#777;border-color:#ccc}.pure-form input:focus:invalid,.pure-form select:focus:invalid,.pure-form textarea:focus:invalid{color:#b94a48;border-color:#e9322d}.pure-form input[type=file]:focus:invalid:focus,.pure-form input[type=checkbox]:focus:invalid:focus,.pure-form input[type=radio]:focus:invalid:focus{outline-color:#e9322d}.pure-form select{height:2.25em;border:1px solid #ccc;background-color:#fff}.pure-form select[multiple]{height:auto}.pure-form label{margin:.5em 0 .2em}.pure-form fieldset{margin:0;padding:.35em 0 .75em;border:0}.pure-form legend{display:block;width:100%;padding:.3em 0;margin-bottom:.3em;color:#333;border-bottom:1px solid #e5e5e5}.pure-form-stacked input:not([type]),.pure-form-stacked input[type=password],.pure-form-stacked input[type=email],.pure-form-stacked input[type=url],.pure-form-stacked input[type=date],.pure-form-stacked input[type=month],.pure-form-stacked input[type=time],.pure-form-stacked input[type=datetime],.pure-form-stacked input[type=datetime-local],.pure-form-stacked input[type=week],.pure-form-stacked input[type=tel],.pure-form-stacked input[type=color],.pure-form-stacked input[type=file],.pure-form-stacked input[type=number],.pure-form-stacked input[type=search],.pure-form-stacked input[type=text],.pure-form-stacked label,.pure-form-stacked select,.pure-form-stacked textarea{display:block;margin:.25em 0}.pure-form-aligned .pure-help-inline,.pure-form-aligned input,.pure-form-aligned select,.pure-form-aligned textarea,.pure-form-message-inline{display:inline-block;vertical-align:middle}.pure-form-aligned textarea{vertical-align:top}.pure-form-aligned .pure-control-group{margin-bottom:.5em}.pure-form-aligned .pure-control-group label{text-align:right;display:inline-block;vertical-align:middle;width:10em;margin:0 1em 0 0}.pure-form-aligned .pure-controls{margin:1.5em 0 0 11em}.pure-form .pure-input-rounded,.pure-form input.pure-input-rounded{border-radius:2em;padding:.5em 1em}.pure-form .pure-group fieldset{margin-bottom:10px}.pure-form .pure-group input,.pure-form .pure-group textarea{display:block;padding:10px;margin:0 0 -1px;border-radius:0;position:relative;top:-1px}.pure-form .pure-group input:focus,.pure-form .pure-group textarea:focus{z-index:3}.pure-form .pure-group input:first-child,.pure-form .pure-group textarea:first-child{top:1px;border-radius:4px 4px 0 0;margin:0}.pure-form .pure-group input:first-child:last-child,.pure-form .pure-group textarea:first-child:last-child{top:1px;border-radius:4px;margin:0}.pure-form .pure-group input:last-child,.pure-form .pure-group textarea:last-child{top:-2px;border-radius:0 0 4px 4px;margin:0}.pure-form .pure-group button{margin:.35em 0}.pure-form .pure-input-1{width:100%}.pure-form .pure-input-3-4{width:75%}.pure-form .pure-input-2-3{width:66%}.pure-form .pure-input-1-2{width:50%}.pure-form .pure-input-1-3{width:33%}.pure-form .pure-input-1-4{width:25%}.pure-form .pure-help-inline,.pure-form-message-inline{display:inline-block;padding-left:.3em;color:#666;vertical-align:middle;font-size:.875em}.pure-form-message{display:block;color:#666;font-size:.875em}@media only screen and (max-width :480px){.pure-form button[type=submit]{margin:.7em 0 0}.pure-form input:not([type]),.pure-form input[type=password],.pure-form input[type=email],.pure-form input[type=url],.pure-form input[type=date],.pure-form input[type=month],.pure-form input[type=time],.pure-form input[type=datetime],.pure-form input[type=datetime-local],.pure-form input[type=week],.pure-form input[type=tel],.pure-form input[type=color],.pure-form input[type=number],.pure-form input[type=search],.pure-form input[type=text],.pure-form label{margin-bottom:.3em;display:block}.pure-group input:not([type]),.pure-group input[type=password],.pure-group input[type=email],.pure-group input[type=url],.pure-group input[type=date],.pure-group input[type=month],.pure-group input[type=time],.pure-group input[type=datetime],.pure-group input[type=datetime-local],.pure-group input[type=week],.pure-group input[type=tel],.pure-group input[type=color],.pure-group input[type=number],.pure-group input[type=search],.pure-group input[type=text]{margin-bottom:0}.pure-form-aligned .pure-control-group label{margin-bottom:.3em;text-align:left;display:block;width:100%}.pure-form-aligned .pure-controls{margin:1.5em 0 0}.pure-form .pure-help-inline,.pure-form-message,.pure-form-message-inline{display:block;font-size:.75em;padding:.2em 0 .8em}}.pure-menu-fixed{position:fixed;left:0;top:0;z-index:3}.pure-menu-item,.pure-menu-list{position:relative}.pure-menu-list{list-style:none;margin:0;padding:0}.pure-menu-item{padding:0;margin:0;height:100%}.pure-menu-heading,.pure-menu-link{display:block;text-decoration:none;white-space:nowrap}.pure-menu-horizontal{width:100%;white-space:nowrap}.pure-menu-horizontal .pure-menu-list{display:inline-block}.pure-menu-horizontal .pure-menu-heading,.pure-menu-horizontal .pure-menu-item,.pure-menu-horizontal .pure-menu-separator{display:inline-block;zoom:1;vertical-align:middle}.pure-menu-item .pure-menu-item{display:block}.pure-menu-children{display:none;position:absolute;left:100%;top:0;margin:0;padding:0;z-index:3}.pure-menu-horizontal .pure-menu-children{left:0;top:auto;width:inherit}.pure-menu-active>.pure-menu-children,.pure-menu-allow-hover:hover>.pure-menu-children{display:block;position:absolute}.pure-menu-has-children>.pure-menu-link:after{padding-left:.5em;content:\"\\25B8\";font-size:small}.pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after{content:\"\\25BE\"}.pure-menu-scrollable{overflow-y:scroll;overflow-x:hidden}.pure-menu-scrollable .pure-menu-list{display:block}.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list{display:inline-block}.pure-menu-horizontal.pure-menu-scrollable{white-space:nowrap;overflow-y:hidden;overflow-x:auto;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;padding:.5em 0}.pure-menu-horizontal.pure-menu-scrollable::-webkit-scrollbar{display:none}.pure-menu-horizontal .pure-menu-children .pure-menu-separator,.pure-menu-separator{background-color:#ccc;height:1px;margin:.3em 0}.pure-menu-horizontal .pure-menu-separator{width:1px;height:1.3em;margin:0 .3em}.pure-menu-horizontal .pure-menu-children .pure-menu-separator{display:block;width:auto}.pure-menu-heading{text-transform:uppercase;color:#565d64}.pure-menu-link{color:#777}.pure-menu-children{background-color:#fff}.pure-menu-disabled,.pure-menu-heading,.pure-menu-link{padding:.5em 1em}.pure-menu-disabled{opacity:.5}.pure-menu-disabled .pure-menu-link:hover{background-color:transparent}.pure-menu-active>.pure-menu-link,.pure-menu-link:focus,.pure-menu-link:hover{background-color:#eee}.pure-menu-selected .pure-menu-link,.pure-menu-selected .pure-menu-link:visited{color:#000}.pure-table{empty-cells:show;border:1px solid #cbcbcb}.pure-table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}.pure-table td,.pure-table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}.pure-table td:first-child,.pure-table th:first-child{border-left-width:0}.pure-table thead{background-color:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}.pure-table td{background-color:transparent}.pure-table-odd td,.pure-table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}.pure-table-bordered td{border-bottom:1px solid #cbcbcb}.pure-table-bordered tbody>tr:last-child>td{border-bottom-width:0}.pure-table-horizontal td,.pure-table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}.pure-table-horizontal tbody>tr:last-child>td{border-bottom-width:0}", ""]);
-
-	// exports
-
-
-/***/ },
-/* 321 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(322);
+	var content = __webpack_require__(321);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -48272,7 +48233,7 @@
 	}
 
 /***/ },
-/* 322 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -48286,13 +48247,13 @@
 
 
 /***/ },
-/* 323 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(324);
+	var content = __webpack_require__(323);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -48312,7 +48273,7 @@
 	}
 
 /***/ },
-/* 324 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -48326,13 +48287,13 @@
 
 
 /***/ },
-/* 325 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(326);
+	var content = __webpack_require__(325);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -48352,7 +48313,7 @@
 	}
 
 /***/ },
-/* 326 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -48360,19 +48321,19 @@
 
 
 	// module
-	exports.push([module.id, "/* Rules for sizing the icon. */\n.material-icons.md-12 {\n  font-size: 12px; }\n\n.material-icons.md-18 {\n  font-size: 18px; }\n\n.material-icons.md-24 {\n  font-size: 24px; }\n\n.material-icons.md-36 {\n  font-size: 36px; }\n\n.material-icons.md-40 {\n  font-size: 40px; }\n\n.material-icons.md-48 {\n  font-size: 48px; }\n\n/* Rules for using icons as black on a light background. */\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n\n/* Rules for using icons as white on a dark background. */\n.material-icons.md-light {\n  color: white; }\n\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n\n.valign-center {\n  display: inline-flex;\n  vertical-align: middle;\n  align-items: center; }\n", ""]);
+	exports.push([module.id, "/* Rules for sizing the icon. */\n.material-icons.md-12 {\n  font-size: 12px; }\n\n.material-icons.md-18 {\n  font-size: 18px; }\n\n.material-icons.md-24 {\n  font-size: 24px; }\n\n.material-icons.md-36 {\n  font-size: 36px; }\n\n.material-icons.md-40 {\n  font-size: 40px; }\n\n.material-icons.md-48 {\n  font-size: 48px; }\n\n/* Rules for using icons as black on a light background. */\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n\n/* Rules for using icons as white on a dark background. */\n.material-icons.md-light {\n  color: white; }\n\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 327 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(328);
+	var content = __webpack_require__(327);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -48392,7 +48353,7 @@
 	}
 
 /***/ },
-/* 328 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -48400,19 +48361,19 @@
 
 
 	// module
-	exports.push([module.id, "body,\nhtml {\n  font-family: 'Roboto', sans-serif;\n  font-weight: 400; }\n\n.hide {\n  display: none; }\n", ""]);
+	exports.push([module.id, "body,\nhtml {\n  font-family: 'Roboto', sans-serif;\n  font-weight: 400; }\n\n.hide {\n  display: none; }\n\n.valign-center {\n  display: inline-flex;\n  align-items: center; }\n\n.full-width-height {\n  height: 100%;\n  width: 100%; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 329 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(330);
+	var content = __webpack_require__(329);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -48432,7 +48393,7 @@
 	}
 
 /***/ },
-/* 330 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -48446,7 +48407,7 @@
 
 
 /***/ },
-/* 331 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48459,7 +48420,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(332);
+	__webpack_require__(331);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48475,13 +48436,13 @@
 	exports.default = Admin;
 
 /***/ },
-/* 332 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(333);
+	var content = __webpack_require__(332);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -48501,7 +48462,7 @@
 	}
 
 /***/ },
-/* 333 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -48515,7 +48476,7 @@
 
 
 /***/ },
-/* 334 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48530,11 +48491,11 @@
 
 	var _reactRouter = __webpack_require__(257);
 
-	var _productsTable = __webpack_require__(335);
+	var _productsTable = __webpack_require__(334);
 
 	var _productsTable2 = _interopRequireDefault(_productsTable);
 
-	__webpack_require__(453);
+	__webpack_require__(452);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48542,16 +48503,16 @@
 	  _reactRouter.browserHistory.push('/admin/product');
 	};
 
-	var Products = function Products(props) {
+	var Products = function Products() {
 	  return _react2.default.createElement(
 	    'div',
-	    { className: 'products-container' },
+	    { className: 'admin--products-container' },
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'products-actions' },
+	      { className: 'admin--products-actions-container' },
 	      _react2.default.createElement(
 	        'button',
-	        { className: 'pure-button  button-primary', onClick: function onClick(e) {
+	        { className: 'mdc-button  button-primary', onClick: function onClick(e) {
 	            return handleAddNew();
 	          } },
 	        _react2.default.createElement(
@@ -48559,7 +48520,7 @@
 	          { className: 'valign-center' },
 	          _react2.default.createElement(
 	            'i',
-	            { className: 'material-icons material-icons.md-18' },
+	            { className: 'material-icons md-18' },
 	            'add'
 	          ),
 	          'New'
@@ -48568,7 +48529,7 @@
 	    ),
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'products-table-wrapper' },
+	      { className: 'admin--products-table-wrapper' },
 	      _react2.default.createElement(_productsTable2.default, null)
 	    )
 	  );
@@ -48577,7 +48538,7 @@
 	exports.default = Products;
 
 /***/ },
-/* 335 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48600,7 +48561,7 @@
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _reactAddonsUpdate = __webpack_require__(336);
+	var _reactAddonsUpdate = __webpack_require__(335);
 
 	var _reactAddonsUpdate2 = _interopRequireDefault(_reactAddonsUpdate);
 
@@ -48608,11 +48569,11 @@
 
 	var productActions = _interopRequireWildcard(_productAction);
 
-	var _productsRow = __webpack_require__(338);
+	var _productsRow = __webpack_require__(337);
 
 	var _productsRow2 = _interopRequireDefault(_productsRow);
 
-	__webpack_require__(451);
+	__webpack_require__(450);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -48734,23 +48695,23 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'admin-products-container' },
+	        { className: 'admin--products-table-container' },
 	        _react2.default.createElement(
 	          'table',
-	          { className: 'products-table' },
+	          { className: 'admin--products__table' },
 	          _react2.default.createElement(
 	            'thead',
 	            null,
 	            _react2.default.createElement(
 	              'tr',
-	              { className: 'products-table-actions' },
+	              { className: 'admin--products__table__tr-actions-container' },
 	              _react2.default.createElement(
 	                'th',
-	                { colSpan: 4 },
+	                { colSpan: 3 },
 	                _react2.default.createElement(
 	                  'div',
 	                  { className: 'search-text-container' },
-	                  _react2.default.createElement('input', { className: 'search-text', value: searchText, onChange: function onChange(event) {
+	                  _react2.default.createElement('input', { className: 'full-width-height', value: searchText, onChange: function onChange(event) {
 	                      return _this3.onChangeText(event);
 	                    } })
 	                )
@@ -48763,20 +48724,13 @@
 	            ),
 	            _react2.default.createElement(
 	              'tr',
-	              { className: 'products-table-header' },
+	              { className: 'admin--products__table__tr-header' },
 	              _react2.default.createElement(
 	                'th',
 	                { width: '40%', onClick: function onClick() {
 	                    return _this3.onChangeSortType('name');
 	                  } },
 	                'Product Name'
-	              ),
-	              _react2.default.createElement(
-	                'th',
-	                { width: '10%', onClick: function onClick() {
-	                    return _this3.onChangeSortType('status');
-	                  } },
-	                'Status'
 	              ),
 	              _react2.default.createElement(
 	                'th',
@@ -48794,7 +48748,7 @@
 	              ),
 	              _react2.default.createElement(
 	                'th',
-	                { width: '15%' },
+	                { width: '25%' },
 	                'Actions'
 	              )
 	            )
@@ -48818,13 +48772,13 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, productActions)(ProductsTable);
 
 /***/ },
-/* 336 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(337);
+	module.exports = __webpack_require__(336);
 
 /***/ },
-/* 337 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -48941,7 +48895,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ },
-/* 338 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48962,11 +48916,11 @@
 
 	var productActions = _interopRequireWildcard(_productAction);
 
-	var _moment = __webpack_require__(339);
+	var _moment = __webpack_require__(338);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	__webpack_require__(449);
+	__webpack_require__(448);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -48985,9 +48939,9 @@
 	      onCloseDeleteSection = props.onCloseDeleteSection,
 	      deleteProduct = props.deleteProduct;
 
-	  var type = +index % 2 === 0 ? ' even ' : ' odd ';
+
 	  var priceText = priceHistory.length == 0 ? 'No price' : '\u20BA' + priceHistory[0].price + ' / ' + priceHistory[0].unit;
-	  var status = active ? 'Active' : 'Inactive';
+	  var status = active ? 'active' : 'inactive';
 	  var updateDate = modifiedDate || createdDate;
 	  var _renderActions = function _renderActions() {
 	    if (!isDeleteSectionOpen) {
@@ -49045,7 +48999,7 @@
 	  };
 	  return _react2.default.createElement(
 	    'tr',
-	    { className: 'products-row ' + type },
+	    { className: 'admin--products-row ' + status },
 	    _react2.default.createElement(
 	      'td',
 	      null,
@@ -49053,17 +49007,7 @@
 	        _reactRouter.Link,
 	        { to: '/admin/product/' + id },
 	        name
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'products-row-id' },
-	        id
 	      )
-	    ),
-	    _react2.default.createElement(
-	      'td',
-	      { className: status.toLowerCase() },
-	      status
 	    ),
 	    _react2.default.createElement(
 	      'td',
@@ -49085,7 +49029,7 @@
 	exports.default = (0, _reactRedux.connect)(null, productActions)(ProductsRow);
 
 /***/ },
-/* 339 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {//! moment.js
@@ -50902,7 +50846,7 @@
 	            module && module.exports) {
 	        try {
 	            oldLocale = globalLocale._abbr;
-	            __webpack_require__(340)("./" + name);
+	            __webpack_require__(339)("./" + name);
 	            // because defineLocale currently also sets the global locale, we
 	            // want to undo that for lazy loaded locales
 	            getSetGlobalLocale(oldLocale);
@@ -53393,226 +53337,226 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(197)(module)))
 
 /***/ },
-/* 340 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./af": 341,
-		"./af.js": 341,
-		"./ar": 342,
-		"./ar-dz": 343,
-		"./ar-dz.js": 343,
-		"./ar-ly": 344,
-		"./ar-ly.js": 344,
-		"./ar-ma": 345,
-		"./ar-ma.js": 345,
-		"./ar-sa": 346,
-		"./ar-sa.js": 346,
-		"./ar-tn": 347,
-		"./ar-tn.js": 347,
-		"./ar.js": 342,
-		"./az": 348,
-		"./az.js": 348,
-		"./be": 349,
-		"./be.js": 349,
-		"./bg": 350,
-		"./bg.js": 350,
-		"./bn": 351,
-		"./bn.js": 351,
-		"./bo": 352,
-		"./bo.js": 352,
-		"./br": 353,
-		"./br.js": 353,
-		"./bs": 354,
-		"./bs.js": 354,
-		"./ca": 355,
-		"./ca.js": 355,
-		"./cs": 356,
-		"./cs.js": 356,
-		"./cv": 357,
-		"./cv.js": 357,
-		"./cy": 358,
-		"./cy.js": 358,
-		"./da": 359,
-		"./da.js": 359,
-		"./de": 360,
-		"./de-at": 361,
-		"./de-at.js": 361,
-		"./de.js": 360,
-		"./dv": 362,
-		"./dv.js": 362,
-		"./el": 363,
-		"./el.js": 363,
-		"./en-au": 364,
-		"./en-au.js": 364,
-		"./en-ca": 365,
-		"./en-ca.js": 365,
-		"./en-gb": 366,
-		"./en-gb.js": 366,
-		"./en-ie": 367,
-		"./en-ie.js": 367,
-		"./en-nz": 368,
-		"./en-nz.js": 368,
-		"./eo": 369,
-		"./eo.js": 369,
-		"./es": 370,
-		"./es-do": 371,
-		"./es-do.js": 371,
-		"./es.js": 370,
-		"./et": 372,
-		"./et.js": 372,
-		"./eu": 373,
-		"./eu.js": 373,
-		"./fa": 374,
-		"./fa.js": 374,
-		"./fi": 375,
-		"./fi.js": 375,
-		"./fo": 376,
-		"./fo.js": 376,
-		"./fr": 377,
-		"./fr-ca": 378,
-		"./fr-ca.js": 378,
-		"./fr-ch": 379,
-		"./fr-ch.js": 379,
-		"./fr.js": 377,
-		"./fy": 380,
-		"./fy.js": 380,
-		"./gd": 381,
-		"./gd.js": 381,
-		"./gl": 382,
-		"./gl.js": 382,
-		"./he": 383,
-		"./he.js": 383,
-		"./hi": 384,
-		"./hi.js": 384,
-		"./hr": 385,
-		"./hr.js": 385,
-		"./hu": 386,
-		"./hu.js": 386,
-		"./hy-am": 387,
-		"./hy-am.js": 387,
-		"./id": 388,
-		"./id.js": 388,
-		"./is": 389,
-		"./is.js": 389,
-		"./it": 390,
-		"./it.js": 390,
-		"./ja": 391,
-		"./ja.js": 391,
-		"./jv": 392,
-		"./jv.js": 392,
-		"./ka": 393,
-		"./ka.js": 393,
-		"./kk": 394,
-		"./kk.js": 394,
-		"./km": 395,
-		"./km.js": 395,
-		"./ko": 396,
-		"./ko.js": 396,
-		"./ky": 397,
-		"./ky.js": 397,
-		"./lb": 398,
-		"./lb.js": 398,
-		"./lo": 399,
-		"./lo.js": 399,
-		"./lt": 400,
-		"./lt.js": 400,
-		"./lv": 401,
-		"./lv.js": 401,
-		"./me": 402,
-		"./me.js": 402,
-		"./mi": 403,
-		"./mi.js": 403,
-		"./mk": 404,
-		"./mk.js": 404,
-		"./ml": 405,
-		"./ml.js": 405,
-		"./mr": 406,
-		"./mr.js": 406,
-		"./ms": 407,
-		"./ms-my": 408,
-		"./ms-my.js": 408,
-		"./ms.js": 407,
-		"./my": 409,
-		"./my.js": 409,
-		"./nb": 410,
-		"./nb.js": 410,
-		"./ne": 411,
-		"./ne.js": 411,
-		"./nl": 412,
-		"./nl-be": 413,
-		"./nl-be.js": 413,
-		"./nl.js": 412,
-		"./nn": 414,
-		"./nn.js": 414,
-		"./pa-in": 415,
-		"./pa-in.js": 415,
-		"./pl": 416,
-		"./pl.js": 416,
-		"./pt": 417,
-		"./pt-br": 418,
-		"./pt-br.js": 418,
-		"./pt.js": 417,
-		"./ro": 419,
-		"./ro.js": 419,
-		"./ru": 420,
-		"./ru.js": 420,
-		"./se": 421,
-		"./se.js": 421,
-		"./si": 422,
-		"./si.js": 422,
-		"./sk": 423,
-		"./sk.js": 423,
-		"./sl": 424,
-		"./sl.js": 424,
-		"./sq": 425,
-		"./sq.js": 425,
-		"./sr": 426,
-		"./sr-cyrl": 427,
-		"./sr-cyrl.js": 427,
-		"./sr.js": 426,
-		"./ss": 428,
-		"./ss.js": 428,
-		"./sv": 429,
-		"./sv.js": 429,
-		"./sw": 430,
-		"./sw.js": 430,
-		"./ta": 431,
-		"./ta.js": 431,
-		"./te": 432,
-		"./te.js": 432,
-		"./tet": 433,
-		"./tet.js": 433,
-		"./th": 434,
-		"./th.js": 434,
-		"./tl-ph": 435,
-		"./tl-ph.js": 435,
-		"./tlh": 436,
-		"./tlh.js": 436,
-		"./tr": 437,
-		"./tr.js": 437,
-		"./tzl": 438,
-		"./tzl.js": 438,
-		"./tzm": 439,
-		"./tzm-latn": 440,
-		"./tzm-latn.js": 440,
-		"./tzm.js": 439,
-		"./uk": 441,
-		"./uk.js": 441,
-		"./uz": 442,
-		"./uz.js": 442,
-		"./vi": 443,
-		"./vi.js": 443,
-		"./x-pseudo": 444,
-		"./x-pseudo.js": 444,
-		"./yo": 445,
-		"./yo.js": 445,
-		"./zh-cn": 446,
-		"./zh-cn.js": 446,
-		"./zh-hk": 447,
-		"./zh-hk.js": 447,
-		"./zh-tw": 448,
-		"./zh-tw.js": 448
+		"./af": 340,
+		"./af.js": 340,
+		"./ar": 341,
+		"./ar-dz": 342,
+		"./ar-dz.js": 342,
+		"./ar-ly": 343,
+		"./ar-ly.js": 343,
+		"./ar-ma": 344,
+		"./ar-ma.js": 344,
+		"./ar-sa": 345,
+		"./ar-sa.js": 345,
+		"./ar-tn": 346,
+		"./ar-tn.js": 346,
+		"./ar.js": 341,
+		"./az": 347,
+		"./az.js": 347,
+		"./be": 348,
+		"./be.js": 348,
+		"./bg": 349,
+		"./bg.js": 349,
+		"./bn": 350,
+		"./bn.js": 350,
+		"./bo": 351,
+		"./bo.js": 351,
+		"./br": 352,
+		"./br.js": 352,
+		"./bs": 353,
+		"./bs.js": 353,
+		"./ca": 354,
+		"./ca.js": 354,
+		"./cs": 355,
+		"./cs.js": 355,
+		"./cv": 356,
+		"./cv.js": 356,
+		"./cy": 357,
+		"./cy.js": 357,
+		"./da": 358,
+		"./da.js": 358,
+		"./de": 359,
+		"./de-at": 360,
+		"./de-at.js": 360,
+		"./de.js": 359,
+		"./dv": 361,
+		"./dv.js": 361,
+		"./el": 362,
+		"./el.js": 362,
+		"./en-au": 363,
+		"./en-au.js": 363,
+		"./en-ca": 364,
+		"./en-ca.js": 364,
+		"./en-gb": 365,
+		"./en-gb.js": 365,
+		"./en-ie": 366,
+		"./en-ie.js": 366,
+		"./en-nz": 367,
+		"./en-nz.js": 367,
+		"./eo": 368,
+		"./eo.js": 368,
+		"./es": 369,
+		"./es-do": 370,
+		"./es-do.js": 370,
+		"./es.js": 369,
+		"./et": 371,
+		"./et.js": 371,
+		"./eu": 372,
+		"./eu.js": 372,
+		"./fa": 373,
+		"./fa.js": 373,
+		"./fi": 374,
+		"./fi.js": 374,
+		"./fo": 375,
+		"./fo.js": 375,
+		"./fr": 376,
+		"./fr-ca": 377,
+		"./fr-ca.js": 377,
+		"./fr-ch": 378,
+		"./fr-ch.js": 378,
+		"./fr.js": 376,
+		"./fy": 379,
+		"./fy.js": 379,
+		"./gd": 380,
+		"./gd.js": 380,
+		"./gl": 381,
+		"./gl.js": 381,
+		"./he": 382,
+		"./he.js": 382,
+		"./hi": 383,
+		"./hi.js": 383,
+		"./hr": 384,
+		"./hr.js": 384,
+		"./hu": 385,
+		"./hu.js": 385,
+		"./hy-am": 386,
+		"./hy-am.js": 386,
+		"./id": 387,
+		"./id.js": 387,
+		"./is": 388,
+		"./is.js": 388,
+		"./it": 389,
+		"./it.js": 389,
+		"./ja": 390,
+		"./ja.js": 390,
+		"./jv": 391,
+		"./jv.js": 391,
+		"./ka": 392,
+		"./ka.js": 392,
+		"./kk": 393,
+		"./kk.js": 393,
+		"./km": 394,
+		"./km.js": 394,
+		"./ko": 395,
+		"./ko.js": 395,
+		"./ky": 396,
+		"./ky.js": 396,
+		"./lb": 397,
+		"./lb.js": 397,
+		"./lo": 398,
+		"./lo.js": 398,
+		"./lt": 399,
+		"./lt.js": 399,
+		"./lv": 400,
+		"./lv.js": 400,
+		"./me": 401,
+		"./me.js": 401,
+		"./mi": 402,
+		"./mi.js": 402,
+		"./mk": 403,
+		"./mk.js": 403,
+		"./ml": 404,
+		"./ml.js": 404,
+		"./mr": 405,
+		"./mr.js": 405,
+		"./ms": 406,
+		"./ms-my": 407,
+		"./ms-my.js": 407,
+		"./ms.js": 406,
+		"./my": 408,
+		"./my.js": 408,
+		"./nb": 409,
+		"./nb.js": 409,
+		"./ne": 410,
+		"./ne.js": 410,
+		"./nl": 411,
+		"./nl-be": 412,
+		"./nl-be.js": 412,
+		"./nl.js": 411,
+		"./nn": 413,
+		"./nn.js": 413,
+		"./pa-in": 414,
+		"./pa-in.js": 414,
+		"./pl": 415,
+		"./pl.js": 415,
+		"./pt": 416,
+		"./pt-br": 417,
+		"./pt-br.js": 417,
+		"./pt.js": 416,
+		"./ro": 418,
+		"./ro.js": 418,
+		"./ru": 419,
+		"./ru.js": 419,
+		"./se": 420,
+		"./se.js": 420,
+		"./si": 421,
+		"./si.js": 421,
+		"./sk": 422,
+		"./sk.js": 422,
+		"./sl": 423,
+		"./sl.js": 423,
+		"./sq": 424,
+		"./sq.js": 424,
+		"./sr": 425,
+		"./sr-cyrl": 426,
+		"./sr-cyrl.js": 426,
+		"./sr.js": 425,
+		"./ss": 427,
+		"./ss.js": 427,
+		"./sv": 428,
+		"./sv.js": 428,
+		"./sw": 429,
+		"./sw.js": 429,
+		"./ta": 430,
+		"./ta.js": 430,
+		"./te": 431,
+		"./te.js": 431,
+		"./tet": 432,
+		"./tet.js": 432,
+		"./th": 433,
+		"./th.js": 433,
+		"./tl-ph": 434,
+		"./tl-ph.js": 434,
+		"./tlh": 435,
+		"./tlh.js": 435,
+		"./tr": 436,
+		"./tr.js": 436,
+		"./tzl": 437,
+		"./tzl.js": 437,
+		"./tzm": 438,
+		"./tzm-latn": 439,
+		"./tzm-latn.js": 439,
+		"./tzm.js": 438,
+		"./uk": 440,
+		"./uk.js": 440,
+		"./uz": 441,
+		"./uz.js": 441,
+		"./vi": 442,
+		"./vi.js": 442,
+		"./x-pseudo": 443,
+		"./x-pseudo.js": 443,
+		"./yo": 444,
+		"./yo.js": 444,
+		"./zh-cn": 445,
+		"./zh-cn.js": 445,
+		"./zh-hk": 446,
+		"./zh-hk.js": 446,
+		"./zh-tw": 447,
+		"./zh-tw.js": 447
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -53625,11 +53569,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 340;
+	webpackContext.id = 339;
 
 
 /***/ },
-/* 341 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53637,7 +53581,7 @@
 	//! author : Werner Mollentze : https://github.com/wernerm
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53707,7 +53651,7 @@
 
 
 /***/ },
-/* 342 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53717,7 +53661,7 @@
 	//! author : forabi https://github.com/forabi
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53854,7 +53798,7 @@
 
 
 /***/ },
-/* 343 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53862,7 +53806,7 @@
 	//! author : Noureddine LOUAHEDJ : https://github.com/noureddineme
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53918,7 +53862,7 @@
 
 
 /***/ },
-/* 344 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53926,7 +53870,7 @@
 	//! author : Ali Hmer: https://github.com/kikoanis
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54049,7 +53993,7 @@
 
 
 /***/ },
-/* 345 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54058,7 +54002,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54114,7 +54058,7 @@
 
 
 /***/ },
-/* 346 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54122,7 +54066,7 @@
 	//! author : Suhail Alkowaileet : https://github.com/xsoh
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54224,7 +54168,7 @@
 
 
 /***/ },
-/* 347 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54232,7 +54176,7 @@
 	//! author : Nader Toukabri : https://github.com/naderio
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54288,7 +54232,7 @@
 
 
 /***/ },
-/* 348 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54296,7 +54240,7 @@
 	//! author : topchiyev : https://github.com/topchiyev
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54398,7 +54342,7 @@
 
 
 /***/ },
-/* 349 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54408,7 +54352,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54537,7 +54481,7 @@
 
 
 /***/ },
-/* 350 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54545,7 +54489,7 @@
 	//! author : Krasen Borisov : https://github.com/kraz
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54632,7 +54576,7 @@
 
 
 /***/ },
-/* 351 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54640,7 +54584,7 @@
 	//! author : Kaushik Gandhi : https://github.com/kaushikgandhi
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54756,7 +54700,7 @@
 
 
 /***/ },
-/* 352 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54764,7 +54708,7 @@
 	//! author : Thupten N. Chakrishar : https://github.com/vajradog
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54880,7 +54824,7 @@
 
 
 /***/ },
-/* 353 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54888,7 +54832,7 @@
 	//! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54993,7 +54937,7 @@
 
 
 /***/ },
-/* 354 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55002,7 +54946,7 @@
 	//! based on (hr) translation by Bojan Marković
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55141,7 +55085,7 @@
 
 
 /***/ },
-/* 355 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55149,7 +55093,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55227,7 +55171,7 @@
 
 
 /***/ },
-/* 356 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55235,7 +55179,7 @@
 	//! author : petrbela : https://github.com/petrbela
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55404,7 +55348,7 @@
 
 
 /***/ },
-/* 357 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55412,7 +55356,7 @@
 	//! author : Anatoly Mironov : https://github.com/mirontoli
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55472,7 +55416,7 @@
 
 
 /***/ },
-/* 358 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55481,7 +55425,7 @@
 	//! author : https://github.com/ryangreaves
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55558,7 +55502,7 @@
 
 
 /***/ },
-/* 359 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55566,7 +55510,7 @@
 	//! author : Ulrik Nielsen : https://github.com/mrbase
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55623,7 +55567,7 @@
 
 
 /***/ },
-/* 360 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55633,7 +55577,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55706,7 +55650,7 @@
 
 
 /***/ },
-/* 361 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55717,7 +55661,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55790,7 +55734,7 @@
 
 
 /***/ },
-/* 362 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55798,7 +55742,7 @@
 	//! author : Jawish Hameed : https://github.com/jawish
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55895,7 +55839,7 @@
 
 
 /***/ },
-/* 363 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55903,7 +55847,7 @@
 	//! author : Aggelos Karalias : https://github.com/mehiel
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55998,7 +55942,7 @@
 
 
 /***/ },
-/* 364 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56006,7 +55950,7 @@
 	//! author : Jared Morse : https://github.com/jarcoal
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56070,7 +56014,7 @@
 
 
 /***/ },
-/* 365 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56078,7 +56022,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56138,7 +56082,7 @@
 
 
 /***/ },
-/* 366 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56146,7 +56090,7 @@
 	//! author : Chris Gedrim : https://github.com/chrisgedrim
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56210,7 +56154,7 @@
 
 
 /***/ },
-/* 367 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56218,7 +56162,7 @@
 	//! author : Chris Cartlidge : https://github.com/chriscartlidge
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56282,7 +56226,7 @@
 
 
 /***/ },
-/* 368 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56290,7 +56234,7 @@
 	//! author : Luke McGregor : https://github.com/lukemcgregor
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56354,7 +56298,7 @@
 
 
 /***/ },
-/* 369 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56364,7 +56308,7 @@
 	//!          Se ne, bonvolu korekti kaj avizi min por ke mi povas lerni!
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56432,7 +56376,7 @@
 
 
 /***/ },
-/* 370 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56440,7 +56384,7 @@
 	//! author : Julio Napurí : https://github.com/julionc
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56518,14 +56462,14 @@
 
 
 /***/ },
-/* 371 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
 	//! locale : Spanish (Dominican Republic) [es-do]
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56603,7 +56547,7 @@
 
 
 /***/ },
-/* 372 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56612,7 +56556,7 @@
 	//! improvements : Illimar Tambek : https://github.com/ragulka
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56688,7 +56632,7 @@
 
 
 /***/ },
-/* 373 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56696,7 +56640,7 @@
 	//! author : Eneko Illarramendi : https://github.com/eillarra
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56759,7 +56703,7 @@
 
 
 /***/ },
-/* 374 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56767,7 +56711,7 @@
 	//! author : Ebrahim Byagowi : https://github.com/ebraminio
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56871,7 +56815,7 @@
 
 
 /***/ },
-/* 375 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56879,7 +56823,7 @@
 	//! author : Tarmo Aidantausta : https://github.com/bleadof
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56983,7 +56927,7 @@
 
 
 /***/ },
-/* 376 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56991,7 +56935,7 @@
 	//! author : Ragnar Johannesen : https://github.com/ragnar123
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57048,7 +56992,7 @@
 
 
 /***/ },
-/* 377 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57056,7 +57000,7 @@
 	//! author : John Fischer : https://github.com/jfroffice
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57117,7 +57061,7 @@
 
 
 /***/ },
-/* 378 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57125,7 +57069,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57182,7 +57126,7 @@
 
 
 /***/ },
-/* 379 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57190,7 +57134,7 @@
 	//! author : Gaspard Bucher : https://github.com/gaspard
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57251,7 +57195,7 @@
 
 
 /***/ },
-/* 380 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57259,7 +57203,7 @@
 	//! author : Robin van der Vliet : https://github.com/robin0van0der0v
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57329,7 +57273,7 @@
 
 
 /***/ },
-/* 381 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57337,7 +57281,7 @@
 	//! author : Jon Ashdown : https://github.com/jonashdown
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57410,7 +57354,7 @@
 
 
 /***/ },
-/* 382 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57418,7 +57362,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57492,7 +57436,7 @@
 
 
 /***/ },
-/* 383 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57502,7 +57446,7 @@
 	//! author : Tal Ater : https://github.com/TalAter
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57596,7 +57540,7 @@
 
 
 /***/ },
-/* 384 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57604,7 +57548,7 @@
 	//! author : Mayank Singhal : https://github.com/mayanksinghal
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57725,7 +57669,7 @@
 
 
 /***/ },
-/* 385 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57733,7 +57677,7 @@
 	//! author : Bojan Marković : https://github.com/bmarkovic
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57875,7 +57819,7 @@
 
 
 /***/ },
-/* 386 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57883,7 +57827,7 @@
 	//! author : Adam Brunner : https://github.com/adambrunner
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -57989,7 +57933,7 @@
 
 
 /***/ },
-/* 387 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -57997,7 +57941,7 @@
 	//! author : Armendarabyan : https://github.com/armendarabyan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58089,7 +58033,7 @@
 
 
 /***/ },
-/* 388 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58098,7 +58042,7 @@
 	//! reference: http://id.wikisource.org/wiki/Pedoman_Umum_Ejaan_Bahasa_Indonesia_yang_Disempurnakan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58177,7 +58121,7 @@
 
 
 /***/ },
-/* 389 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58185,7 +58129,7 @@
 	//! author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58309,7 +58253,7 @@
 
 
 /***/ },
-/* 390 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58318,7 +58262,7 @@
 	//! author: Mattia Larentis: https://github.com/nostalgiaz
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58384,7 +58328,7 @@
 
 
 /***/ },
-/* 391 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58392,7 +58336,7 @@
 	//! author : LI Long : https://github.com/baryon
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58465,7 +58409,7 @@
 
 
 /***/ },
-/* 392 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58474,7 +58418,7 @@
 	//! reference: http://jv.wikipedia.org/wiki/Basa_Jawa
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58553,7 +58497,7 @@
 
 
 /***/ },
-/* 393 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58561,7 +58505,7 @@
 	//! author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58647,7 +58591,7 @@
 
 
 /***/ },
-/* 394 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58655,7 +58599,7 @@
 	//! authors : Nurlan Rakhimzhanov : https://github.com/nurlan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58739,7 +58683,7 @@
 
 
 /***/ },
-/* 395 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58747,7 +58691,7 @@
 	//! author : Kruy Vanna : https://github.com/kruyvanna
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58802,7 +58746,7 @@
 
 
 /***/ },
-/* 396 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58811,7 +58755,7 @@
 	//! author : Jeeeyul Lee <jeeeyul@gmail.com>
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58872,7 +58816,7 @@
 
 
 /***/ },
-/* 397 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58880,7 +58824,7 @@
 	//! author : Chyngyz Arystan uulu : https://github.com/chyngyz
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -58965,7 +58909,7 @@
 
 
 /***/ },
-/* 398 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -58974,7 +58918,7 @@
 	//! author : David Raison : https://github.com/kwisatz
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -59107,7 +59051,7 @@
 
 
 /***/ },
-/* 399 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -59115,7 +59059,7 @@
 	//! author : Ryan Hart : https://github.com/ryanhart2
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -59182,7 +59126,7 @@
 
 
 /***/ },
-/* 400 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -59190,7 +59134,7 @@
 	//! author : Mindaugas Mozūras : https://github.com/mmozuras
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -59304,7 +59248,7 @@
 
 
 /***/ },
-/* 401 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -59313,7 +59257,7 @@
 	//! author : Jānis Elmeris : https://github.com/JanisE
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -59406,7 +59350,7 @@
 
 
 /***/ },
-/* 402 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -59414,7 +59358,7 @@
 	//! author : Miodrag Nikač <miodrag@restartit.me> : https://github.com/miodragnikac
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -59522,7 +59466,7 @@
 
 
 /***/ },
-/* 403 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -59530,7 +59474,7 @@
 	//! author : John Corrigan <robbiecloset@gmail.com> : https://github.com/johnideal
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -59591,7 +59535,7 @@
 
 
 /***/ },
-/* 404 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -59599,7 +59543,7 @@
 	//! author : Borislav Mickov : https://github.com/B0k0
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -59686,7 +59630,7 @@
 
 
 /***/ },
-/* 405 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -59694,7 +59638,7 @@
 	//! author : Floyd Pink : https://github.com/floydpink
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -59772,7 +59716,7 @@
 
 
 /***/ },
-/* 406 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -59781,7 +59725,7 @@
 	//! author : Vivek Athalye : https://github.com/vnathalye
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -59936,7 +59880,7 @@
 
 
 /***/ },
-/* 407 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -59944,7 +59888,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60023,7 +59967,7 @@
 
 
 /***/ },
-/* 408 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60032,7 +59976,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60111,7 +60055,7 @@
 
 
 /***/ },
-/* 409 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60121,7 +60065,7 @@
 	//! author : Tin Aung Lin : https://github.com/thanyawzinmin
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60212,7 +60156,7 @@
 
 
 /***/ },
-/* 410 */
+/* 409 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60221,7 +60165,7 @@
 	//!           Sigurd Gartmann : https://github.com/sigurdga
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60280,7 +60224,7 @@
 
 
 /***/ },
-/* 411 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60288,7 +60232,7 @@
 	//! author : suvash : https://github.com/suvash
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60408,7 +60352,7 @@
 
 
 /***/ },
-/* 412 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60417,7 +60361,7 @@
 	//! author : Jacob Middag : https://github.com/middagj
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60499,7 +60443,7 @@
 
 
 /***/ },
-/* 413 */
+/* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60508,7 +60452,7 @@
 	//! author : Jacob Middag : https://github.com/middagj
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60590,7 +60534,7 @@
 
 
 /***/ },
-/* 414 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60598,7 +60542,7 @@
 	//! author : https://github.com/mechuwind
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60655,7 +60599,7 @@
 
 
 /***/ },
-/* 415 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60663,7 +60607,7 @@
 	//! author : Harpreet Singh : https://github.com/harpreetkhalsagtbit
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60784,7 +60728,7 @@
 
 
 /***/ },
-/* 416 */
+/* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60792,7 +60736,7 @@
 	//! author : Rafal Hirsz : https://github.com/evoL
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60894,7 +60838,7 @@
 
 
 /***/ },
-/* 417 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60902,7 +60846,7 @@
 	//! author : Jefferson : https://github.com/jalex79
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -60964,7 +60908,7 @@
 
 
 /***/ },
-/* 418 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -60972,7 +60916,7 @@
 	//! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -61030,7 +60974,7 @@
 
 
 /***/ },
-/* 419 */
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -61039,7 +60983,7 @@
 	//! author : Valentin Agachi : https://github.com/avaly
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -61110,7 +61054,7 @@
 
 
 /***/ },
-/* 420 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -61120,7 +61064,7 @@
 	//! author : Коренберг Марк : https://github.com/socketpair
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -61298,7 +61242,7 @@
 
 
 /***/ },
-/* 421 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -61306,7 +61250,7 @@
 	//! authors : Bård Rolstad Henriksen : https://github.com/karamell
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -61364,7 +61308,7 @@
 
 
 /***/ },
-/* 422 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -61372,7 +61316,7 @@
 	//! author : Sampath Sitinamaluwa : https://github.com/sampathsris
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -61440,7 +61384,7 @@
 
 
 /***/ },
-/* 423 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -61449,7 +61393,7 @@
 	//! based on work of petrbela : https://github.com/petrbela
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -61595,7 +61539,7 @@
 
 
 /***/ },
-/* 424 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -61603,7 +61547,7 @@
 	//! author : Robert Sedovšek : https://github.com/sedovsek
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -61762,7 +61706,7 @@
 
 
 /***/ },
-/* 425 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -61772,7 +61716,7 @@
 	//! author : Oerd Cukalla : https://github.com/oerd
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -61837,7 +61781,7 @@
 
 
 /***/ },
-/* 426 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -61845,7 +61789,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -61952,7 +61896,7 @@
 
 
 /***/ },
-/* 427 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -61960,7 +61904,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62067,7 +62011,7 @@
 
 
 /***/ },
-/* 428 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62075,7 +62019,7 @@
 	//! author : Nicolai Davies<mail@nicolai.io> : https://github.com/nicolaidavies
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62161,7 +62105,7 @@
 
 
 /***/ },
-/* 429 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62169,7 +62113,7 @@
 	//! author : Jens Alm : https://github.com/ulmus
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62235,7 +62179,7 @@
 
 
 /***/ },
-/* 430 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62243,7 +62187,7 @@
 	//! author : Fahad Kassim : https://github.com/fadsel
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62299,7 +62243,7 @@
 
 
 /***/ },
-/* 431 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62307,7 +62251,7 @@
 	//! author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62434,7 +62378,7 @@
 
 
 /***/ },
-/* 432 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62442,7 +62386,7 @@
 	//! author : Krishna Chaitanya Thota : https://github.com/kcthota
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62528,7 +62472,7 @@
 
 
 /***/ },
-/* 433 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62537,7 +62481,7 @@
 	//! author : Onorio De J. Afonso : https://github.com/marobo
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62601,7 +62545,7 @@
 
 
 /***/ },
-/* 434 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62609,7 +62553,7 @@
 	//! author : Kridsada Thanabulpong : https://github.com/sirn
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62673,7 +62617,7 @@
 
 
 /***/ },
-/* 435 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62681,7 +62625,7 @@
 	//! author : Dan Hagman : https://github.com/hagmandan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62740,7 +62684,7 @@
 
 
 /***/ },
-/* 436 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62748,7 +62692,7 @@
 	//! author : Dominika Kruk : https://github.com/amaranthrose
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62865,7 +62809,7 @@
 
 
 /***/ },
-/* 437 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62874,7 +62818,7 @@
 	//!           Burak Yiğit Kaya: https://github.com/BYK
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -62960,7 +62904,7 @@
 
 
 /***/ },
-/* 438 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -62969,7 +62913,7 @@
 	//! author : Iustì Canun
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63056,7 +63000,7 @@
 
 
 /***/ },
-/* 439 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63064,7 +63008,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63119,7 +63063,7 @@
 
 
 /***/ },
-/* 440 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63127,7 +63071,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63182,7 +63126,7 @@
 
 
 /***/ },
-/* 441 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63191,7 +63135,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63333,7 +63277,7 @@
 
 
 /***/ },
-/* 442 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63341,7 +63285,7 @@
 	//! author : Sardor Muminov : https://github.com/muminoff
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63396,7 +63340,7 @@
 
 
 /***/ },
-/* 443 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63404,7 +63348,7 @@
 	//! author : Bang Nguyen : https://github.com/bangnk
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63480,7 +63424,7 @@
 
 
 /***/ },
-/* 444 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63488,7 +63432,7 @@
 	//! author : Andrew Hood : https://github.com/andrewhood125
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63553,7 +63497,7 @@
 
 
 /***/ },
-/* 445 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63561,7 +63505,7 @@
 	//! author : Atolagbe Abisoye : https://github.com/andela-batolagbe
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63618,7 +63562,7 @@
 
 
 /***/ },
-/* 446 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63627,7 +63571,7 @@
 	//! author : Zeno Zeng : https://github.com/zenozeng
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63750,7 +63694,7 @@
 
 
 /***/ },
-/* 447 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63760,7 +63704,7 @@
 	//! author : Konstantin : https://github.com/skfd
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63860,7 +63804,7 @@
 
 
 /***/ },
-/* 448 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -63869,7 +63813,7 @@
 	//! author : Chris Lam : https://github.com/hehachris
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(339)) :
+	    true ? factory(__webpack_require__(338)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -63969,13 +63913,13 @@
 
 
 /***/ },
-/* 449 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(450);
+	var content = __webpack_require__(449);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -63995,7 +63939,7 @@
 	}
 
 /***/ },
-/* 450 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -64003,19 +63947,19 @@
 
 
 	// module
-	exports.push([module.id, ".products-row {\n  height: 40px;\n  background-color: #FFFFFF;\n  border-top: 1px solid #ededed; }\n  .products-row a {\n    color: #0288D1 !important;\n    text-decoration: none; }\n  .products-row td {\n    padding: 18px 0 18px 10px; }\n  .products-row button {\n    background-color: Transparent;\n    background-repeat: no-repeat;\n    border: none;\n    cursor: pointer;\n    overflow: hidden;\n    outline: none; }\n  .products-row:hover {\n    background-color: #f8f8f8 !important; }\n\n.products-row .active {\n  color: #AAC667; }\n\n.products-row .inactive {\n  color: #EE637A; }\n\n.products-row .products-update-date {\n  font-size: 12px; }\n\n.products-row .products-row-id {\n  color: #888c90;\n  font-size: 10px; }\n\n.products-row .action-buttons-container {\n  padding-right: 20px;\n  display: flex;\n  flex-direction: row-reverse; }\n\n.products-row .delete-section {\n  font-size: 12px; }\n", ""]);
+	exports.push([module.id, ".admin--products-row {\n  height: 40px;\n  background-color: #FFFFFF;\n  border-top: 1px solid #ededed; }\n  .admin--products-row a {\n    color: #0288D1 !important;\n    text-decoration: none; }\n  .admin--products-row td {\n    padding: 18px 0 18px 10px; }\n  .admin--products-row button {\n    background-color: Transparent;\n    background-repeat: no-repeat;\n    border: none;\n    cursor: pointer;\n    overflow: hidden;\n    outline: none; }\n  .admin--products-row:hover {\n    background-color: #f8f8f8 !important; }\n\n.admin--products-row.active {\n  border-left: 5px solid #64DD17; }\n\n.admin--products-row.inactive {\n  border-left: 5px solid #FF1744; }\n\n.admin--products-row .products-update-date {\n  font-size: 10px; }\n\n.admin--products-row .action-buttons-container {\n  padding-right: 20px;\n  display: flex;\n  flex-direction: row-reverse; }\n\n.admin--products-row .delete-section {\n  font-size: 12px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 451 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(452);
+	var content = __webpack_require__(451);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -64035,7 +63979,7 @@
 	}
 
 /***/ },
-/* 452 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -64043,19 +63987,19 @@
 
 
 	// module
-	exports.push([module.id, ".admin-products-container {\n  width: 70%;\n  margin: 0 auto; }\n  .admin-products-container .products-table {\n    width: 100%;\n    border-collapse: collapse; }\n  .admin-products-container .products-table .products-table-actions {\n    background-color: #E1E4E9;\n    height: 50px; }\n  .admin-products-container .products-table .products-table-header {\n    background-color: #FFFFFF; }\n    .admin-products-container .products-table .products-table-header th {\n      text-align: left;\n      height: 40px;\n      border-bottom: 1px solid #dddddd;\n      padding-left: 10px; }\n  .admin-products-container .products-table .products-table-actions .search-text-container {\n    padding-left: 10px;\n    height: 25px;\n    display: flex; }\n    .admin-products-container .products-table .products-table-actions .search-text-container .search-text {\n      width: 40%;\n      height: 100%; }\n", ""]);
+	exports.push([module.id, ".admin--products-table-container .admin--products__table {\n  width: 100%;\n  border-collapse: collapse; }\n\n.admin--products-table-container .admin--products__table .admin--products__table__tr-actions-container {\n  background-color: #E1E4E9;\n  height: 50px; }\n\n.admin--products-table-container .admin--products__table .admin--products__table__tr-actions-container .search-text-container {\n  padding-left: 10px;\n  height: 25px;\n  display: flex; }\n\n.admin--products-table-container .admin--products__table .admin--products__table__tr-header {\n  background-color: #FFFFFF; }\n  .admin--products-table-container .admin--products__table .admin--products__table__tr-header th {\n    text-align: left;\n    height: 40px;\n    border-bottom: 1px solid #dddddd;\n    padding-left: 10px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 453 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(454);
+	var content = __webpack_require__(453);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -64075,7 +64019,7 @@
 	}
 
 /***/ },
-/* 454 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -64083,13 +64027,13 @@
 
 
 	// module
-	exports.push([module.id, ".products-container {\n  padding: 10px 10px 20px 20px; }\n\n.products-container .products-actions {\n  display: flex;\n  flex-direction: row-reverse;\n  margin-bottom: 20px; }\n", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.admin--products-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .admin--products-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.admin--products-container .admin--products-actions-container {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  display: flex;\n  flex-direction: row-reverse;\n  margin-bottom: 20px; }\n\n.admin--products-container .admin--products-table-wrapper {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 455 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64112,7 +64056,7 @@
 
 	var _reactRouter = __webpack_require__(257);
 
-	var _reactAddonsUpdate = __webpack_require__(336);
+	var _reactAddonsUpdate = __webpack_require__(335);
 
 	var _reactAddonsUpdate2 = _interopRequireDefault(_reactAddonsUpdate);
 
@@ -64120,11 +64064,11 @@
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _tabs = __webpack_require__(456);
+	var _tabs = __webpack_require__(455);
 
 	var _tabs2 = _interopRequireDefault(_tabs);
 
-	var _pane = __webpack_require__(459);
+	var _pane = __webpack_require__(458);
 
 	var _pane2 = _interopRequireDefault(_pane);
 
@@ -64132,23 +64076,23 @@
 
 	var productActions = _interopRequireWildcard(_productAction);
 
-	var _setup = __webpack_require__(460);
+	var _setup = __webpack_require__(459);
 
 	var _setup2 = _interopRequireDefault(_setup);
 
-	var _timeline = __webpack_require__(480);
+	var _timeline = __webpack_require__(479);
 
 	var _timeline2 = _interopRequireDefault(_timeline);
 
-	var _productName = __webpack_require__(489);
+	var _productName = __webpack_require__(488);
 
 	var _productName2 = _interopRequireDefault(_productName);
 
-	var _timespanTypes = __webpack_require__(481);
+	var _timespanTypes = __webpack_require__(480);
 
 	var _timespanTypes2 = _interopRequireDefault(_timespanTypes);
 
-	__webpack_require__(493);
+	__webpack_require__(492);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -64272,21 +64216,8 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'product-tabs-section' },
-	          _react2.default.createElement(
-	            _tabs2.default,
-	            { selected: 0 },
-	            _react2.default.createElement(
-	              _pane2.default,
-	              { label: this.renderButtonSettings() },
-	              _react2.default.createElement(_setup2.default, _extends({}, this.state, { onChangeStatus: this.onChangeStatus, onChangePrice: this.onChangePrice, onChangePriceUnit: this.onChangePriceUnit }))
-	            ),
-	            _react2.default.createElement(
-	              _pane2.default,
-	              { label: this.renderButtonTimeline() },
-	              _react2.default.createElement(_timeline2.default, _extends({}, this.state, { onChangeTimespan: this.handleChangeTimespanType }))
-	            )
-	          )
+	          { className: 'product-setup-section' },
+	          _react2.default.createElement(_setup2.default, _extends({}, this.state, { onChangeStatus: this.onChangeStatus, onChangePrice: this.onChangePrice, onChangePriceUnit: this.onChangePriceUnit }))
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -64296,14 +64227,14 @@
 	            { className: 'botton-container' },
 	            _react2.default.createElement(
 	              'button',
-	              { className: 'pure-button  button-primary valign-center', onClick: function onClick() {
+	              { className: 'mdc-button  button-primary valign-center', onClick: function onClick() {
 	                  return _this2.onClickSave();
 	                } },
 	              'Save'
 	            ),
 	            _react2.default.createElement(
 	              'button',
-	              { className: 'pure-button valign-center', onClick: function onClick() {
+	              { className: 'mdc-button valign-center', onClick: function onClick() {
 	                  return _this2.onClickCancel();
 	                } },
 	              'Cancel'
@@ -64388,7 +64319,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Product);
 
 /***/ },
-/* 456 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64403,7 +64334,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(457);
+	__webpack_require__(456);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -64494,13 +64425,13 @@
 	exports.default = Tabs;
 
 /***/ },
-/* 457 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(458);
+	var content = __webpack_require__(457);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -64520,7 +64451,7 @@
 	}
 
 /***/ },
-/* 458 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -64534,7 +64465,7 @@
 
 
 /***/ },
-/* 459 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64588,7 +64519,7 @@
 	exports.default = Pane;
 
 /***/ },
-/* 460 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64603,7 +64534,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactSelect = __webpack_require__(461);
+	var _reactSelect = __webpack_require__(460);
 
 	var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
@@ -64611,7 +64542,7 @@
 
 	var _reactRedux = __webpack_require__(240);
 
-	var _switch = __webpack_require__(473);
+	var _switch = __webpack_require__(472);
 
 	var _switch2 = _interopRequireDefault(_switch);
 
@@ -64619,9 +64550,9 @@
 
 	var priceActions = _interopRequireWildcard(_priceAction);
 
-	__webpack_require__(476);
+	__webpack_require__(475);
 
-	__webpack_require__(478);
+	__webpack_require__(477);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -64748,7 +64679,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Setup);
 
 /***/ },
-/* 461 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -64779,43 +64710,43 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactInputAutosize = __webpack_require__(462);
+	var _reactInputAutosize = __webpack_require__(461);
 
 	var _reactInputAutosize2 = _interopRequireDefault(_reactInputAutosize);
 
-	var _classnames = __webpack_require__(463);
+	var _classnames = __webpack_require__(462);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _utilsDefaultArrowRenderer = __webpack_require__(464);
+	var _utilsDefaultArrowRenderer = __webpack_require__(463);
 
 	var _utilsDefaultArrowRenderer2 = _interopRequireDefault(_utilsDefaultArrowRenderer);
 
-	var _utilsDefaultFilterOptions = __webpack_require__(465);
+	var _utilsDefaultFilterOptions = __webpack_require__(464);
 
 	var _utilsDefaultFilterOptions2 = _interopRequireDefault(_utilsDefaultFilterOptions);
 
-	var _utilsDefaultMenuRenderer = __webpack_require__(467);
+	var _utilsDefaultMenuRenderer = __webpack_require__(466);
 
 	var _utilsDefaultMenuRenderer2 = _interopRequireDefault(_utilsDefaultMenuRenderer);
 
-	var _Async = __webpack_require__(468);
+	var _Async = __webpack_require__(467);
 
 	var _Async2 = _interopRequireDefault(_Async);
 
-	var _AsyncCreatable = __webpack_require__(469);
+	var _AsyncCreatable = __webpack_require__(468);
 
 	var _AsyncCreatable2 = _interopRequireDefault(_AsyncCreatable);
 
-	var _Creatable = __webpack_require__(470);
+	var _Creatable = __webpack_require__(469);
 
 	var _Creatable2 = _interopRequireDefault(_Creatable);
 
-	var _Option = __webpack_require__(471);
+	var _Option = __webpack_require__(470);
 
 	var _Option2 = _interopRequireDefault(_Option);
 
-	var _Value = __webpack_require__(472);
+	var _Value = __webpack_require__(471);
 
 	var _Value2 = _interopRequireDefault(_Value);
 
@@ -65940,7 +65871,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 462 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -66074,7 +66005,7 @@
 	module.exports = AutosizeInput;
 
 /***/ },
-/* 463 */
+/* 462 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -66128,7 +66059,7 @@
 
 
 /***/ },
-/* 464 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -66157,14 +66088,14 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 465 */
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _stripDiacritics = __webpack_require__(466);
+	var _stripDiacritics = __webpack_require__(465);
 
 	var _stripDiacritics2 = _interopRequireDefault(_stripDiacritics);
 
@@ -66204,7 +66135,7 @@
 	module.exports = filterOptions;
 
 /***/ },
-/* 466 */
+/* 465 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -66219,14 +66150,14 @@
 	};
 
 /***/ },
-/* 467 */
+/* 466 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _classnames = __webpack_require__(463);
+	var _classnames = __webpack_require__(462);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -66285,7 +66216,7 @@
 	module.exports = menuRenderer;
 
 /***/ },
-/* 468 */
+/* 467 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -66312,11 +66243,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Select = __webpack_require__(461);
+	var _Select = __webpack_require__(460);
 
 	var _Select2 = _interopRequireDefault(_Select);
 
-	var _utilsStripDiacritics = __webpack_require__(466);
+	var _utilsStripDiacritics = __webpack_require__(465);
 
 	var _utilsStripDiacritics2 = _interopRequireDefault(_utilsStripDiacritics);
 
@@ -66493,7 +66424,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 469 */
+/* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -66506,7 +66437,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Select = __webpack_require__(461);
+	var _Select = __webpack_require__(460);
 
 	var _Select2 = _interopRequireDefault(_Select);
 
@@ -66540,7 +66471,7 @@
 	module.exports = AsyncCreatable;
 
 /***/ },
-/* 470 */
+/* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -66555,15 +66486,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Select = __webpack_require__(461);
+	var _Select = __webpack_require__(460);
 
 	var _Select2 = _interopRequireDefault(_Select);
 
-	var _utilsDefaultFilterOptions = __webpack_require__(465);
+	var _utilsDefaultFilterOptions = __webpack_require__(464);
 
 	var _utilsDefaultFilterOptions2 = _interopRequireDefault(_utilsDefaultFilterOptions);
 
-	var _utilsDefaultMenuRenderer = __webpack_require__(467);
+	var _utilsDefaultMenuRenderer = __webpack_require__(466);
 
 	var _utilsDefaultMenuRenderer2 = _interopRequireDefault(_utilsDefaultMenuRenderer);
 
@@ -66829,7 +66760,7 @@
 	module.exports = Creatable;
 
 /***/ },
-/* 471 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -66840,7 +66771,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(463);
+	var _classnames = __webpack_require__(462);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -66945,7 +66876,7 @@
 	module.exports = Option;
 
 /***/ },
-/* 472 */
+/* 471 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -66956,7 +66887,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(463);
+	var _classnames = __webpack_require__(462);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -67056,7 +66987,7 @@
 	module.exports = Value;
 
 /***/ },
-/* 473 */
+/* 472 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67069,11 +67000,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(463);
+	var _classnames = __webpack_require__(462);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	__webpack_require__(474);
+	__webpack_require__(473);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -67113,13 +67044,13 @@
 	exports.default = Switch;
 
 /***/ },
-/* 474 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(475);
+	var content = __webpack_require__(474);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -67139,7 +67070,7 @@
 	}
 
 /***/ },
-/* 475 */
+/* 474 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -67147,19 +67078,19 @@
 
 
 	// module
-	exports.push([module.id, ".Switch {\n  position: relative;\n  display: inline-block;\n  color: #ffffff;\n  height: 18px;\n  padding: 6px 6px 5px;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  background: #BDC3C7;\n  cursor: pointer;\n  font-size: 16px; }\n\nbody.IE7 .Switch {\n  width: 78px; }\n\n.Switch span {\n  display: inline-block;\n  width: 35px; }\n\n.Switch .Toggle {\n  position: absolute;\n  top: 0;\n  width: 50%;\n  height: 30px;\n  border-radius: 4px;\n  z-index: 999;\n  text-align: center;\n  vertical-align: middle;\n  line-height: 30px; }\n\n.Switch.On .Toggle {\n  left: 0;\n  background: #2FB1E8;\n  color: #FFFFFF; }\n\n.Switch.Off .Toggle {\n  left: 50%;\n  background-color: #8891A2;\n  color: #ffffff; }\n", ""]);
+	exports.push([module.id, ".Switch {\n  position: relative;\n  display: inline-block;\n  color: #ffffff;\n  height: 100%;\n  padding: 6px 6px 5px;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  background: #BDC3C7;\n  cursor: pointer;\n  font-size: 16px; }\n\nbody.IE7 .Switch {\n  width: 78px; }\n\n.Switch span {\n  display: inline-block;\n  width: 35px; }\n\n.Switch .Toggle {\n  position: absolute;\n  top: 0;\n  width: 50%;\n  height: 30px;\n  border-radius: 4px;\n  z-index: 999;\n  text-align: center;\n  vertical-align: middle;\n  line-height: 30px; }\n\n.Switch.On .Toggle {\n  left: 0;\n  background: #2FB1E8;\n  color: #FFFFFF; }\n\n.Switch.Off .Toggle {\n  left: 50%;\n  background-color: #8891A2;\n  color: #ffffff; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 476 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(477);
+	var content = __webpack_require__(476);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -67179,7 +67110,7 @@
 	}
 
 /***/ },
-/* 477 */
+/* 476 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -67193,13 +67124,13 @@
 
 
 /***/ },
-/* 478 */
+/* 477 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(479);
+	var content = __webpack_require__(478);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -67219,7 +67150,7 @@
 	}
 
 /***/ },
-/* 479 */
+/* 478 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -67227,13 +67158,13 @@
 
 
 	// module
-	exports.push([module.id, ".setup-container {\n  padding: 20px 10px 20px 40px;\n  width: 100%; }\n  .setup-container .primary-form {\n    width: 50%; }\n  .setup-container .primary-form .row {\n    margin-bottom: 20px;\n    height: 30px; }\n  .setup-container .primary-form .row .label {\n    width: 20%;\n    max-width: 100px;\n    white-space: nowrap;\n    vertical-align: top;\n    display: inline-block;\n    margin-top: 8px;\n    font-size: 18px; }\n  .setup-container .primary-form .row .field {\n    display: inline-block;\n    width: 80%;\n    height: 100%; }\n    .setup-container .primary-form .row .field .field-content {\n      display: flex;\n      height: 100%;\n      font-size: 18px; }\n    .setup-container .primary-form .row .field .field-control {\n      width: 100%;\n      height: 100%; }\n", ""]);
+	exports.push([module.id, ".setup-container {\n  padding: 10px;\n  width: 100%; }\n  .setup-container .primary-form {\n    width: 100%; }\n  .setup-container .primary-form .row {\n    margin-bottom: 20px;\n    height: 30px; }\n  .setup-container .primary-form .row .label {\n    width: 20%;\n    max-width: 100px;\n    white-space: nowrap;\n    vertical-align: top;\n    display: inline-block;\n    margin-top: 8px;\n    font-size: 18px; }\n  .setup-container .primary-form .row .field {\n    display: inline-block;\n    width: 80%;\n    height: 100%; }\n    .setup-container .primary-form .row .field .field-content {\n      display: flex;\n      height: 100%;\n      font-size: 18px; }\n    .setup-container .primary-form .row .field .field-control {\n      width: 100%;\n      height: 100%; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 480 */
+/* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67248,7 +67179,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactSelect = __webpack_require__(461);
+	var _reactSelect = __webpack_require__(460);
 
 	var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
@@ -67258,19 +67189,19 @@
 
 	var priceActions = _interopRequireWildcard(_priceAction);
 
-	var _timespanTypes = __webpack_require__(481);
+	var _timespanTypes = __webpack_require__(480);
 
 	var _timespanTypes2 = _interopRequireDefault(_timespanTypes);
 
-	var _priceTimelineLineGraph = __webpack_require__(482);
+	var _priceTimelineLineGraph = __webpack_require__(481);
 
 	var _priceTimelineLineGraph2 = _interopRequireDefault(_priceTimelineLineGraph);
 
 	var _reducers = __webpack_require__(207);
 
-	__webpack_require__(476);
+	__webpack_require__(475);
 
-	__webpack_require__(487);
+	__webpack_require__(486);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -67351,7 +67282,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, priceActions)(Timeline);
 
 /***/ },
-/* 481 */
+/* 480 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -67363,7 +67294,7 @@
 	exports.default = timespanTypes;
 
 /***/ },
-/* 482 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67382,11 +67313,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _d3LineChart = __webpack_require__(483);
+	var _d3LineChart = __webpack_require__(482);
 
 	var _d3LineChart2 = _interopRequireDefault(_d3LineChart);
 
-	__webpack_require__(485);
+	__webpack_require__(484);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -67456,7 +67387,7 @@
 	exports.default = PriceTimelineLineGraph;
 
 /***/ },
-/* 483 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67467,7 +67398,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _d = __webpack_require__(484);
+	var _d = __webpack_require__(483);
 
 	var d3 = _interopRequireWildcard(_d);
 
@@ -67475,7 +67406,7 @@
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _moment = __webpack_require__(339);
+	var _moment = __webpack_require__(338);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -67686,7 +67617,7 @@
 	exports.default = LineChart;
 
 /***/ },
-/* 484 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// https://d3js.org Version 4.4.2. Copyright 2017 Mike Bostock.
@@ -84085,13 +84016,13 @@
 
 
 /***/ },
-/* 485 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(486);
+	var content = __webpack_require__(485);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84111,7 +84042,7 @@
 	}
 
 /***/ },
-/* 486 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84125,13 +84056,13 @@
 
 
 /***/ },
-/* 487 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(488);
+	var content = __webpack_require__(487);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84151,7 +84082,7 @@
 	}
 
 /***/ },
-/* 488 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84165,7 +84096,7 @@
 
 
 /***/ },
-/* 489 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84180,15 +84111,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactClickOutside = __webpack_require__(490);
+	var _reactClickOutside = __webpack_require__(489);
 
 	var _reactClickOutside2 = _interopRequireDefault(_reactClickOutside);
 
-	var _classnames = __webpack_require__(463);
+	var _classnames = __webpack_require__(462);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	__webpack_require__(491);
+	__webpack_require__(490);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84219,9 +84150,13 @@
 	  _createClass(ProductName, [{
 	    key: 'componentWillReceiveProps',
 	    value: function componentWillReceiveProps(nextProps) {
-	      this.setState({
-	        isOpened: !!!nextProps.id
-	      });
+	      var id = this.props.id;
+
+	      if (nextProps.id !== id) {
+	        this.setState({
+	          isOpened: !!!nextProps.id
+	        });
+	      }
 	    }
 	  }, {
 	    key: 'handleClickOutside',
@@ -84264,7 +84199,7 @@
 	exports.default = (0, _reactClickOutside2.default)(ProductName);
 
 /***/ },
-/* 490 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84303,13 +84238,13 @@
 	};
 
 /***/ },
-/* 491 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(492);
+	var content = __webpack_require__(491);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84329,7 +84264,7 @@
 	}
 
 /***/ },
-/* 492 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84337,19 +84272,19 @@
 
 
 	// module
-	exports.push([module.id, ".product-name-container {\n  width: 60%;\n  height: 30px;\n  font-size: 25px;\n  padding-bottom: 20px; }\n\n.product-name-container .product-name {\n  width: 100%;\n  height: 100%; }\n", ""]);
+	exports.push([module.id, ".product-name-container {\n  width: 100%;\n  height: 50px;\n  font-size: 25px;\n  padding-bottom: 20px;\n  overflow: hidden; }\n\n.product-name-container .product-name {\n  width: 100%;\n  height: 100%; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 493 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(494);
+	var content = __webpack_require__(493);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84369,7 +84304,7 @@
 	}
 
 /***/ },
-/* 494 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84377,13 +84312,13 @@
 
 
 	// module
-	exports.push([module.id, ".product-container {\n  padding: 20px 10px 20px 20px; }\n\n.product-container .product-tabs-section {\n  margin-bottom: 30px; }\n\n.product-container .product-actions-section .botton-container {\n  width: 160px;\n  display: flex;\n  justify-content: space-between; }\n", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.product-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .product-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.product-container .product-setup-section {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  background-color: #ffffff;\n  margin-bottom: 20px; }\n\n.product-container .product-actions-section {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0; }\n\n.product-container .product-actions-section .botton-container {\n  width: 160px;\n  display: flex;\n  justify-content: space-between; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 495 */
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84396,11 +84331,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _productsTable = __webpack_require__(496);
+	var _productsTable = __webpack_require__(495);
 
 	var _productsTable2 = _interopRequireDefault(_productsTable);
 
-	__webpack_require__(502);
+	__webpack_require__(501);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84424,7 +84359,7 @@
 	exports.default = Main;
 
 /***/ },
-/* 496 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84451,11 +84386,11 @@
 
 	var productActions = _interopRequireWildcard(_productAction);
 
-	var _productsRow = __webpack_require__(497);
+	var _productsRow = __webpack_require__(496);
 
 	var _productsRow2 = _interopRequireDefault(_productsRow);
 
-	__webpack_require__(500);
+	__webpack_require__(499);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -84517,7 +84452,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, productActions)(MainProductsTable);
 
 /***/ },
-/* 497 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84532,13 +84467,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _moment = __webpack_require__(339);
+	var _moment = __webpack_require__(338);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
 	var _reactRedux = __webpack_require__(240);
 
-	__webpack_require__(498);
+	__webpack_require__(497);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84553,6 +84488,7 @@
 	          { className: 'material-icons ' },
 	          'arrow_drop_up'
 	        ),
+	        '%\xA0',
 	        rate
 	      );
 	    case +rate < 0:
@@ -84564,6 +84500,7 @@
 	          { className: 'material-icons ' },
 	          'arrow_drop_down'
 	        ),
+	        '%\xA0',
 	        rate
 	      );
 	    default:
@@ -84664,13 +84601,13 @@
 	exports.default = MainProductsRow;
 
 /***/ },
-/* 498 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(499);
+	var content = __webpack_require__(498);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84690,7 +84627,7 @@
 	}
 
 /***/ },
-/* 499 */
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84698,19 +84635,19 @@
 
 
 	// module
-	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n  @media (min-width: 320px) {\n    .products-row-container {\n      height: 70px; } }\n  @media (min-width: 641px) {\n    .products-row-container {\n      height: 90px; } }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.5vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 1.5vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n", ""]);
+	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n  @media (min-width: 320px) {\n    .products-row-container {\n      height: 70px; } }\n  @media (min-width: 641px) {\n    .products-row-container {\n      height: 90px; } }\n  @media (min-width: 1382px) {\n    .products-row-container {\n      height: 100px; } }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 1.5vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n      @media (min-width: 1382px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.5vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 1.5vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 500 */
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(501);
+	var content = __webpack_require__(500);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84730,7 +84667,7 @@
 	}
 
 /***/ },
-/* 501 */
+/* 500 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84744,13 +84681,13 @@
 
 
 /***/ },
-/* 502 */
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(503);
+	var content = __webpack_require__(502);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84770,7 +84707,7 @@
 	}
 
 /***/ },
-/* 503 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84779,6 +84716,46 @@
 
 	// module
 	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .index-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 503 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(504);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../css-loader/index.js!./material-components-web.css", function() {
+				var newContent = require("!!./../../css-loader/index.js!./material-components-web.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 504 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n.mdc-animation-linear-out-slow-in {\n  -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\n          animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-animation-fast-out-slow-in {\n  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-animation-fast-out-linear-in {\n  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 1);\n          animation-timing-function: cubic-bezier(0.4, 0, 1, 1); }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* postcss-bem-linter: define button */\n/* stylelint-disable declaration-property-unit-whitelist */\n.mdc-button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  display: inline-block;\n  position: relative;\n  min-width: 64px;\n  height: 36px;\n  padding: 0 16px;\n  border: none;\n  border-radius: 2px;\n  outline: none;\n  background: transparent;\n  font-size: 14px;\n  /* Override font to specifically be px as spec defined pt */\n  font-weight: 500;\n  line-height: 36px;\n  /* Override line-height so text aligns centered */\n  text-align: center;\n  text-transform: uppercase;\n  vertical-align: middle;\n  box-sizing: border-box;\n  -webkit-appearance: none;\n  -webkit-tap-highlight-color: transparent;\n  /* postcss-bem-linter: ignore */\n  /* stylelint-disable selector-no-type */ }\n  .mdc-button--theme-dark,\n  .mdc-theme--dark .mdc-button {\n    color: white;\n    color: var(--mdc-theme-text-primary-on-dark, white); }\n  .mdc-button::before {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    border-radius: inherit;\n    background: currentColor;\n    content: \"\";\n    opacity: 0; }\n  .mdc-button:focus::before {\n    -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    opacity: .12; }\n  .mdc-button:active::before {\n    -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n    opacity: .18; }\n  .mdc-button:focus:active::before {\n    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n  .mdc-button:active {\n    outline: none; }\n  .mdc-button:hover {\n    cursor: pointer; }\n  .mdc-button::-moz-focus-inner {\n    padding: 0;\n    border: 0; }\n  .mdc-button--dense {\n    height: 32px;\n    font-size: .8125rem;\n    /* 13sp */\n    line-height: 32px; }\n  .mdc-button--raised {\n    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n    -webkit-transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n    will-change: box-shadow;\n    min-width: 88px; }\n    .mdc-button--raised:active {\n      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n    .mdc-button--theme-dark .mdc-button--raised,\n    .mdc-theme--dark .mdc-button--raised {\n      background-color: #3f51b5;\n      background-color: var(--mdc-theme-primary, #3f51b5);\n      /* postcss-bem-linter: ignore */ }\n      .mdc-button--theme-dark .mdc-button--raised::before,\n      .mdc-theme--dark .mdc-button--raised::before {\n        /*\n          We are explicitly not fully adhering to Material Design here.\n          This should be the 700-shade when active instead of a black shade.\n          Due to the complexity involved in adhering fully it is being ignored.\n          Instead re-using the existing architecture for shading works just fine.\n          - With <3 from Garbee\n        */\n        color: black; }\n  .mdc-button--primary {\n    color: #3f51b5;\n    color: var(--mdc-theme-primary, #3f51b5);\n    /* postcss-bem-linter: ignore */ }\n    .mdc-button--theme-dark .mdc-button--primary,\n    .mdc-theme--dark .mdc-button--primary {\n      color: #3f51b5;\n      color: var(--mdc-theme-primary, #3f51b5); }\n    .mdc-button--primary.mdc-button--raised {\n      background-color: #3f51b5;\n      background-color: var(--mdc-theme-primary, #3f51b5);\n      color: white;\n      color: var(--mdc-theme-text-primary-on-primary, white);\n      /* postcss-bem-linter: ignore */ }\n      .mdc-button--primary.mdc-button--raised::before {\n        color: black; }\n  .mdc-button--accent {\n    color: #ff4081;\n    color: var(--mdc-theme-accent, #ff4081);\n    /* postcss-bem-linter: ignore */ }\n    .mdc-button--theme-dark .mdc-button--accent,\n    .mdc-theme--dark .mdc-button--accent {\n      color: #ff4081;\n      color: var(--mdc-theme-accent, #ff4081); }\n    .mdc-button--accent.mdc-button--raised {\n      background-color: #ff4081;\n      background-color: var(--mdc-theme-accent, #ff4081);\n      color: white;\n      color: var(--mdc-theme-text-primary-on-accent, white);\n      /* postcss-bem-linter: ignore */ }\n      .mdc-button--accent.mdc-button--raised::before {\n        color: black; }\n  .mdc-button--compact {\n    padding: 0 8px; }\n  fieldset:disabled .mdc-button, .mdc-button:disabled {\n    color: rgba(0, 0, 0, 0.26);\n    cursor: default;\n    pointer-events: none; }\n    .mdc-button--theme-dark fieldset:disabled .mdc-button,\n    .mdc-theme--dark fieldset:disabled .mdc-button, .mdc-button--theme-dark .mdc-button:disabled,\n    .mdc-theme--dark .mdc-button:disabled {\n      color: rgba(255, 255, 255, 0.3); }\n  fieldset:disabled .mdc-button--raised, .mdc-button--raised:disabled {\n    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n    background-color: rgba(0, 0, 0, 0.12);\n    pointer-events: none; }\n    .mdc-button--theme-dark fieldset:disabled .mdc-button--raised,\n    .mdc-theme--dark fieldset:disabled .mdc-button--raised, .mdc-button--theme-dark .mdc-button--raised:disabled,\n    .mdc-theme--dark .mdc-button--raised:disabled {\n      background-color: rgba(255, 255, 255, 0.12); }\n\n/* postcss-bem-linter: end */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* postcss-bem-linter: define card */\n.mdc-card {\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  padding: 0;\n  box-sizing: border-box; }\n  .mdc-card__primary {\n    padding: 16px;\n    /* Add extra space before large title. */\n    /* Add extra padding if this is the last block. */ }\n    .mdc-card__primary .mdc-card__title--large {\n      padding-top: 8px; }\n    .mdc-card__primary:last-child {\n      padding-bottom: 24px; }\n  .mdc-card__supporting-text {\n    padding: 8px 16px;\n    box-sizing: border-box;\n    font-family: Roboto, sans-serif;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    font-size: 0.875rem;\n    font-weight: 400;\n    letter-spacing: 0.04em;\n    line-height: 1.25rem;\n    color: rgba(0, 0, 0, 0.87);\n    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n    /* Remove top padding if immediately preceded by a primary block. */\n    /* Add extra padding if this is the last block. */ }\n    .mdc-card--theme-dark .mdc-card__supporting-text,\n    .mdc-theme--dark .mdc-card__supporting-text {\n      color: white;\n      color: var(--mdc-theme-text-primary-on-dark, white); }\n    .mdc-card__primary + .mdc-card__supporting-text {\n      margin-top: -8px;\n      padding-top: 0; }\n    .mdc-card__supporting-text:last-child {\n      padding-bottom: 24px; }\n  .mdc-card__actions {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    padding: 8px;\n    box-sizing: border-box;\n    /* Adjust text color for dark theme. */\n    /* Tweak button paddings and margins when they're used as actions */\n    /* Vertical actions (one per line) */ }\n    .mdc-card--theme-dark .mdc-card__actions,\n    .mdc-theme--dark .mdc-card__actions {\n      color: white;\n      color: var(--mdc-theme-text-primary-on-dark, white); }\n    .mdc-card__actions .mdc-card__action {\n      margin: 0 8px 0 0; }\n    .mdc-card__actions .mdc-card__action:last-child {\n      margin-right: 0; }\n    .mdc-card__actions--vertical {\n      -ms-flex-flow: column;\n          flex-flow: column;\n      -webkit-box-align: start;\n          -ms-flex-align: start;\n              align-items: flex-start; }\n      .mdc-card__actions--vertical .mdc-card__action {\n        margin: 0 0 4px; }\n      .mdc-card__actions--vertical .mdc-card__action:last-child {\n        margin-bottom: 0; }\n  .mdc-card__media {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n    padding: 16px;\n    box-sizing: border-box; }\n  .mdc-card__media-item {\n    display: inline-block;\n    width: auto;\n    height: 80px;\n    margin: 16px 0 0;\n    padding: 0; }\n    .mdc-card__media-item--1dot5x {\n      width: auto;\n      height: 120px; }\n    .mdc-card__media-item--2x {\n      width: auto;\n      height: 160px; }\n    .mdc-card__media-item--3x {\n      width: auto;\n      height: 240px; }\n  .mdc-card__title {\n    font-family: Roboto, sans-serif;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    font-size: 0.875rem;\n    font-weight: 500;\n    letter-spacing: 0.04em;\n    line-height: 1.5rem;\n    color: rgba(0, 0, 0, 0.87);\n    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n    /* Adjust text color for dark theme. */\n    margin: -.063rem 0;\n    /* -1sp 0 */ }\n    .mdc-card--theme-dark .mdc-card__title,\n    .mdc-theme--dark .mdc-card__title {\n      color: white;\n      color: var(--mdc-theme-text-primary-on-dark, white); }\n  .mdc-card__title--large {\n    font-family: Roboto, sans-serif;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    font-size: 1.5rem;\n    font-weight: 400;\n    letter-spacing: normal;\n    line-height: 2rem;\n    margin: 0; }\n  .mdc-card__subtitle {\n    font-family: Roboto, sans-serif;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    font-size: 0.875rem;\n    font-weight: 400;\n    letter-spacing: 0.04em;\n    line-height: 1.25rem;\n    color: rgba(0, 0, 0, 0.87);\n    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n    /* Adjust text color for dark theme. */\n    margin: -.063rem 0;\n    /* -1sp 0 */ }\n    .mdc-card--theme-dark .mdc-card__subtitle,\n    .mdc-theme--dark .mdc-card__subtitle {\n      color: white;\n      color: var(--mdc-theme-text-primary-on-dark, white); }\n  .mdc-card__horizontal-block {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: start;\n        -ms-flex-align: start;\n            align-items: flex-start;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    padding: 0 16px 0 0;\n    box-sizing: border-box; }\n    .mdc-card__horizontal-block .mdc-card__actions--vertical {\n      margin: 16px; }\n    .mdc-card__horizontal-block .mdc-card__media-item {\n      margin-left: 16px; }\n    .mdc-card__horizontal-block:last-child .mdc-card__media-item {\n      margin-bottom: 16px; }\n\n/* postcss-bem-linter: end */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* Manual calculation done on SVG */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* Manual calculation done on SVG */\n@-webkit-keyframes mdc-checkbox-fade-in-background {\n  0% {\n    border-color: rgba(0, 0, 0, 0.54);\n    background-color: transparent; }\n  50% {\n    border-color: #3f51b5;\n    border-color: var(--mdc-theme-primary, #3f51b5);\n    background-color: #3f51b5;\n    background-color: var(--mdc-theme-primary, #3f51b5); } }\n@keyframes mdc-checkbox-fade-in-background {\n  0% {\n    border-color: rgba(0, 0, 0, 0.54);\n    background-color: transparent; }\n  50% {\n    border-color: #3f51b5;\n    border-color: var(--mdc-theme-primary, #3f51b5);\n    background-color: #3f51b5;\n    background-color: var(--mdc-theme-primary, #3f51b5); } }\n\n@-webkit-keyframes mdc-checkbox-fade-out-background {\n  0%,\n  80% {\n    border-color: #3f51b5;\n    border-color: var(--mdc-theme-primary, #3f51b5);\n    background-color: #3f51b5;\n    background-color: var(--mdc-theme-primary, #3f51b5); }\n  100% {\n    border-color: rgba(0, 0, 0, 0.54);\n    background-color: transparent; } }\n\n@keyframes mdc-checkbox-fade-out-background {\n  0%,\n  80% {\n    border-color: #3f51b5;\n    border-color: var(--mdc-theme-primary, #3f51b5);\n    background-color: #3f51b5;\n    background-color: var(--mdc-theme-primary, #3f51b5); }\n  100% {\n    border-color: rgba(0, 0, 0, 0.54);\n    background-color: transparent; } }\n\n@-webkit-keyframes mdc-checkbox-fade-in-background-dark {\n  0% {\n    border-color: white;\n    background-color: transparent; }\n  50% {\n    border-color: #3f51b5;\n    border-color: var(--mdc-theme-primary, #3f51b5);\n    background-color: #3f51b5;\n    background-color: var(--mdc-theme-primary, #3f51b5); } }\n\n@keyframes mdc-checkbox-fade-in-background-dark {\n  0% {\n    border-color: white;\n    background-color: transparent; }\n  50% {\n    border-color: #3f51b5;\n    border-color: var(--mdc-theme-primary, #3f51b5);\n    background-color: #3f51b5;\n    background-color: var(--mdc-theme-primary, #3f51b5); } }\n\n@-webkit-keyframes mdc-checkbox-fade-out-background-dark {\n  0%,\n  80% {\n    border-color: #3f51b5;\n    border-color: var(--mdc-theme-primary, #3f51b5);\n    background-color: #3f51b5;\n    background-color: var(--mdc-theme-primary, #3f51b5); }\n  100% {\n    border-color: white;\n    background-color: transparent; } }\n\n@keyframes mdc-checkbox-fade-out-background-dark {\n  0%,\n  80% {\n    border-color: #3f51b5;\n    border-color: var(--mdc-theme-primary, #3f51b5);\n    background-color: #3f51b5;\n    background-color: var(--mdc-theme-primary, #3f51b5); }\n  100% {\n    border-color: white;\n    background-color: transparent; } }\n\n@-webkit-keyframes mdc-checkbox-unchecked-checked-checkmark-path {\n  0%,\n  50% {\n    stroke-dashoffset: 29.78334; }\n  50% {\n    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\n            animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n  100% {\n    stroke-dashoffset: 0; } }\n\n@keyframes mdc-checkbox-unchecked-checked-checkmark-path {\n  0%,\n  50% {\n    stroke-dashoffset: 29.78334; }\n  50% {\n    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\n            animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n  100% {\n    stroke-dashoffset: 0; } }\n\n@-webkit-keyframes mdc-checkbox-unchecked-indeterminate-mixedmark {\n  0%,\n  68.2% {\n    -webkit-transform: scaleX(0);\n            transform: scaleX(0); }\n  68.2% {\n    -webkit-animation-timing-function: cubic-bezier(0, 0, 0, 1);\n            animation-timing-function: cubic-bezier(0, 0, 0, 1); }\n  100% {\n    -webkit-transform: scaleX(1);\n            transform: scaleX(1); } }\n\n@keyframes mdc-checkbox-unchecked-indeterminate-mixedmark {\n  0%,\n  68.2% {\n    -webkit-transform: scaleX(0);\n            transform: scaleX(0); }\n  68.2% {\n    -webkit-animation-timing-function: cubic-bezier(0, 0, 0, 1);\n            animation-timing-function: cubic-bezier(0, 0, 0, 1); }\n  100% {\n    -webkit-transform: scaleX(1);\n            transform: scaleX(1); } }\n\n@-webkit-keyframes mdc-checkbox-checked-unchecked-checkmark-path {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 1);\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 1);\n    opacity: 1;\n    stroke-dashoffset: 0; }\n  to {\n    opacity: 0;\n    stroke-dashoffset: -29.78334; } }\n\n@keyframes mdc-checkbox-checked-unchecked-checkmark-path {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 1);\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 1);\n    opacity: 1;\n    stroke-dashoffset: 0; }\n  to {\n    opacity: 0;\n    stroke-dashoffset: -29.78334; } }\n\n@-webkit-keyframes mdc-checkbox-checked-indeterminate-checkmark {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n    opacity: 1;\n    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\n            animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n  to {\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    opacity: 0; } }\n\n@keyframes mdc-checkbox-checked-indeterminate-checkmark {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n    opacity: 1;\n    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\n            animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n  to {\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    opacity: 0; } }\n\n@-webkit-keyframes mdc-checkbox-indeterminate-checked-checkmark {\n  from {\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    opacity: 0;\n    -webkit-animation-timing-function: cubic-bezier(0.14, 0, 0, 1);\n            animation-timing-function: cubic-bezier(0.14, 0, 0, 1); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n    opacity: 1; } }\n\n@keyframes mdc-checkbox-indeterminate-checked-checkmark {\n  from {\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    opacity: 0;\n    -webkit-animation-timing-function: cubic-bezier(0.14, 0, 0, 1);\n            animation-timing-function: cubic-bezier(0.14, 0, 0, 1); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n    opacity: 1; } }\n\n@-webkit-keyframes mdc-checkbox-checked-indeterminate-mixedmark {\n  from {\n    -webkit-transform: rotate(-45deg);\n            transform: rotate(-45deg);\n    opacity: 0;\n    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\n            animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n  to {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n    opacity: 1; } }\n\n@keyframes mdc-checkbox-checked-indeterminate-mixedmark {\n  from {\n    -webkit-transform: rotate(-45deg);\n            transform: rotate(-45deg);\n    opacity: 0;\n    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);\n            animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n  to {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n    opacity: 1; } }\n\n@-webkit-keyframes mdc-checkbox-indeterminate-checked-mixedmark {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n    opacity: 1;\n    -webkit-animation-timing-function: cubic-bezier(0.14, 0, 0, 1);\n            animation-timing-function: cubic-bezier(0.14, 0, 0, 1); }\n  to {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg);\n    opacity: 0; } }\n\n@keyframes mdc-checkbox-indeterminate-checked-mixedmark {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n    opacity: 1;\n    -webkit-animation-timing-function: cubic-bezier(0.14, 0, 0, 1);\n            animation-timing-function: cubic-bezier(0.14, 0, 0, 1); }\n  to {\n    -webkit-transform: rotate(315deg);\n            transform: rotate(315deg);\n    opacity: 0; } }\n\n@-webkit-keyframes mdc-checkbox-indeterminate-unchecked-mixedmark {\n  0% {\n    -webkit-transform: scaleX(1);\n            transform: scaleX(1);\n    opacity: 1;\n    -webkit-animation-timing-function: linear;\n            animation-timing-function: linear; }\n  32.8%,\n  100% {\n    -webkit-transform: scaleX(0);\n            transform: scaleX(0);\n    opacity: 0; } }\n\n@keyframes mdc-checkbox-indeterminate-unchecked-mixedmark {\n  0% {\n    -webkit-transform: scaleX(1);\n            transform: scaleX(1);\n    opacity: 1;\n    -webkit-animation-timing-function: linear;\n            animation-timing-function: linear; }\n  32.8%,\n  100% {\n    -webkit-transform: scaleX(0);\n            transform: scaleX(0);\n    opacity: 0; } }\n\n/* postcss-bem-linter: define checkbox */\n.mdc-checkbox {\n  display: inline-block;\n  position: relative;\n  width: 18px;\n  height: 18px;\n  line-height: 0;\n  white-space: nowrap;\n  cursor: pointer;\n  vertical-align: bottom; }\n  .mdc-checkbox__background {\n    border-radius: 2px;\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    box-sizing: border-box;\n    pointer-events: none;\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-transition: background-color 90ms 0ms cubic-bezier(0.4, 0, 1, 1), border-color 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: background-color 90ms 0ms cubic-bezier(0.4, 0, 1, 1), border-color 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    border: 2px solid rgba(0, 0, 0, 0.54);\n    background-color: transparent;\n    will-change: background-color, border-color;\n    /** The frame's ::before element is used as a focus indicator for the checkbox */ }\n    .mdc-checkbox--theme-dark .mdc-checkbox__background,\n    .mdc-theme--dark .mdc-checkbox__background {\n      border-color: white; }\n    .mdc-checkbox__background::before {\n      position: absolute;\n      top: 0;\n      right: 0;\n      bottom: 0;\n      left: 0;\n      -webkit-transform: scale(0, 0);\n              transform: scale(0, 0);\n      -webkit-transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      border-radius: 50%;\n      content: \"\";\n      opacity: 0;\n      pointer-events: none;\n      will-change: opacity, transform;\n      background: #3f51b5;\n      background: var(--mdc-theme-primary, #3f51b5); }\n  .mdc-checkbox__native-control {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    margin: 0;\n    padding: 0;\n    cursor: inherit;\n    opacity: 0; }\n  .mdc-checkbox__checkmark {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    -webkit-transition: opacity 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    opacity: 0;\n    fill: white; }\n    .mdc-checkbox__checkmark__path {\n      -webkit-transition: stroke-dashoffset 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      transition: stroke-dashoffset 180ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      stroke: white !important;\n      stroke-width: 3.12px;\n      stroke-dashoffset: 29.78334;\n      stroke-dasharray: 29.78334; }\n  .mdc-checkbox__mixedmark {\n    width: 100%;\n    height: 2px;\n    -webkit-transform: scaleX(0) rotate(0deg);\n            transform: scaleX(0) rotate(0deg);\n    -webkit-transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    background-color: white;\n    opacity: 0; }\n\n.mdc-checkbox__native-control:focus ~ .mdc-checkbox__background::before {\n  -webkit-transform: scale(2.75, 2.75);\n          transform: scale(2.75, 2.75);\n  -webkit-transition: opacity 80ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 80ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 80ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 80ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .26; }\n\n.mdc-checkbox__native-control:checked ~ .mdc-checkbox__background {\n  -webkit-transition: border-color 90ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 90ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: border-color 90ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 90ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  border-color: #3f51b5;\n  border-color: var(--mdc-theme-primary, #3f51b5);\n  background-color: #3f51b5;\n  background-color: var(--mdc-theme-primary, #3f51b5); }\n  .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background .mdc-checkbox__checkmark {\n    -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 180ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    opacity: 1; }\n    .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background .mdc-checkbox__checkmark__path {\n      stroke-dashoffset: 0; }\n  .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background .mdc-checkbox__mixedmark {\n    -webkit-transform: scaleX(1) rotate(-45deg);\n            transform: scaleX(1) rotate(-45deg); }\n\n.mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background {\n  border-color: #3f51b5;\n  border-color: var(--mdc-theme-primary, #3f51b5);\n  background-color: #3f51b5;\n  background-color: var(--mdc-theme-primary, #3f51b5); }\n  .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background .mdc-checkbox__checkmark {\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    -webkit-transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    opacity: 0; }\n    .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background .mdc-checkbox__checkmark__path {\n      stroke-dashoffset: 0; }\n  .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background .mdc-checkbox__mixedmark {\n    -webkit-transform: scaleX(1) rotate(0deg);\n            transform: scaleX(1) rotate(0deg);\n    opacity: 1; }\n\n.mdc-checkbox__native-control:disabled,\nfieldset:disabled .mdc-checkbox__native-control,\n[aria-disabled=\"true\"] .mdc-checkbox__native-control {\n  cursor: default;\n  /* postcss-bem-linter: ignore */ }\n  .mdc-checkbox__native-control:disabled ~ .mdc-checkbox__background,\n  fieldset:disabled .mdc-checkbox__native-control ~ .mdc-checkbox__background,\n  [aria-disabled=\"true\"] .mdc-checkbox__native-control ~ .mdc-checkbox__background {\n    border-color: rgba(0, 0, 0, 0.26); }\n    .mdc-checkbox--theme-dark .mdc-checkbox__native-control:disabled ~ .mdc-checkbox__background,\n    .mdc-theme--dark .mdc-checkbox__native-control:disabled ~ .mdc-checkbox__background, .mdc-checkbox--theme-dark\n    fieldset:disabled .mdc-checkbox__native-control ~ .mdc-checkbox__background,\n    .mdc-theme--dark\n    fieldset:disabled .mdc-checkbox__native-control ~ .mdc-checkbox__background, .mdc-checkbox--theme-dark\n    [aria-disabled=\"true\"] .mdc-checkbox__native-control ~ .mdc-checkbox__background,\n    .mdc-theme--dark\n    [aria-disabled=\"true\"] .mdc-checkbox__native-control ~ .mdc-checkbox__background {\n      border-color: rgba(255, 255, 255, 0.3); }\n  .mdc-checkbox__native-control:disabled:checked ~ .mdc-checkbox__background, .mdc-checkbox__native-control:disabled:indeterminate ~ .mdc-checkbox__background,\n  fieldset:disabled .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background,\n  fieldset:disabled .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background,\n  [aria-disabled=\"true\"] .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background,\n  [aria-disabled=\"true\"] .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background {\n    border-color: transparent;\n    background-color: rgba(0, 0, 0, 0.26);\n    /* stylelint-disable selector-max-compound-selectors, selector-max-specificity */\n    /* stylelint-enable selector-max-compound-selectors, selector-max-specificity */ }\n    .mdc-checkbox--theme-dark .mdc-checkbox__native-control:disabled:checked ~ .mdc-checkbox__background,\n    .mdc-theme--dark .mdc-checkbox__native-control:disabled:checked ~ .mdc-checkbox__background, .mdc-checkbox--theme-dark .mdc-checkbox__native-control:disabled:indeterminate ~ .mdc-checkbox__background,\n    .mdc-theme--dark .mdc-checkbox__native-control:disabled:indeterminate ~ .mdc-checkbox__background, .mdc-checkbox--theme-dark\n    fieldset:disabled .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background,\n    .mdc-theme--dark\n    fieldset:disabled .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background, .mdc-checkbox--theme-dark\n    fieldset:disabled .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background,\n    .mdc-theme--dark\n    fieldset:disabled .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background, .mdc-checkbox--theme-dark\n    [aria-disabled=\"true\"] .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background,\n    .mdc-theme--dark\n    [aria-disabled=\"true\"] .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background, .mdc-checkbox--theme-dark\n    [aria-disabled=\"true\"] .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background,\n    .mdc-theme--dark\n    [aria-disabled=\"true\"] .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background {\n      background-color: rgba(255, 255, 255, 0.3); }\n\n.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__background, .mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__background {\n  -webkit-animation: mdc-checkbox-fade-in-background 180ms linear;\n          animation: mdc-checkbox-fade-in-background 180ms linear; }\n  .mdc-checkbox--theme-dark .mdc-checkbox--anim-unchecked-checked .mdc-checkbox__background,\n  .mdc-theme--dark .mdc-checkbox--anim-unchecked-checked .mdc-checkbox__background, .mdc-checkbox--theme-dark .mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__background,\n  .mdc-theme--dark .mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__background {\n    -webkit-animation-name: mdc-checkbox-fade-in-background-dark;\n            animation-name: mdc-checkbox-fade-in-background-dark; }\n\n.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__background, .mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__background {\n  -webkit-animation: mdc-checkbox-fade-out-background 180ms linear;\n          animation: mdc-checkbox-fade-out-background 180ms linear; }\n  .mdc-checkbox--theme-dark .mdc-checkbox--anim-checked-unchecked .mdc-checkbox__background,\n  .mdc-theme--dark .mdc-checkbox--anim-checked-unchecked .mdc-checkbox__background, .mdc-checkbox--theme-dark .mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__background,\n  .mdc-theme--dark .mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__background {\n    -webkit-animation-name: mdc-checkbox-fade-out-background-dark;\n            animation-name: mdc-checkbox-fade-out-background-dark; }\n\n.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__checkmark__path {\n  -webkit-animation: 180ms linear 0s mdc-checkbox-unchecked-checked-checkmark-path;\n          animation: 180ms linear 0s mdc-checkbox-unchecked-checked-checkmark-path;\n  -webkit-transition: none;\n  transition: none; }\n\n.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__mixedmark {\n  -webkit-animation: 90ms linear 0s mdc-checkbox-unchecked-indeterminate-mixedmark;\n          animation: 90ms linear 0s mdc-checkbox-unchecked-indeterminate-mixedmark;\n  -webkit-transition: none;\n  transition: none; }\n\n.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__checkmark__path {\n  -webkit-animation: 90ms linear 0s mdc-checkbox-checked-unchecked-checkmark-path;\n          animation: 90ms linear 0s mdc-checkbox-checked-unchecked-checkmark-path;\n  -webkit-transition: none;\n  transition: none; }\n\n.mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__checkmark {\n  -webkit-animation: 90ms linear 0s mdc-checkbox-checked-indeterminate-checkmark;\n          animation: 90ms linear 0s mdc-checkbox-checked-indeterminate-checkmark;\n  -webkit-transition: none;\n  transition: none; }\n\n.mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__mixedmark {\n  -webkit-animation: 90ms linear 0s mdc-checkbox-checked-indeterminate-mixedmark;\n          animation: 90ms linear 0s mdc-checkbox-checked-indeterminate-mixedmark;\n  -webkit-transition: none;\n  transition: none; }\n\n.mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__checkmark {\n  -webkit-animation: 500ms linear 0s mdc-checkbox-indeterminate-checked-checkmark;\n          animation: 500ms linear 0s mdc-checkbox-indeterminate-checked-checkmark;\n  -webkit-transition: none;\n  transition: none; }\n\n.mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__mixedmark {\n  -webkit-animation: 500ms linear 0s mdc-checkbox-indeterminate-checked-mixedmark;\n          animation: 500ms linear 0s mdc-checkbox-indeterminate-checked-mixedmark;\n  -webkit-transition: none;\n  transition: none; }\n\n.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__mixedmark {\n  -webkit-animation: 300ms linear 0s mdc-checkbox-indeterminate-unchecked-mixedmark;\n          animation: 300ms linear 0s mdc-checkbox-indeterminate-unchecked-mixedmark;\n  -webkit-transition: none;\n  transition: none; }\n\n/* postcss-bem-linter: end */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/* stylelint-enable scss/dollar-variable-pattern */\n.mdc-permanent-drawer {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  background: #fff;\n  background: var(--mdc-theme-background, #fff);\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-disable scss/dollar-variable-pattern */\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-disable scss/dollar-variable-pattern */\n  left: 0;\n  right: initial;\n  /* stylelint-enable scss/dollar-variable-pattern */\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 240px;\n  height: 100%;\n  box-sizing: border-box;\n  overflow: hidden; }\n  .mdc-permanent-drawer__toolbar-spacer {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    position: relative;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-negative: 0;\n        flex-shrink: 0;\n    -webkit-box-align: flex-center;\n        -ms-flex-align: flex-center;\n            align-items: flex-center;\n    height: 56px;\n    padding: 16px;\n    border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n    box-sizing: border-box;\n    /* TODO(sgomes): replace with global breakpoints when we have them */ }\n    .mdc-permanent-drawer__toolbar-spacer--theme-dark .mdc-permanent-drawer__toolbar-spacer,\n    .mdc-theme--dark .mdc-permanent-drawer__toolbar-spacer {\n      border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n    @media (min-width: 600px) {\n      .mdc-permanent-drawer__toolbar-spacer {\n        height: 64px; } }\n  .mdc-permanent-drawer__header {\n    position: relative; }\n  .mdc-permanent-drawer__header::before {\n    display: block;\n    padding-top: 56.25%;\n    content: \"\"; }\n  .mdc-permanent-drawer__header-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    -webkit-box-align: end;\n        -ms-flex-align: end;\n            align-items: flex-end;\n    padding: 16px;\n    box-sizing: border-box; }\n  .mdc-permanent-drawer .mdc-list-group,\n  .mdc-permanent-drawer .mdc-list {\n    padding-right: 0;\n    padding-left: 0; }\n  .mdc-permanent-drawer .mdc-list-item {\n    position: relative;\n    padding: 0 16px;\n    outline: none;\n    color: inherit;\n    text-decoration: none;\n    font-family: Roboto, sans-serif;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    font-size: 0.875rem;\n    font-weight: 500;\n    letter-spacing: 0.04em;\n    line-height: 1.5rem; }\n  .mdc-permanent-drawer .mdc-list-item__start-detail {\n    color: rgba(0, 0, 0, 0.54); }\n    .mdc-permanent-drawer .mdc-list-item__start-detail--theme-dark .mdc-permanent-drawer .mdc-list-item__start-detail,\n    .mdc-theme--dark .mdc-permanent-drawer .mdc-list-item__start-detail {\n      color: rgba(255, 255, 255, 0.54); }\n  .mdc-permanent-drawer--selected.mdc-list-item,\n  .mdc-permanent-drawer--selected.mdc-list-item .mdc-list-item__start-detail {\n    color: #3f51b5;\n    color: var(--mdc-theme-primary, #3f51b5); }\n  .mdc-permanent-drawer .mdc-list-item::before {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    border-radius: inherit;\n    background: currentColor;\n    content: \"\";\n    opacity: 0; }\n  .mdc-permanent-drawer .mdc-list-item:focus::before {\n    -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    opacity: .12; }\n  .mdc-permanent-drawer .mdc-list-item:active::before {\n    /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n    -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    opacity: .18; }\n  .mdc-permanent-drawer .mdc-list-item:active:focus::before {\n    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n  [dir=\"rtl\"] .mdc-permanent-drawer, .mdc-permanent-drawer[dir=\"rtl\"] {\n    border-left: 1px solid #e4e4e4;\n    border-right: 0; }\n  [dir=\"rtl\"] .mdc-permanent-drawer, .mdc-permanent-drawer[dir=\"rtl\"] {\n    left: initial;\n    right: 0; }\n  .mdc-permanent-drawer--theme-dark,\n  .mdc-theme--dark .mdc-permanent-drawer {\n    background: #212121;\n    color: white;\n    color: var(--mdc-theme-text-primary-on-dark, white);\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    border-left: 0;\n    border-right: 1px solid rgba(255, 255, 255, 0.12);\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */ }\n    [dir=\"rtl\"] .mdc-permanent-drawer--theme-dark, .mdc-permanent-drawer--theme-dark[dir=\"rtl\"], [dir=\"rtl\"]\n    .mdc-theme--dark .mdc-permanent-drawer,\n    .mdc-theme--dark .mdc-permanent-drawer[dir=\"rtl\"] {\n      border-left: 1px solid rgba(255, 255, 255, 0.12);\n      border-right: 0; }\n  .mdc-permanent-drawer--floating {\n    background: none;\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    border-left: 0;\n    border-right: none;\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */ }\n    [dir=\"rtl\"] .mdc-permanent-drawer--floating, .mdc-permanent-drawer--floating[dir=\"rtl\"] {\n      border-left: none;\n      border-right: 0; }\n    .mdc-permanent-drawer--floating--theme-dark,\n    .mdc-theme--dark .mdc-permanent-drawer--floating {\n      background: none;\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable scss/dollar-variable-pattern */\n      border-left: 0;\n      border-right: none;\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */ }\n      [dir=\"rtl\"] .mdc-permanent-drawer--floating--theme-dark, .mdc-permanent-drawer--floating--theme-dark[dir=\"rtl\"], [dir=\"rtl\"]\n      .mdc-theme--dark .mdc-permanent-drawer--floating,\n      .mdc-theme--dark .mdc-permanent-drawer--floating[dir=\"rtl\"] {\n        border-left: none;\n        border-right: 0; }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/* stylelint-enable scss/dollar-variable-pattern */\n.mdc-temporary-drawer {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  pointer-events: none;\n  box-sizing: border-box;\n  contain: strict;\n  /* Shaded background */ }\n  .mdc-temporary-drawer__toolbar-spacer {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    position: relative;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-negative: 0;\n        flex-shrink: 0;\n    -webkit-box-align: flex-center;\n        -ms-flex-align: flex-center;\n            align-items: flex-center;\n    height: 56px;\n    padding: 16px;\n    border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n    box-sizing: border-box;\n    /* TODO(sgomes): replace with global breakpoints when we have them */ }\n    .mdc-temporary-drawer__toolbar-spacer--theme-dark .mdc-temporary-drawer__toolbar-spacer,\n    .mdc-theme--dark .mdc-temporary-drawer__toolbar-spacer {\n      border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n    @media (min-width: 600px) {\n      .mdc-temporary-drawer__toolbar-spacer {\n        height: 64px; } }\n  .mdc-temporary-drawer__header {\n    position: relative; }\n  .mdc-temporary-drawer__header::before {\n    display: block;\n    padding-top: 56.25%;\n    content: \"\"; }\n  .mdc-temporary-drawer__header-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    -webkit-box-align: end;\n        -ms-flex-align: end;\n            align-items: flex-end;\n    padding: 16px;\n    box-sizing: border-box; }\n  .mdc-temporary-drawer .mdc-list-group,\n  .mdc-temporary-drawer .mdc-list {\n    padding-right: 0;\n    padding-left: 0; }\n  .mdc-temporary-drawer .mdc-list-item {\n    position: relative;\n    padding: 0 16px;\n    outline: none;\n    color: inherit;\n    text-decoration: none;\n    font-family: Roboto, sans-serif;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    font-size: 0.875rem;\n    font-weight: 500;\n    letter-spacing: 0.04em;\n    line-height: 1.5rem; }\n  .mdc-temporary-drawer .mdc-list-item__start-detail {\n    color: rgba(0, 0, 0, 0.54); }\n    .mdc-temporary-drawer .mdc-list-item__start-detail--theme-dark .mdc-temporary-drawer .mdc-list-item__start-detail,\n    .mdc-theme--dark .mdc-temporary-drawer .mdc-list-item__start-detail {\n      color: rgba(255, 255, 255, 0.54); }\n  .mdc-temporary-drawer--selected.mdc-list-item,\n  .mdc-temporary-drawer--selected.mdc-list-item .mdc-list-item__start-detail {\n    color: #3f51b5;\n    color: var(--mdc-theme-primary, #3f51b5); }\n  .mdc-temporary-drawer .mdc-list-item::before {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    border-radius: inherit;\n    background: currentColor;\n    content: \"\";\n    opacity: 0; }\n  .mdc-temporary-drawer .mdc-list-item:focus::before {\n    -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    opacity: .12; }\n  .mdc-temporary-drawer .mdc-list-item:active::before {\n    /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n    -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    opacity: .18; }\n  .mdc-temporary-drawer .mdc-list-item:active:focus::before {\n    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n  .mdc-temporary-drawer::before {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.6);\n    content: \"\";\n    opacity: 0;\n    opacity: var(--mdc-temporary-drawer-opacity, 0);\n    will-change: opacity;\n    box-sizing: border-box; }\n  .mdc-temporary-drawer__drawer {\n    background: #fff;\n    background: var(--mdc-theme-background, #fff);\n    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n    /* stylelint-disable scss/dollar-variable-pattern */\n    left: 0;\n    right: initial;\n    /* stylelint-enable scss/dollar-variable-pattern */\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    position: absolute;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    width: calc(100% - 56px);\n    max-width: 280px;\n    height: 100%;\n    -webkit-transform: translateX(calc(-100% - 20px));\n            transform: translateX(calc(-100% - 20px));\n    will-change: transform;\n    box-sizing: border-box;\n    overflow: hidden;\n    -ms-touch-action: none;\n        touch-action: none;\n    /* TODO(sgomes): replace with global breakpoints when we have them */ }\n    [dir=\"rtl\"] .mdc-temporary-drawer__drawer, .mdc-temporary-drawer__drawer[dir=\"rtl\"] {\n      left: initial;\n      right: 0; }\n    .mdc-temporary-drawer--theme-dark .mdc-temporary-drawer__drawer,\n    .mdc-theme--dark .mdc-temporary-drawer__drawer {\n      background: #303030;\n      color: white;\n      color: var(--mdc-theme-text-primary-on-dark, white); }\n    [dir=\"rtl\"] .mdc-temporary-drawer .mdc-temporary-drawer__drawer,\n    .mdc-temporary-drawer[dir=\"rtl\"] .mdc-temporary-drawer__drawer {\n      -webkit-transform: translateX(calc(100% + 20px));\n              transform: translateX(calc(100% + 20px)); }\n    @media (min-width: 600px) {\n      .mdc-temporary-drawer__drawer {\n        width: calc(100% - 64px);\n        max-width: 320px; } }\n  .mdc-temporary-drawer__content {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    box-sizing: border-box;\n    -webkit-overflow-scrolling: touch;\n    -ms-touch-action: pan-y;\n        touch-action: pan-y; }\n  .mdc-temporary-drawer__footer {\n    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n    -ms-flex-negative: 0;\n        flex-shrink: 0; }\n  .mdc-temporary-drawer--animating::before {\n    -webkit-transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1); }\n  .mdc-temporary-drawer--animating.mdc-temporary-drawer--open .mdc-temporary-drawer__drawer {\n    -webkit-transition: -webkit-transform 0.33s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: -webkit-transform 0.33s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: transform 0.33s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: transform 0.33s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.33s 0ms cubic-bezier(0, 0, 0.2, 1); }\n  .mdc-temporary-drawer--animating .mdc-temporary-drawer__drawer {\n    -webkit-transition: -webkit-transform 0.13s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: -webkit-transform 0.13s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: transform 0.13s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: transform 0.13s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.13s 0ms cubic-bezier(0, 0, 0.2, 1); }\n  .mdc-temporary-drawer--open {\n    pointer-events: auto; }\n    .mdc-temporary-drawer--open::before {\n      opacity: 1;\n      opacity: var(--mdc-temporary-drawer-opacity, 1); }\n    .mdc-temporary-drawer--open .mdc-temporary-drawer__drawer {\n      -webkit-transform: none;\n              transform: none; }\n    [dir=\"rtl\"] .mdc-temporary-drawer--open .mdc-temporary-drawer__drawer, .mdc-temporary-drawer--open[dir=\"rtl\"] .mdc-temporary-drawer__drawer {\n      -webkit-transform: none;\n              transform: none; }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n.mdc-elevation--z0 {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z1 {\n  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z2 {\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z3 {\n  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z4 {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z5 {\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z6 {\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z7 {\n  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z8 {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z9 {\n  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z10 {\n  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z11 {\n  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z12 {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z13 {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z14 {\n  box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z15 {\n  box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z16 {\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z17 {\n  box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z18 {\n  box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z19 {\n  box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z20 {\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z21 {\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z22 {\n  box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z23 {\n  box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation--z24 {\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); }\n\n.mdc-elevation-transition {\n  -webkit-transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/* postcss-bem-linter: define fab */\n.mdc-fab {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  position: relative;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 56px;\n  height: 56px;\n  padding: 0;\n  -webkit-transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  border: none;\n  border-radius: 50%;\n  cursor: pointer;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  box-sizing: border-box;\n  fill: currentColor;\n  -moz-appearance: none;\n  -webkit-appearance: none;\n  -webkit-tap-highlight-color: transparent;\n  background-color: #ff4081;\n  background-color: var(--mdc-theme-accent, #ff4081);\n  color: white;\n  color: var(--mdc-theme-text-primary-on-accent, white);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  /*\n    This allows for using SVGs within them to align properly in all browsers.\n    Can remove once: https://bugzilla.mozilla.org/show_bug.cgi?id=1294515 is resolved.\n  */\n  /* stylelint-disable selector-no-type */\n  /* postcss-bem-linter: ignore */ }\n  .mdc-fab--mini {\n    width: 40px;\n    height: 40px; }\n  .mdc-fab--plain {\n    background-color: white;\n    color: rgba(0, 0, 0, 0.87);\n    color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }\n  .mdc-fab::before {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    border-radius: inherit;\n    background: black;\n    content: \"\";\n    opacity: 0; }\n  .mdc-fab:focus::before {\n    -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    opacity: .12; }\n  .mdc-fab:active::before {\n    -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    opacity: .18; }\n  .mdc-fab:active:focus::before {\n    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n  .mdc-fab:active, .mdc-fab:focus {\n    outline: none; }\n  .mdc-fab:active {\n    box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }\n  .mdc-fab:hover {\n    cursor: pointer; }\n  .mdc-fab::-moz-focus-inner {\n    padding: 0;\n    border: 0; }\n  .mdc-fab > svg {\n    width: 100%; }\n  fieldset:disabled .mdc-fab, .mdc-fab:disabled {\n    background-color: rgba(0, 0, 0, 0.12);\n    color: rgba(0, 0, 0, 0.26);\n    cursor: default;\n    pointer-events: none; }\n\n.mdc-fab__icon {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 100%; }\n\n/* postcss-bem-linter: end */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* stylelint-disable selector-no-type */\n.mdc-form-field {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem;\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  vertical-align: middle; }\n  .mdc-form-field--theme-dark,\n  .mdc-theme--dark .mdc-form-field {\n    color: white;\n    color: var(--mdc-theme-text-primary-on-dark, white); }\n  .mdc-form-field > label {\n    -webkit-box-ordinal-group: 1;\n        -ms-flex-order: 0;\n            order: 0;\n    margin-right: auto;\n    margin-left: 4px; }\n  [dir=\"rtl\"] .mdc-form-field > label, .mdc-form-field[dir=\"rtl\"] > label {\n    margin-right: 4px;\n    margin-left: auto; }\n\n.mdc-form-field--align-end > label {\n  -webkit-box-ordinal-group: 0;\n      -ms-flex-order: -1;\n          order: -1;\n  margin-right: 4px;\n  margin-left: auto; }\n\n[dir=\"rtl\"] .mdc-form-field--align-end > label, .mdc-form-field--align-end[dir=\"rtl\"] > label {\n  margin-right: auto;\n  margin-left: 4px; }\n\n/* stylelint-enable selector-no-type */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/** postcss-bem-linter: define icon-toggle */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/** MDC Ripple keyframes are split into their own file so that _mixins.scss can rely on them. */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    -webkit-animation-timing-function: cubic-bezier(0.157, 0.72, 0.386, 0.987);\n            animation-timing-function: cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n  to {\n    -webkit-transform: scale(1.5);\n            transform: scale(1.5); } }\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    -webkit-animation-timing-function: cubic-bezier(0.157, 0.72, 0.386, 0.987);\n            animation-timing-function: cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n  to {\n    -webkit-transform: scale(1.5);\n            transform: scale(1.5); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    opacity: 1;\n    -webkit-animation-timing-function: linear;\n            animation-timing-function: linear; }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    opacity: 1;\n    -webkit-animation-timing-function: linear;\n            animation-timing-function: linear; }\n  to {\n    opacity: 0; } }\n\n@-webkit-keyframes mdc-ripple-fg-unbounded-opacity-deactivate {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@-webkit-keyframes mdc-ripple-fg-unbounded-transform-deactivate {\n  from {\n    -webkit-transform: var(--mdc-ripple-fg-approx-xf);\n            transform: var(--mdc-ripple-fg-approx-xf); }\n  to {\n    -webkit-transform: scale(1.01);\n            transform: scale(1.01); } }\n\n@keyframes mdc-ripple-fg-unbounded-transform-deactivate {\n  from {\n    -webkit-transform: var(--mdc-ripple-fg-approx-xf);\n            transform: var(--mdc-ripple-fg-approx-xf); }\n  to {\n    -webkit-transform: scale(1.01);\n            transform: scale(1.01); } }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n.mdc-icon-toggle {\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  box-sizing: border-box;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 48px;\n  height: 48px;\n  padding: 12px;\n  outline: none;\n  font-size: 1.5rem;\n  cursor: pointer;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none; }\n  .mdc-icon-toggle::after {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    -webkit-transform: scale(0, 0);\n            transform: scale(0, 0);\n    -webkit-transition: opacity 80ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 80ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 80ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 80ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 80ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 80ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 80ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 80ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 80ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    border-radius: 50%;\n    background-color: currentColor;\n    content: \"\";\n    opacity: 0;\n    pointer-events: none; }\n  .mdc-icon-toggle:focus::after {\n    -webkit-transform: scale(1.3, 1.3);\n            transform: scale(1.3, 1.3);\n    -webkit-transition: opacity 80ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 80ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 80ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 80ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 80ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    opacity: .12; }\n  .mdc-icon-toggle--theme-dark,\n  .mdc-theme--dark .mdc-icon-toggle {\n    color: white;\n    color: var(--mdc-theme-text-primary-on-dark, white); }\n    .mdc-icon-toggle--theme-dark:focus::after,\n    .mdc-theme--dark .mdc-icon-toggle:focus::after {\n      opacity: .3; }\n\n.mdc-icon-toggle--primary {\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-icon-toggle--accent {\n  color: #ff4081;\n  color: var(--mdc-theme-accent, #ff4081); }\n\n.mdc-icon-toggle--primary:focus::after,\n.mdc-icon-toggle--accent:focus::after {\n  opacity: .26; }\n\n.mdc-icon-toggle--disabled {\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));\n  pointer-events: none; }\n  .mdc-icon-toggle--theme-dark.mdc-icon-toggle--disabled,\n  .mdc-theme--dark .mdc-icon-toggle--disabled {\n    color: rgba(255, 255, 255, 0.5);\n    color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)); }\n\n/** postcss-bem-linter: end */\n.mdc-icon-toggle.mdc-ripple-upgraded {\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-surface-height: 0;\n  --mdc-ripple-surface-width: 0;\n  --mdc-ripple-fg-unbounded-transform-duration: 0ms;\n  --mdc-ripple-xfo-x: center;\n  --mdc-ripple-xfo-y: center;\n  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;\n  --mdc-ripple-fg-unbounded-transform-duration: 0ms;\n  --mdc-ripple-fg-approx-xf: 0;\n  will-change: transition, opacity;\n  -webkit-tap-highlight-color: transparent;\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n  will-change: initial; }\n  .mdc-icon-toggle.mdc-ripple-upgraded::before {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    background-color: rgba(0, 0, 0, 0.062);\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    position: absolute;\n    top: calc(50% - 100%);\n    left: calc(50% - 100%);\n    width: 200%;\n    height: 200%;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    -webkit-transition: opacity 200ms linear;\n    transition: opacity 200ms linear;\n    border-radius: 50%;\n    opacity: 0;\n    pointer-events: none;\n    content: \"\"; }\n  .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {\n    opacity: .99999; }\n  .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {\n    -webkit-transition-duration: 600ms;\n            transition-duration: 600ms; }\n  .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {\n    -webkit-transition-duration: 120ms;\n            transition-duration: 120ms;\n    opacity: 1; }\n  .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n    top: var(--mdc-ripple-top);\n    left: var(--mdc-ripple-left);\n    width: var(--mdc-ripple-fg-size);\n    height: var(--mdc-ripple-fg-size); }\n  .mdc-icon-toggle.mdc-ripple-upgraded::after {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    background-color: rgba(0, 0, 0, 0.062);\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    position: absolute;\n    width: var(--mdc-ripple-fg-size);\n    height: var(--mdc-ripple-fg-size);\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    -webkit-transform-origin: center center;\n            transform-origin: center center;\n    border-radius: 50%;\n    opacity: 0;\n    pointer-events: none;\n    content: \"\"; }\n  .mdc-icon-toggle.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n    top: calc(var(--mdc-ripple-top) - var(--mdc-ripple-fg-size) / 2);\n    left: calc(var(--mdc-ripple-left) - var(--mdc-ripple-fg-size) / 2);\n    -webkit-transform-origin: center center;\n            transform-origin: center center; }\n  .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n    top: var(--mdc-ripple-top);\n    left: var(--mdc-ripple-left);\n    -webkit-transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y);\n            transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y); }\n  .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;\n            animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }\n  .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    opacity: 1; }\n  .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {\n    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987);\n            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n  .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded,\n  .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */ }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded::before,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded::before {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n      background-color: rgba(255, 255, 255, 0.16);\n      /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n      position: absolute;\n      top: calc(50% - 100%);\n      left: calc(50% - 100%);\n      width: 200%;\n      height: 200%;\n      -webkit-transform: scale(1);\n              transform: scale(1);\n      -webkit-transition: opacity 200ms linear;\n      transition: opacity 200ms linear;\n      border-radius: 50%;\n      opacity: 0;\n      pointer-events: none;\n      content: \"\"; }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {\n      opacity: .99999; }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {\n      -webkit-transition-duration: 600ms;\n              transition-duration: 600ms; }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {\n      -webkit-transition-duration: 120ms;\n              transition-duration: 120ms;\n      opacity: 1; }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n      top: var(--mdc-ripple-top);\n      left: var(--mdc-ripple-left);\n      width: var(--mdc-ripple-fg-size);\n      height: var(--mdc-ripple-fg-size); }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded::after,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded::after {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n      background-color: rgba(255, 255, 255, 0.16);\n      /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n      position: absolute;\n      width: var(--mdc-ripple-fg-size);\n      height: var(--mdc-ripple-fg-size);\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      -webkit-transform-origin: center center;\n              transform-origin: center center;\n      border-radius: 50%;\n      opacity: 0;\n      pointer-events: none;\n      content: \"\"; }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n      top: calc(var(--mdc-ripple-top) - var(--mdc-ripple-fg-size) / 2);\n      left: calc(var(--mdc-ripple-left) - var(--mdc-ripple-fg-size) / 2);\n      -webkit-transform-origin: center center;\n              transform-origin: center center; }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n      top: var(--mdc-ripple-top);\n      left: var(--mdc-ripple-left);\n      -webkit-transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y);\n              transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y); }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n      -webkit-animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;\n              animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      opacity: 1; }\n    .mdc-icon-toggle--theme-dark.mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after,\n    .mdc-theme--dark .mdc-icon-toggle.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {\n      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987);\n              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n\n.mdc-icon-toggle--primary.mdc-ripple-upgraded {\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */ }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded::before {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    background-color: rgba(63, 81, 181, 0.14);\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    position: absolute;\n    top: calc(50% - 100%);\n    left: calc(50% - 100%);\n    width: 200%;\n    height: 200%;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    -webkit-transition: opacity 200ms linear;\n    transition: opacity 200ms linear;\n    border-radius: 50%;\n    opacity: 0;\n    pointer-events: none;\n    content: \"\"; }\n    @supports (background-color: color(green a(10%))) {\n      .mdc-icon-toggle--primary.mdc-ripple-upgraded::before {\n        background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {\n    opacity: .99999; }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {\n    -webkit-transition-duration: 600ms;\n            transition-duration: 600ms; }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {\n    -webkit-transition-duration: 120ms;\n            transition-duration: 120ms;\n    opacity: 1; }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n    top: var(--mdc-ripple-top);\n    left: var(--mdc-ripple-left);\n    width: var(--mdc-ripple-fg-size);\n    height: var(--mdc-ripple-fg-size); }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded::after {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    background-color: rgba(63, 81, 181, 0.14);\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    position: absolute;\n    width: var(--mdc-ripple-fg-size);\n    height: var(--mdc-ripple-fg-size);\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    -webkit-transform-origin: center center;\n            transform-origin: center center;\n    border-radius: 50%;\n    opacity: 0;\n    pointer-events: none;\n    content: \"\"; }\n    @supports (background-color: color(green a(10%))) {\n      .mdc-icon-toggle--primary.mdc-ripple-upgraded::after {\n        background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n    top: calc(var(--mdc-ripple-top) - var(--mdc-ripple-fg-size) / 2);\n    left: calc(var(--mdc-ripple-left) - var(--mdc-ripple-fg-size) / 2);\n    -webkit-transform-origin: center center;\n            transform-origin: center center; }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n    top: var(--mdc-ripple-top);\n    left: var(--mdc-ripple-left);\n    -webkit-transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y);\n            transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y); }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;\n            animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    opacity: 1; }\n  .mdc-icon-toggle--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {\n    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987);\n            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n\n.mdc-icon-toggle--accent.mdc-ripple-upgraded {\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */ }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded::before {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    background-color: rgba(255, 64, 129, 0.14);\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    position: absolute;\n    top: calc(50% - 100%);\n    left: calc(50% - 100%);\n    width: 200%;\n    height: 200%;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    -webkit-transition: opacity 200ms linear;\n    transition: opacity 200ms linear;\n    border-radius: 50%;\n    opacity: 0;\n    pointer-events: none;\n    content: \"\"; }\n    @supports (background-color: color(green a(10%))) {\n      .mdc-icon-toggle--accent.mdc-ripple-upgraded::before {\n        background-color: color(var(--mdc-theme-accent, #ff4081) a(14%)); } }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {\n    opacity: .99999; }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {\n    -webkit-transition-duration: 600ms;\n            transition-duration: 600ms; }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {\n    -webkit-transition-duration: 120ms;\n            transition-duration: 120ms;\n    opacity: 1; }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n    top: var(--mdc-ripple-top);\n    left: var(--mdc-ripple-left);\n    width: var(--mdc-ripple-fg-size);\n    height: var(--mdc-ripple-fg-size); }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded::after {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    background-color: rgba(255, 64, 129, 0.14);\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    position: absolute;\n    width: var(--mdc-ripple-fg-size);\n    height: var(--mdc-ripple-fg-size);\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    -webkit-transform-origin: center center;\n            transform-origin: center center;\n    border-radius: 50%;\n    opacity: 0;\n    pointer-events: none;\n    content: \"\"; }\n    @supports (background-color: color(green a(10%))) {\n      .mdc-icon-toggle--accent.mdc-ripple-upgraded::after {\n        background-color: color(var(--mdc-theme-accent, #ff4081) a(14%)); } }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n    top: calc(var(--mdc-ripple-top) - var(--mdc-ripple-fg-size) / 2);\n    left: calc(var(--mdc-ripple-left) - var(--mdc-ripple-fg-size) / 2);\n    -webkit-transform-origin: center center;\n            transform-origin: center center; }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n    top: var(--mdc-ripple-top);\n    left: var(--mdc-ripple-left);\n    -webkit-transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y);\n            transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y); }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;\n            animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    opacity: 1; }\n  .mdc-icon-toggle--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {\n    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987);\n            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Sets the width and height of a detail element to the specified dimension.\n */\n/**\n * Sets the width and height of the start detail element, as well as calculates the margins for\n * the start detail element such that the text is always offset by 72px, which is defined within\n * the spec.\n */\n/* postcss-bem-linter: define list */\n.mdc-list {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem;\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0;\n  padding: 8px 16px 0;\n  /* According to the mocks and stickersheet, the line-height is adjusted to 24px for text content,\n   * same as for subheading1. */\n  line-height: 1.5rem;\n  list-style-type: none; }\n  .mdc-list--theme-dark,\n  .mdc-theme--dark .mdc-list {\n    color: white;\n    color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-list--dense {\n  padding-top: 4px;\n  font-size: .812rem; }\n\n/* postcss-bem-linter: end */\n/* postcss-bem-linter: define list-item */\n.mdc-list-item {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  height: 48px;\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n  .mdc-list-item__start-detail {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    width: 24px;\n    height: 24px;\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    margin-left: 0;\n    margin-right: 32px;\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */ }\n    [dir=\"rtl\"] .mdc-list-item .mdc-list-item__start-detail,\n    .mdc-list-item[dir=\"rtl\"] .mdc-list-item__start-detail {\n      margin-left: 32px;\n      margin-right: 0; }\n  .mdc-list-item__end-detail {\n    width: 24px;\n    height: 24px;\n    /* stylelint-disable scss/dollar-variable-pattern */\n    margin-left: auto;\n    margin-right: 16px;\n    /* stylelint-enable scss/dollar-variable-pattern */ }\n    [dir=\"rtl\"] .mdc-list-item .mdc-list-item__end-detail,\n    .mdc-list-item[dir=\"rtl\"] .mdc-list-item__end-detail {\n      margin-left: 16px;\n      margin-right: auto; }\n  .mdc-list-item__text {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .mdc-list-item__text__secondary {\n      font-family: Roboto, sans-serif;\n      -moz-osx-font-smoothing: grayscale;\n      -webkit-font-smoothing: antialiased;\n      font-size: 0.875rem;\n      font-weight: 400;\n      letter-spacing: 0.04em;\n      line-height: 1.25rem;\n      color: rgba(0, 0, 0, 0.54);\n      color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));\n      /* Match the font size to the primary text when dense */\n      /* stylelint-disable plugin/selector-bem-pattern */\n      /* stylelint-enable plugin/selector-bem-pattern */ }\n      .mdc-list-item__text__secondary--theme-dark,\n      .mdc-theme--dark .mdc-list-item__text__secondary {\n        color: rgba(255, 255, 255, 0.7);\n        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n      .mdc-list--dense .mdc-list-item__text__secondary {\n        font-size: inherit; }\n  .mdc-list--dense .mdc-list-item {\n    height: 40px; }\n    .mdc-list--dense .mdc-list-item__start-detail {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      width: 20px;\n      height: 20px;\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable scss/dollar-variable-pattern */\n      margin-left: 0;\n      margin-right: 36px;\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */ }\n      [dir=\"rtl\"] .mdc-list-item .mdc-list--dense .mdc-list-item__start-detail,\n      .mdc-list-item[dir=\"rtl\"] .mdc-list--dense .mdc-list-item__start-detail {\n        margin-left: 36px;\n        margin-right: 0; }\n    .mdc-list--dense .mdc-list-item__end-detail {\n      width: 20px;\n      height: 20px; }\n  .mdc-list--avatar-list .mdc-list-item {\n    height: 56px; }\n    .mdc-list--avatar-list .mdc-list-item__start-detail {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      width: 40px;\n      height: 40px;\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable scss/dollar-variable-pattern */\n      margin-left: 0;\n      margin-right: 16px;\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      border-radius: 50%; }\n      [dir=\"rtl\"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__start-detail,\n      .mdc-list-item[dir=\"rtl\"] .mdc-list--avatar-list .mdc-list-item__start-detail {\n        margin-left: 16px;\n        margin-right: 0; }\n  .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item {\n    height: 48px; }\n    .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      width: 36px;\n      height: 36px;\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable scss/dollar-variable-pattern */\n      margin-left: 0;\n      margin-right: 20px;\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */ }\n      [dir=\"rtl\"] .mdc-list-item .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail,\n      .mdc-list-item[dir=\"rtl\"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {\n        margin-left: 20px;\n        margin-right: 0; }\n  .mdc-list--two-line .mdc-list-item {\n    height: 72px; }\n  .mdc-list--two-line.mdc-list--dense .mdc-list-item {\n    height: 60px; }\n\n/* postcss-bem-linter: end */\n/* postcss-bem-linter: define list-divider */\n.mdc-list-divider {\n  height: 0;\n  margin: 0;\n  border: none;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }\n  .mdc-list--theme-dark .mdc-list-divider,\n  .mdc-theme--dark .mdc-list-divider {\n    border-bottom-color: rgba(255, 255, 255, 0.2); }\n\n.mdc-list-divider--inset {\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-disable scss/dollar-variable-pattern */\n  margin-left: 56px;\n  margin-right: 0;\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  width: calc(100% - 56px); }\n  [dir=\"rtl\"] .mdc-list-group .mdc-list-divider--inset,\n  .mdc-list-group[dir=\"rtl\"] .mdc-list-divider--inset {\n    margin-left: 0;\n    margin-right: 56px; }\n\n/* postcss-bem-linter: end */\n/* postcss-bem-linter: define list-group */\n.mdc-list-group {\n  padding: 0 16px;\n  /* Reset padding on mdc-list since it's already accounted for by the list group. */\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n  .mdc-list-group__subheader {\n    font-family: Roboto, sans-serif;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    font-size: 0.875rem;\n    font-weight: 500;\n    letter-spacing: 0.04em;\n    line-height: 1.5rem;\n    color: rgba(0, 0, 0, 0.87);\n    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n    margin: 0.75rem 0; }\n    .mdc-list-group__subheader--theme-dark,\n    .mdc-theme--dark .mdc-list-group__subheader {\n      color: white;\n      color: var(--mdc-theme-text-primary-on-dark, white); }\n  .mdc-list-group .mdc-list {\n    padding: 0; }\n\n/* postcss-bem-linter: end */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* postcss-bem-linter: define simple-menu */\n.mdc-simple-menu {\n  display: none;\n  position: absolute;\n  max-width: calc(100vw - 32px);\n  max-height: calc(100vh - 32px);\n  margin: 0;\n  padding: 0;\n  -webkit-transform: scale(0);\n          transform: scale(0);\n  -webkit-transform-origin: top left;\n          transform-origin: top left;\n  border-radius: 2px;\n  background-color: white;\n  white-space: nowrap;\n  opacity: 0;\n  overflow: hidden;\n  box-sizing: border-box;\n  will-change: transform, opacity;\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n  .mdc-simple-menu--theme-dark,\n  .mdc-theme--dark .mdc-simple-menu {\n    background-color: #424242; }\n  .mdc-simple-menu:focus {\n    outline: none; }\n  .mdc-simple-menu--open {\n    display: inline-block;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; }\n  .mdc-simple-menu--animating {\n    display: inline-block;\n    -webkit-transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1); }\n  .mdc-simple-menu__items {\n    display: inline-block;\n    overflow-x: hidden;\n    overflow-y: auto;\n    box-sizing: border-box;\n    will-change: transform;\n    /* stylelint-disable plugin/selector-bem-pattern, selector-no-universal */\n    /* stylelint-enable plugin/selector-bem-pattern, selector-no-universal */ }\n    .mdc-simple-menu__items > * {\n      opacity: 0; }\n    .mdc-simple-menu__items > .mdc-list-item {\n      cursor: pointer; }\n    .mdc-simple-menu--animating .mdc-simple-menu__items {\n      overflow-y: hidden; }\n      .mdc-simple-menu--animating .mdc-simple-menu__items > * {\n        -webkit-transition-duration: 0.3s;\n                transition-duration: 0.3s;\n        -webkit-transition-property: opacity;\n        transition-property: opacity;\n        -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);\n                transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n    .mdc-simple-menu--open .mdc-simple-menu__items > * {\n      opacity: 1;\n      will-change: opacity; }\n  [dir=\"rtl\"] .mdc-simple-menu {\n    -webkit-transform-origin: top right;\n            transform-origin: top right; }\n  .mdc-simple-menu--open-from-top-left {\n    -webkit-transform-origin: top left !important;\n            transform-origin: top left !important; }\n  .mdc-simple-menu--open-from-top-right {\n    -webkit-transform-origin: top right !important;\n            transform-origin: top right !important; }\n  .mdc-simple-menu--open-from-bottom-left {\n    -webkit-transform-origin: bottom left !important;\n            transform-origin: bottom left !important; }\n  .mdc-simple-menu--open-from-bottom-right {\n    -webkit-transform-origin: bottom right !important;\n            transform-origin: bottom right !important; }\n  .mdc-simple-menu .mdc-list-group,\n  .mdc-simple-menu .mdc-list {\n    padding: 0; }\n  .mdc-simple-menu .mdc-list-item {\n    position: relative;\n    padding: 0 16px;\n    outline: none;\n    color: inherit;\n    text-decoration: none;\n    font-family: Roboto, sans-serif;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    font-size: 0.875rem;\n    font-weight: 500;\n    letter-spacing: 0.04em;\n    line-height: 1.5rem; }\n    .mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-item,\n    .mdc-theme--dark .mdc-simple-menu .mdc-list-item {\n      color: white; }\n  .mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-divider,\n  .mdc-theme--dark .mdc-simple-menu .mdc-list-divider {\n    border-color: rgba(255, 255, 255, 0.12); }\n  .mdc-simple-menu .mdc-list-item__start-detail {\n    color: rgba(0, 0, 0, 0.54); }\n    .mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-item__start-detail,\n    .mdc-theme--dark .mdc-simple-menu .mdc-list-item__start-detail {\n      color: rgba(255, 255, 255, 0.54); }\n  .mdc-simple-menu--selected.mdc-list-item,\n  .mdc-simple-menu--selected.mdc-list-item .mdc-list-item__start-detail {\n    color: #3f51b5;\n    color: var(--mdc-theme-primary, #3f51b5); }\n  .mdc-simple-menu .mdc-list-item::before {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-transition: opacity 120ms cubic-bezier(0, 0, 0.2, 1);\n    transition: opacity 120ms cubic-bezier(0, 0, 0.2, 1);\n    border-radius: inherit;\n    background: currentColor;\n    content: \"\";\n    opacity: 0; }\n  .mdc-simple-menu .mdc-list-item:focus::before {\n    opacity: .12; }\n  .mdc-simple-menu .mdc-list-item:active::before {\n    /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n    opacity: .18; }\n\n/* postcss-bem-linter: end */\n.mdc-menu-anchor {\n  position: relative;\n  overflow: visible; }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/** MDC Ripple keyframes are split into their own file so that _mixins.scss can rely on them. */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    -webkit-animation-timing-function: cubic-bezier(0.157, 0.72, 0.386, 0.987);\n            animation-timing-function: cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n  to {\n    -webkit-transform: scale(1.5);\n            transform: scale(1.5); } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    opacity: 1;\n    -webkit-animation-timing-function: linear;\n            animation-timing-function: linear; }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-unbounded-transform-deactivate {\n  from {\n    -webkit-transform: var(--mdc-ripple-fg-approx-xf);\n            transform: var(--mdc-ripple-fg-approx-xf); }\n  to {\n    -webkit-transform: scale(1.01);\n            transform: scale(1.01); } }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/* postcss-bem-linter: define radio */\n.mdc-radio {\n  display: inline-block;\n  position: relative;\n  box-sizing: border-box;\n  width: 40px;\n  height: 40px;\n  padding: 10px;\n  cursor: pointer;\n  will-change: opacity, transform, border-color, background-color, color; }\n  .mdc-radio__background {\n    display: inline-block;\n    position: absolute;\n    width: 50%;\n    height: 50%;\n    box-sizing: border-box; }\n    .mdc-radio__background::before {\n      background-color: #3f51b5;\n      background-color: var(--mdc-theme-primary, #3f51b5);\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      -webkit-transform: scale(0, 0);\n              transform: scale(0, 0);\n      -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n      border-radius: 50%;\n      content: \"\";\n      opacity: 0;\n      pointer-events: none; }\n  .mdc-radio__outer-circle {\n    border-color: rgba(0, 0, 0, 0.54);\n    border-color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-transition: border-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: border-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    border-width: 2px;\n    border-style: solid;\n    border-radius: 50%;\n    box-sizing: border-box; }\n    .mdc-radio--theme-dark .mdc-radio__outer-circle,\n    .mdc-theme--dark .mdc-radio__outer-circle {\n      border-color: rgba(255, 255, 255, 0.7);\n      border-color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n  .mdc-radio__inner-circle {\n    background-color: rgba(0, 0, 0, 0.54);\n    background-color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54));\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-transform: scale(0, 0);\n            transform: scale(0, 0);\n    -webkit-transition: background-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: background-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1), background-color 120ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    border-radius: 50%;\n    box-sizing: border-box; }\n    .mdc-radio--theme-dark .mdc-radio__inner-circle,\n    .mdc-theme--dark .mdc-radio__inner-circle {\n      background-color: rgba(255, 255, 255, 0.7);\n      background-color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n  .mdc-radio__native-control {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    margin: 0;\n    padding: 0;\n    cursor: inherit;\n    opacity: 0;\n    z-index: 1; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background,\n.mdc-radio__native-control:disabled + .mdc-radio__background {\n  -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n  .mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle,\n  .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle {\n    -webkit-transition: border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: border-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n  .mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle,\n  .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle {\n    -webkit-transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio--disabled {\n  cursor: default;\n  pointer-events: none; }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle {\n  border-color: #3f51b5;\n  border-color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__inner-circle {\n  background-color: #3f51b5;\n  background-color: var(--mdc-theme-primary, #3f51b5);\n  -webkit-transform: scale(0.5);\n          transform: scale(0.5);\n  -webkit-transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), background-color 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-radio__native-control:disabled + .mdc-radio__background,\nfieldset:disabled .mdc-radio__native-control + .mdc-radio__background,\n[aria-disabled=\"true\"] .mdc-radio__native-control + .mdc-radio__background {\n  cursor: default; }\n  .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle,\n  fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle,\n  [aria-disabled=\"true\"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle {\n    border-color: rgba(0, 0, 0, 0.26); }\n    .mdc-radio--theme-dark .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle,\n    .mdc-theme--dark .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__outer-circle, .mdc-radio--theme-dark\n    fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle,\n    .mdc-theme--dark\n    fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle, .mdc-radio--theme-dark\n    [aria-disabled=\"true\"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle,\n    .mdc-theme--dark\n    [aria-disabled=\"true\"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle {\n      border-color: rgba(255, 255, 255, 0.3); }\n  .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle,\n  fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle,\n  [aria-disabled=\"true\"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle {\n    background-color: rgba(0, 0, 0, 0.26); }\n    .mdc-radio--theme-dark .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle,\n    .mdc-theme--dark .mdc-radio__native-control:disabled + .mdc-radio__background .mdc-radio__inner-circle, .mdc-radio--theme-dark\n    fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle,\n    .mdc-theme--dark\n    fieldset:disabled .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle, .mdc-radio--theme-dark\n    [aria-disabled=\"true\"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle,\n    .mdc-theme--dark\n    [aria-disabled=\"true\"] .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle {\n      background-color: rgba(255, 255, 255, 0.3); }\n\n.mdc-radio__native-control:focus + .mdc-radio__background::before {\n  -webkit-transform: scale(2.8, 2.8);\n          transform: scale(2.8, 2.8);\n  -webkit-transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0, 0, 0.2, 1), transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 120ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .26; }\n\n/* postcss-bem-linter: end */\n.mdc-radio.mdc-ripple-upgraded {\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-surface-height: 0;\n  --mdc-ripple-surface-width: 0;\n  --mdc-ripple-fg-unbounded-transform-duration: 0ms;\n  --mdc-ripple-xfo-x: center;\n  --mdc-ripple-xfo-y: center;\n  --mdc-ripple-fg-unbounded-opacity-duration: 0ms;\n  --mdc-ripple-fg-unbounded-transform-duration: 0ms;\n  --mdc-ripple-fg-approx-xf: 0;\n  will-change: transition, opacity;\n  -webkit-tap-highlight-color: transparent;\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n  /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */ }\n  .mdc-radio.mdc-ripple-upgraded::before {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    background-color: rgba(63, 81, 181, 0.14);\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    position: absolute;\n    top: calc(50% - 100%);\n    left: calc(50% - 100%);\n    width: 200%;\n    height: 200%;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    -webkit-transition: opacity 200ms linear;\n    transition: opacity 200ms linear;\n    border-radius: 50%;\n    opacity: 0;\n    pointer-events: none;\n    content: \"\"; }\n    @supports (background-color: color(green a(10%))) {\n      .mdc-radio.mdc-ripple-upgraded::before {\n        background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }\n  .mdc-radio.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {\n    opacity: .99999; }\n  .mdc-radio.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {\n    -webkit-transition-duration: 600ms;\n            transition-duration: 600ms; }\n  .mdc-radio.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {\n    -webkit-transition-duration: 120ms;\n            transition-duration: 120ms;\n    opacity: 1; }\n  .mdc-radio.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n    top: var(--mdc-ripple-top);\n    left: var(--mdc-ripple-left);\n    width: var(--mdc-ripple-fg-size);\n    height: var(--mdc-ripple-fg-size); }\n  .mdc-radio.mdc-ripple-upgraded::after {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    background-color: rgba(63, 81, 181, 0.14);\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    position: absolute;\n    width: var(--mdc-ripple-fg-size);\n    height: var(--mdc-ripple-fg-size);\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    -webkit-transform-origin: center center;\n            transform-origin: center center;\n    border-radius: 50%;\n    opacity: 0;\n    pointer-events: none;\n    content: \"\"; }\n    @supports (background-color: color(green a(10%))) {\n      .mdc-radio.mdc-ripple-upgraded::after {\n        background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }\n  .mdc-radio.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n    top: calc(var(--mdc-ripple-top) - var(--mdc-ripple-fg-size) / 2);\n    left: calc(var(--mdc-ripple-left) - var(--mdc-ripple-fg-size) / 2);\n    -webkit-transform-origin: center center;\n            transform-origin: center center; }\n  .mdc-radio.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n    top: var(--mdc-ripple-top);\n    left: var(--mdc-ripple-left);\n    -webkit-transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y);\n            transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y); }\n  .mdc-radio.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;\n            animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }\n  .mdc-radio.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n    opacity: 1; }\n  .mdc-radio.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {\n    -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987);\n            animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n  .mdc-radio.mdc-ripple-upgraded .mdc-radio__background::before {\n    content: none; }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/** MDC Ripple keyframes are split into their own file so that _mixins.scss can rely on them. */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    -webkit-animation-timing-function: cubic-bezier(0.157, 0.72, 0.386, 0.987);\n            animation-timing-function: cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n  to {\n    -webkit-transform: scale(1.5);\n            transform: scale(1.5); } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    opacity: 1;\n    -webkit-animation-timing-function: linear;\n            animation-timing-function: linear; }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-unbounded-opacity-deactivate {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-unbounded-transform-deactivate {\n  from {\n    -webkit-transform: var(--mdc-ripple-fg-approx-xf);\n            transform: var(--mdc-ripple-fg-approx-xf); }\n  to {\n    -webkit-transform: scale(1.01);\n            transform: scale(1.01); } }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* postcss-bem-linter: define ripple-surface */\n.mdc-ripple-surface {\n  position: relative;\n  outline: none;\n  overflow: hidden; }\n  .mdc-ripple-surface[data-mdc-ripple-is-unbounded] {\n    overflow: visible; }\n  .mdc-ripple-surface::before {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    border-radius: inherit;\n    background: currentColor;\n    content: \"\";\n    opacity: 0; }\n  .mdc-ripple-surface:focus::before {\n    opacity: .12; }\n  .mdc-ripple-surface:active::before {\n    opacity: .18; }\n  .mdc-ripple-surface.mdc-ripple-upgraded {\n    --mdc-ripple-left: 0;\n    --mdc-ripple-top: 0;\n    --mdc-ripple-fg-size: 0;\n    --mdc-ripple-surface-height: 0;\n    --mdc-ripple-surface-width: 0;\n    --mdc-ripple-fg-unbounded-transform-duration: 0ms;\n    --mdc-ripple-xfo-x: center;\n    --mdc-ripple-xfo-y: center;\n    --mdc-ripple-fg-unbounded-opacity-duration: 0ms;\n    --mdc-ripple-fg-unbounded-transform-duration: 0ms;\n    --mdc-ripple-fg-approx-xf: 0;\n    will-change: transition, opacity;\n    -webkit-tap-highlight-color: transparent;\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */ }\n    .mdc-ripple-surface.mdc-ripple-upgraded::before {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n      background-color: rgba(0, 0, 0, 0.06);\n      /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n      position: absolute;\n      top: calc(50% - 100%);\n      left: calc(50% - 100%);\n      width: 200%;\n      height: 200%;\n      -webkit-transform: scale(1);\n              transform: scale(1);\n      -webkit-transition: opacity 200ms linear;\n      transition: opacity 200ms linear;\n      border-radius: 50%;\n      opacity: 0;\n      pointer-events: none;\n      content: \"\"; }\n    .mdc-ripple-surface.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {\n      opacity: .99999; }\n    .mdc-ripple-surface.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {\n      -webkit-transition-duration: 600ms;\n              transition-duration: 600ms; }\n    .mdc-ripple-surface.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {\n      -webkit-transition-duration: 120ms;\n              transition-duration: 120ms;\n      opacity: 1; }\n    .mdc-ripple-surface.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n      top: var(--mdc-ripple-top);\n      left: var(--mdc-ripple-left);\n      width: var(--mdc-ripple-fg-size);\n      height: var(--mdc-ripple-fg-size); }\n    .mdc-ripple-surface.mdc-ripple-upgraded::after {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n      background-color: rgba(0, 0, 0, 0.06);\n      /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n      position: absolute;\n      width: var(--mdc-ripple-fg-size);\n      height: var(--mdc-ripple-fg-size);\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      -webkit-transform-origin: center center;\n              transform-origin: center center;\n      border-radius: 50%;\n      opacity: 0;\n      pointer-events: none;\n      content: \"\"; }\n    .mdc-ripple-surface.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n      top: calc(var(--mdc-ripple-top) - var(--mdc-ripple-fg-size) / 2);\n      left: calc(var(--mdc-ripple-left) - var(--mdc-ripple-fg-size) / 2);\n      -webkit-transform-origin: center center;\n              transform-origin: center center; }\n    .mdc-ripple-surface.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n      top: var(--mdc-ripple-top);\n      left: var(--mdc-ripple-left);\n      -webkit-transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y);\n              transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y); }\n    .mdc-ripple-surface.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n      -webkit-animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;\n              animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }\n    .mdc-ripple-surface.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      opacity: 1; }\n    .mdc-ripple-surface.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {\n      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987);\n              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n  .mdc-ripple-surface--primary.mdc-ripple-upgraded {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */ }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded::before, .mdc-ripple-surface--primary.mdc-ripple-upgraded::after {\n      background-color: #3f51b5;\n      background-color: var(--mdc-theme-primary, #3f51b5); }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded::before {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      background-color: rgba(63, 81, 181, 0.14);\n      /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n      position: absolute;\n      top: calc(50% - 100%);\n      left: calc(50% - 100%);\n      width: 200%;\n      height: 200%;\n      -webkit-transform: scale(1);\n              transform: scale(1);\n      -webkit-transition: opacity 200ms linear;\n      transition: opacity 200ms linear;\n      border-radius: 50%;\n      opacity: 0;\n      pointer-events: none;\n      content: \"\"; }\n      @supports (background-color: color(green a(10%))) {\n        .mdc-ripple-surface--primary.mdc-ripple-upgraded::before {\n          background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {\n      opacity: .99999; }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {\n      -webkit-transition-duration: 600ms;\n              transition-duration: 600ms; }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {\n      -webkit-transition-duration: 120ms;\n              transition-duration: 120ms;\n      opacity: 1; }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n      top: var(--mdc-ripple-top);\n      left: var(--mdc-ripple-left);\n      width: var(--mdc-ripple-fg-size);\n      height: var(--mdc-ripple-fg-size); }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded::after {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      background-color: rgba(63, 81, 181, 0.14);\n      /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n      position: absolute;\n      width: var(--mdc-ripple-fg-size);\n      height: var(--mdc-ripple-fg-size);\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      -webkit-transform-origin: center center;\n              transform-origin: center center;\n      border-radius: 50%;\n      opacity: 0;\n      pointer-events: none;\n      content: \"\"; }\n      @supports (background-color: color(green a(10%))) {\n        .mdc-ripple-surface--primary.mdc-ripple-upgraded::after {\n          background-color: color(var(--mdc-theme-primary, #3f51b5) a(14%)); } }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n      top: calc(var(--mdc-ripple-top) - var(--mdc-ripple-fg-size) / 2);\n      left: calc(var(--mdc-ripple-left) - var(--mdc-ripple-fg-size) / 2);\n      -webkit-transform-origin: center center;\n              transform-origin: center center; }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n      top: var(--mdc-ripple-top);\n      left: var(--mdc-ripple-left);\n      -webkit-transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y);\n              transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y); }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n      -webkit-animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;\n              animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      opacity: 1; }\n    .mdc-ripple-surface--primary.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {\n      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987);\n              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n  .mdc-ripple-surface--accent.mdc-ripple-upgraded {\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n    /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */ }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded::before, .mdc-ripple-surface--accent.mdc-ripple-upgraded::after {\n      background-color: #3f51b5;\n      background-color: var(--mdc-theme-primary, #3f51b5); }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded::before {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      background-color: rgba(255, 64, 129, 0.14);\n      /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n      position: absolute;\n      top: calc(50% - 100%);\n      left: calc(50% - 100%);\n      width: 200%;\n      height: 200%;\n      -webkit-transform: scale(1);\n              transform: scale(1);\n      -webkit-transition: opacity 200ms linear;\n      transition: opacity 200ms linear;\n      border-radius: 50%;\n      opacity: 0;\n      pointer-events: none;\n      content: \"\"; }\n      @supports (background-color: color(green a(10%))) {\n        .mdc-ripple-surface--accent.mdc-ripple-upgraded::before {\n          background-color: color(var(--mdc-theme-accent, #ff4081) a(14%)); } }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active::before {\n      opacity: .99999; }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active:active::before {\n      -webkit-transition-duration: 600ms;\n              transition-duration: 600ms; }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--background-bounded-active-fill::before {\n      -webkit-transition-duration: 120ms;\n              transition-duration: 120ms;\n      opacity: 1; }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n      top: var(--mdc-ripple-top);\n      left: var(--mdc-ripple-left);\n      width: var(--mdc-ripple-fg-size);\n      height: var(--mdc-ripple-fg-size); }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded::after {\n      /* stylelint-disable scss/dollar-variable-pattern */\n      /* stylelint-disable at-rule-empty-line-before, block-closing-brace-newline-after */\n      /* stylelint-enable scss/dollar-variable-pattern */\n      background-color: rgba(255, 64, 129, 0.14);\n      /* stylelint-enable at-rule-empty-line-before, block-closing-brace-newline-after */\n      position: absolute;\n      width: var(--mdc-ripple-fg-size);\n      height: var(--mdc-ripple-fg-size);\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      -webkit-transform-origin: center center;\n              transform-origin: center center;\n      border-radius: 50%;\n      opacity: 0;\n      pointer-events: none;\n      content: \"\"; }\n      @supports (background-color: color(green a(10%))) {\n        .mdc-ripple-surface--accent.mdc-ripple-upgraded::after {\n          background-color: color(var(--mdc-theme-accent, #ff4081) a(14%)); } }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n      top: calc(var(--mdc-ripple-top) - var(--mdc-ripple-fg-size) / 2);\n      left: calc(var(--mdc-ripple-left) - var(--mdc-ripple-fg-size) / 2);\n      -webkit-transform-origin: center center;\n              transform-origin: center center; }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n      top: var(--mdc-ripple-top);\n      left: var(--mdc-ripple-left);\n      -webkit-transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y);\n              transform-origin: var(--mdc-ripple-xfo-x) var(--mdc-ripple-xfo-y); }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-bounded-active-fill::after {\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n      -webkit-animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out;\n              animation: 800ms mdc-ripple-fg-radius-in, 400ms mdc-ripple-fg-opacity-out; }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-activation::after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n      -webkit-transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      transition: opacity 110ms linear, transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms, -webkit-transform var(--mdc-ripple-fg-unbounded-transform-duration) linear 80ms;\n      opacity: 1; }\n    .mdc-ripple-surface--accent.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded.mdc-ripple-upgraded--foreground-unbounded-deactivation::after {\n      -webkit-animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987);\n              animation: mdc-ripple-fg-unbounded-opacity-deactivate var(--mdc-ripple-fg-unbounded-opacity-duration) linear, mdc-ripple-fg-unbounded-transform-deactivate var(--mdc-ripple-fg-unbounded-transform-duration) cubic-bezier(0.157, 0.72, 0.386, 0.987); }\n\n/* postcss-bem-linter: end */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-select {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem;\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-disable scss/dollar-variable-pattern */\n  padding-left: 0;\n  padding-right: 24px;\n  /* stylelint-enable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  max-width: calc(100% - 24px);\n  height: 32px;\n  -webkit-transition: border-bottom-color 150ms 0ms cubic-bezier(0.4, 0, 1, 1), background-color 150ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: border-bottom-color 150ms 0ms cubic-bezier(0.4, 0, 1, 1), background-color 150ms 0ms cubic-bezier(0.4, 0, 1, 1);\n  border: none;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  border-radius: 0;\n  background: none;\n  background-repeat: no-repeat;\n  background-position: right center;\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  font-family: Roboto, sans-serif;\n  font-size: .936rem;\n  cursor: pointer; }\n  [dir=\"rtl\"] .mdc-select, .mdc-select[dir=\"rtl\"] {\n    padding-left: 24px;\n    padding-right: 0; }\n  .mdc-select::-ms-expand {\n    display: none; }\n  .mdc-select:focus {\n    border-bottom-color: #3f51b5;\n    border-bottom-color: var(--mdc-theme-primary, #3f51b5);\n    outline: none;\n    background-color: rgba(0, 0, 0, 0.06); }\n  [dir=\"rtl\"] .mdc-select, .mdc-select[dir=\"rtl\"] {\n    background-position: left center; }\n  .mdc-select--theme-dark,\n  .mdc-theme--dark .mdc-select {\n    color: white;\n    color: var(--mdc-theme-text-primary-on-dark, white);\n    background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n    border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n    .mdc-select--theme-dark:focus,\n    .mdc-theme--dark .mdc-select:focus {\n      border-bottom-color: #3f51b5;\n      border-bottom-color: var(--mdc-theme-primary, #3f51b5);\n      background-color: rgba(255, 255, 255, 0.09); }\n  .mdc-select__menu {\n    position: fixed;\n    top: 0;\n    left: 0;\n    max-height: 100%;\n    -webkit-transform-origin: center center;\n            transform-origin: center center;\n    overflow-y: scroll; }\n  .mdc-select__selected-text {\n    -webkit-transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 125ms 0ms cubic-bezier(0.4, 0, 1, 1), transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 125ms 0ms cubic-bezier(0.4, 0, 1, 1);\n    white-space: nowrap;\n    overflow: hidden; }\n\n.mdc-select--open .mdc-select__selected-text {\n  -webkit-transform: translateY(8px);\n          transform: translateY(8px);\n  -webkit-transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 125ms 125ms cubic-bezier(0, 0, 0.2, 1), transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 125ms 125ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: 0; }\n\n.mdc-select--disabled,\n.mdc-select[disabled] {\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));\n  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%230%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.38%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n  border-bottom-style: dotted;\n  cursor: default;\n  pointer-events: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none; }\n  .mdc-select--theme-dark.mdc-select--disabled, .mdc-select[disabled],\n  .mdc-theme--dark .mdc-select--disabled,\n  .mdc-theme--dark\n  .mdc-select[disabled] {\n    color: rgba(255, 255, 255, 0.5);\n    color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5));\n    background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.38%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E);\n    border-bottom: 1px dotted rgba(255, 255, 255, 0.38); }\n\n.mdc-select__menu .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem;\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }\n  .mdc-select__menu .mdc-list-item[aria-selected=\"true\"] {\n    color: rgba(0, 0, 0, 0.87);\n    color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }\n  .mdc-select--theme-dark .mdc-select__menu .mdc-list-item,\n  .mdc-theme--dark .mdc-select__menu .mdc-list-item {\n    color: rgba(255, 255, 255, 0.7);\n    color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n    .mdc-select--theme-dark .mdc-select__menu .mdc-list-item[aria-selected=\"true\"],\n    .mdc-theme--dark .mdc-select__menu .mdc-list-item[aria-selected=\"true\"] {\n      color: white;\n      color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-select__menu .mdc-list-group,\n.mdc-select__menu .mdc-list-group > .mdc-list-item:first-child {\n  margin-top: 12px; }\n\n.mdc-select__menu .mdc-list-group {\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));\n  font-weight: normal; }\n  .mdc-select__menu .mdc-list-group .mdc-list-item {\n    color: rgba(0, 0, 0, 0.87);\n    color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)); }\n\n.mdc-select--theme-dark .mdc-select__menu .mdc-list-group,\n.mdc-theme--dark .mdc-select__menu .mdc-list-group {\n  color: rgba(255, 255, 255, 0.5);\n  color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }\n  .mdc-select--theme-dark .mdc-select__menu .mdc-list-group .mdc-list-item,\n  .mdc-theme--dark .mdc-select__menu .mdc-list-group .mdc-list-item {\n    color: white;\n    color: var(--mdc-theme-text-primary-on-dark, white); }\n\n/**\n * Copyright 2015 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* postcss-bem-linter: define snackbar */\n.mdc-snackbar {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: fixed;\n  bottom: 0;\n  left: 50%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  padding-right: 24px;\n  padding-left: 24px;\n  -webkit-transform: translate(0, 100%);\n          transform: translate(0, 100%);\n  -webkit-transition: -webkit-transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: -webkit-transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1);\n  transition: transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1);\n  background-color: #323232;\n  will-change: transform;\n  pointer-events: none;\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n  @media (max-width: 599px) {\n    .mdc-snackbar {\n      left: 0;\n      width: calc(100% - 48px); } }\n  @media (min-width: 600px) {\n    .mdc-snackbar {\n      min-width: 288px;\n      max-width: 568px;\n      -webkit-transform: translate(-50%, 100%);\n              transform: translate(-50%, 100%);\n      border-radius: 2px; } }\n  .mdc-snackbar--active {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0);\n    pointer-events: auto;\n    -webkit-transition: -webkit-transform 0.25s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: -webkit-transform 0.25s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: transform 0.25s 0ms cubic-bezier(0, 0, 0.2, 1);\n    transition: transform 0.25s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.25s 0ms cubic-bezier(0, 0, 0.2, 1); }\n    @media (min-width: 600px) {\n      .mdc-snackbar--active {\n        -webkit-transform: translate(-50%, 0);\n                transform: translate(-50%, 0); } }\n  .mdc-snackbar--action-on-bottom {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n  .mdc-snackbar--action-on-bottom .mdc-snackbar__text {\n    margin-right: inherit; }\n  .mdc-snackbar--action-on-bottom .mdc-snackbar__action-wrapper {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    margin-top: -12px;\n    margin-bottom: 8px;\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    margin-left: auto;\n    margin-right: 0;\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */ }\n    [dir=\"rtl\"] .mdc-snackbar--action-on-bottom .mdc-snackbar__action-wrapper, .mdc-snackbar--action-on-bottom .mdc-snackbar__action-wrapper[dir=\"rtl\"] {\n      margin-left: 0;\n      margin-right: auto; }\n  .mdc-snackbar__text {\n    font-family: Roboto, sans-serif;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    font-size: 0.875rem;\n    font-weight: 400;\n    letter-spacing: 0.04em;\n    line-height: 1.25rem;\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    margin-left: 0;\n    margin-right: auto;\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 48px;\n    -webkit-transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);\n    color: white;\n    opacity: 0; }\n    [dir=\"rtl\"] .mdc-snackbar .mdc-snackbar__text,\n    .mdc-snackbar[dir=\"rtl\"] .mdc-snackbar__text {\n      margin-left: auto;\n      margin-right: 0; }\n  .mdc-snackbar--multiline .mdc-snackbar__text {\n    height: 80px; }\n  .mdc-snackbar--multiline.mdc-snackbar--action-on-bottom .mdc-snackbar__text {\n    margin: 0; }\n  .mdc-snackbar__action-button {\n    color: #ff4081;\n    color: var(--mdc-theme-accent, #ff4081);\n    /* stylelint-disable scss/dollar-variable-pattern */\n    /* stylelint-disable scss/dollar-variable-pattern */\n    margin-left: 0;\n    margin-right: -16px;\n    /* stylelint-enable scss/dollar-variable-pattern */\n    /* stylelint-enable scss/dollar-variable-pattern */\n    min-width: auto;\n    height: inherit;\n    -webkit-transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);\n    opacity: 0;\n    visibility: hidden; }\n    [dir=\"rtl\"] .mdc-snackbar .mdc-snackbar__action-button,\n    .mdc-snackbar[dir=\"rtl\"] .mdc-snackbar__action-button {\n      margin-left: -16px;\n      margin-right: 0; }\n    .mdc-snackbar__action-button::-moz-focus-inner {\n      border: 0; }\n    .mdc-snackbar__action-button:not([aria-hidden]) {\n      visibility: inherit; }\n  .mdc-snackbar--active .mdc-snackbar__text,\n  .mdc-snackbar--active .mdc-snackbar__action-button:not([aria-hidden]) {\n    -webkit-transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);\n    transition: opacity 0.3s 0ms cubic-bezier(0.4, 0, 1, 1);\n    opacity: 1; }\n\n/* postcss-bem-linter: end */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box-property(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* postcss-bem-linter: define textfield */\n.mdc-textfield {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  letter-spacing: 0.04em;\n  display: inline-block;\n  margin-bottom: 8px;\n  will-change: opacity, transform, color; }\n  .mdc-textfield__input {\n    color: rgba(0, 0, 0, 0.87);\n    color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n    padding: 0 0 8px;\n    border: none;\n    background: none;\n    font-size: inherit;\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none; }\n    .mdc-textfield__input::-webkit-input-placeholder {\n      color: rgba(0, 0, 0, 0.38);\n      color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));\n      -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      opacity: 1; }\n    .mdc-textfield__input::-moz-placeholder {\n      color: rgba(0, 0, 0, 0.38);\n      color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));\n      -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      opacity: 1; }\n    .mdc-textfield__input:-ms-input-placeholder {\n      color: rgba(0, 0, 0, 0.38);\n      color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));\n      -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      opacity: 1; }\n    .mdc-textfield__input::placeholder {\n      color: rgba(0, 0, 0, 0.38);\n      color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));\n      -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      opacity: 1; }\n    .mdc-textfield__input:focus {\n      outline: none; }\n      .mdc-textfield__input:focus::-webkit-input-placeholder {\n        color: rgba(0, 0, 0, 0.54);\n        color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }\n      .mdc-textfield__input:focus::-moz-placeholder {\n        color: rgba(0, 0, 0, 0.54);\n        color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }\n      .mdc-textfield__input:focus:-ms-input-placeholder {\n        color: rgba(0, 0, 0, 0.54);\n        color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }\n      .mdc-textfield__input:focus::placeholder {\n        color: rgba(0, 0, 0, 0.54);\n        color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)); }\n    .mdc-textfield__input:invalid {\n      box-shadow: none; }\n    .mdc-textfield__input--theme-dark,\n    .mdc-theme--dark .mdc-textfield__input {\n      color: white; }\n      .mdc-textfield__input--theme-dark::-webkit-input-placeholder,\n      .mdc-theme--dark .mdc-textfield__input::-webkit-input-placeholder {\n        color: rgba(255, 255, 255, 0.5);\n        color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }\n      .mdc-textfield__input--theme-dark::-moz-placeholder,\n      .mdc-theme--dark .mdc-textfield__input::-moz-placeholder {\n        color: rgba(255, 255, 255, 0.5);\n        color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }\n      .mdc-textfield__input--theme-dark:-ms-input-placeholder,\n      .mdc-theme--dark .mdc-textfield__input:-ms-input-placeholder {\n        color: rgba(255, 255, 255, 0.5);\n        color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }\n      .mdc-textfield__input--theme-dark::placeholder,\n      .mdc-theme--dark .mdc-textfield__input::placeholder {\n        color: rgba(255, 255, 255, 0.5);\n        color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }\n      .mdc-textfield__input--theme-dark:focus::-webkit-input-placeholder,\n      .mdc-theme--dark .mdc-textfield__input:focus::-webkit-input-placeholder {\n        color: rgba(255, 255, 255, 0.7);\n        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n      .mdc-textfield__input--theme-dark:focus::-moz-placeholder,\n      .mdc-theme--dark .mdc-textfield__input:focus::-moz-placeholder {\n        color: rgba(255, 255, 255, 0.7);\n        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n      .mdc-textfield__input--theme-dark:focus:-ms-input-placeholder,\n      .mdc-theme--dark .mdc-textfield__input:focus:-ms-input-placeholder {\n        color: rgba(255, 255, 255, 0.7);\n        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n      .mdc-textfield__input--theme-dark:focus::placeholder,\n      .mdc-theme--dark .mdc-textfield__input:focus::placeholder {\n        color: rgba(255, 255, 255, 0.7);\n        color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n  .mdc-textfield__label {\n    color: rgba(0, 0, 0, 0.38);\n    color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));\n    position: absolute;\n    bottom: 8px;\n    left: 0;\n    -webkit-transform-origin: left top;\n            transform-origin: left top;\n    -webkit-transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n    transition: color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n    cursor: text;\n    /* stylelint-disable plugin/selector-bem-pattern */\n    /* stylelint-enable plugin/selector-bem-pattern */ }\n    [dir=\"rtl\"] .mdc-textfield .mdc-textfield__label,\n    .mdc-textfield[dir=\"rtl\"] .mdc-textfield__label {\n      right: 0;\n      left: auto;\n      -webkit-transform-origin: right top;\n              transform-origin: right top; }\n    .mdc-textfield--theme-dark .mdc-textfield__label,\n    .mdc-theme--dark .mdc-textfield__label {\n      color: rgba(255, 255, 255, 0.5);\n      color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }\n    .mdc-textfield__label--float-above {\n      -webkit-transform: translateY(-100%) scale(0.75, 0.75);\n              transform: translateY(-100%) scale(0.75, 0.75);\n      cursor: auto; }\n\n.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth) {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  position: relative;\n  box-sizing: border-box;\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n  margin-top: 16px; }\n  .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline) {\n    height: 48px; }\n    .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {\n      position: absolute;\n      bottom: 0;\n      left: 0;\n      width: 100%;\n      height: 1px;\n      -webkit-transform: translateY(50%) scaleY(1);\n              transform: translateY(50%) scaleY(1);\n      -webkit-transform-origin: center bottom;\n              transform-origin: center bottom;\n      -webkit-transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1), transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1), transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n      background-color: rgba(0, 0, 0, 0.12);\n      content: \"\"; }\n      .mdc-textfield--theme-dark .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after,\n      .mdc-theme--dark .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {\n        background-color: rgba(255, 255, 255, 0.12); }\n  .mdc-textfield--upgraded:not(.mdc-textfield--fullwidth) .mdc-textfield__label {\n    pointer-events: none; }\n\n.mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {\n  background-color: #3f51b5;\n  background-color: var(--mdc-theme-primary, #3f51b5);\n  -webkit-transform: translateY(100%) scaleY(2);\n          transform: translateY(100%) scaleY(2);\n  -webkit-transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1); }\n  .mdc-textfield--theme-dark.mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after,\n  .mdc-theme--dark .mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {\n    background-color: #3f51b5;\n    background-color: var(--mdc-theme-primary, #3f51b5);\n    -webkit-transform: translateY(100%) scaleY(2);\n            transform: translateY(100%) scaleY(2);\n    -webkit-transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n    transition: -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);\n    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 180ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-textfield--focused .mdc-textfield__label {\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n  .mdc-textfield--theme-dark .mdc-textfield--focused .mdc-textfield__label,\n  .mdc-theme--dark .mdc-textfield--focused .mdc-textfield__label {\n    color: #3f51b5;\n    color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-textfield--dense {\n  margin-top: 12px;\n  margin-bottom: 4px;\n  font-size: .813rem; }\n  .mdc-textfield--dense .mdc-textfield__label--float-above {\n    -webkit-transform: translateY(calc(-100% - 2px)) scale(0.923, 0.923);\n            transform: translateY(calc(-100% - 2px)) scale(0.923, 0.923); }\n\n.mdc-textfield--invalid:not(.mdc-textfield--focused)::after {\n  background-color: #d50000; }\n\n.mdc-textfield--invalid:not(.mdc-textfield--focused) .mdc-textfield__label {\n  color: #d50000; }\n\n.mdc-textfield--theme-dark.mdc-textfield--invalid:not(.mdc-textfield--focused)::after,\n.mdc-theme--dark .mdc-textfield--invalid:not(.mdc-textfield--focused)::after {\n  background-color: #ff6e6e; }\n\n.mdc-textfield--theme-dark.mdc-textfield--invalid:not(.mdc-textfield--focused) .mdc-textfield__label,\n.mdc-theme--dark .mdc-textfield--invalid:not(.mdc-textfield--focused) .mdc-textfield__label {\n  color: #ff6e6e; }\n\n.mdc-textfield--disabled {\n  border-bottom: 1px dotted rgba(35, 31, 32, 0.26);\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n  .mdc-textfield--disabled::after {\n    display: none; }\n  .mdc-textfield--disabled .mdc-textfield__input {\n    padding-bottom: 7px; }\n  .mdc-textfield--theme-dark.mdc-textfield--disabled,\n  .mdc-theme--dark .mdc-textfield--disabled {\n    border-bottom: 1px dotted rgba(255, 255, 255, 0.3); }\n  .mdc-textfield--disabled .mdc-textfield__input,\n  .mdc-textfield--disabled .mdc-textfield__label,\n  .mdc-textfield--disabled + .mdc-textfield-helptext {\n    color: rgba(0, 0, 0, 0.38);\n    color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n  .mdc-textfield--theme-dark .mdc-textfield--disabled .mdc-textfield__input,\n  .mdc-theme--dark .mdc-textfield--disabled .mdc-textfield__input, .mdc-textfield--theme-dark\n  .mdc-textfield--disabled .mdc-textfield__label,\n  .mdc-theme--dark\n  .mdc-textfield--disabled .mdc-textfield__label {\n    color: rgba(255, 255, 255, 0.5);\n    color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)); }\n  .mdc-textfield--theme-dark.mdc-textfield--disabled,\n  .mdc-theme--dark .mdc-textfield--disabled {\n    /* stylelint-disable plugin/selector-bem-pattern */\n    /* stylelint-enable plugin/selector-bem-pattern */ }\n    .mdc-textfield--theme-dark.mdc-textfield--disabled + .mdc-textfield-helptext,\n    .mdc-theme--dark .mdc-textfield--disabled + .mdc-textfield-helptext {\n      colr: rgba(255, 255, 255, 0.5);\n      colr: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)); }\n  .mdc-textfield--disabled .mdc-textfield__label {\n    bottom: 7px;\n    cursor: default; }\n\n.mdc-textfield__input:required + .mdc-textfield__label::after {\n  margin-left: 1px;\n  content: \"*\"; }\n  .mdc-textfield--focused .mdc-textfield__input:required + .mdc-textfield__label::after {\n    color: #d50000; }\n  .mdc-textfield--focused .mdc-textfield--theme-dark .mdc-textfield__input:required + .mdc-textfield__label::after, .mdc-textfield--focused\n  .mdc-theme--dark .mdc-textfield__input:required + .mdc-textfield__label::after {\n    color: #ff6e6e; }\n\n.mdc-textfield--multiline {\n  /* stylelint-disable scss/dollar-variable-pattern */\n  /* stylelint-enable scss/dollar-variable-pattern */\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: initial;\n  -webkit-transition: none;\n  transition: none;\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n  .mdc-textfield--multiline::after {\n    content: initial; }\n  .mdc-textfield--multiline .mdc-textfield__input {\n    padding: 4px;\n    -webkit-transition: border-color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n    transition: border-color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n    border: 1px solid rgba(0, 0, 0, 0.12);\n    border-radius: 2px; }\n    .mdc-textfield--theme-dark .mdc-textfield--multiline .mdc-textfield__input,\n    .mdc-theme--dark .mdc-textfield--multiline .mdc-textfield__input {\n      border-color: rgba(255, 255, 255, 0.12); }\n    .mdc-textfield--multiline .mdc-textfield__input:focus {\n      border-color: #3f51b5;\n      border-color: var(--mdc-theme-primary, #3f51b5); }\n    .mdc-textfield--multiline .mdc-textfield__input:invalid:not(:focus) {\n      border-color: #d50000; }\n    .mdc-textfield--theme-dark .mdc-textfield--multiline .mdc-textfield__input:invalid:not(:focus),\n    .mdc-theme--dark .mdc-textfield--multiline .mdc-textfield__input:invalid:not(:focus) {\n      border-color: #ff6e6e; }\n  .mdc-textfield--multiline .mdc-textfield__label {\n    top: 6px;\n    bottom: initial;\n    left: 4px; }\n    [dir=\"rtl\"] .mdc-textfield--multiline .mdc-textfield--multiline .mdc-textfield__label,\n    .mdc-textfield--multiline[dir=\"rtl\"] .mdc-textfield--multiline .mdc-textfield__label {\n      right: 4px;\n      left: auto; }\n    .mdc-textfield--multiline .mdc-textfield__label--float-above {\n      -webkit-transform: translateY(calc(-100% - 6px)) scale(0.923, 0.923);\n              transform: translateY(calc(-100% - 6px)) scale(0.923, 0.923); }\n  .mdc-textfield--multiline.mdc-textfield--disabled {\n    border-bottom: none; }\n    .mdc-textfield--multiline.mdc-textfield--disabled .mdc-textfield__input {\n      border: 1px dotted rgba(35, 31, 32, 0.26); }\n      .mdc-textfield--theme-dark .mdc-textfield--multiline.mdc-textfield--disabled .mdc-textfield__input,\n      .mdc-theme--dark .mdc-textfield--multiline.mdc-textfield--disabled .mdc-textfield__input {\n        border-color: rgba(255, 255, 255, 0.3); }\n\n.mdc-textfield--fullwidth {\n  display: block;\n  width: 100%;\n  box-sizing: border-box;\n  margin: 0;\n  border: none;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  outline: none;\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n  .mdc-textfield--fullwidth:not(.mdc-textfield--multiline) {\n    height: 56px; }\n  .mdc-textfield--fullwidth.mdc-textfield--multiline {\n    padding: 20px 0 0; }\n  .mdc-textfield--fullwidth.mdc-textfield--dense:not(.mdc-textfield--multiline) {\n    height: 48px; }\n  .mdc-textfield--fullwidth.mdc-textfield--dense.mdc-textfield--multiline {\n    padding: 16px 0 0; }\n  .mdc-textfield--fullwidth.mdc-textfield--disabled, .mdc-textfield--fullwidth.mdc-textfield--disabled.mdc-textfield--multiline {\n    border-bottom: 1px dotted rgba(0, 0, 0, 0.12); }\n  .mdc-textfield--fullwidth--theme-dark,\n  .mdc-theme--dark .mdc-textfield--fullwidth {\n    border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n    .mdc-textfield--fullwidth--theme-dark.mdc-textfield--disabled, .mdc-textfield--fullwidth--theme-dark.mdc-textfield--disabled.mdc-textfield--multiline,\n    .mdc-theme--dark .mdc-textfield--fullwidth.mdc-textfield--disabled,\n    .mdc-theme--dark .mdc-textfield--fullwidth.mdc-textfield--disabled.mdc-textfield--multiline {\n      border-bottom: 1px dotted rgba(255, 255, 255, 0.12); }\n  .mdc-textfield--fullwidth .mdc-textfield__input {\n    width: 100%;\n    height: 100%;\n    padding: 0;\n    resize: none;\n    border: none !important; }\n\n.mdc-textfield:not(.mdc-textfield--upgraded):not(.mdc-textfield--multiline) .mdc-textfield__input {\n  -webkit-transition: border-bottom-color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: border-bottom-color 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }\n\n.mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:focus {\n  border-color: #3f51b5;\n  border-color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:disabled {\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38));\n  border-style: dotted;\n  border-color: rgba(35, 31, 32, 0.26); }\n\n.mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:invalid:not(:focus) {\n  border-color: #d50000; }\n\n.mdc-textfield--theme-dark:not(.mdc-textfield--upgraded) .mdc-textfield__input:not(:focus),\n.mdc-theme--dark .mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:not(:focus) {\n  border-color: rgba(255, 255, 255, 0.12); }\n\n.mdc-textfield--theme-dark:not(.mdc-textfield--upgraded) .mdc-textfield__input:disabled,\n.mdc-theme--dark .mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:disabled {\n  color: rgba(255, 255, 255, 0.5);\n  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5));\n  border-color: rgba(255, 255, 255, 0.3); }\n\n.mdc-textfield--theme-dark:not(.mdc-textfield--upgraded) .mdc-textfield__input:invalid:not(:focus),\n.mdc-theme--dark .mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:invalid:not(:focus) {\n  border-color: #ff6e6e; }\n\n/* postcss-bem-linter: end */\n/* postcss-bem-linter: define textfield-helptext */\n.mdc-textfield-helptext {\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38));\n  margin: 0;\n  -webkit-transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  font-size: .75rem;\n  opacity: 0;\n  will-change: opacity;\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n  .mdc-textfield-helptext--theme-dark,\n  .mdc-theme--dark .mdc-textfield-helptext {\n    color: rgba(255, 255, 255, 0.5);\n    color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)); }\n  .mdc-textfield + .mdc-textfield-helptext {\n    margin-bottom: 8px; }\n  .mdc-textfield--dense + .mdc-textfield-helptext {\n    margin-bottom: 4px; }\n  .mdc-textfield--focused + .mdc-textfield-helptext:not(.mdc-textfield-helptext--validation-msg) {\n    opacity: 1; }\n\n.mdc-textfield-helptext--persistent {\n  -webkit-transition: none;\n  transition: none;\n  opacity: 1;\n  will-change: initial; }\n\n/* postcss-bem-linter: end */\n.mdc-textfield--invalid + .mdc-textfield-helptext--validation-msg {\n  color: #d50000;\n  opacity: 1; }\n\n.mdc-textfield--theme-dark.mdc-textfield--invalid + .mdc-textfield-helptext--validation-msg,\n.mdc-theme--dark .mdc-textfield--invalid + .mdc-textfield-helptext--validation-msg {\n  color: #ff6e6e; }\n\n/* stylelint-disable selector-no-type */\n.mdc-form-field > .mdc-textfield + label {\n  -ms-flex-item-align: start;\n      align-self: flex-start; }\n\n/* stylelint-enable selector-no-type */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance() with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/*\n  Precomputed linear color channel values, for use in contrast calculations.\n  See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n\n  Algorithm, for c in 0 to 255:\n  f(c) {\n    c = c / 255;\n    return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);\n  }\n\n  This lookup table is needed since there is no `pow` in SASS.\n*/\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Calculate the luminance for a color.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Calculate the contrast ratio between two colors.\n * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\n */\n/**\n * Determine whether to use dark or light text on top of given color.\n * Returns \"dark\" for dark text and \"light\" for light text.\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n/*\n  Main theme colors.\n  If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.\n*/\n/* Indigo 500 */\n/* Pink A200 */\n/* White */\n/* Which set of text colors to use for each main theme color (light or dark) */\n/* Text colors according to light vs dark and text type */\n/* Primary text colors for each of the theme colors */\n/* All variables are local, so disable pattern checking. */\n/* stylelint-disable scss/dollar-variable-pattern */\n/**\n * Applies the correct theme color style to the specified property.\n * $property is typically color or background-color, but can be any CSS property that accepts color values.\n * $style should be one of the map keys in $mdc-theme-property-values (_variables.scss).\n */\n/**\n * Creates a rule to be used in MDC-Web components for dark theming, and applies the provided contents.\n * Should provide the $root-selector option if applied to anything other than the root selector.\n * When used with a modifier class, provide a second argument of `true` for the $compound parameter\n * to specify that this should be attached as a compound class.\n *\n * Usage example:\n *\n * ```scss\n * .mdc-foo {\n *   color: black;\n *\n *   @include mdc-theme-dark {\n *     color: white;\n *   }\n *\n *   &__bar {\n *     background: black;\n *\n *     @include mdc-theme-dark(\".mdc-foo\") {\n *       background: white;\n *     }\n *   }\n * }\n *\n * .mdc-foo--disabled {\n *   opacity: .38;\n *\n *   @include mdc-theme-dark(\".mdc-foo\", true) {\n *     opacity: .5;\n *   }\n * }\n * ```\n */\n/* stylelint-enable scss/dollar-variable-pattern */\n:root {\n  --mdc-theme-primary: #3f51b5;\n  --mdc-theme-accent: #ff4081;\n  --mdc-theme-background: #fff;\n  --mdc-theme-text-primary-on-primary: white;\n  --mdc-theme-text-secondary-on-primary: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-primary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-primary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-primary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-accent: white;\n  --mdc-theme-text-secondary-on-accent: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-accent: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-accent: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-accent: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-dark: white;\n  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5); }\n\n/* Special case, so that .mdc-theme--background changes background color, not text color. */\n.mdc-theme--background {\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff); }\n\n.mdc-theme--primary {\n  color: #3f51b5 !important;\n  color: var(--mdc-theme-primary, #3f51b5) !important; }\n\n.mdc-theme--accent {\n  color: #ff4081 !important;\n  color: var(--mdc-theme-accent, #ff4081) !important; }\n\n.mdc-theme--text-primary-on-primary {\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-primary, white) !important; }\n\n.mdc-theme--text-secondary-on-primary {\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-primary, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-primary {\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-primary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-primary {\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-primary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-primary {\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-primary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-accent {\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-accent, white) !important; }\n\n.mdc-theme--text-secondary-on-accent {\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-accent, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-accent {\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-accent, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-accent {\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-accent, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-accent {\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-accent, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-background {\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-background {\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-background {\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-background {\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-background {\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-light {\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-light {\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-light {\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-light {\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-light {\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-dark {\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-dark, white) !important; }\n\n.mdc-theme--text-secondary-on-dark {\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-dark {\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-dark {\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-dark {\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n/* CSS rules for using primary and accent as background colors. */\n.mdc-theme--primary-bg {\n  background-color: #3f51b5 !important;\n  background-color: var(--mdc-theme-primary, #3f51b5) !important; }\n\n.mdc-theme--accent-bg {\n  background-color: #ff4081 !important;\n  background-color: var(--mdc-theme-accent, #ff4081) !important; }\n\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/**\n * Copyright 2016 Google Inc. All Rights Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-typography {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased; }\n\n.mdc-typography--display4 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 7rem;\n  font-weight: 300;\n  letter-spacing: -0.04em;\n  line-height: 7rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--display4 {\n  margin: -1rem 0 3.5rem -0.085em; }\n\n.mdc-typography--display3 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3.5rem;\n  font-weight: 400;\n  letter-spacing: -0.02em;\n  line-height: 3.5rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--display3 {\n  margin: -8px 0 64px -0.07em; }\n\n.mdc-typography--display2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.813rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 3rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--display2 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--display1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2.5rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--display1 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--headline {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--headline {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  line-height: 2rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--title {\n  margin: -0.5rem 0 1rem -0.05em; }\n\n.mdc-typography--subheading2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading2 {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--subheading1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.938rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading1 {\n  margin: -0.313rem 0 0.813rem -0.06em; }\n\n.mdc-typography--body2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--body2 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--body1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--body1 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--caption {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  font-weight: 400;\n  letter-spacing: 0.08em;\n  line-height: 1.25rem; }\n\n.mdc-typography--adjust-margin.mdc-typography--caption {\n  margin: -0.5rem 0 1rem -0.04em; }\n", ""]);
 
 	// exports
 

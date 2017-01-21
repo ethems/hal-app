@@ -61,7 +61,6 @@
     "moment": "^2.17.1",
     "mongoose": "^4.7.7",
     "node-uuid": "^1.4.7",
-    "purecss": "^0.6.2",
     "react": "^15.4.2",
     "react-addons-update": "^15.4.2",
     "react-click-outside": "^2.2.0",

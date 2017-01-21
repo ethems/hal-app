@@ -20,7 +20,7 @@ describe('Product Controller', () => {
       request(server).put('/api/product').send(product).expect(200).end((err, res) => {
         should.not.exists(err);
         res.body.product.name.should.equal('Product Put Test Just Name');
-        res.body.product.active.should.equal(true);
+        res.body.product.active.should.equal(false);
         done();
       });
     });
@@ -34,7 +34,7 @@ describe('Product Controller', () => {
       request(server).put('/api/product').send(product).expect(200).end((err, res) => {
         should.not.exists(err);
         res.body.product.name.should.equal('Product Put Test Just Name And Price');
-        res.body.product.active.should.equal(true);
+        res.body.product.active.should.equal(false);
         res.body.product.priceHistory.length.should.equal(1);
         res.body.product.priceHistory[0].price.should.equal(123);
         done();

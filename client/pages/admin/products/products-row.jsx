@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import * as productActions from '../../../actions/product-action';
 import moment from 'moment';
-
 import './styles/products-row.scss';
 
 const ProductsRow = (props) => {
@@ -20,15 +19,13 @@ const ProductsRow = (props) => {
     onCloseDeleteSection,
     deleteProduct
   } = props;
-  const type = +index % 2 === 0
-    ? ' even '
-    : ' odd ';
+
   const priceText = priceHistory.length == 0
     ? 'No price'
     : `\u20BA${priceHistory[0].price} / ${priceHistory[0].unit}`;
   const status = active
-    ? 'Active'
-    : 'Inactive';
+    ? 'active'
+    : 'inactive';
   const updateDate = modifiedDate || createdDate;
   const _renderActions = () => {
     if (!isDeleteSectionOpen) {
@@ -56,14 +53,10 @@ const ProductsRow = (props) => {
     }
   };
   return (
-    <tr className={`products-row ${type}`}>
+    <tr className={`admin--products-row ${status}`}>
       <td>
         <Link to={`/admin/product/${id}`}>{name}</Link>
-        <div className="products-row-id">
-          {id}
-        </div>
       </td>
-      <td className={status.toLowerCase()}>{status}</td>
       <td>{priceText}</td>
       <td className="products-update-date">{moment(updateDate).format('DD-MM-YYYY, hh:mm')}</td>
       <td>

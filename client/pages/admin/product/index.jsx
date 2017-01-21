@@ -123,20 +123,13 @@ class Product extends Component {
         <div className="product-name-section">
           <ProductName {...this.state} onChangeName={this.onChangeName}/>
         </div>
-        <div className="product-tabs-section">
-          <Tabs selected={0}>
-            <Pane label={this.renderButtonSettings()}>
-              <Setup {...this.state} onChangeStatus={this.onChangeStatus} onChangePrice={this.onChangePrice} onChangePriceUnit={this.onChangePriceUnit}/>
-            </Pane>
-            <Pane label={this.renderButtonTimeline()}>
-              <Timeline {...this.state} onChangeTimespan={this.handleChangeTimespanType}/>
-            </Pane>
-          </Tabs>
+        <div className="product-setup-section">
+          <Setup {...this.state} onChangeStatus={this.onChangeStatus} onChangePrice={this.onChangePrice} onChangePriceUnit={this.onChangePriceUnit}/>
         </div>
         <div className="product-actions-section">
           <div className="botton-container">
-            <button className="pure-button  button-primary valign-center" onClick={() => this.onClickSave()}>Save</button>
-            <button className="pure-button valign-center" onClick={() => this.onClickCancel()}>Cancel</button>
+            <button className="mdc-button  button-primary valign-center" onClick={() => this.onClickSave()}>Save</button>
+            <button className="mdc-button valign-center" onClick={() => this.onClickCancel()}>Cancel</button>
           </div>
         </div>
       </div>

@@ -8,15 +8,16 @@ const handleAddNew = () => {
   browserHistory.push('/admin/product');
 }
 
-const Products = props => (
-  <div className="products-container">
-    <div className="products-actions">
-      <button className="pure-button  button-primary" onClick={e => handleAddNew()}>
+const Products = () => (
+  <div className="admin--products-container">
+    <div className="admin--products-actions-container">
+      <button className="mdc-button  button-primary" onClick={e => handleAddNew()}>
         <div className="valign-center">
-          <i className="material-icons material-icons.md-18">add</i>New</div>
+          <i className="material-icons md-18">add</i>New
+        </div>
       </button>
     </div>
-    <div className="products-table-wrapper">
+    <div className="admin--products-table-wrapper">
       <ProductsTable/>
     </div>
   </div>

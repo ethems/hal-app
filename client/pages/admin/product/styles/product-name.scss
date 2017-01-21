@@ -1,8 +1,9 @@
 .product-name-container {
-    width: 60%;
-    height: 30px;
+    width: 100%;
+    height: 50px;
     font-size: 25px;
     padding-bottom: 20px;
+    overflow: hidden;
 }
 
 .product-name-container .product-name {

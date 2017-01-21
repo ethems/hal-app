@@ -1,13 +1,24 @@
+@import "~susy/sass/susy";
+$susy: ( columns: 12, container: 1120px, global-box-sizing: border-box );
+/* Makes border-box properties */
+@include border-box-sizing;
+
 .product-container {
-    padding: 20px 10px 20px 20px;
+    @include container;
 }
 
 
-.product-container .product-tabs-section {
-    margin-bottom: 30px;
+.product-container .product-setup-section {
+  @include span(12);
+   background-color: #ffffff;
+   margin-bottom: 20px;
+}
+.product-container .product-actions-section{
+  @include span(12);
 }
 
 .product-container .product-actions-section .botton-container {
+
     width: 160px;
     display: flex;
     justify-content: space-between;

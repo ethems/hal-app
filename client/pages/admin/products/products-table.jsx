@@ -84,25 +84,24 @@ class ProductsTable extends Component {
   render() {
     const {searchText} = this.state;
     return (
-      <div className="admin-products-container">
-        <table className="products-table">
+      <div className="admin--products-table-container">
+        <table className="admin--products__table">
           <thead>
-            <tr className="products-table-actions">
-              <th colSpan={4}>
+            <tr className="admin--products__table__tr-actions-container">
+              <th colSpan={3}>
                 <div className="search-text-container">
-                  <input className="search-text" value={searchText} onChange={event => this.onChangeText(event)}/>
+                  <input className="full-width-height" value={searchText} onChange={event => this.onChangeText(event)}/>
                 </div>
               </th>
               <th colSpan={1}>
                 <div className="active-visibility-container"></div>
               </th>
             </tr>
-            <tr className="products-table-header">
+            <tr className="admin--products__table__tr-header">
               <th width="40%" onClick={() => this.onChangeSortType('name')}>Product Name</th>
-              <th width="10%" onClick={() => this.onChangeSortType('status')}>Status</th>
               <th width="20%" onClick={() => this.onChangeSortType('price')}>Price</th>
               <th width="15%" onClick={() => this.onChangeSortType('date')}>Update Date</th>
-              <th width="15%">Actions</th>
+              <th width="25%">Actions</th>
             </tr>
           </thead>
           <tbody>{this._renderRows()}</tbody>

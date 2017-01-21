@@ -1,9 +1,18 @@
-.products-container {
-    padding: 10px 10px 20px 20px;
+@import "~susy/sass/susy";
+$susy: ( columns: 12, container: 1120px, global-box-sizing: border-box );
+/* Makes border-box properties */
+@include border-box-sizing;
+
+.admin--products-container {
+    @include container;
 }
 
-.products-container .products-actions {
+.admin--products-container .admin--products-actions-container {
+    @include span(12);
     display: flex;
     flex-direction: row-reverse;
     margin-bottom: 20px;
+}
+.admin--products-container .admin--products-table-wrapper{
+    @include span(12);
 }

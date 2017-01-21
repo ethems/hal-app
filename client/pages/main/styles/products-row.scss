@@ -14,6 +14,8 @@
     @media (min-width:641px) {
         height: 90px;
     }
+    @media (min-width: 1382px) {
+    }
 }
 
 .products-row-container .products-row-price-section {
@@ -35,11 +37,17 @@
         @media (min-width: 961px) {
             font-size: 2vmax;
         }
+        @media (min-width: 1382px) {
+          font-size:1.5vmax;
+        }
 
         sup {
             font-size: 2vmax;
             @media (min-width: 961px) {
                 font-size: 1.5vmax;
+            }
+            @media (min-width: 1382px) {
+              font-size:1vmax;
             }
         }
     }
@@ -88,6 +96,9 @@
         @media (min-width: 961px) {
             font-size: 1.5vmax;
         }
+        @media (min-width: 1382px) {
+          font-size:1vmax;
+        }
         color: #2196F3;
     }
 }
@@ -101,6 +112,9 @@
     align-items: center;
     @media (min-width: 961px) {
         font-size: 1vmax;
+    }
+    @media (min-width: 1382px) {
+      font-size:1vmax;
     }
   }
 }

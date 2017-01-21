@@ -9,12 +9,12 @@ const renderRateIcon = (rate) => {
     case(+ rate > 0):
       return (
         <span className="rate__content up">
-          <i className="material-icons ">arrow_drop_up</i>{rate}</span>
+          <i className="material-icons ">arrow_drop_up</i>%&nbsp;{rate}</span>
       )
     case(+ rate < 0):
       return (
         <span className="rate__content down">
-          <i className="material-icons ">arrow_drop_down</i>{rate}</span>
+          <i className="material-icons ">arrow_drop_down</i>%&nbsp;{rate}</span>
       )
     default:
       return null;
