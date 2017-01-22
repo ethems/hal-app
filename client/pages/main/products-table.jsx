@@ -16,9 +16,16 @@ class MainProductsTable extends Component {
   _sort(products) {
     return _.sortBy(products, product => product.name);
   }
+  _filter(products) {
+    const searchText = this.props.searchText.toLowerCase();
+    if (searchText === '') {
+      return products;
+    }
+    return _.filter(products, product => product.name.toLowerCase().indexOf(searchText) !== -1);
+  }
   _renderRows() {
     const {products} = this.props;
-    return this._sort(products).map(product => <MainProductsRow key={product.id} {...product}/>);
+    return this._sort(this._filter(products)).map(product => <MainProductsRow key={product.id} {...product}/>);
   }
   render() {
     return (

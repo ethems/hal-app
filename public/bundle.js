@@ -84327,6 +84327,8 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(5);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -84335,26 +84337,67 @@
 
 	var _productsTable2 = _interopRequireDefault(_productsTable);
 
+	var _indexHeader = __webpack_require__(509);
+
+	var _indexHeader2 = _interopRequireDefault(_indexHeader);
+
 	__webpack_require__(501);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Main = function Main(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'index-container' },
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'product-table-wrapper' },
-	      _react2.default.createElement(_productsTable2.default, null)
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'graph-wrapper' },
-	      'Graph'
-	    )
-	  );
-	};
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Main = function (_Component) {
+	  _inherits(Main, _Component);
+
+	  function Main(props) {
+	    _classCallCheck(this, Main);
+
+	    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+
+	    _this.handleChangeSeachText = function (searchText) {
+	      _this.setState({ searchText: searchText });
+	    };
+
+	    _this.state = {
+	      searchText: ''
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Main, [{
+	    key: 'render',
+	    value: function render() {
+	      var searchText = this.state.searchText;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'index-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'index-header-wrapper' },
+	          _react2.default.createElement(_indexHeader2.default, { searchText: searchText, onChangeSearchText: this.handleChangeSeachText })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'product-table-wrapper' },
+	          _react2.default.createElement(_productsTable2.default, { searchText: searchText })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'graph-wrapper' },
+	          'Graph'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Main;
+	}(_react.Component);
 
 	exports.default = Main;
 
@@ -84424,11 +84467,22 @@
 	      });
 	    }
 	  }, {
+	    key: '_filter',
+	    value: function _filter(products) {
+	      var searchText = this.props.searchText.toLowerCase();
+	      if (searchText === '') {
+	        return products;
+	      }
+	      return _lodash2.default.filter(products, function (product) {
+	        return product.name.toLowerCase().indexOf(searchText) !== -1;
+	      });
+	    }
+	  }, {
 	    key: '_renderRows',
 	    value: function _renderRows() {
 	      var products = this.props.products;
 
-	      return this._sort(products).map(function (product) {
+	      return this._sort(this._filter(products)).map(function (product) {
 	        return _react2.default.createElement(_productsRow2.default, _extends({ key: product.id }, product));
 	      });
 	    }
@@ -84635,7 +84689,7 @@
 
 
 	// module
-	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n  @media (min-width: 320px) {\n    .products-row-container {\n      height: 70px; } }\n  @media (min-width: 641px) {\n    .products-row-container {\n      height: 90px; } }\n  @media (min-width: 1382px) {\n    .products-row-container {\n      height: 100px; } }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 1.5vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n      @media (min-width: 1382px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.5vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 1.5vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n", ""]);
+	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px;\n  height: 70px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 1.5vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n      @media (min-width: 1382px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.5vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 1.5vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n", ""]);
 
 	// exports
 
@@ -84715,7 +84769,7 @@
 
 
 	// module
-	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .index-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 120px; }\n  .index-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n", ""]);
 
 	// exports
 
@@ -84759,6 +84813,332 @@
 
 	// exports
 
+
+/***/ },
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */,
+/* 509 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _sticky = __webpack_require__(512);
+
+	var _sticky2 = _interopRequireDefault(_sticky);
+
+	__webpack_require__(510);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var IndexHeader = function (_Component) {
+	  _inherits(IndexHeader, _Component);
+
+	  function IndexHeader(props) {
+	    _classCallCheck(this, IndexHeader);
+
+	    var _this = _possibleConstructorReturn(this, (IndexHeader.__proto__ || Object.getPrototypeOf(IndexHeader)).call(this, props));
+
+	    _this._changeState = function (state) {
+	      if (state === 'view') {
+	        _this.props.onChangeSearchText('');
+	      }
+	      _this.setState({ state: state });
+	    };
+
+	    _this.state = {
+	      state: props.searchText === '' ? 'view' : 'search'
+	    };
+	    return _this;
+	  }
+
+	  _createClass(IndexHeader, [{
+	    key: '_renderState',
+	    value: function _renderState() {
+	      var _this2 = this;
+
+	      var state = this.state.state;
+	      var searchText = this.props.searchText;
+
+	      switch (state) {
+	        case 'view':
+	          return _react2.default.createElement(
+	            'div',
+	            { className: 'index-header-actions__button-container' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'index-header-action__button', onClick: function onClick() {
+	                  return _this2._changeState('search');
+	                } },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons' },
+	                'search'
+	              )
+	            )
+	          );
+	        case 'search':
+	          return _react2.default.createElement(
+	            'div',
+	            { className: 'index-header-actions__search-container' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'index-header-action__button', onClick: function onClick() {
+	                  return _this2._changeState('view');
+	                } },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons' },
+	                'keyboard_backspace'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'mdc-textfield mdc-textfield--fullwidth index-header-action__search' },
+	              _react2.default.createElement('input', { className: 'mdc-textfield__input', value: searchText, placeholder: 'Urun Ara', onChange: function onChange(e) {
+	                  return _this2.props.onChangeSearchText(e.target.value);
+	                } })
+	            )
+	          );
+	        default:
+	          return _react2.default.createElement(
+	            'div',
+	            { className: 'index-header-actions__button-container' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'index-header-action__button', onClick: function onClick() {
+	                  return _this2._changeState('search');
+	                } },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons' },
+	                'search'
+	              )
+	            )
+	          );
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'index-header-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'index-header--fixed mdc-elevation--z4' },
+	          this._renderState()
+	        ),
+	        _react2.default.createElement(_sticky2.default, { className: 'index-secondary-header', enter: '30' })
+	      );
+	    }
+	  }]);
+
+	  return IndexHeader;
+	}(_react.Component);
+
+	exports.default = IndexHeader;
+
+/***/ },
+/* 510 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(511);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index-header.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index-header.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 511 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".index-header-container .index-header--fixed {\n  height: 60px;\n  position: fixed;\n  background-color: #0174FF;\n  top: 0;\n  left: 0;\n  right: 1px; }\n\n.index-header-container .index-header--fixed .index-header-actions__button-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  width: 100%;\n  height: 100%; }\n\n.index-header-container .index-header--fixed .index-header-action__button {\n  margin: 0 10px;\n  color: #fff; }\n\n.index-header-container .index-header--fixed .index-header-actions__search-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  width: 100%;\n  height: 100%; }\n\n.index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search {\n  border-bottom: 0; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search input {\n    color: #fff; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search ::-webkit-input-placeholder {\n    color: #9E9E9E; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search ::-moz-placeholder {\n    /* Firefox 19+ */\n    color: #9E9E9E; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search :-ms-input-placeholder {\n    color: #9E9E9E; }\n\n.index-header-container .index-secondary-header {\n  display: flex;\n  position: fixed;\n  background-color: #0174FF;\n  top: 60px;\n  left: 0;\n  right: 1px;\n  height: 30px; }\n\n.index-header-container .index-secondary-header.sticky {\n  display: flex;\n  position: fixed;\n  top: -60px; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 512 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(36);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	__webpack_require__(513);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Sticky = function (_React$Component) {
+	  _inherits(Sticky, _React$Component);
+
+	  function Sticky() {
+	    _classCallCheck(this, Sticky);
+
+	    return _possibleConstructorReturn(this, (Sticky.__proto__ || Object.getPrototypeOf(Sticky)).apply(this, arguments));
+	  }
+
+	  _createClass(Sticky, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var setInitialHeights = function setInitialHeights(element) {
+	        element.setAttribute('data-sticky-initial', element.getBoundingClientRect().top);
+	      };
+
+	      var stickyContainerDOM = _reactDom2.default.findDOMNode(this._stickyContainer);
+	      setInitialHeights(stickyContainerDOM);
+	      var el = document.querySelectorAll('.app-container')[0];
+	      $(el).bind('scroll', function () {
+	        var container = $(this)[0];
+	        var top = container.scrollTop;
+	        var bottom = container.scrollHeight;
+
+	        var stickyInitial = parseInt(stickyContainerDOM.getAttribute('data-sticky-initial'), 10);
+	        var stickyEnter = parseInt(stickyContainerDOM.getAttribute('data-sticky-enter'), 10) || stickyInitial;
+	        var stickyExit = parseInt(stickyContainerDOM.getAttribute('data-sticky-exit'), 10) || bottom;
+	        if (top >= stickyEnter && top <= stickyExit) {
+	          $(stickyContainerDOM).addClass('sticky');
+	        } else {
+	          $(stickyContainerDOM).removeClass('sticky');
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var _props = this.props,
+	          className = _props.className,
+	          enter = _props.enter,
+	          exit = _props.exit,
+	          children = _props.children;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: '' + className, ref: function ref(c) {
+	            return _this2._stickyContainer = c;
+	          }, 'data-sticky-enter': enter, 'data-sticky-exit': exit },
+	        children
+	      );
+	    }
+	  }]);
+
+	  return Sticky;
+	}(_react2.default.Component);
+
+	Sticky.propTypes = {
+	  className: _react2.default.PropTypes.string,
+	  enter: _react2.default.PropTypes.string,
+	  exit: _react2.default.PropTypes.string,
+	  children: _react2.default.PropTypes.node
+	};
+
+	exports.default = Sticky;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(515)))
+
+/***/ },
+/* 513 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(514);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 514 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 515 */
+/***/ function(module, exports) {
+
+	module.exports = jQuery;
 
 /***/ }
 /******/ ]);

@@ -5,6 +5,7 @@ $susy: ( columns: 12, container: 1120px, global-box-sizing: border-box );
 
 .index-container {
     @include container;
+    margin-top: 120px;
 }
 
 .index-container .graph-wrapper {
