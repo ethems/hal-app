@@ -24,13 +24,33 @@ export const ActionTypes = {
   DUPLICATE_PRODUCT: 'DUPLICATE_PRODUCT',
   DUPLICATE_PRODUCT_PENDING: 'DUPLICATE_PRODUCT_PENDING',
   DUPLICATE_PRODUCT_FULFILLED: 'DUPLICATE_PRODUCT_FULFILLED',
-  DUPLICATE_PRODUCT_REJECTED: 'DUPLICATE_PRODUCT_REJECTED'
+  DUPLICATE_PRODUCT_REJECTED: 'DUPLICATE_PRODUCT_REJECTED',
+
+  RESET_PRODUCTS: 'RESET_PRODUCTS',
+  RESET_PRODUCTS_PENDING: 'RESET_PRODUCTS_PENDING',
+  RESET_PRODUCTS_FULFILLED: 'RESET_PRODUCTS_FULFILLED'
 };
 
 export function getProducts(props = {}) {
   const withRate = props.withRate || false;
   const justActive = props.justActive || false;
-  return {type: ActionTypes.GET_PRODUCTS, payload: axios.get(`/api/products?withrate=${withRate}&justactive=${justActive}`)};
+  return {
+    type: ActionTypes.GET_PRODUCTS,
+    payload: axios.get(`/api/products?withrate=${withRate}&justactive=${justActive}`)
+  };
+}
+
+export function resetProducts(callback) {
+  return dispatch => dispatch({
+    type: ActionTypes.RESET_PRODUCTS,
+    payload: new Promise((res) => {
+      setTimeout(() => {
+        res()
+      }, 1);
+    })
+  }).then(() => {
+    callback && callback();
+  });
 }
 
 export function getProduct(productId) {

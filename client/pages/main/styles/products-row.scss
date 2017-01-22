@@ -52,6 +52,9 @@
         @media (min-width: 961px) {
             font-size: 1vmax;
         }
+        @media (min-width: 1382px) {
+            font-size: 0.75vmax;
+        }
     }
 }
 
@@ -59,6 +62,9 @@
     font-size: 2vmax;
     @media (min-width: 961px) {
         font-size: 1vmax;
+    }
+    @media (min-width: 1382px) {
+        font-size: 0.75vmax;
     }
 }
 
@@ -108,7 +114,7 @@
             font-size: 1vmax;
         }
         @media (min-width: 1382px) {
-            font-size: 1vmax;
+            font-size: 0.75vmax;
         }
     }
 }

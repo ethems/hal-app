@@ -7,6 +7,8 @@ const products = (state = [], action) => {
       return [...action.payload.data.products];
     case ActionTypes.GET_PRODUCT_FULFILLED:
       return [action.payload.data.product];
+    case ActionTypes.RESET_PRODUCTS_FULFILLED:
+      return [];
     case ActionTypes.DUPLICATE_PRODUCT_FULFILLED:
       return [
         ...state,

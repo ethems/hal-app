@@ -1,0 +1,23 @@
+.admin--products-header-container {}
+
+.admin--products-header-container .admin--products-header--fixed {
+    height: 60px;
+    position: fixed;
+    background-color: #B0BEC5;
+    top: 0;
+    left: 0;
+    right: 1px;
+}
+
+.admin--products-header-container .admin--products-header--fixed .admin--products-header__button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+}
+
+.admin--products-header-container .admin--products-header--fixed .admin--products-header__button {
+    color: #fff;
+    margin: 0 10px;
+}

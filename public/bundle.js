@@ -39986,6 +39986,8 @@
 	      return [].concat(_toConsumableArray(action.payload.data.products));
 	    case _productAction.ActionTypes.GET_PRODUCT_FULFILLED:
 	      return [action.payload.data.product];
+	    case _productAction.ActionTypes.RESET_PRODUCTS_FULFILLED:
+	      return [];
 	    case _productAction.ActionTypes.DUPLICATE_PRODUCT_FULFILLED:
 	      return [].concat(_toConsumableArray(state), [action.payload.data.product]);
 	    case _productAction.ActionTypes.DELETE_PRODUCT_FULFILLED:
@@ -40026,6 +40028,7 @@
 	});
 	exports.ActionTypes = undefined;
 	exports.getProducts = getProducts;
+	exports.resetProducts = resetProducts;
 	exports.getProduct = getProduct;
 	exports.updateProduct = updateProduct;
 	exports.deleteProduct = deleteProduct;
@@ -40061,7 +40064,11 @@
 	  DUPLICATE_PRODUCT: 'DUPLICATE_PRODUCT',
 	  DUPLICATE_PRODUCT_PENDING: 'DUPLICATE_PRODUCT_PENDING',
 	  DUPLICATE_PRODUCT_FULFILLED: 'DUPLICATE_PRODUCT_FULFILLED',
-	  DUPLICATE_PRODUCT_REJECTED: 'DUPLICATE_PRODUCT_REJECTED'
+	  DUPLICATE_PRODUCT_REJECTED: 'DUPLICATE_PRODUCT_REJECTED',
+
+	  RESET_PRODUCTS: 'RESET_PRODUCTS',
+	  RESET_PRODUCTS_PENDING: 'RESET_PRODUCTS_PENDING',
+	  RESET_PRODUCTS_FULFILLED: 'RESET_PRODUCTS_FULFILLED'
 	};
 
 	function getProducts() {
@@ -40069,7 +40076,25 @@
 
 	  var withRate = props.withRate || false;
 	  var justActive = props.justActive || false;
-	  return { type: ActionTypes.GET_PRODUCTS, payload: _axios2.default.get('/api/products?withrate=' + withRate + '&justactive=' + justActive) };
+	  return {
+	    type: ActionTypes.GET_PRODUCTS,
+	    payload: _axios2.default.get('/api/products?withrate=' + withRate + '&justactive=' + justActive)
+	  };
+	}
+
+	function resetProducts(callback) {
+	  return function (dispatch) {
+	    return dispatch({
+	      type: ActionTypes.RESET_PRODUCTS,
+	      payload: new Promise(function (res) {
+	        setTimeout(function () {
+	          res();
+	        }, 1);
+	      })
+	    }).then(function () {
+	      callback && callback();
+	    });
+	  };
 	}
 
 	function getProduct(productId) {
@@ -48489,19 +48514,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(257);
-
 	var _productsTable = __webpack_require__(334);
 
 	var _productsTable2 = _interopRequireDefault(_productsTable);
 
+	var _productsHeader = __webpack_require__(516);
+
+	var _productsHeader2 = _interopRequireDefault(_productsHeader);
+
 	__webpack_require__(452);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var handleAddNew = function handleAddNew() {
-	  _reactRouter.browserHistory.push('/admin/product');
-	};
 
 	var Products = function Products() {
 	  return _react2.default.createElement(
@@ -48509,23 +48532,8 @@
 	    { className: 'admin--products-container' },
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'admin--products-actions-container' },
-	      _react2.default.createElement(
-	        'button',
-	        { className: 'mdc-button  button-primary', onClick: function onClick(e) {
-	            return handleAddNew();
-	          } },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'valign-center' },
-	          _react2.default.createElement(
-	            'i',
-	            { className: 'material-icons md-18' },
-	            'add'
-	          ),
-	          'New'
-	        )
-	      )
+	      { className: 'admin--products-header-wrapper' },
+	      _react2.default.createElement(_productsHeader2.default, null)
 	    ),
 	    _react2.default.createElement(
 	      'div',
@@ -64027,7 +64035,7 @@
 
 
 	// module
-	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.admin--products-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .admin--products-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.admin--products-container .admin--products-actions-container {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  display: flex;\n  flex-direction: row-reverse;\n  margin-bottom: 20px; }\n\n.admin--products-container .admin--products-table-wrapper {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0; }\n", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.admin--products-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 90px; }\n  .admin--products-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.admin--products-container .admin--products-header-wrapper {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0; }\n\n.admin--products-container .admin--products-table-wrapper {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0; }\n", ""]);
 
 	// exports
 
@@ -84689,7 +84697,7 @@
 
 
 	// module
-	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px;\n  height: 70px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 1.5vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n      @media (min-width: 1382px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.5vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 1.5vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n", ""]);
+	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px;\n  height: 70px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 1.5vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n      @media (min-width: 1382px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n  @media (min-width: 1382px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.5vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 1.5vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 0.75vmax; } }\n", ""]);
 
 	// exports
 
@@ -85139,6 +85147,127 @@
 /***/ function(module, exports) {
 
 	module.exports = jQuery;
+
+/***/ },
+/* 516 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(257);
+
+	var _reactRedux = __webpack_require__(240);
+
+	var _productAction = __webpack_require__(210);
+
+	var productActions = _interopRequireWildcard(_productAction);
+
+	__webpack_require__(517);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var handleGotoNew = function handleGotoNew() {
+	  _reactRouter.browserHistory.push('/admin/product');
+	};
+	var handleGotoHome = function handleGotoHome() {
+	  _reactRouter.browserHistory.push('/');
+	};
+	var ProductsHeader = function ProductsHeader(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'admin--products-header-container' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'admin--products-header--fixed mdc-elevation--z4' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'admin--products-header__button-container' },
+	        _react2.default.createElement(
+	          'button',
+	          { className: 'admin--products-header__button mdc-button  button-primary', onClick: function onClick() {
+	              return props.resetProducts(handleGotoHome);
+	            } },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'valign-center' },
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons md-18' },
+	              'home'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'button',
+	          { className: 'admin--products-header__button mdc-button  button-primary', onClick: function onClick() {
+	              return handleGotoNew();
+	            } },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'valign-center' },
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons md-18' },
+	              'add'
+	            )
+	          )
+	        )
+	      )
+	    )
+	  );
+	};
+
+	exports.default = (0, _reactRedux.connect)(null, productActions)(ProductsHeader);
+
+/***/ },
+/* 517 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(518);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./products-header.scss", function() {
+				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./products-header.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 518 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".admin--products-header-container .admin--products-header--fixed {\n  height: 60px;\n  position: fixed;\n  background-color: #B0BEC5;\n  top: 0;\n  left: 0;\n  right: 1px; }\n\n.admin--products-header-container .admin--products-header--fixed .admin--products-header__button-container {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  height: 100%;\n  width: 100%; }\n\n.admin--products-header-container .admin--products-header--fixed .admin--products-header__button {\n  color: #fff;\n  margin: 0 10px; }\n", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);
