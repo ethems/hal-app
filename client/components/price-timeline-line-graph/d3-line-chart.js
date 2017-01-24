@@ -111,7 +111,7 @@ export default class LineChart {
       d3.max(prices, price => new Date(price.startDate))
     ]).range([
       padding * 1.5,
-      width - (padding * 0.5)
+      width - padding 
     ]);
     const yScale = d3.scaleLinear().domain([
       Math.floor(d3.min(prices, price => price.price)),

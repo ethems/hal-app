@@ -11,7 +11,7 @@ class TimelineGraph extends Component {
   constructor(props) {
     super(props);
     const {timelineProductId} = props;
-    const timespanType = 'daily';
+    const timespanType = 'weekly';
     if (timelineProductId) {
       props.getPriceTimelines(timelineProductId, timespanType);
     }
@@ -22,7 +22,7 @@ class TimelineGraph extends Component {
   componentWillReceiveProps(nextProps) {
     const {timelineProductId} = nextProps;
     if (timelineProductId !== this.props.timelineProductId) {
-      const timespanType = 'daily';
+      const timespanType = 'weekly';
       this.props.getPriceTimelines(timelineProductId, timespanType);
       this.setState({timespanType});
     }
@@ -41,9 +41,6 @@ class TimelineGraph extends Component {
     return (
       <div className="product-timeline-container">
         <div className="product-timeline-header mdc-elevation--z1">
-          <div className={classNames('product-timeline-header-item', {
-            'active': timespanType === 'daily'
-          })} onClick={() => this.handleChangeTimespanType('daily')}>Gunluk</div>
           <div className={classNames('product-timeline-header-item', {
             'active': timespanType === 'weekly'
           })} onClick={() => this.handleChangeTimespanType('weekly')}>Haftalik</div>

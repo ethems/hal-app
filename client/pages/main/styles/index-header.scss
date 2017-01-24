@@ -7,6 +7,7 @@
     top: 0;
     left: 0;
     right: 1px;
+    z-index: 7;
 }
 
 .index-header-container .index-header--fixed .index-header-actions__button-container {
@@ -21,6 +22,7 @@
 .index-header-container .index-header--fixed .index-header-action__button {
     margin: 0 10px;
     color: #fff;
+    cursor: pointer;
 }
 
 .index-header-container .index-header--fixed .index-header-actions__search-container {
@@ -61,6 +63,7 @@
     left: 0;
     right: 1px;
     height: 30px;
+    z-index: 7;
 }
 
 .index-header-container .index-secondary-header.sticky {
