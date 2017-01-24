@@ -41,14 +41,15 @@ const MainProductsRow = (props) => {
     priceHistory,
     rate,
     createdDate,
-    modifiedDate
+    modifiedDate,
+    onChangeTimelineProductId
   } = props;
   const price = priceHistory[0].price;
   const unit = priceHistory[0].unit;
   const updateDate = modifiedDate || createdDate;
   return (
     <div className="products-row-container">
-      <div className="products-row-price-section">
+      <div className="products-row-price-section" onClick={() => onChangeTimelineProductId(id)}>
         <div className="price-unit__container">
           <div className="price__content">&#8378;{renderPrice(price)}</div>
           <div className="unit__content">/{unit}</div>

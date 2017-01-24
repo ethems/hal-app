@@ -1,0 +1,29 @@
+.product-timeline-container {
+    width: 100%;
+    background-color: #fff;
+}
+
+.product-timeline-container .product-timeline-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+}
+
+.product-timeline-container .product-timeline-header .product-timeline-header-item {
+    color: #9E9E9E;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.product-timeline-container .product-timeline-header .product-timeline-header-item.active {
+    color: #0172FF;
+    border-bottom: 3px solid #0172FF;
+}
+
+.product-timeline-container .product-timeline-content {
+  height: 300px;
+  position: relative;
+}

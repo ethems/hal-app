@@ -32,7 +32,7 @@ export default class LineChart {
     this.renderGraph();
   }
   cleanGraph() {
-    d3.select(this.el).selectAll('.line-graph-svg').selectAll("*").remove();
+    d3.select(this.el).selectAll('.line-graph-svg').selectAll('*').remove();
   }
   createGraph() {
     d3.select(this.el).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', `0 0 ${this.width} ${this.height}`).attr('class', 'line-graph-svg');
@@ -76,41 +76,26 @@ export default class LineChart {
       case 'daily':
         return prices;
       case 'weekly':
-        const oldPricesByDay = _.chain(prices.filter(price => price.active === false)).groupBy(price => moment(price.startDate).startOf('day').format()).map((group, day) => {
-          const startDate = day;
-          const lastPriceEnterSpecificDay = group.reduce((pre, cur) => new Date(pre.startDate) > new Date(cur.startDate)
-            ? pre
-            : cur);
-          return Object.assign({}, lastPriceEnterSpecificDay, {startDate});
-        }).value();
-        return [
-          ...oldPricesByDay,
-          ...prices.filter(price => price.active === true)
-        ];
       case 'monthly':
-        const oldPricesByWeek = _.chain(prices.filter(price => price.active === false)).groupBy(price => moment(price.startDate).startOf('week').format()).map((group, day) => {
-          const startDate = day;
-          const lastPriceEnterSpecificDay = group.reduce((pre, cur) => new Date(pre.startDate) > new Date(cur.startDate)
-            ? pre
-            : cur);
-          return Object.assign({}, lastPriceEnterSpecificDay, {startDate});
-        }).value();
-        return [
-          ...oldPricesByWeek,
-          ...prices.filter(price => price.active === true)
-        ];
       case 'yearly':
-        const oldPricesByMonth = _.chain(prices.filter(price => price.active === false)).groupBy(price => moment(price.startDate).startOf('month').format()).map((group, day) => {
-          const startDate = day;
-          const lastPriceEnterSpecificDay = group.reduce((pre, cur) => new Date(pre.startDate) > new Date(cur.startDate)
-            ? pre
-            : cur);
-          return Object.assign({}, lastPriceEnterSpecificDay, {startDate});
-        }).value();
-        return [
-          ...oldPricesByMonth,
-          ...prices.filter(price => price.active === true)
-        ];
+        {
+          const timespanMap = {
+            weekly: 'day',
+            monthly: 'week',
+            yearly: 'month'
+          };
+          const oldPrices = _.chain(prices.filter(price => price.active === false)).groupBy(price => moment(price.startDate).startOf(timespanMap[timespanType]).format()).map((group, day) => {
+            const startDate = day;
+            const lastPriceEnterSpecificDay = group.reduce((pre, cur) => new Date(pre.startDate) > new Date(cur.startDate)
+              ? pre
+              : cur);
+            return Object.assign({}, lastPriceEnterSpecificDay, {startDate});
+          }).value();
+          return [
+            ...oldPrices,
+            ...prices.filter(price => price.active === true)
+          ];
+        }
       default:
         return prices;
     }
@@ -125,7 +110,8 @@ export default class LineChart {
       d3.min(prices, price => new Date(price.startDate)),
       d3.max(prices, price => new Date(price.startDate))
     ]).range([
-      padding, width - padding
+      padding * 1.5,
+      width - (padding * 0.5)
     ]);
     const yScale = d3.scaleLinear().domain([
       Math.floor(d3.min(prices, price => price.price)),
@@ -136,10 +122,21 @@ export default class LineChart {
     ]);
     this._renderYAxis(yScale);
     this._renderXAxis(xScale);
+
+    // AREA
+    const area = d3.area().x(d => xScale(new Date(d.startDate))).y0(height - padding).y1(d => yScale(d.price)).curve(d3.curveCatmullRom.alpha(0.5));
+    d3.select(el).selectAll('.line-graph-svg').append('path').attr('d', area(prices)).attr('class', 'area-container');
+
     // LINE
-    const lineFun = d3.line().x(d => xScale(new Date(d.startDate))).y(d => yScale(d.price));
+    const lineFun = d3.line().x(d => xScale(new Date(d.startDate))).y(d => yScale(d.price)).curve(d3.curveCatmullRom.alpha(0.5));
     d3.select(el).selectAll('.line-graph-svg').append('path').attr('d', lineFun(prices)).attr('class', 'line-container');
+
     // LABELS
-    d3.select(el).selectAll('.line-graph-svg').selectAll('.label-container').data(prices).enter().append('text').attr('class', 'label-container').text(d => d.price).attr('x', d => xScale(new Date(d.startDate))).attr('y', d => yScale(d.price)).attr('transform', `translate(${ - 10},${ - 10})`);
+    d3.select(el).selectAll('.line-graph-svg').selectAll('.label-container').data(prices).enter().append('text').attr('class', 'label-container').text(d => d.price).attr('font-size', d => (d.active === false
+      ? 11
+      : 15)).attr('x', d => xScale(new Date(d.startDate))).attr('y', d => yScale(d.price)).attr('transform', `translate(${ - 10},${ - 10})`);
+    d3.select(el).selectAll('.line-graph-svg').selectAll('.circle-container').data(prices).enter().append('circle').attr('class', 'circle-container').attr('r', d => (d.active === false
+      ? 5
+      : 7)).attr('cx', d => xScale(new Date(d.startDate))).attr('cy', d => yScale(d.price));
   }
 }

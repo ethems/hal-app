@@ -24,8 +24,8 @@ class MainProductsTable extends Component {
     return _.filter(products, product => product.name.toLowerCase().indexOf(searchText) !== -1);
   }
   _renderRows() {
-    const {products} = this.props;
-    return this._sort(this._filter(products)).map(product => <MainProductsRow key={product.id} {...product}/>);
+    const {products, onChangeTimelineProductId} = this.props;
+    return this._sort(this._filter(products)).map(product => <MainProductsRow onChangeTimelineProductId={onChangeTimelineProductId} key={product.id} {...product}/>);
   }
   render() {
     return (

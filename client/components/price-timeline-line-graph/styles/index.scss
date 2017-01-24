@@ -1,23 +1,33 @@
 .price-timeline-line-graph-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .price-timeline-line-graph-container .line-graph-svg {}
 
 .price-timeline-line-graph-container .line-graph-svg .label-container {
-    font-size: 11px;
     fill: #7E8A96;
     stroke: none;
+}
+.price-timeline-line-graph-container .line-graph-svg .circle-container {
+    fill:#fff ;
+    stroke: #66A1FD;
+    stroke-width: 2px;
 }
 
 .price-timeline-line-graph-container .line-graph-svg .line-container {
     fill: none;
-    stroke: #146FB0;
+    stroke: #66A1FD;
     stroke-width: 2px;
+}
+
+.price-timeline-line-graph-container .line-graph-svg .area-container {
+    fill: #F1F8FF;
+    fill-opacity:0.5;
+    stroke: none;
 }
 
 .price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis {

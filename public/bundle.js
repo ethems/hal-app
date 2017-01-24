@@ -41699,6 +41699,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.getActiveTimeline = undefined;
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -41742,6 +41743,19 @@
 	};
 
 	exports.default = priceTimelines;
+
+	//  ********************
+	//  HELPER FUNCTIONS
+	//  ********************
+
+	var getActiveTimeline = exports.getActiveTimeline = function getActiveTimeline(state, productId, timespanType) {
+	  if (productId && timespanType) {
+	    return _lodash2.default.find(state, function (priceTimeline) {
+	      return priceTimeline.productId === productId && priceTimeline.timespanType === timespanType;
+	    });
+	  }
+	  return null;
+	};
 
 /***/ },
 /* 239 */
@@ -67404,6 +67418,8 @@
 	  value: true
 	});
 
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _d = __webpack_require__(483);
@@ -67464,7 +67480,7 @@
 	  }, {
 	    key: 'cleanGraph',
 	    value: function cleanGraph() {
-	      d3.select(this.el).selectAll('.line-graph-svg').selectAll("*").remove();
+	      d3.select(this.el).selectAll('.line-graph-svg').selectAll('*').remove();
 	    }
 	  }, {
 	    key: 'createGraph',
@@ -67525,50 +67541,35 @@
 	        case 'daily':
 	          return prices;
 	        case 'weekly':
-	          var oldPricesByDay = _lodash2.default.chain(prices.filter(function (price) {
-	            return price.active === false;
-	          })).groupBy(function (price) {
-	            return (0, _moment2.default)(price.startDate).startOf('day').format();
-	          }).map(function (group, day) {
-	            var startDate = day;
-	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
-	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
-	            });
-	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
-	          }).value();
-	          return [].concat(_toConsumableArray(oldPricesByDay), _toConsumableArray(prices.filter(function (price) {
-	            return price.active === true;
-	          })));
 	        case 'monthly':
-	          var oldPricesByWeek = _lodash2.default.chain(prices.filter(function (price) {
-	            return price.active === false;
-	          })).groupBy(function (price) {
-	            return (0, _moment2.default)(price.startDate).startOf('week').format();
-	          }).map(function (group, day) {
-	            var startDate = day;
-	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
-	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
-	            });
-	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
-	          }).value();
-	          return [].concat(_toConsumableArray(oldPricesByWeek), _toConsumableArray(prices.filter(function (price) {
-	            return price.active === true;
-	          })));
 	        case 'yearly':
-	          var oldPricesByMonth = _lodash2.default.chain(prices.filter(function (price) {
-	            return price.active === false;
-	          })).groupBy(function (price) {
-	            return (0, _moment2.default)(price.startDate).startOf('month').format();
-	          }).map(function (group, day) {
-	            var startDate = day;
-	            var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
-	              return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
-	            });
-	            return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
-	          }).value();
-	          return [].concat(_toConsumableArray(oldPricesByMonth), _toConsumableArray(prices.filter(function (price) {
-	            return price.active === true;
-	          })));
+	          {
+	            var _ret = function () {
+	              var timespanMap = {
+	                weekly: 'day',
+	                monthly: 'week',
+	                yearly: 'month'
+	              };
+	              var oldPrices = _lodash2.default.chain(prices.filter(function (price) {
+	                return price.active === false;
+	              })).groupBy(function (price) {
+	                return (0, _moment2.default)(price.startDate).startOf(timespanMap[timespanType]).format();
+	              }).map(function (group, day) {
+	                var startDate = day;
+	                var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
+	                  return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
+	                });
+	                return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
+	              }).value();
+	              return {
+	                v: [].concat(_toConsumableArray(oldPrices), _toConsumableArray(prices.filter(function (price) {
+	                  return price.active === true;
+	                })))
+	              };
+	            }();
+
+	            if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+	          }
 	        default:
 	          return prices;
 	      }
@@ -67593,7 +67594,7 @@
 	        return new Date(price.startDate);
 	      }), d3.max(prices, function (price) {
 	        return new Date(price.startDate);
-	      })]).range([padding, width - padding]);
+	      })]).range([padding * 1.5, width - padding * 0.5]);
 	      var yScale = d3.scaleLinear().domain([Math.floor(d3.min(prices, function (price) {
 	        return price.price;
 	      })), Math.ceil(d3.max(prices, function (price) {
@@ -67601,21 +67602,40 @@
 	      }))]).range([height - padding, padding]);
 	      this._renderYAxis(yScale);
 	      this._renderXAxis(xScale);
+
+	      // AREA
+	      var area = d3.area().x(function (d) {
+	        return xScale(new Date(d.startDate));
+	      }).y0(height - padding).y1(function (d) {
+	        return yScale(d.price);
+	      }).curve(d3.curveCatmullRom.alpha(0.5));
+	      d3.select(el).selectAll('.line-graph-svg').append('path').attr('d', area(prices)).attr('class', 'area-container');
+
 	      // LINE
 	      var lineFun = d3.line().x(function (d) {
 	        return xScale(new Date(d.startDate));
 	      }).y(function (d) {
 	        return yScale(d.price);
-	      });
+	      }).curve(d3.curveCatmullRom.alpha(0.5));
 	      d3.select(el).selectAll('.line-graph-svg').append('path').attr('d', lineFun(prices)).attr('class', 'line-container');
+
 	      // LABELS
 	      d3.select(el).selectAll('.line-graph-svg').selectAll('.label-container').data(prices).enter().append('text').attr('class', 'label-container').text(function (d) {
 	        return d.price;
+	      }).attr('font-size', function (d) {
+	        return d.active === false ? 11 : 15;
 	      }).attr('x', function (d) {
 	        return xScale(new Date(d.startDate));
 	      }).attr('y', function (d) {
 	        return yScale(d.price);
 	      }).attr('transform', 'translate(' + -10 + ',' + -10 + ')');
+	      d3.select(el).selectAll('.line-graph-svg').selectAll('.circle-container').data(prices).enter().append('circle').attr('class', 'circle-container').attr('r', function (d) {
+	        return d.active === false ? 5 : 7;
+	      }).attr('cx', function (d) {
+	        return xScale(new Date(d.startDate));
+	      }).attr('cy', function (d) {
+	        return yScale(d.price);
+	      });
 	    }
 	  }]);
 
@@ -84058,7 +84078,7 @@
 
 
 	// module
-	exports.push([module.id, ".price-timeline-line-graph-container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.price-timeline-line-graph-container .line-graph-svg .label-container {\n  font-size: 11px;\n  fill: #7E8A96;\n  stroke: none; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-container {\n  fill: none;\n  stroke: #146FB0;\n  stroke-width: 2px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis path {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis .xaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis .xaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis path {\n  display: none; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis .yaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis .yaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n", ""]);
+	exports.push([module.id, ".price-timeline-line-graph-container {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.price-timeline-line-graph-container .line-graph-svg .label-container {\n  fill: #7E8A96;\n  stroke: none; }\n\n.price-timeline-line-graph-container .line-graph-svg .circle-container {\n  fill: #fff;\n  stroke: #66A1FD;\n  stroke-width: 2px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-container {\n  fill: none;\n  stroke: #66A1FD;\n  stroke-width: 2px; }\n\n.price-timeline-line-graph-container .line-graph-svg .area-container {\n  fill: #F1F8FF;\n  fill-opacity: 0.5;\n  stroke: none; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis path {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis .xaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-xaxis .xaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis path {\n  display: none; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis .yaxis-line {\n  stroke: #E1E4E9;\n  stroke-width: 1px; }\n\n.price-timeline-line-graph-container .line-graph-svg .line-graph-yaxis .yaxis-text {\n  font-family: sans-serif;\n  font-size: 13px;\n  stroke: none;\n  fill: #707378; }\n", ""]);
 
 	// exports
 
@@ -84349,6 +84369,10 @@
 
 	var _indexHeader2 = _interopRequireDefault(_indexHeader);
 
+	var _productTimelineGraph = __webpack_require__(519);
+
+	var _productTimelineGraph2 = _interopRequireDefault(_productTimelineGraph);
+
 	__webpack_require__(501);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -84371,8 +84395,13 @@
 	      _this.setState({ searchText: searchText });
 	    };
 
+	    _this.handleChangeTimelineProductId = function (timelineProductId) {
+	      _this.setState({ timelineProductId: timelineProductId });
+	    };
+
 	    _this.state = {
-	      searchText: ''
+	      searchText: '',
+	      timelineProductId: undefined
 	    };
 	    return _this;
 	  }
@@ -84380,7 +84409,9 @@
 	  _createClass(Main, [{
 	    key: 'render',
 	    value: function render() {
-	      var searchText = this.state.searchText;
+	      var _state = this.state,
+	          searchText = _state.searchText,
+	          timelineProductId = _state.timelineProductId;
 
 	      return _react2.default.createElement(
 	        'div',
@@ -84393,12 +84424,12 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'product-table-wrapper' },
-	          _react2.default.createElement(_productsTable2.default, { searchText: searchText })
+	          _react2.default.createElement(_productsTable2.default, { searchText: searchText, onChangeTimelineProductId: this.handleChangeTimelineProductId })
 	        ),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'graph-wrapper' },
-	          'Graph'
+	          _react2.default.createElement(_productTimelineGraph2.default, { timelineProductId: timelineProductId })
 	        )
 	      );
 	    }
@@ -84488,10 +84519,12 @@
 	  }, {
 	    key: '_renderRows',
 	    value: function _renderRows() {
-	      var products = this.props.products;
+	      var _props = this.props,
+	          products = _props.products,
+	          onChangeTimelineProductId = _props.onChangeTimelineProductId;
 
 	      return this._sort(this._filter(products)).map(function (product) {
-	        return _react2.default.createElement(_productsRow2.default, _extends({ key: product.id }, product));
+	        return _react2.default.createElement(_productsRow2.default, _extends({ onChangeTimelineProductId: onChangeTimelineProductId, key: product.id }, product));
 	      });
 	    }
 	  }, {
@@ -84597,7 +84630,8 @@
 	      priceHistory = props.priceHistory,
 	      rate = props.rate,
 	      createdDate = props.createdDate,
-	      modifiedDate = props.modifiedDate;
+	      modifiedDate = props.modifiedDate,
+	      onChangeTimelineProductId = props.onChangeTimelineProductId;
 
 	  var price = priceHistory[0].price;
 	  var unit = priceHistory[0].unit;
@@ -84607,7 +84641,9 @@
 	    { className: 'products-row-container' },
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'products-row-price-section' },
+	      { className: 'products-row-price-section', onClick: function onClick() {
+	          return onChangeTimelineProductId(id);
+	        } },
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'price-unit__container' },
@@ -84697,7 +84733,7 @@
 
 
 	// module
-	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px;\n  height: 70px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 1.5vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n      @media (min-width: 1382px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n  @media (min-width: 1382px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.5vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 1.5vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 0.75vmax; } }\n", ""]);
+	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px;\n  height: 70px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column;\n  cursor: pointer; }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 1.5vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n      @media (min-width: 1382px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n  @media (min-width: 1382px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.5vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 1.5vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 0.75vmax; } }\n", ""]);
 
 	// exports
 
@@ -85265,6 +85301,196 @@
 
 	// module
 	exports.push([module.id, ".admin--products-header-container .admin--products-header--fixed {\n  height: 60px;\n  position: fixed;\n  background-color: #B0BEC5;\n  top: 0;\n  left: 0;\n  right: 1px; }\n\n.admin--products-header-container .admin--products-header--fixed .admin--products-header__button-container {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  height: 100%;\n  width: 100%; }\n\n.admin--products-header-container .admin--products-header--fixed .admin--products-header__button {\n  color: #fff;\n  margin: 0 10px; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 519 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(240);
+
+	var _priceAction = __webpack_require__(237);
+
+	var priceActions = _interopRequireWildcard(_priceAction);
+
+	var _priceTimelineLineGraph = __webpack_require__(481);
+
+	var _priceTimelineLineGraph2 = _interopRequireDefault(_priceTimelineLineGraph);
+
+	var _priceTimelines = __webpack_require__(238);
+
+	var _classnames = __webpack_require__(462);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	__webpack_require__(520);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TimelineGraph = function (_Component) {
+	  _inherits(TimelineGraph, _Component);
+
+	  function TimelineGraph(props) {
+	    _classCallCheck(this, TimelineGraph);
+
+	    var _this = _possibleConstructorReturn(this, (TimelineGraph.__proto__ || Object.getPrototypeOf(TimelineGraph)).call(this, props));
+
+	    _initialiseProps.call(_this);
+
+	    var timelineProductId = props.timelineProductId;
+
+	    var timespanType = 'daily';
+	    if (timelineProductId) {
+	      props.getPriceTimelines(timelineProductId, timespanType);
+	    }
+	    _this.state = {
+	      timespanType: timespanType
+	    };
+	    return _this;
+	  }
+
+	  _createClass(TimelineGraph, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var timelineProductId = nextProps.timelineProductId;
+
+	      if (timelineProductId !== this.props.timelineProductId) {
+	        var timespanType = 'daily';
+	        this.props.getPriceTimelines(timelineProductId, timespanType);
+	        this.setState({ timespanType: timespanType });
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var timespanType = this.state.timespanType;
+	      var timelineProductId = this.props.timelineProductId;
+
+	      var activeTimeline = (0, _priceTimelines.getActiveTimeline)(this.props.timelines, timelineProductId, timespanType);
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'product-timeline-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'product-timeline-header mdc-elevation--z1' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: (0, _classnames2.default)('product-timeline-header-item', {
+	                'active': timespanType === 'daily'
+	              }), onClick: function onClick() {
+	                return _this2.handleChangeTimespanType('daily');
+	              } },
+	            'Gunluk'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: (0, _classnames2.default)('product-timeline-header-item', {
+	                'active': timespanType === 'weekly'
+	              }), onClick: function onClick() {
+	                return _this2.handleChangeTimespanType('weekly');
+	              } },
+	            'Haftalik'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: (0, _classnames2.default)('product-timeline-header-item', {
+	                'active': timespanType === 'monthly'
+	              }), onClick: function onClick() {
+	                return _this2.handleChangeTimespanType('monthly');
+	              } },
+	            'Aylik'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'product-timeline-content' },
+	          _react2.default.createElement(_priceTimelineLineGraph2.default, { timeline: activeTimeline, timespanType: timespanType })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return TimelineGraph;
+	}(_react.Component);
+
+	var _initialiseProps = function _initialiseProps() {
+	  var _this3 = this;
+
+	  this.handleChangeTimespanType = function (timespanType) {
+	    var timelineProductId = _this3.props.timelineProductId;
+
+	    if (_this3.state.timespanType !== timespanType && timelineProductId) {
+	      _this3.props.getPriceTimelines(timelineProductId, timespanType);
+	    }
+	    _this3.setState({ timespanType: timespanType });
+	  };
+	};
+
+	var mapStateToProps = function mapStateToProps(state) {
+	  return { timelines: state.priceTimelines };
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, priceActions)(TimelineGraph);
+
+/***/ },
+/* 520 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(521);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./product-timeline-graph.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./product-timeline-graph.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 521 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".product-timeline-container {\n  width: 100%;\n  background-color: #fff; }\n\n.product-timeline-container .product-timeline-header {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  height: 40px; }\n\n.product-timeline-container .product-timeline-header .product-timeline-header-item {\n  color: #9E9E9E;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  cursor: pointer; }\n\n.product-timeline-container .product-timeline-header .product-timeline-header-item.active {\n  color: #0172FF;\n  border-bottom: 3px solid #0172FF; }\n\n.product-timeline-container .product-timeline-content {\n  height: 300px;\n  position: relative; }\n", ""]);
 
 	// exports
 
