@@ -48400,7 +48400,7 @@
 
 
 	// module
-	exports.push([module.id, "body,\nhtml {\n  font-family: 'Roboto', sans-serif;\n  font-weight: 400; }\n\n.hide {\n  display: none; }\n\n.valign-center {\n  display: inline-flex;\n  align-items: center; }\n\n.full-width-height {\n  height: 100%;\n  width: 100%; }\n", ""]);
+	exports.push([module.id, "body,\nhtml {\n  font-family: 'Roboto', sans-serif;\n  font-weight: 400;\n  box-sizing: border-box; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\n.hide {\n  display: none; }\n\n.valign-center {\n  display: inline-flex;\n  align-items: center; }\n\n.full-width-height {\n  height: 100%;\n  width: 100%; }\n", ""]);
 
 	// exports
 
@@ -84369,6 +84369,10 @@
 
 	var _indexHeader2 = _interopRequireDefault(_indexHeader);
 
+	var _indexFooter = __webpack_require__(522);
+
+	var _indexFooter2 = _interopRequireDefault(_indexFooter);
+
 	var _productTimelineGraph = __webpack_require__(519);
 
 	var _productTimelineGraph2 = _interopRequireDefault(_productTimelineGraph);
@@ -84430,6 +84434,11 @@
 	          'div',
 	          { className: 'graph-wrapper' },
 	          _react2.default.createElement(_productTimelineGraph2.default, { timelineProductId: timelineProductId })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'index-footer-wrapper' },
+	          _react2.default.createElement(_indexFooter2.default, null)
 	        )
 	      );
 	    }
@@ -84813,7 +84822,7 @@
 
 
 	// module
-	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 120px; }\n  .index-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto;\n  padding-top: 120px;\n  padding-bottom: 60px;\n  position: relative;\n  min-height: 100%; }\n  .index-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n\n.index-container .index-footer-wrapper {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  position: absolute;\n  bottom: 0;\n  height: 40px; }\n", ""]);
 
 	// exports
 
@@ -85491,6 +85500,74 @@
 
 	// module
 	exports.push([module.id, ".product-timeline-container {\n  width: 100%;\n  background-color: #fff; }\n\n.product-timeline-container .product-timeline-header {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  height: 40px; }\n\n.product-timeline-container .product-timeline-header .product-timeline-header-item {\n  color: #9E9E9E;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  cursor: pointer; }\n\n.product-timeline-container .product-timeline-header .product-timeline-header-item.active {\n  color: #0172FF;\n  border-bottom: 3px solid #0172FF; }\n\n.product-timeline-container .product-timeline-content {\n  height: 300px;\n  position: relative; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 522 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(523);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var IndexFooter = function IndexFooter() {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'index-footer-container' },
+	    'xxxx'
+	  );
+	};
+
+	exports.default = IndexFooter;
+
+/***/ },
+/* 523 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(524);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index-footer.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index-footer.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 524 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".index-footer-container {\n  background-color: #fff;\n  width: 100%;\n  height: 100%;\n  display: flex; }\n", ""]);
 
 	// exports
 

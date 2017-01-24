@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import MainProductsTable from './products-table';
 import IndexHeader from './index-header';
+import IndexFooter from './index-footer';
 import ProductTimelineGraph from './product-timeline-graph';
 import './styles/index.scss';
 
@@ -28,6 +29,9 @@ class Main extends Component {
         <div className="product-table-wrapper"><MainProductsTable searchText={searchText} onChangeTimelineProductId={this.handleChangeTimelineProductId}/></div>
         <div className="graph-wrapper">
           <ProductTimelineGraph timelineProductId={timelineProductId}/>
+        </div>
+        <div className="index-footer-wrapper">
+          <IndexFooter/>
         </div>
       </div>
     );
