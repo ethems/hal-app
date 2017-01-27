@@ -1,0 +1,15 @@
+.products-empty-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#fff;
+}
+
+.products-empty-table-container .products-empty-table__content {
+    color: #E0E0E0;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -41795,6 +41795,10 @@
 
 	var _main2 = _interopRequireDefault(_main);
 
+	var _contact = __webpack_require__(523);
+
+	var _contact2 = _interopRequireDefault(_contact);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Root = function Root(_ref) {
@@ -41809,6 +41813,7 @@
 	        _reactRouter.Route,
 	        { path: '/', component: _app2.default },
 	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _main2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'contact', component: _contact2.default }),
 	        _react2.default.createElement(
 	          _reactRouter.Route,
 	          { path: 'admin', component: _admin2.default },
@@ -48399,7 +48404,7 @@
 
 
 	// module
-	exports.push([module.id, "/* Rules for sizing the icon. */\n.material-icons.md-12 {\n  font-size: 12px; }\n\n.material-icons.md-18 {\n  font-size: 18px; }\n\n.material-icons.md-24 {\n  font-size: 24px; }\n\n.material-icons.md-36 {\n  font-size: 36px; }\n\n.material-icons.md-40 {\n  font-size: 40px; }\n\n.material-icons.md-48 {\n  font-size: 48px; }\n\n/* Rules for using icons as black on a light background. */\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n\n/* Rules for using icons as white on a dark background. */\n.material-icons.md-light {\n  color: white; }\n\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n", ""]);
+	exports.push([module.id, "/* Rules for sizing the icon. */\n.material-icons.md-12 {\n  font-size: 12px; }\n\n.material-icons.md-18 {\n  font-size: 18px; }\n\n.material-icons.md-24 {\n  font-size: 24px; }\n\n.material-icons.md-36 {\n  font-size: 36px; }\n\n.material-icons.md-40 {\n  font-size: 40px; }\n\n.material-icons.md-48 {\n  font-size: 48px; }\n\n.material-icons.md-100 {\n  font-size: 100px; }\n\n/* Rules for using icons as black on a light background. */\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n\n/* Rules for using icons as white on a dark background. */\n.material-icons.md-light {\n  color: white; }\n\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n", ""]);
 
 	// exports
 
@@ -84525,19 +84530,19 @@
 
 	var _productsTable2 = _interopRequireDefault(_productsTable);
 
-	var _indexHeader = __webpack_require__(505);
+	var _indexHeader = __webpack_require__(509);
 
 	var _indexHeader2 = _interopRequireDefault(_indexHeader);
 
-	var _indexFooter = __webpack_require__(512);
+	var _indexFooter = __webpack_require__(515);
 
 	var _indexFooter2 = _interopRequireDefault(_indexFooter);
 
-	var _productTimelineGraph = __webpack_require__(515);
+	var _productTimelineGraph = __webpack_require__(518);
 
 	var _productTimelineGraph2 = _interopRequireDefault(_productTimelineGraph);
 
-	__webpack_require__(518);
+	__webpack_require__(521);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84587,13 +84592,17 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'product-table-wrapper' },
-	          _react2.default.createElement(_productsTable2.default, { searchText: searchText, onChangeTimelineProductId: this.handleChangeTimelineProductId })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'graph-wrapper' },
-	          _react2.default.createElement(_productTimelineGraph2.default, { timelineProductId: timelineProductId })
+	          { className: 'index-content-container' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'product-table-wrapper' },
+	            _react2.default.createElement(_productsTable2.default, { searchText: searchText, onChangeTimelineProductId: this.handleChangeTimelineProductId })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'graph-wrapper' },
+	            _react2.default.createElement(_productTimelineGraph2.default, { timelineProductId: timelineProductId })
+	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -84641,7 +84650,15 @@
 
 	var _productsRow2 = _interopRequireDefault(_productsRow);
 
-	__webpack_require__(503);
+	var _productsTableEmpty = __webpack_require__(503);
+
+	var _productsTableEmpty2 = _interopRequireDefault(_productsTableEmpty);
+
+	var _loadingPanel = __webpack_require__(526);
+
+	var _loadingPanel2 = _interopRequireDefault(_loadingPanel);
+
+	__webpack_require__(507);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -84686,15 +84703,25 @@
 	      });
 	    }
 	  }, {
+	    key: '_renderEmptyList',
+	    value: function _renderEmptyList() {
+	      return _react2.default.createElement(_productsTableEmpty2.default, null);
+	      //return <CircularLoadingPanel/>
+	    }
+	  }, {
 	    key: '_renderRows',
 	    value: function _renderRows() {
 	      var _props = this.props,
 	          products = _props.products,
 	          onChangeTimelineProductId = _props.onChangeTimelineProductId;
 
-	      return this._sort(this._filter(products)).map(function (product) {
-	        return _react2.default.createElement(_productsRow2.default, _extends({ onChangeTimelineProductId: onChangeTimelineProductId, key: product.id }, product));
-	      });
+	      var processedProducts = this._sort(this._filter(products));
+	      if (processedProducts.length && processedProducts.length > 0) {
+	        return processedProducts.map(function (product) {
+	          return _react2.default.createElement(_productsRow2.default, _extends({ onChangeTimelineProductId: onChangeTimelineProductId, key: product.id }, product));
+	        });
+	      }
+	      return this._renderEmptyList();
 	    }
 	  }, {
 	    key: 'render',
@@ -84902,7 +84929,7 @@
 
 
 	// module
-	exports.push([module.id, ".products-row-container {\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px;\n  height: 70px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column;\n  cursor: pointer; }\n  @media (max-width: 961px) {\n    .products-row-container .products-row-price-section {\n      pointer-events: none; } }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 1.5vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n      @media (min-width: 1382px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n  @media (min-width: 1382px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.5vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 1.5vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .attribute-container .update__content {\n        font-size: 0.75vmax; } }\n", ""]);
+	exports.push([module.id, ".products-row-container {\n  background-color: #fff;\n  display: flex;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  padding: 5px;\n  height: 70px; }\n  .products-row-container:last-child {\n    border-bottom: 0; }\n\n.products-row-container .products-row-price-section {\n  width: 30%;\n  display: flex;\n  flex-direction: column;\n  cursor: pointer; }\n  @media (max-width: 961px) {\n    .products-row-container .products-row-price-section {\n      pointer-events: none; } }\n\n.products-row-container .products-row-price-section .price-unit__container {\n  display: flex;\n  flex-direction: row;\n  height: 50%; }\n  .products-row-container .products-row-price-section .price-unit__container .price__content {\n    font-weight: 300;\n    font-size: 3vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 2vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .price__content {\n        font-size: 1.5vmax; } }\n    .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n      font-size: 2vmax; }\n      @media (min-width: 961px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1.5vmax; } }\n      @media (min-width: 1382px) {\n        .products-row-container .products-row-price-section .price-unit__container .price__content sup {\n          font-size: 1vmax; } }\n  .products-row-container .products-row-price-section .price-unit__container .unit__content {\n    font-size: 2vmax;\n    display: flex;\n    align-items: center; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 1vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row-price-section .price-unit__container .unit__content {\n        font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container {\n  font-size: 2vmax; }\n  @media (min-width: 961px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 1vmax; } }\n  @media (min-width: 1382px) {\n    .products-row-container .products-row-price-section .rate__container {\n      font-size: 0.75vmax; } }\n\n.products-row-container .products-row-price-section .rate__container .rate__content {\n  display: flex;\n  align-items: center; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.up {\n    color: #64DD17; }\n  .products-row-container .products-row-price-section .rate__container .rate__content.down {\n    color: #FF1744; }\n\n.products-row-container .products-row__content-section {\n  width: 70%;\n  display: flex;\n  flex-direction: column; }\n\n.products-row-container .products-row__content-section .name-container {\n  height: 40%; }\n  .products-row-container .products-row__content-section .name-container .name__content {\n    font-size: 2vmax;\n    color: #2196F3; }\n    @media (min-width: 961px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 1.3vmax; } }\n    @media (min-width: 1382px) {\n      .products-row-container .products-row__content-section .name-container .name__content {\n        font-size: 0.75vmax; } }\n\n.products-row-container .products-row__content-section .attribute-container {\n  height: 60%; }\n  .products-row-container .products-row__content-section .attribute-container .update__content {\n    color: #757575;\n    font-size: 12px;\n    display: flex;\n    align-items: center; }\n", ""]);
 
 	// exports
 
@@ -84911,10 +84938,106 @@
 /* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(505);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MainEmptyProductTable = function MainEmptyProductTable() {
+	  var height = $(window).height();
+	  var divStyle = {
+	    height: height - 180
+	  };
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'products-empty-table-container', style: divStyle },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'products-empty-table__content' },
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'i',
+	          { className: 'material-icons md-100' },
+	          'mood_bad'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        'Aradiginiz Urun Bulunmamaktadir.'
+	      )
+	    )
+	  );
+	};
+
+	exports.default = MainEmptyProductTable;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(504)))
+
+/***/ },
+/* 504 */
+/***/ function(module, exports) {
+
+	module.exports = jQuery;
+
+/***/ },
+/* 505 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(504);
+	var content = __webpack_require__(506);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./products-table-empty.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./products-table-empty.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 506 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".products-empty-table-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: #fff; }\n\n.products-empty-table-container .products-empty-table__content {\n  color: #E0E0E0;\n  font-size: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 507 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(508);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84934,7 +85057,7 @@
 	}
 
 /***/ },
-/* 504 */
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84942,13 +85065,13 @@
 
 
 	// module
-	exports.push([module.id, ".products-table-container {\n  background-color: #fff; }\n", ""]);
+	exports.push([module.id, "", ""]);
 
 	// exports
 
 
 /***/ },
-/* 505 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84963,11 +85086,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _sticky = __webpack_require__(506);
+	var _sticky = __webpack_require__(510);
 
 	var _sticky2 = _interopRequireDefault(_sticky);
 
-	__webpack_require__(510);
+	var _reactRouter = __webpack_require__(257);
+
+	__webpack_require__(513);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84999,69 +85124,77 @@
 	  }
 
 	  _createClass(IndexHeader, [{
+	    key: '_renderViewState',
+	    value: function _renderViewState() {
+	      var _this2 = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'index-header-primary__content' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'index-header-action__button', onClick: function onClick() {
+	              return _reactRouter.browserHistory.push('/contact');
+	            } },
+	          _react2.default.createElement(
+	            'i',
+	            { className: 'material-icons' },
+	            'phone'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'index-header-action__button', onClick: function onClick() {
+	              return _this2._changeState('search');
+	            } },
+	          _react2.default.createElement(
+	            'i',
+	            { className: 'material-icons' },
+	            'search'
+	          )
+	        )
+	      );
+	    }
+	  }, {
 	    key: '_renderState',
 	    value: function _renderState() {
-	      var _this2 = this;
+	      var _this3 = this;
 
 	      var state = this.state.state;
 	      var searchText = this.props.searchText;
 
 	      switch (state) {
 	        case 'view':
-	          return _react2.default.createElement(
-	            'div',
-	            { className: 'index-header-actions__button-container' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'index-header-action__button', onClick: function onClick() {
-	                  return _this2._changeState('search');
-	                } },
-	              _react2.default.createElement(
-	                'i',
-	                { className: 'material-icons' },
-	                'search'
-	              )
-	            )
-	          );
+	          return this._renderViewState();
 	        case 'search':
 	          return _react2.default.createElement(
 	            'div',
-	            { className: 'index-header-actions__search-container' },
+	            { className: 'index-header-primary__content' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'index-header-action__button', onClick: function onClick() {
-	                  return _this2._changeState('view');
-	                } },
+	              { className: 'index-header-actions__search-container' },
 	              _react2.default.createElement(
-	                'i',
-	                { className: 'material-icons' },
-	                'keyboard_backspace'
+	                'div',
+	                { className: 'index-header-action__button', onClick: function onClick() {
+	                    return _this3._changeState('view');
+	                  } },
+	                _react2.default.createElement(
+	                  'i',
+	                  { className: 'material-icons' },
+	                  'keyboard_backspace'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'mdc-textfield mdc-textfield--fullwidth index-header-action__search' },
+	                _react2.default.createElement('input', { className: 'mdc-textfield__input', value: searchText, placeholder: 'Urun Ara', onChange: function onChange(e) {
+	                    return _this3.props.onChangeSearchText(e.target.value);
+	                  } })
 	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'mdc-textfield mdc-textfield--fullwidth index-header-action__search' },
-	              _react2.default.createElement('input', { className: 'mdc-textfield__input', value: searchText, placeholder: 'Urun Ara', onChange: function onChange(e) {
-	                  return _this2.props.onChangeSearchText(e.target.value);
-	                } })
 	            )
 	          );
 	        default:
-	          return _react2.default.createElement(
-	            'div',
-	            { className: 'index-header-actions__button-container' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'index-header-action__button', onClick: function onClick() {
-	                  return _this2._changeState('search');
-	                } },
-	              _react2.default.createElement(
-	                'i',
-	                { className: 'material-icons' },
-	                'search'
-	              )
-	            )
-	          );
+	          return this._renderViewState();
 	      }
 	    }
 	  }, {
@@ -85086,7 +85219,7 @@
 	exports.default = IndexHeader;
 
 /***/ },
-/* 506 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -85105,7 +85238,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	__webpack_require__(508);
+	__webpack_require__(511);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85181,22 +85314,16 @@
 	};
 
 	exports.default = Sticky;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(507)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(504)))
 
 /***/ },
-/* 507 */
-/***/ function(module, exports) {
-
-	module.exports = jQuery;
-
-/***/ },
-/* 508 */
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(509);
+	var content = __webpack_require__(512);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85216,7 +85343,7 @@
 	}
 
 /***/ },
-/* 509 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85230,13 +85357,13 @@
 
 
 /***/ },
-/* 510 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(511);
+	var content = __webpack_require__(514);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85256,7 +85383,7 @@
 	}
 
 /***/ },
-/* 511 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85264,13 +85391,13 @@
 
 
 	// module
-	exports.push([module.id, ".index-header-container .index-header--fixed {\n  height: 60px;\n  position: fixed;\n  background-color: #0174FF;\n  top: 0;\n  left: 0;\n  right: 1px;\n  z-index: 7; }\n\n.index-header-container .index-header--fixed .index-header-actions__button-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  width: 100%;\n  height: 100%; }\n\n.index-header-container .index-header--fixed .index-header-action__button {\n  margin: 0 10px;\n  color: #fff;\n  cursor: pointer; }\n\n.index-header-container .index-header--fixed .index-header-actions__search-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  width: 100%;\n  height: 100%; }\n\n.index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search {\n  border-bottom: 0; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search input {\n    color: #fff; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search ::-webkit-input-placeholder {\n    color: #9E9E9E; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search ::-moz-placeholder {\n    /* Firefox 19+ */\n    color: #9E9E9E; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search :-ms-input-placeholder {\n    color: #9E9E9E; }\n\n.index-header-container .index-secondary-header {\n  display: flex;\n  position: fixed;\n  background-color: #0174FF;\n  top: 60px;\n  left: 0;\n  right: 1px;\n  height: 30px;\n  z-index: 7; }\n\n.index-header-container .index-secondary-header.sticky {\n  display: flex;\n  position: fixed;\n  top: -60px; }\n", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-header-container .index-header--fixed {\n  height: 60px;\n  position: fixed;\n  background-color: #0174FF;\n  top: 0;\n  left: 0;\n  right: 1px;\n  z-index: 7; }\n\n.index-header-container .index-header--fixed .index-header-primary__content {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  height: 100%;\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .index-header-container .index-header--fixed .index-header-primary__content:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-header-container .index-header--fixed .index-header-action__button {\n  margin: 0 10px;\n  color: #fff;\n  cursor: pointer; }\n\n.index-header-container .index-header--fixed .index-header-actions__search-container {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  height: 100%; }\n\n.index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search {\n  border-bottom: 0; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search input {\n    color: #fff; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search ::-webkit-input-placeholder {\n    color: #9E9E9E; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search ::-moz-placeholder {\n    /* Firefox 19+ */\n    color: #9E9E9E; }\n  .index-header-container .index-header--fixed .index-header-actions__search-container .index-header-action__search :-ms-input-placeholder {\n    color: #9E9E9E; }\n\n.index-header-container .index-secondary-header {\n  display: flex;\n  position: fixed;\n  background-color: #0174FF;\n  top: 60px;\n  left: 0;\n  right: 1px;\n  height: 30px;\n  z-index: 7; }\n\n.index-header-container .index-secondary-header.sticky {\n  display: flex;\n  position: fixed;\n  top: -60px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 512 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85283,7 +85410,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(513);
+	var _moment = __webpack_require__(339);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	__webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85291,20 +85422,26 @@
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'index-footer-container' },
-	    'xxxx'
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'index-footer-copyright-section' },
+	      'Copyright \xA9 ',
+	      (0, _moment2.default)().format('YYYY'),
+	      ' Halcyoon'
+	    )
 	  );
 	};
 
 	exports.default = IndexFooter;
 
 /***/ },
-/* 513 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(514);
+	var content = __webpack_require__(517);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85324,7 +85461,7 @@
 	}
 
 /***/ },
-/* 514 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85332,13 +85469,13 @@
 
 
 	// module
-	exports.push([module.id, ".index-footer-container {\n  background-color: #3D464B;\n  color: #fff;\n  width: 100%;\n  height: 100%;\n  display: flex; }\n", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-footer-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto;\n  color: #fff; }\n  .index-footer-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-footer-container .index-footer-copyright-section {\n  font-size: 10px;\n  height: 40px;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 515 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85369,7 +85506,7 @@
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	__webpack_require__(516);
+	__webpack_require__(519);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -85479,13 +85616,13 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, priceActions)(TimelineGraph);
 
 /***/ },
-/* 516 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(517);
+	var content = __webpack_require__(520);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85505,7 +85642,7 @@
 	}
 
 /***/ },
-/* 517 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85519,13 +85656,13 @@
 
 
 /***/ },
-/* 518 */
+/* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(519);
+	var content = __webpack_require__(522);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85545,7 +85682,7 @@
 	}
 
 /***/ },
-/* 519 */
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85553,7 +85690,163 @@
 
 
 	// module
-	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto;\n  padding-top: 120px;\n  padding-bottom: 60px;\n  position: relative;\n  min-height: 100%; }\n  .index-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n\n.index-container .index-footer-wrapper {\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  position: absolute;\n  bottom: 0;\n  height: 40px; }\n", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  position: relative;\n  min-height: 100%;\n  padding-top: 120px;\n  padding-bottom: 60px; }\n\n.index-content-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .index-content-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-content-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-content-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-content-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-content-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n\n.index-footer-wrapper {\n  position: absolute;\n  bottom: 0;\n  height: 40px;\n  width: 100%;\n  left: 0;\n  background-color: #3D464B; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 523 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(524);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Contact = function Contact(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'contact-container' },
+	    'xxx'
+	  );
+	};
+
+	exports.default = Contact;
+
+/***/ },
+/* 524 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(525);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 525 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 526 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(527);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var LoadingPanel = function LoadingPanel(props) {
+	  var width = props.width,
+	      strokeWidth = props.strokeWidth,
+	      strokeMiterlimit = props.strokeMiterlimit;
+
+	  var style = {
+	    width: width
+	  };
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'loader', style: style },
+	    _react2.default.createElement(
+	      'svg',
+	      { className: 'circular', viewBox: '25 25 50 50' },
+	      _react2.default.createElement('circle', { className: 'path', cx: '50', cy: '50', r: '20', fill: 'none', strokeWidth: strokeWidth, strokeMiterlimit: strokeMiterlimit })
+	    )
+	  );
+	};
+	LoadingPanel.propTypes = {
+	  width: _react2.default.PropTypes.number,
+	  strokeWidth: _react2.default.PropTypes.number,
+	  strokeMiterlimit: _react2.default.PropTypes.number
+	};
+	LoadingPanel.defaultProps = {
+	  width: 100,
+	  strokeWidth: 2,
+	  strokeMiterlimit: 10
+	};
+	exports.default = LoadingPanel;
+
+/***/ },
+/* 527 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(528);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 528 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".loader {\n  position: relative;\n  margin: 0 auto; }\n  .loader:before {\n    content: '';\n    display: block;\n    padding-top: 100%; }\n\n.circular {\n  animation: rotate 2s linear infinite;\n  height: 100%;\n  transform-origin: center center;\n  width: 100%;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  margin: auto; }\n\n.path {\n  stroke-dasharray: 1, 200;\n  stroke-dashoffset: 0;\n  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;\n  stroke-linecap: round; }\n\n@keyframes rotate {\n  100% {\n    transform: rotate(360deg); } }\n\n@keyframes dash {\n  0% {\n    stroke-dasharray: 1, 200;\n    stroke-dashoffset: 0; }\n  50% {\n    stroke-dasharray: 89, 200;\n    stroke-dashoffset: -35px; }\n  100% {\n    stroke-dasharray: 89, 200;\n    stroke-dashoffset: -124px; } }\n\n@keyframes color {\n  100%,\n  0% {\n    stroke: #d62d20; }\n  40% {\n    stroke: #0174FF; }\n  66% {\n    stroke: #008744; }\n  80%,\n  90% {\n    stroke: #ffa700; } }\n", ""]);
 
 	// exports
 

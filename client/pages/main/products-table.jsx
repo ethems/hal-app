@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import * as productActions from '../../actions/product-action';
 import MainProductsRow from './products-row';
+import EmptyProductTable from './products-table-empty';
+import CircularLoadingPanel from '../../components/loading-panel';
 
 import './styles/products-table.scss';
 
@@ -23,9 +25,17 @@ class MainProductsTable extends Component {
     }
     return _.filter(products, product => product.name.toLowerCase().indexOf(searchText) !== -1);
   }
+  _renderEmptyList() {
+    return <EmptyProductTable/>
+    //return <CircularLoadingPanel/>
+  }
   _renderRows() {
     const {products, onChangeTimelineProductId} = this.props;
-    return this._sort(this._filter(products)).map(product => <MainProductsRow onChangeTimelineProductId={onChangeTimelineProductId} key={product.id} {...product}/>);
+    const processedProducts = this._sort(this._filter(products));
+    if (processedProducts.length && processedProducts.length > 0) {
+      return processedProducts.map(product => <MainProductsRow onChangeTimelineProductId={onChangeTimelineProductId} key={product.id} {...product}/>);
+    }
+    return this._renderEmptyList();
   }
   render() {
     return (

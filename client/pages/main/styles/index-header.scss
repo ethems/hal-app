@@ -1,3 +1,8 @@
+@import "~susy/sass/susy";
+$susy: ( columns: 12, container: 1120px, global-box-sizing: border-box );
+/* Makes border-box properties */
+@include border-box-sizing;
+
 .index-header-container {}
 
 .index-header-container .index-header--fixed {
@@ -10,13 +15,13 @@
     z-index: 7;
 }
 
-.index-header-container .index-header--fixed .index-header-actions__button-container {
+.index-header-container .index-header--fixed .index-header-primary__content {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    width: 100%;
     height: 100%;
+    @include container;
 }
 
 .index-header-container .index-header--fixed .index-header-action__button {
@@ -26,11 +31,11 @@
 }
 
 .index-header-container .index-header--fixed .index-header-actions__search-container {
+    @include span(12);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
     height: 100%;
 }
 

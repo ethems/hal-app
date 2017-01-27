@@ -26,9 +26,11 @@ class Main extends Component {
         <div className="index-header-wrapper">
           <IndexHeader searchText={searchText} onChangeSearchText={this.handleChangeSeachText}/>
         </div>
-        <div className="product-table-wrapper"><MainProductsTable searchText={searchText} onChangeTimelineProductId={this.handleChangeTimelineProductId}/></div>
-        <div className="graph-wrapper">
-          <ProductTimelineGraph timelineProductId={timelineProductId}/>
+        <div className="index-content-container">
+          <div className="product-table-wrapper"><MainProductsTable searchText={searchText} onChangeTimelineProductId={this.handleChangeTimelineProductId}/></div>
+          <div className="graph-wrapper">
+            <ProductTimelineGraph timelineProductId={timelineProductId}/>
+          </div>
         </div>
         <div className="index-footer-wrapper">
           <IndexFooter/>

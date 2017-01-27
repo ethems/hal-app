@@ -4,30 +4,36 @@ $susy: ( columns: 12, container: 1120px, global-box-sizing: border-box );
 @include border-box-sizing;
 
 .index-container {
-    @include container;
-    padding-top: 120px;
-    padding-bottom: 60px;
     position: relative;
     min-height: 100%;
+    padding-top: 120px;
+    padding-bottom: 60px;
 }
 
-.index-container .graph-wrapper {
+.index-content-container {
+    @include container;
+}
+
+.index-content-container .graph-wrapper {
     @media (max-width: 961px) {
          @include span(12);
-         display: none;
+        display: none;
     }
     @include span(6 last);
 }
 
-.index-container .product-table-wrapper {
+.index-content-container .product-table-wrapper {
     @media (max-width: 961px) {
          @include span(12);
     }
     @include span(6 first);
 }
-.index-container .index-footer-wrapper{
-  @include span(12);
-  position: absolute;
-  bottom: 0;
-  height: 40px;
+
+.index-footer-wrapper {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    left: 0;
+    background-color: #3D464B;
 }
