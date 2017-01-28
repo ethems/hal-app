@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/index.scss';
 
-const LoadingPanel = (props) => {
+const CircularLoadingPanel = (props) => {
   const {width, strokeWidth, strokeMiterlimit} = props;
   const style = {
     width
@@ -14,14 +14,14 @@ const LoadingPanel = (props) => {
     </div>
   );
 };
-LoadingPanel.propTypes = {
+CircularLoadingPanel.propTypes = {
   width: React.PropTypes.number,
   strokeWidth: React.PropTypes.number,
   strokeMiterlimit: React.PropTypes.number
 };
-LoadingPanel.defaultProps = {
+CircularLoadingPanel.defaultProps = {
   width: 100,
   strokeWidth: 2,
   strokeMiterlimit: 10
 };
-export default LoadingPanel;
+export default CircularLoadingPanel;

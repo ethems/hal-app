@@ -111,5 +111,5 @@ class ProductsTable extends Component {
   }
 }
 
-const mapStateToProps = state => ({products: state.products});
+const mapStateToProps = state => ({products: state.products.data});
 export default connect(mapStateToProps, productActions)(ProductsTable);

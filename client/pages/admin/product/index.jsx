@@ -141,5 +141,5 @@ function mapDispatchToProps(dispatch) {
     productActions: bindActionCreators(productActions, dispatch)
   };
 }
-const mapStateToProps = state => ({products: state.products});
+const mapStateToProps = state => ({products: state.products.data});
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

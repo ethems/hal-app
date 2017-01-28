@@ -39977,19 +39977,38 @@
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+	var initialState = {
+	  isLoading: false,
+	  data: []
+	};
+
 	var products = function products() {
-	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
 	  var action = arguments[1];
 
 	  switch (action.type) {
+	    case _productAction.ActionTypes.GET_PRODUCTS_PENDING:
+	      return Object.assign({}, state, { isLoading: true });
 	    case _productAction.ActionTypes.GET_PRODUCTS_FULFILLED:
-	      return [].concat(_toConsumableArray(action.payload.data.products));
+	      return Object.assign({}, state, {
+	        data: [].concat(_toConsumableArray(action.payload.data.products)),
+	        isLoading: false
+	      });
 	    case _productAction.ActionTypes.GET_PRODUCT_FULFILLED:
-	      return [action.payload.data.product];
+	      return Object.assign({}, state, {
+	        data: [action.payload.data.product],
+	        isLoading: false
+	      });
 	    case _productAction.ActionTypes.RESET_PRODUCTS_FULFILLED:
-	      return [];
+	      return Object.assign({}, state, {
+	        data: [],
+	        isLoading: false
+	      });
 	    case _productAction.ActionTypes.DUPLICATE_PRODUCT_FULFILLED:
-	      return [].concat(_toConsumableArray(state), [action.payload.data.product]);
+	      return Object.assign({}, state, {
+	        data: [].concat(_toConsumableArray(state.data), [action.payload.data.product]),
+	        isLoading: false
+	      });
 	    case _productAction.ActionTypes.DELETE_PRODUCT_FULFILLED:
 	      {
 	        var _ret = function () {
@@ -40000,7 +40019,10 @@
 	          });
 	          if (index > -1) {
 	            return {
-	              v: [].concat(_toConsumableArray(state.slice(0, index)), _toConsumableArray(state.slice(index + 1)))
+	              v: Object.assign({}, state, {
+	                data: [].concat(_toConsumableArray(state.data.slice(0, index)), _toConsumableArray(state.data.slice(index + 1))),
+	                isLoading: false
+	              })
 	            };
 	          }
 	          return {
@@ -41795,7 +41817,7 @@
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _contact = __webpack_require__(523);
+	var _contact = __webpack_require__(526);
 
 	var _contact2 = _interopRequireDefault(_contact);
 
@@ -48833,7 +48855,7 @@
 	}(_react.Component);
 
 	var mapStateToProps = function mapStateToProps(state) {
-	  return { products: state.products };
+	  return { products: state.products.data };
 	};
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, productActions)(ProductsTable);
 
@@ -64501,7 +64523,7 @@
 	  };
 	}
 	var mapStateToProps = function mapStateToProps(state) {
-	  return { products: state.products };
+	  return { products: state.products.data };
 	};
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Product);
 
@@ -84530,19 +84552,19 @@
 
 	var _productsTable2 = _interopRequireDefault(_productsTable);
 
-	var _indexHeader = __webpack_require__(509);
+	var _indexHeader = __webpack_require__(512);
 
 	var _indexHeader2 = _interopRequireDefault(_indexHeader);
 
-	var _indexFooter = __webpack_require__(515);
+	var _indexFooter = __webpack_require__(518);
 
 	var _indexFooter2 = _interopRequireDefault(_indexFooter);
 
-	var _productTimelineGraph = __webpack_require__(518);
+	var _productTimelineGraph = __webpack_require__(521);
 
 	var _productTimelineGraph2 = _interopRequireDefault(_productTimelineGraph);
 
-	__webpack_require__(521);
+	__webpack_require__(524);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84654,11 +84676,11 @@
 
 	var _productsTableEmpty2 = _interopRequireDefault(_productsTableEmpty);
 
-	var _loadingPanel = __webpack_require__(526);
+	var _circularLoadingPanel = __webpack_require__(507);
 
-	var _loadingPanel2 = _interopRequireDefault(_loadingPanel);
+	var _circularLoadingPanel2 = _interopRequireDefault(_circularLoadingPanel);
 
-	__webpack_require__(507);
+	__webpack_require__(510);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -84673,10 +84695,10 @@
 	var MainProductsTable = function (_Component) {
 	  _inherits(MainProductsTable, _Component);
 
-	  function MainProductsTable(props) {
+	  function MainProductsTable() {
 	    _classCallCheck(this, MainProductsTable);
 
-	    return _possibleConstructorReturn(this, (MainProductsTable.__proto__ || Object.getPrototypeOf(MainProductsTable)).call(this, props));
+	    return _possibleConstructorReturn(this, (MainProductsTable.__proto__ || Object.getPrototypeOf(MainProductsTable)).apply(this, arguments));
 	  }
 
 	  _createClass(MainProductsTable, [{
@@ -84705,8 +84727,12 @@
 	  }, {
 	    key: '_renderEmptyList',
 	    value: function _renderEmptyList() {
+	      var isLoading = this.props.isLoading;
+
+	      if (isLoading) {
+	        return _react2.default.createElement(_circularLoadingPanel2.default, null);
+	      }
 	      return _react2.default.createElement(_productsTableEmpty2.default, null);
-	      //return <CircularLoadingPanel/>
 	    }
 	  }, {
 	    key: '_renderRows',
@@ -84738,7 +84764,7 @@
 	}(_react.Component);
 
 	var mapStateToProps = function mapStateToProps(state) {
-	  return { products: state.products };
+	  return { products: state.products.data, isLoading: state.products.isLoading };
 	};
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, productActions)(MainProductsTable);
 
@@ -85034,10 +85060,98 @@
 /* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(508);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var CircularLoadingPanel = function CircularLoadingPanel(props) {
+	  var width = props.width,
+	      strokeWidth = props.strokeWidth,
+	      strokeMiterlimit = props.strokeMiterlimit;
+
+	  var style = {
+	    width: width
+	  };
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'loader', style: style },
+	    _react2.default.createElement(
+	      'svg',
+	      { className: 'circular', viewBox: '25 25 50 50' },
+	      _react2.default.createElement('circle', { className: 'path', cx: '50', cy: '50', r: '20', fill: 'none', strokeWidth: strokeWidth, strokeMiterlimit: strokeMiterlimit })
+	    )
+	  );
+	};
+	CircularLoadingPanel.propTypes = {
+	  width: _react2.default.PropTypes.number,
+	  strokeWidth: _react2.default.PropTypes.number,
+	  strokeMiterlimit: _react2.default.PropTypes.number
+	};
+	CircularLoadingPanel.defaultProps = {
+	  width: 100,
+	  strokeWidth: 2,
+	  strokeMiterlimit: 10
+	};
+	exports.default = CircularLoadingPanel;
+
+/***/ },
+/* 508 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(508);
+	var content = __webpack_require__(509);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 509 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".loader {\n  position: relative;\n  margin: 0 auto; }\n  .loader:before {\n    content: '';\n    display: block;\n    padding-top: 100%; }\n\n.circular {\n  animation: rotate 2s linear infinite;\n  height: 100%;\n  transform-origin: center center;\n  width: 100%;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  margin: auto; }\n\n.path {\n  stroke-dasharray: 1, 200;\n  stroke-dashoffset: 0;\n  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;\n  stroke-linecap: round; }\n\n@keyframes rotate {\n  100% {\n    transform: rotate(360deg); } }\n\n@keyframes dash {\n  0% {\n    stroke-dasharray: 1, 200;\n    stroke-dashoffset: 0; }\n  50% {\n    stroke-dasharray: 89, 200;\n    stroke-dashoffset: -35px; }\n  100% {\n    stroke-dasharray: 89, 200;\n    stroke-dashoffset: -124px; } }\n\n@keyframes color {\n  100%,\n  0% {\n    stroke: #d62d20; }\n  40% {\n    stroke: #0174FF; }\n  66% {\n    stroke: #008744; }\n  80%,\n  90% {\n    stroke: #ffa700; } }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 510 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(511);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85057,7 +85171,7 @@
 	}
 
 /***/ },
-/* 508 */
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85071,7 +85185,7 @@
 
 
 /***/ },
-/* 509 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85086,13 +85200,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _sticky = __webpack_require__(510);
+	var _sticky = __webpack_require__(513);
 
 	var _sticky2 = _interopRequireDefault(_sticky);
 
 	var _reactRouter = __webpack_require__(257);
 
-	__webpack_require__(513);
+	__webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85219,7 +85333,7 @@
 	exports.default = IndexHeader;
 
 /***/ },
-/* 510 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -85238,7 +85352,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	__webpack_require__(511);
+	__webpack_require__(514);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85317,13 +85431,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(504)))
 
 /***/ },
-/* 511 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(512);
+	var content = __webpack_require__(515);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85343,7 +85457,7 @@
 	}
 
 /***/ },
-/* 512 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85357,13 +85471,13 @@
 
 
 /***/ },
-/* 513 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(514);
+	var content = __webpack_require__(517);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85383,7 +85497,7 @@
 	}
 
 /***/ },
-/* 514 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85397,7 +85511,7 @@
 
 
 /***/ },
-/* 515 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85414,7 +85528,7 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	__webpack_require__(516);
+	__webpack_require__(519);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85435,13 +85549,13 @@
 	exports.default = IndexFooter;
 
 /***/ },
-/* 516 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(517);
+	var content = __webpack_require__(520);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85461,7 +85575,7 @@
 	}
 
 /***/ },
-/* 517 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85475,7 +85589,7 @@
 
 
 /***/ },
-/* 518 */
+/* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85506,7 +85620,7 @@
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	__webpack_require__(519);
+	__webpack_require__(522);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -85616,13 +85730,13 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, priceActions)(TimelineGraph);
 
 /***/ },
-/* 519 */
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(520);
+	var content = __webpack_require__(523);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85642,7 +85756,7 @@
 	}
 
 /***/ },
-/* 520 */
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85654,74 +85768,6 @@
 
 	// exports
 
-
-/***/ },
-/* 521 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(522);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(318)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 522 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(313)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  position: relative;\n  min-height: 100%;\n  padding-top: 120px;\n  padding-bottom: 60px; }\n\n.index-content-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .index-content-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-content-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-content-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-content-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-content-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n\n.index-footer-wrapper {\n  position: absolute;\n  bottom: 0;\n  height: 40px;\n  width: 100%;\n  left: 0;\n  background-color: #3D464B; }\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 523 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(5);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(524);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Contact = function Contact(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'contact-container' },
-	    'xxx'
-	  );
-	};
-
-	exports.default = Contact;
 
 /***/ },
 /* 524 */
@@ -85758,7 +85804,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.index-container {\n  position: relative;\n  min-height: 100%;\n  padding-top: 120px;\n  padding-bottom: 60px; }\n\n.index-content-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .index-content-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.index-content-container .graph-wrapper {\n  width: 49.15254%;\n  float: right;\n  margin-right: 0; }\n  @media (max-width: 961px) {\n    .index-content-container .graph-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0;\n      display: none; } }\n\n.index-content-container .product-table-wrapper {\n  width: 49.15254%;\n  float: left;\n  margin-right: 1.69492%; }\n  @media (max-width: 961px) {\n    .index-content-container .product-table-wrapper {\n      width: 100%;\n      float: left;\n      margin-left: 0;\n      margin-right: 0; } }\n\n.index-footer-wrapper {\n  position: absolute;\n  bottom: 0;\n  height: 40px;\n  width: 100%;\n  left: 0;\n  background-color: #3D464B; }\n", ""]);
 
 	// exports
 
@@ -85781,35 +85827,15 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var LoadingPanel = function LoadingPanel(props) {
-	  var width = props.width,
-	      strokeWidth = props.strokeWidth,
-	      strokeMiterlimit = props.strokeMiterlimit;
-
-	  var style = {
-	    width: width
-	  };
+	var Contact = function Contact(props) {
 	  return _react2.default.createElement(
 	    'div',
-	    { className: 'loader', style: style },
-	    _react2.default.createElement(
-	      'svg',
-	      { className: 'circular', viewBox: '25 25 50 50' },
-	      _react2.default.createElement('circle', { className: 'path', cx: '50', cy: '50', r: '20', fill: 'none', strokeWidth: strokeWidth, strokeMiterlimit: strokeMiterlimit })
-	    )
+	    { className: 'contact-container' },
+	    'xxx'
 	  );
 	};
-	LoadingPanel.propTypes = {
-	  width: _react2.default.PropTypes.number,
-	  strokeWidth: _react2.default.PropTypes.number,
-	  strokeMiterlimit: _react2.default.PropTypes.number
-	};
-	LoadingPanel.defaultProps = {
-	  width: 100,
-	  strokeWidth: 2,
-	  strokeMiterlimit: 10
-	};
-	exports.default = LoadingPanel;
+
+	exports.default = Contact;
 
 /***/ },
 /* 527 */
@@ -85846,7 +85872,7 @@
 
 
 	// module
-	exports.push([module.id, ".loader {\n  position: relative;\n  margin: 0 auto; }\n  .loader:before {\n    content: '';\n    display: block;\n    padding-top: 100%; }\n\n.circular {\n  animation: rotate 2s linear infinite;\n  height: 100%;\n  transform-origin: center center;\n  width: 100%;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  margin: auto; }\n\n.path {\n  stroke-dasharray: 1, 200;\n  stroke-dashoffset: 0;\n  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;\n  stroke-linecap: round; }\n\n@keyframes rotate {\n  100% {\n    transform: rotate(360deg); } }\n\n@keyframes dash {\n  0% {\n    stroke-dasharray: 1, 200;\n    stroke-dashoffset: 0; }\n  50% {\n    stroke-dasharray: 89, 200;\n    stroke-dashoffset: -35px; }\n  100% {\n    stroke-dasharray: 89, 200;\n    stroke-dashoffset: -124px; } }\n\n@keyframes color {\n  100%,\n  0% {\n    stroke: #d62d20; }\n  40% {\n    stroke: #0174FF; }\n  66% {\n    stroke: #008744; }\n  80%,\n  90% {\n    stroke: #ffa700; } }\n", ""]);
+	exports.push([module.id, "", ""]);
 
 	// exports
 

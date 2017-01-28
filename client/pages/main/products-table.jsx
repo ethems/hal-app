@@ -4,14 +4,11 @@ import _ from 'lodash';
 import * as productActions from '../../actions/product-action';
 import MainProductsRow from './products-row';
 import EmptyProductTable from './products-table-empty';
-import CircularLoadingPanel from '../../components/loading-panel';
+import CircularLoadingPanel from '../../components/circular-loading-panel';
 
 import './styles/products-table.scss';
 
 class MainProductsTable extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     this.props.getProducts({justActive: true, withRate: true});
   }
@@ -26,8 +23,11 @@ class MainProductsTable extends Component {
     return _.filter(products, product => product.name.toLowerCase().indexOf(searchText) !== -1);
   }
   _renderEmptyList() {
+    const {isLoading} = this.props;
+    if (isLoading) {
+      return <CircularLoadingPanel/>
+    }
     return <EmptyProductTable/>
-    //return <CircularLoadingPanel/>
   }
   _renderRows() {
     const {products, onChangeTimelineProductId} = this.props;
@@ -46,5 +46,5 @@ class MainProductsTable extends Component {
   }
 }
 
-const mapStateToProps = state => ({products: state.products});
+const mapStateToProps = state => ({products: state.products.data, isLoading: state.products.isLoading});
 export default connect(mapStateToProps, productActions)(MainProductsTable);
