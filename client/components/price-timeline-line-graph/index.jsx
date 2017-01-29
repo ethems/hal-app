@@ -16,6 +16,9 @@ class PriceTimelineLineGraph extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     const {timeline, timespanType} = this.props;
+    const chartContainerDOM = ReactDOM.findDOMNode(this._chartContainer);
+    const {clientWidth, clientHeight} = chartContainerDOM;
+     this.d3LineChart.checkDimension({width: clientWidth, height: clientHeight});
     (timeline && timeline.prices)
       ? this.d3LineChart.updateProperties({prices: timeline.prices, timespanType:timespanType})
       : this._renderEmpty();

@@ -67567,6 +67567,11 @@
 	          timeline = _props2.timeline,
 	          timespanType = _props2.timespanType;
 
+	      var chartContainerDOM = _reactDom2.default.findDOMNode(this._chartContainer);
+	      var clientWidth = chartContainerDOM.clientWidth,
+	          clientHeight = chartContainerDOM.clientHeight;
+
+	      this.d3LineChart.checkDimension({ width: clientWidth, height: clientHeight });
 	      timeline && timeline.prices ? this.d3LineChart.updateProperties({ prices: timeline.prices, timespanType: timespanType }) : this._renderEmpty();
 	    }
 	  }, {
@@ -67673,6 +67678,23 @@
 	    key: 'createGraph',
 	    value: function createGraph() {
 	      d3.select(this.el).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', '0 0 ' + this.width + ' ' + this.height).attr('class', 'line-graph-svg');
+	    }
+	  }, {
+	    key: 'checkDimension',
+	    value: function checkDimension(props) {
+	      var width = props.width,
+	          height = props.height;
+
+	      if (this.width !== width || this.height !== height) {
+	        this.width = width;
+	        this.height = height;
+	        this._reCreateDimension();
+	      }
+	    }
+	  }, {
+	    key: '_reCreateDimension',
+	    value: function _reCreateDimension() {
+	      d3.select(this.el).selectAll('svg').attr('viewBox', '0 0 ' + this.width + ' ' + this.height);
 	    }
 	  }, {
 	    key: '_renderXAxis',

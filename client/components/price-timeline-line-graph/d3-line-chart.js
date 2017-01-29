@@ -37,6 +37,17 @@ export default class LineChart {
   createGraph() {
     d3.select(this.el).append('svg').attr('preserveAspectRatio', 'xMinYMin meet').attr('viewBox', `0 0 ${this.width} ${this.height}`).attr('class', 'line-graph-svg');
   }
+  checkDimension(props) {
+    const {width, height} = props;
+    if (this.width !== width || this.height !== height) {
+      this.width=width;
+      this.height=height;
+      this._reCreateDimension();
+    }
+  }
+  _reCreateDimension() {
+    d3.select(this.el).selectAll('svg').attr('viewBox', `0 0 ${this.width} ${this.height}`);
+  }
   _renderXAxis(xScale) {
     const {height, padding, el, timespanType} = this;
     const xAxis = d3.axisBottom(xScale);
