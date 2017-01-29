@@ -41813,11 +41813,11 @@
 
 	var _product2 = _interopRequireDefault(_product);
 
-	var _main = __webpack_require__(498);
+	var _main = __webpack_require__(499);
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _contact = __webpack_require__(526);
+	var _contact = __webpack_require__(527);
 
 	var _contact2 = _interopRequireDefault(_contact);
 
@@ -64293,7 +64293,7 @@
 
 	var _timeline2 = _interopRequireDefault(_timeline);
 
-	var _productName = __webpack_require__(492);
+	var _productName = __webpack_require__(493);
 
 	var _productName2 = _interopRequireDefault(_productName);
 
@@ -64301,7 +64301,7 @@
 
 	var _timespanTypes2 = _interopRequireDefault(_timespanTypes);
 
-	__webpack_require__(496);
+	__webpack_require__(497);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -67410,7 +67410,7 @@
 
 	__webpack_require__(479);
 
-	__webpack_require__(490);
+	__webpack_require__(491);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -67526,7 +67526,7 @@
 
 	var _d3LineChart2 = _interopRequireDefault(_d3LineChart);
 
-	__webpack_require__(488);
+	__webpack_require__(489);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -67622,7 +67622,7 @@
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _moment = __webpack_require__(529);
+	var _moment = __webpack_require__(488);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -67903,14 +67903,14 @@
 /* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// https://d3js.org Version 4.4.4. Copyright 2017 Mike Bostock.
+	// https://d3js.org Version 4.5.0. Copyright 2017 Mike Bostock.
 	(function (global, factory) {
 		 true ? factory(exports) :
 		typeof define === 'function' && define.amd ? define(['exports'], factory) :
 		(factory((global.d3 = global.d3 || {})));
 	}(this, (function (exports) { 'use strict';
 
-	var version = "4.4.4";
+	var version = "4.5.0";
 
 	var ascending = function(a, b) {
 	  return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
@@ -77297,6 +77297,19 @@
 	  return cluster;
 	};
 
+	function count(node) {
+	  var sum = 0,
+	      children = node.children,
+	      i = children && children.length;
+	  if (!i) sum = 1;
+	  else while (--i >= 0) sum += children[i].value;
+	  node.value = sum;
+	}
+
+	var node_count = function() {
+	  return this.eachAfter(count);
+	};
+
 	var node_each = function(callback) {
 	  var node = this, current, next = [node], children, i, n;
 	  do {
@@ -77475,6 +77488,7 @@
 
 	Node.prototype = hierarchy.prototype = {
 	  constructor: Node,
+	  count: node_count,
 	  each: node_each,
 	  eachAfter: node_eachAfter,
 	  eachBefore: node_eachBefore,
@@ -77635,7 +77649,13 @@
 	  var dx = b.x - a.x,
 	      dy = b.y - a.y,
 	      dr = a.r + b.r;
-	  return dr * dr > dx * dx + dy * dy;
+	  return dr * dr - 1e-6 > dx * dx + dy * dy;
+	}
+
+	function distance1(a, b) {
+	  var l = a._.r;
+	  while (a !== b) l += 2 * (a = a.next)._.r;
+	  return l - b._.r;
 	}
 
 	function distance2(circle, x, y) {
@@ -77685,35 +77705,27 @@
 	  pack: for (i = 3; i < n; ++i) {
 	    place(a._, b._, c = circles[i]), c = new Node$1(c);
 
-	    // If there are only three elements in the front-chain…
-	    if ((k = a.previous) === (j = b.next)) {
-	      // If the new circle intersects the third circle,
-	      // rotate the front chain to try the next position.
-	      if (intersects(j._, c._)) {
-	        a = b, b = j, --i;
-	        continue pack;
-	      }
-	    }
-
 	    // Find the closest intersecting circle on the front-chain, if any.
-	    else {
-	      sj = j._.r, sk = k._.r;
-	      do {
-	        if (sj <= sk) {
-	          if (intersects(j._, c._)) {
-	            b = j, a.next = b, b.previous = a, --i;
-	            continue pack;
-	          }
-	          j = j.next, sj += j._.r;
-	        } else {
-	          if (intersects(k._, c._)) {
-	            a = k, a.next = b, b.previous = a, --i;
-	            continue pack;
-	          }
-	          k = k.previous, sk += k._.r;
+	    // “Closeness” is determined by linear distance along the front-chain.
+	    // “Ahead” or “behind” is likewise determined by linear distance.
+	    j = b.next, k = a.previous, sj = b._.r, sk = a._.r;
+	    do {
+	      if (sj <= sk) {
+	        if (intersects(j._, c._)) {
+	          if (sj + a._.r + b._.r > distance1(j, b)) a = j; else b = j;
+	          a.next = b, b.previous = a, --i;
+	          continue pack;
 	        }
-	      } while (j !== k.next);
-	    }
+	        sj += j._.r, j = j.next;
+	      } else {
+	        if (intersects(k._, c._)) {
+	          if (distance1(a, k) > sk + a._.r + b._.r) a = k; else b = k;
+	          a.next = b, b.previous = a, --i;
+	          continue pack;
+	        }
+	        sk += k._.r, k = k.previous;
+	      }
+	    } while (j !== k.next);
 
 	    // Success! Insert the new circle c between a and b.
 	    c.previous = a, c.next = b, a.next = b.previous = b = c;
@@ -84302,10 +84314,66 @@
 /* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	(function (root, factory) {
+	  'use strict';
+
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(339)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
+	    // Node. Does not work with strict CommonJS, but
+	    // only CommonJS-like environments that support module.exports,
+	    // like Node.
+	    module.exports = factory(require('moment'));
+	  } else {
+	    // Browser globals (root is window)
+	    root.returnExports = factory(root.moment);
+	  }
+	})(undefined, function (moment) {
+	  'use strict';
+
+	  moment.fn.previousDatesByTimespan = function (timespan) {
+	    var dates = [];
+	    switch (timespan) {
+	      case 'weekly':
+	        {
+	          var startTime = moment().clone().subtract(1, 'weeks').startOf('day');
+	          var stopTime = moment().clone().startOf('day');
+	          while (startTime.diff(stopTime) < 0) {
+	            dates.push(startTime.clone());
+	            startTime.add('days', 1);
+	          }
+	          return dates;
+	        }
+	      case 'monthly':
+	        {
+	          var _startTime = moment().clone().subtract(1, 'months').startOf('week');
+	          var _stopTime = moment().clone().startOf('week');
+	          while (_startTime.diff(_stopTime) < 0) {
+	            dates.push(_startTime.clone());
+	            _startTime.add('week', 1);
+	          }
+	          return dates;
+	        }
+	      default:
+	        return dates;
+	    }
+	  };
+	  return moment;
+	});
+
+/***/ },
+/* 489 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(489);
+	var content = __webpack_require__(490);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84325,7 +84393,7 @@
 	}
 
 /***/ },
-/* 489 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84339,13 +84407,13 @@
 
 
 /***/ },
-/* 490 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(491);
+	var content = __webpack_require__(492);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84365,7 +84433,7 @@
 	}
 
 /***/ },
-/* 491 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84379,7 +84447,7 @@
 
 
 /***/ },
-/* 492 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84394,7 +84462,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactClickOutside = __webpack_require__(493);
+	var _reactClickOutside = __webpack_require__(494);
 
 	var _reactClickOutside2 = _interopRequireDefault(_reactClickOutside);
 
@@ -84402,7 +84470,7 @@
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	__webpack_require__(494);
+	__webpack_require__(495);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84482,7 +84550,7 @@
 	exports.default = (0, _reactClickOutside2.default)(ProductName);
 
 /***/ },
-/* 493 */
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84521,13 +84589,13 @@
 	};
 
 /***/ },
-/* 494 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(495);
+	var content = __webpack_require__(496);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84547,7 +84615,7 @@
 	}
 
 /***/ },
-/* 495 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84561,13 +84629,13 @@
 
 
 /***/ },
-/* 496 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(497);
+	var content = __webpack_require__(498);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -84587,7 +84655,7 @@
 	}
 
 /***/ },
-/* 497 */
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -84601,7 +84669,7 @@
 
 
 /***/ },
-/* 498 */
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84616,23 +84684,23 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _productsTable = __webpack_require__(499);
+	var _productsTable = __webpack_require__(500);
 
 	var _productsTable2 = _interopRequireDefault(_productsTable);
 
-	var _indexHeader = __webpack_require__(512);
+	var _indexHeader = __webpack_require__(513);
 
 	var _indexHeader2 = _interopRequireDefault(_indexHeader);
 
-	var _indexFooter = __webpack_require__(518);
+	var _indexFooter = __webpack_require__(519);
 
 	var _indexFooter2 = _interopRequireDefault(_indexFooter);
 
-	var _productTimelineGraph = __webpack_require__(521);
+	var _productTimelineGraph = __webpack_require__(522);
 
 	var _productTimelineGraph2 = _interopRequireDefault(_productTimelineGraph);
 
-	__webpack_require__(524);
+	__webpack_require__(525);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84709,7 +84777,7 @@
 	exports.default = Main;
 
 /***/ },
-/* 499 */
+/* 500 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84736,19 +84804,19 @@
 
 	var productActions = _interopRequireWildcard(_productAction);
 
-	var _productsRow = __webpack_require__(500);
+	var _productsRow = __webpack_require__(501);
 
 	var _productsRow2 = _interopRequireDefault(_productsRow);
 
-	var _productsTableEmpty = __webpack_require__(503);
+	var _productsTableEmpty = __webpack_require__(504);
 
 	var _productsTableEmpty2 = _interopRequireDefault(_productsTableEmpty);
 
-	var _circularLoadingPanel = __webpack_require__(507);
+	var _circularLoadingPanel = __webpack_require__(508);
 
 	var _circularLoadingPanel2 = _interopRequireDefault(_circularLoadingPanel);
 
-	__webpack_require__(510);
+	__webpack_require__(511);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -84837,7 +84905,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, productActions)(MainProductsTable);
 
 /***/ },
-/* 500 */
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84858,7 +84926,7 @@
 
 	var _reactRedux = __webpack_require__(240);
 
-	__webpack_require__(501);
+	__webpack_require__(502);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84989,13 +85057,13 @@
 	exports.default = MainProductsRow;
 
 /***/ },
-/* 501 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(502);
+	var content = __webpack_require__(503);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85015,7 +85083,7 @@
 	}
 
 /***/ },
-/* 502 */
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85029,7 +85097,7 @@
 
 
 /***/ },
-/* 503 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -85042,7 +85110,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(505);
+	__webpack_require__(506);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85076,22 +85144,22 @@
 	};
 
 	exports.default = MainEmptyProductTable;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(504)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(505)))
 
 /***/ },
-/* 504 */
+/* 505 */
 /***/ function(module, exports) {
 
 	module.exports = jQuery;
 
 /***/ },
-/* 505 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(506);
+	var content = __webpack_require__(507);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85111,7 +85179,7 @@
 	}
 
 /***/ },
-/* 506 */
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85125,7 +85193,7 @@
 
 
 /***/ },
-/* 507 */
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85138,7 +85206,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(508);
+	__webpack_require__(509);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85173,13 +85241,13 @@
 	exports.default = CircularLoadingPanel;
 
 /***/ },
-/* 508 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(509);
+	var content = __webpack_require__(510);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85199,7 +85267,7 @@
 	}
 
 /***/ },
-/* 509 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85213,13 +85281,13 @@
 
 
 /***/ },
-/* 510 */
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(511);
+	var content = __webpack_require__(512);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85239,7 +85307,7 @@
 	}
 
 /***/ },
-/* 511 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85253,7 +85321,7 @@
 
 
 /***/ },
-/* 512 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85268,13 +85336,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _sticky = __webpack_require__(513);
+	var _sticky = __webpack_require__(514);
 
 	var _sticky2 = _interopRequireDefault(_sticky);
 
 	var _reactRouter = __webpack_require__(257);
 
-	__webpack_require__(516);
+	__webpack_require__(517);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85401,7 +85469,7 @@
 	exports.default = IndexHeader;
 
 /***/ },
-/* 513 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -85420,7 +85488,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	__webpack_require__(514);
+	__webpack_require__(515);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85496,16 +85564,16 @@
 	};
 
 	exports.default = Sticky;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(504)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(505)))
 
 /***/ },
-/* 514 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(515);
+	var content = __webpack_require__(516);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85525,7 +85593,7 @@
 	}
 
 /***/ },
-/* 515 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85539,13 +85607,13 @@
 
 
 /***/ },
-/* 516 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(517);
+	var content = __webpack_require__(518);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85565,7 +85633,7 @@
 	}
 
 /***/ },
-/* 517 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85579,7 +85647,7 @@
 
 
 /***/ },
-/* 518 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85596,7 +85664,7 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	__webpack_require__(519);
+	__webpack_require__(520);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85617,13 +85685,13 @@
 	exports.default = IndexFooter;
 
 /***/ },
-/* 519 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(520);
+	var content = __webpack_require__(521);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85643,7 +85711,7 @@
 	}
 
 /***/ },
-/* 520 */
+/* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85657,7 +85725,7 @@
 
 
 /***/ },
-/* 521 */
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85688,7 +85756,7 @@
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	__webpack_require__(522);
+	__webpack_require__(523);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -85810,13 +85878,13 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, priceActions)(TimelineGraph);
 
 /***/ },
-/* 522 */
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(523);
+	var content = __webpack_require__(524);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85836,7 +85904,7 @@
 	}
 
 /***/ },
-/* 523 */
+/* 524 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85850,13 +85918,13 @@
 
 
 /***/ },
-/* 524 */
+/* 525 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(525);
+	var content = __webpack_require__(526);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -85876,7 +85944,7 @@
 	}
 
 /***/ },
-/* 525 */
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -85890,7 +85958,7 @@
 
 
 /***/ },
-/* 526 */
+/* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85903,19 +85971,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _contactHeader = __webpack_require__(530);
+	var _contactHeader = __webpack_require__(528);
 
 	var _contactHeader2 = _interopRequireDefault(_contactHeader);
 
-	var _contactContent = __webpack_require__(536);
+	var _contactContent = __webpack_require__(531);
 
 	var _contactContent2 = _interopRequireDefault(_contactContent);
 
-	var _contactFooter = __webpack_require__(533);
+	var _contactFooter = __webpack_require__(534);
 
 	var _contactFooter2 = _interopRequireDefault(_contactFooter);
 
-	__webpack_require__(527);
+	__webpack_require__(537);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85944,103 +86012,7 @@
 	exports.default = Contact;
 
 /***/ },
-/* 527 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(528);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(318)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
 /* 528 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(313)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.contact-container {\n  position: relative;\n  min-height: 100%;\n  padding-top: 90px;\n  padding-bottom: 60px; }\n\n.contact-container .contact-content-wrapper {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .contact-container .contact-content-wrapper:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.contact-container .contact-footer-wrapper {\n  position: absolute;\n  bottom: 0;\n  height: 40px;\n  width: 100%;\n  left: 0;\n  background-color: #3D464B; }\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 529 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-	(function (root, factory) {
-	  'use strict';
-
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(339)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-	    // Node. Does not work with strict CommonJS, but
-	    // only CommonJS-like environments that support module.exports,
-	    // like Node.
-	    module.exports = factory(require('moment'));
-	  } else {
-	    // Browser globals (root is window)
-	    root.returnExports = factory(root.moment);
-	  }
-	})(undefined, function (moment) {
-	  'use strict';
-
-	  moment.fn.previousDatesByTimespan = function (timespan) {
-	    var dates = [];
-	    switch (timespan) {
-	      case 'weekly':
-	        {
-	          var startTime = moment().clone().subtract(1, 'weeks').startOf('day');
-	          var stopTime = moment().clone().startOf('day');
-	          while (startTime.diff(stopTime) < 0) {
-	            dates.push(startTime.clone());
-	            startTime.add('days', 1);
-	          }
-	          return dates;
-	        }
-	      case 'monthly':
-	        {
-	          var _startTime = moment().clone().subtract(1, 'months').startOf('week');
-	          var _stopTime = moment().clone().startOf('week');
-	          while (_startTime.diff(_stopTime) < 0) {
-	            dates.push(_startTime.clone());
-	            _startTime.add('week', 1);
-	          }
-	          return dates;
-	        }
-	      default:
-	        return dates;
-	    }
-	  };
-	  return moment;
-	});
-
-/***/ },
-/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -86055,7 +86027,7 @@
 
 	var _reactRouter = __webpack_require__(257);
 
-	__webpack_require__(531);
+	__webpack_require__(529);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -86091,13 +86063,13 @@
 	exports.default = ContactHeader;
 
 /***/ },
-/* 531 */
+/* 529 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(532);
+	var content = __webpack_require__(530);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -86117,7 +86089,7 @@
 	}
 
 /***/ },
-/* 532 */
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -86131,7 +86103,7 @@
 
 
 /***/ },
-/* 533 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -86144,85 +86116,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _moment = __webpack_require__(339);
-
-	var _moment2 = _interopRequireDefault(_moment);
-
-	__webpack_require__(534);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ContactFooter = function ContactFooter() {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'contact-footer-container' },
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'contact-footer-copyright-section' },
-	      'Copyright \xA9 ',
-	      (0, _moment2.default)().format('YYYY'),
-	      'Halcyoon'
-	    )
-	  );
-	};
-
-	exports.default = ContactFooter;
-
-/***/ },
-/* 534 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(535);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(318)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-footer.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-footer.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 535 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(313)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.contact-footer-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto;\n  color: #fff; }\n  .contact-footer-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.contact-footer-container .contact-footer-copyright-section {\n  font-size: 10px;\n  height: 40px;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 536 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(5);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(537);
+	__webpack_require__(532);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -86269,13 +86163,13 @@
 	exports.default = ContactContent;
 
 /***/ },
-/* 537 */
+/* 532 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(538);
+	var content = __webpack_require__(533);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(318)(content, {});
@@ -86295,7 +86189,7 @@
 	}
 
 /***/ },
-/* 538 */
+/* 533 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(313)();
@@ -86304,6 +86198,124 @@
 
 	// module
 	exports.push([module.id, ".contact-content-container .contact-content-header {\n  font-size: 25px;\n  height: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.contact-content-container .contact-main-content {\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 534 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _moment = __webpack_require__(339);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	__webpack_require__(535);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ContactFooter = function ContactFooter() {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'contact-footer-container' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'contact-footer-copyright-section' },
+	      'Copyright \xA9 ',
+	      (0, _moment2.default)().format('YYYY'),
+	      'Halcyoon'
+	    )
+	  );
+	};
+
+	exports.default = ContactFooter;
+
+/***/ },
+/* 535 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(536);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-footer.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-footer.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 536 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.contact-footer-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto;\n  color: #fff; }\n  .contact-footer-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.contact-footer-container .contact-footer-copyright-section {\n  font-size: 10px;\n  height: 40px;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 537 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(538);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./index.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 538 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.contact-container {\n  position: relative;\n  min-height: 100%;\n  padding-top: 90px;\n  padding-bottom: 60px; }\n\n.contact-container .contact-content-wrapper {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .contact-container .contact-content-wrapper:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.contact-container .contact-footer-wrapper {\n  position: absolute;\n  bottom: 0;\n  height: 40px;\n  width: 100%;\n  left: 0;\n  background-color: #3D464B; }\n", ""]);
 
 	// exports
 
