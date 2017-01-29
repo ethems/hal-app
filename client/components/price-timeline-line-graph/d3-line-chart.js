@@ -17,7 +17,7 @@ export default class LineChart {
     }
     this.el = el;
     this.width = width || 100;
-    this.height = height || 100;
+    this.height = height || 300;
     this.prices = prices || [];
     this.timespanType = timespanType || 'hourly';
     this.padding = padding || 10;

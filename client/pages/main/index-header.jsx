@@ -21,11 +21,11 @@ class IndexHeader extends Component {
   _renderViewState() {
     return (
       <div className="index-header-primary__content">
-        <div className="index-header-action__button" onClick={() => browserHistory.push('/contact')}>
-          <i className="material-icons">phone</i>
-        </div>
         <div className="index-header-action__button" onClick={() => this._changeState('search')}>
           <i className="material-icons">search</i>
+        </div>
+        <div className="index-header-action__button" onClick={() => browserHistory.push('/contact')}>
+          <i className="material-icons">phone</i>
         </div>
       </div>
     )

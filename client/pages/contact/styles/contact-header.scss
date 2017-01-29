@@ -1,0 +1,31 @@
+@import "~susy/sass/susy";
+$susy: ( columns: 12, container: 1120px, global-box-sizing: border-box );
+/* Makes border-box properties */
+@include border-box-sizing;
+
+.contact-header-container {}
+
+.contact-header-container .contact-header--fixed {
+    height: 60px;
+    position: fixed;
+    background-color: #43A047;
+    top: 0;
+    left: 0;
+    right: 1px;
+    z-index: 7;
+}
+
+.contact-header-container .contact-header--fixed .contact-header-primary__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    @include container;
+}
+
+.contact-header-container  .contact-header-action__button {
+    margin: 0 10px;
+    color: #fff;
+    cursor: pointer;
+}

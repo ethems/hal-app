@@ -41735,13 +41735,8 @@
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-	var initialState = {
-	  isLoading: false,
-	  data: []
-	};
-
 	var priceTimelines = function priceTimelines() {
-	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 	  var action = arguments[1];
 
 	  switch (action.type) {
@@ -41754,17 +41749,11 @@
 	          });
 	          if (foundIndex === -1) {
 	            return {
-	              v: Object.assign({}, state, {
-	                data: [].concat(_toConsumableArray(state), [priceData]),
-	                isLoading: false
-	              })
+	              v: [].concat(_toConsumableArray(state), [priceData])
 	            };
 	          }
 	          return {
-	            v: Object.assign({}, state, {
-	              data: [].concat(_toConsumableArray(state.slice(0, foundIndex)), [priceData], _toConsumableArray(state.slice(foundIndex + 1))),
-	              isLoading: false
-	            })
+	            v: [].concat(_toConsumableArray(state.slice(0, foundIndex)), [priceData], _toConsumableArray(state.slice(foundIndex + 1)))
 	          };
 	        }();
 
@@ -41783,7 +41772,7 @@
 
 	var getActiveTimeline = exports.getActiveTimeline = function getActiveTimeline(state, productId, timespanType) {
 	  if (productId && timespanType) {
-	    return _lodash2.default.find(state.data, function (priceTimeline) {
+	    return _lodash2.default.find(state, function (priceTimeline) {
 	      return priceTimeline.productId === productId && priceTimeline.timespanType === timespanType;
 	    });
 	  }
@@ -67656,7 +67645,7 @@
 	    }
 	    this.el = el;
 	    this.width = width || 100;
-	    this.height = height || 100;
+	    this.height = height || 300;
 	    this.prices = prices || [];
 	    this.timespanType = timespanType || 'hourly';
 	    this.padding = padding || 10;
@@ -85305,23 +85294,23 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'index-header-action__button', onClick: function onClick() {
-	              return _reactRouter.browserHistory.push('/contact');
-	            } },
-	          _react2.default.createElement(
-	            'i',
-	            { className: 'material-icons' },
-	            'phone'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'index-header-action__button', onClick: function onClick() {
 	              return _this2._changeState('search');
 	            } },
 	          _react2.default.createElement(
 	            'i',
 	            { className: 'material-icons' },
 	            'search'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'index-header-action__button', onClick: function onClick() {
+	              return _reactRouter.browserHistory.push('/contact');
+	            } },
+	          _react2.default.createElement(
+	            'i',
+	            { className: 'material-icons' },
+	            'phone'
 	          )
 	        )
 	      );
@@ -85892,6 +85881,18 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _contactHeader = __webpack_require__(530);
+
+	var _contactHeader2 = _interopRequireDefault(_contactHeader);
+
+	var _contactContent = __webpack_require__(536);
+
+	var _contactContent2 = _interopRequireDefault(_contactContent);
+
+	var _contactFooter = __webpack_require__(533);
+
+	var _contactFooter2 = _interopRequireDefault(_contactFooter);
+
 	__webpack_require__(527);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -85900,7 +85901,21 @@
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'contact-container' },
-	    'xxx'
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'contact-header-wrapper' },
+	      _react2.default.createElement(_contactHeader2.default, null)
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'contact-content-wrapper' },
+	      _react2.default.createElement(_contactContent2.default, null)
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'contact-footer-wrapper' },
+	      _react2.default.createElement(_contactFooter2.default, null)
+	    )
 	  );
 	};
 
@@ -85941,7 +85956,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.contact-container {\n  position: relative;\n  min-height: 100%;\n  padding-top: 90px;\n  padding-bottom: 60px; }\n\n.contact-container .contact-content-wrapper {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .contact-container .contact-content-wrapper:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.contact-container .contact-footer-wrapper {\n  position: absolute;\n  bottom: 0;\n  height: 40px;\n  width: 100%;\n  left: 0;\n  background-color: #3D464B; }\n", ""]);
 
 	// exports
 
@@ -86001,6 +86016,275 @@
 	  };
 	  return moment;
 	});
+
+/***/ },
+/* 530 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(257);
+
+	__webpack_require__(531);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ContactHeader = function ContactHeader() {
+	  var handleGotoHome = function handleGotoHome() {
+	    _reactRouter.browserHistory.push('/');
+	  };
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'contact-header-container' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'contact-header--fixed mdc-elevation--z4' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'contact-header-primary__content' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'contact-header-action__button', onClick: function onClick() {
+	              return handleGotoHome();
+	            } },
+	          _react2.default.createElement(
+	            'i',
+	            { className: 'material-icons' },
+	            'home'
+	          )
+	        )
+	      )
+	    )
+	  );
+	};
+
+	exports.default = ContactHeader;
+
+/***/ },
+/* 531 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(532);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-header.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-header.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 532 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.contact-header-container .contact-header--fixed {\n  height: 60px;\n  position: fixed;\n  background-color: #43A047;\n  top: 0;\n  left: 0;\n  right: 1px;\n  z-index: 7; }\n\n.contact-header-container .contact-header--fixed .contact-header-primary__content {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  height: 100%;\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto; }\n  .contact-header-container .contact-header--fixed .contact-header-primary__content:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.contact-header-container .contact-header-action__button {\n  margin: 0 10px;\n  color: #fff;\n  cursor: pointer; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 533 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _moment = __webpack_require__(339);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	__webpack_require__(534);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ContactFooter = function ContactFooter() {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'contact-footer-container' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'contact-footer-copyright-section' },
+	      'Copyright \xA9 ',
+	      (0, _moment2.default)().format('YYYY'),
+	      'Halcyoon'
+	    )
+	  );
+	};
+
+	exports.default = ContactFooter;
+
+/***/ },
+/* 534 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(535);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-footer.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-footer.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 535 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/* Makes border-box properties */\n*, *:before, *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.contact-footer-container {\n  max-width: 1120px;\n  margin-left: auto;\n  margin-right: auto;\n  color: #fff; }\n  .contact-footer-container:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.contact-footer-container .contact-footer-copyright-section {\n  font-size: 10px;\n  height: 40px;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 536 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(537);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ContactContent = function ContactContent() {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'contact-content-container' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'contact-content-header' },
+	      'Bizimle Iletisime Gecin'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'contact-main-content' },
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Halcyoon\'a ilginizden dolayi tesekkur ederiz.'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Restaurant, cafe, bar, otel, catering, market ve manavlar\u0131n t\xFCm meyve-sebze ihtiya\xE7lar\u0131n\u0131 en k\u0131sa s\xFCrede ve en uygun fiyata kar\u015F\u0131l\u0131yoruz. Bizimle \xE7al\u0131\u015Fmak isteyen i\u015Fletme sahipleri bizi telefonla arayarak ula\u015Fmalar\u0131 yeterlidir'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Eger satis elemanimizla konusmak isterseniz'
+	      ),
+	      _react2.default.createElement(
+	        'ul',
+	        null,
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          'Yurtici icin +(90) 536-722-2966  arayin'
+	        )
+	      )
+	    )
+	  );
+	};
+
+	exports.default = ContactContent;
+
+/***/ },
+/* 537 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(538);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(318)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-content.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./contact-content.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 538 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(313)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".contact-content-container .contact-content-header {\n  font-size: 25px;\n  height: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.contact-content-container .contact-main-content {\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column; }\n", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);

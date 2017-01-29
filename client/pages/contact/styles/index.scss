@@ -1,0 +1,27 @@
+@import "~susy/sass/susy";
+$susy: ( columns: 12, container: 1120px, global-box-sizing: border-box );
+/* Makes border-box properties */
+@include border-box-sizing;
+
+
+.contact-container{
+  position: relative;
+  min-height: 100%;
+  padding-top: 90px;
+  padding-bottom: 60px;
+}
+
+.contact-container .contact-header-wrapper{
+
+}
+.contact-container .contact-content-wrapper{
+    @include container;
+}
+.contact-container .contact-footer-wrapper {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    left: 0;
+    background-color: #3D464B;
+}

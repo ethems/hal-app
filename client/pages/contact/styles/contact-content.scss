@@ -1,0 +1,17 @@
+.contact-content-container {}
+
+.contact-content-container .contact-content-header {
+    font-size: 25px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-content-container .contact-main-content{
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
