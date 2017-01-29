@@ -24,6 +24,14 @@
 }
 
 .product-timeline-container .product-timeline-content {
-  height: 300px;
-  position: relative;
+    height: 300px;
+    position: relative;
+}
+
+.product-timeline-container .product-timeline-footer {
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color:#008744
 }

@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 import _ from 'lodash';
-import moment from 'moment';
+import moment from '../../utils/moment';
 
 export default class LineChart {
   constructor(props) {
@@ -45,10 +45,10 @@ export default class LineChart {
         xAxis.tickFormat(d3.timeFormat('%H:%M'));
         break;
       case 'weekly':
-        xAxis.tickFormat(d3.timeFormat('%a %d'));
+        xAxis.tickFormat(d3.timeFormat('%d'));
         break;
       case 'monthly':
-        xAxis.tickFormat(d3.timeFormat('%b %d'));
+        xAxis.tickFormat(d3.timeFormat('%a'));
         break;
       case 'yearly':
         xAxis.tickFormat(d3.timeFormat('%B'));
@@ -86,14 +86,16 @@ export default class LineChart {
           };
           const oldPrices = _.chain(prices.filter(price => price.active === false)).groupBy(price => moment(price.startDate).startOf(timespanMap[timespanType]).format()).map((group, day) => {
             const startDate = day;
-            const lastPriceEnterSpecificDay = group.reduce((pre, cur) => new Date(pre.startDate) > new Date(cur.startDate)
-              ? pre
-              : cur);
-            return Object.assign({}, lastPriceEnterSpecificDay, {startDate});
+            const lastPriceEntered = group.reduce((pre, cur) => {
+              return new Date(pre.startDate) > new Date(cur.startDate)
+                ? pre
+                : cur
+            });
+            return Object.assign({}, lastPriceEntered, {startDate});
           }).value();
           return [
             ...oldPrices,
-            ...prices.filter(price => price.active === true)
+            ...prices.filter(price => price.active === true).map(price => Object.assign({}, price, {startDate: moment().startOf('day')}))
           ];
         }
       default:
@@ -103,19 +105,45 @@ export default class LineChart {
   sortData(prices) {
     return _.sortBy(prices, price => new Date(price.startDate));
   }
+  fillMissindDates(prices) {
+    const {timespanType} = this;
+    const filledPrices = [];
+    switch (timespanType) {
+      case 'weekly':
+      case 'monthly':
+      case 'yearly':
+        const dates = moment().previousDatesByTimespan(timespanType);
+        let previousPriceForUnFilledDate = prices[0].price;
+        for (let i = 0, len = dates.length; i < len; i++) {
+          const foundIndex = _.findIndex(prices, price => dates[i].isSame(price.startDate));
+          if (foundIndex !== -1) {
+            filledPrices.push(Object.assign({}, _.pick(prices[foundIndex], ['startDate', 'price', 'active'])));
+            previousPriceForUnFilledDate = prices[foundIndex].price;
+          } else {
+            filledPrices.push({price: previousPriceForUnFilledDate, startDate: dates[i], active: false})
+          }
+        }
+        return [
+          ...filledPrices,
+          ...prices.filter(price => price.active === true)
+        ];
+      default:
+        return prices;
+    }
+  }
   renderGraph() {
     const {width, height, padding, el} = this;
-    const prices = this.sortData(this.prepareData());
+    const prices = this.fillMissindDates(this.sortData(this.prepareData()));
     const xScale = d3.scaleLinear().domain([
       d3.min(prices, price => new Date(price.startDate)),
       d3.max(prices, price => new Date(price.startDate))
     ]).range([
       padding * 1.5,
-      width - padding 
+      width - padding
     ]);
     const yScale = d3.scaleLinear().domain([
-      Math.floor(d3.min(prices, price => price.price)),
-      Math.ceil(d3.max(prices, price => price.price))
+      d3.min(prices, price => price.price) * 0.9,
+      d3.max(prices, price => price.price) * 1.1
     ]).range([
       height - padding,
       padding

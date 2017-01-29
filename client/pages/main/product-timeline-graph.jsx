@@ -34,6 +34,15 @@ class TimelineGraph extends Component {
     }
     this.setState({timespanType});
   }
+  _renderfooter(activeTimeline) {
+    if (activeTimeline) {
+      return (
+        <div className="product-timeline-footer mdc-elevation--z2">
+          {activeTimeline.product.name}
+        </div>
+      )
+    }
+  }
   render() {
     const {timespanType} = this.state;
     const {timelineProductId} = this.props;
@@ -49,8 +58,9 @@ class TimelineGraph extends Component {
           })} onClick={() => this.handleChangeTimespanType('monthly')}>Aylik</div>
         </div>
         <div className="product-timeline-content">
-            <PriceTimelineLineGraph timeline={activeTimeline} timespanType={timespanType}/>
+          <PriceTimelineLineGraph timeline={activeTimeline} timespanType={timespanType}/>
         </div>
+        {this._renderfooter(activeTimeline)}
       </div>
     );
   }

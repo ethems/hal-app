@@ -131,6 +131,18 @@ describe('PRICE  MODEL', () => {
           startDate: moment().startOf('month').add(1, 'hours')
         });
         yield Product.updatePrice(product.id, {
+          price: 33,
+          startDate: moment().startOf('month').add(1, 'weeks')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 44,
+          startDate: moment().startOf('month').add(2, 'weeks')
+        });
+        yield Product.updatePrice(product.id, {
+          price: 55,
+          startDate: moment().startOf('month').add(3, 'weeks')
+        });
+        yield Product.updatePrice(product.id, {
           price: 10.36,
           startDate: moment().startOf('week').add(2, 'hours')
         });

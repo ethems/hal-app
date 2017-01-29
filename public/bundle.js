@@ -41735,8 +41735,13 @@
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+	var initialState = {
+	  isLoading: false,
+	  data: []
+	};
+
 	var priceTimelines = function priceTimelines() {
-	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
 	  var action = arguments[1];
 
 	  switch (action.type) {
@@ -41749,11 +41754,17 @@
 	          });
 	          if (foundIndex === -1) {
 	            return {
-	              v: [].concat(_toConsumableArray(state), [priceData])
+	              v: Object.assign({}, state, {
+	                data: [].concat(_toConsumableArray(state), [priceData]),
+	                isLoading: false
+	              })
 	            };
 	          }
 	          return {
-	            v: [].concat(_toConsumableArray(state.slice(0, foundIndex)), [priceData], _toConsumableArray(state.slice(foundIndex + 1)))
+	            v: Object.assign({}, state, {
+	              data: [].concat(_toConsumableArray(state.slice(0, foundIndex)), [priceData], _toConsumableArray(state.slice(foundIndex + 1))),
+	              isLoading: false
+	            })
 	          };
 	        }();
 
@@ -41772,7 +41783,7 @@
 
 	var getActiveTimeline = exports.getActiveTimeline = function getActiveTimeline(state, productId, timespanType) {
 	  if (productId && timespanType) {
-	    return _lodash2.default.find(state, function (priceTimeline) {
+	    return _lodash2.default.find(state.data, function (priceTimeline) {
 	      return priceTimeline.productId === productId && priceTimeline.timespanType === timespanType;
 	    });
 	  }
@@ -67617,7 +67628,7 @@
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _moment = __webpack_require__(339);
+	var _moment = __webpack_require__(529);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -67688,10 +67699,10 @@
 	          xAxis.tickFormat(d3.timeFormat('%H:%M'));
 	          break;
 	        case 'weekly':
-	          xAxis.tickFormat(d3.timeFormat('%a %d'));
+	          xAxis.tickFormat(d3.timeFormat('%d'));
 	          break;
 	        case 'monthly':
-	          xAxis.tickFormat(d3.timeFormat('%b %d'));
+	          xAxis.tickFormat(d3.timeFormat('%a'));
 	          break;
 	        case 'yearly':
 	          xAxis.tickFormat(d3.timeFormat('%B'));
@@ -67743,14 +67754,16 @@
 	                return (0, _moment2.default)(price.startDate).startOf(timespanMap[timespanType]).format();
 	              }).map(function (group, day) {
 	                var startDate = day;
-	                var lastPriceEnterSpecificDay = group.reduce(function (pre, cur) {
+	                var lastPriceEntered = group.reduce(function (pre, cur) {
 	                  return new Date(pre.startDate) > new Date(cur.startDate) ? pre : cur;
 	                });
-	                return Object.assign({}, lastPriceEnterSpecificDay, { startDate: startDate });
+	                return Object.assign({}, lastPriceEntered, { startDate: startDate });
 	              }).value();
 	              return {
 	                v: [].concat(_toConsumableArray(oldPrices), _toConsumableArray(prices.filter(function (price) {
 	                  return price.active === true;
+	                }).map(function (price) {
+	                  return Object.assign({}, price, { startDate: (0, _moment2.default)().startOf('day') });
 	                })))
 	              };
 	            }();
@@ -67769,6 +67782,50 @@
 	      });
 	    }
 	  }, {
+	    key: 'fillMissindDates',
+	    value: function fillMissindDates(prices) {
+	      var timespanType = this.timespanType;
+
+	      var filledPrices = [];
+
+	      var _ret2 = function () {
+	        switch (timespanType) {
+	          case 'weekly':
+	          case 'monthly':
+	          case 'yearly':
+	            var dates = (0, _moment2.default)().previousDatesByTimespan(timespanType);
+	            var previousPriceForUnFilledDate = prices[0].price;
+
+	            var _loop = function _loop(i, len) {
+	              var foundIndex = _lodash2.default.findIndex(prices, function (price) {
+	                return dates[i].isSame(price.startDate);
+	              });
+	              if (foundIndex !== -1) {
+	                filledPrices.push(Object.assign({}, _lodash2.default.pick(prices[foundIndex], ['startDate', 'price', 'active'])));
+	                previousPriceForUnFilledDate = prices[foundIndex].price;
+	              } else {
+	                filledPrices.push({ price: previousPriceForUnFilledDate, startDate: dates[i], active: false });
+	              }
+	            };
+
+	            for (var i = 0, len = dates.length; i < len; i++) {
+	              _loop(i, len);
+	            }
+	            return {
+	              v: [].concat(filledPrices, _toConsumableArray(prices.filter(function (price) {
+	                return price.active === true;
+	              })))
+	            };
+	          default:
+	            return {
+	              v: prices
+	            };
+	        }
+	      }();
+
+	      if ((typeof _ret2 === 'undefined' ? 'undefined' : _typeof(_ret2)) === "object") return _ret2.v;
+	    }
+	  }, {
 	    key: 'renderGraph',
 	    value: function renderGraph() {
 	      var width = this.width,
@@ -67776,17 +67833,17 @@
 	          padding = this.padding,
 	          el = this.el;
 
-	      var prices = this.sortData(this.prepareData());
+	      var prices = this.fillMissindDates(this.sortData(this.prepareData()));
 	      var xScale = d3.scaleLinear().domain([d3.min(prices, function (price) {
 	        return new Date(price.startDate);
 	      }), d3.max(prices, function (price) {
 	        return new Date(price.startDate);
 	      })]).range([padding * 1.5, width - padding]);
-	      var yScale = d3.scaleLinear().domain([Math.floor(d3.min(prices, function (price) {
+	      var yScale = d3.scaleLinear().domain([d3.min(prices, function (price) {
 	        return price.price;
-	      })), Math.ceil(d3.max(prices, function (price) {
+	      }) * 0.9, d3.max(prices, function (price) {
 	        return price.price;
-	      }))]).range([height - padding, padding]);
+	      }) * 1.1]).range([height - padding, padding]);
 	      this._renderYAxis(yScale);
 	      this._renderXAxis(xScale);
 
@@ -85666,6 +85723,17 @@
 	      }
 	    }
 	  }, {
+	    key: '_renderfooter',
+	    value: function _renderfooter(activeTimeline) {
+	      if (activeTimeline) {
+	        return _react2.default.createElement(
+	          'div',
+	          { className: 'product-timeline-footer mdc-elevation--z2' },
+	          activeTimeline.product.name
+	        );
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -85703,7 +85771,8 @@
 	          'div',
 	          { className: 'product-timeline-content' },
 	          _react2.default.createElement(_priceTimelineLineGraph2.default, { timeline: activeTimeline, timespanType: timespanType })
-	        )
+	        ),
+	        this._renderfooter(activeTimeline)
 	      );
 	    }
 	  }]);
@@ -85764,7 +85833,7 @@
 
 
 	// module
-	exports.push([module.id, ".product-timeline-container {\n  width: 100%;\n  background-color: #fff; }\n\n.product-timeline-container .product-timeline-header {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  height: 40px; }\n\n.product-timeline-container .product-timeline-header .product-timeline-header-item {\n  color: #9E9E9E;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  cursor: pointer; }\n\n.product-timeline-container .product-timeline-header .product-timeline-header-item.active {\n  color: #0172FF;\n  border-bottom: 3px solid #0172FF; }\n\n.product-timeline-container .product-timeline-content {\n  height: 300px;\n  position: relative; }\n", ""]);
+	exports.push([module.id, ".product-timeline-container {\n  width: 100%;\n  background-color: #fff; }\n\n.product-timeline-container .product-timeline-header {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  height: 40px; }\n\n.product-timeline-container .product-timeline-header .product-timeline-header-item {\n  color: #9E9E9E;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  cursor: pointer; }\n\n.product-timeline-container .product-timeline-header .product-timeline-header-item.active {\n  color: #0172FF;\n  border-bottom: 3px solid #0172FF; }\n\n.product-timeline-container .product-timeline-content {\n  height: 300px;\n  position: relative; }\n\n.product-timeline-container .product-timeline-footer {\n  height: 40px;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  color: #008744; }\n", ""]);
 
 	// exports
 
@@ -85876,6 +85945,62 @@
 
 	// exports
 
+
+/***/ },
+/* 529 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	(function (root, factory) {
+	  'use strict';
+
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(339)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
+	    // Node. Does not work with strict CommonJS, but
+	    // only CommonJS-like environments that support module.exports,
+	    // like Node.
+	    module.exports = factory(require('moment'));
+	  } else {
+	    // Browser globals (root is window)
+	    root.returnExports = factory(root.moment);
+	  }
+	})(undefined, function (moment) {
+	  'use strict';
+
+	  moment.fn.previousDatesByTimespan = function (timespan) {
+	    var dates = [];
+	    switch (timespan) {
+	      case 'weekly':
+	        {
+	          var startTime = moment().clone().subtract(1, 'weeks').startOf('day');
+	          var stopTime = moment().clone().startOf('day');
+	          while (startTime.diff(stopTime) < 0) {
+	            dates.push(startTime.clone());
+	            startTime.add('days', 1);
+	          }
+	          return dates;
+	        }
+	      case 'monthly':
+	        {
+	          var _startTime = moment().clone().subtract(1, 'months').startOf('week');
+	          var _stopTime = moment().clone().startOf('week');
+	          while (_startTime.diff(_stopTime) < 0) {
+	            dates.push(_startTime.clone());
+	            _startTime.add('week', 1);
+	          }
+	          return dates;
+	        }
+	      default:
+	        return dates;
+	    }
+	  };
+	  return moment;
+	});
 
 /***/ }
 /******/ ]);
